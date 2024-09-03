@@ -1,5 +1,5 @@
-from flask import Flask, request, jsonify, session
-from flask_cors import CORS
+from flask import Flask, request, jsonify, session # type: ignore
+from flask_cors import CORS # type: ignore
 
 
 app = Flask(__name__)
