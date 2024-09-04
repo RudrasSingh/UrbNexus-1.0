@@ -6,7 +6,7 @@
 
 ```
 pip install virtualenv
-python -m venv env
+python -m venv venv
 venv\Scripts\activate
 ```
 
