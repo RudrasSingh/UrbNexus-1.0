@@ -151,6 +151,15 @@ def logout():
     return jsonify({"message":"Log out success"})
 
 # ---------------------------------------------------------------------------------------
+#functionality code
+@app.route('/new-task', methods=['GET'])
+def createTask():
+    #TODO: write the mechanism to get the details from the front end and store it in the database
+    #TODO: allocate the resources for the task using Resource Allocation Algorithm and notify upon success
+    #TODO: run the task overlapping algorithm to check for overlapping tasks and notify the user
+    #TODO: check for the overlapping tasks and ask them if they want to merge the task and if yes then merge the task and modify the database accordingly for merged tasks and notify the user about the same and return the task details
+
+    return jsonify({"message":"Task created successfully"})
 
 
 
