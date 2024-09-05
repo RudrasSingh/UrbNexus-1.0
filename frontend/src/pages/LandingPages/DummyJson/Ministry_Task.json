@@ -1,0 +1,74 @@
+{
+  "tasks": [
+    {
+      "task_id": 1,
+      "ministry_id": 1,
+      "title": "Water Conservation Project",
+      "description": "Implement water conservation techniques in rural areas.",
+      "status": "In Progress"
+    },
+    {
+      "task_id": 2,
+      "ministry_id": 1,
+      "title": "River Cleaning Initiative",
+      "description": "Clean up polluted rivers in the state.",
+      "status": "Pending"
+    },
+    {
+      "task_id": 3,
+      "ministry_id": 1,
+      "title": "Rainwater Harvesting Setup",
+      "description": "Establish rainwater harvesting systems in urban areas.",
+      "status": "Completed"
+    },
+    {
+      "task_id": 4,
+      "ministry_id": 1,
+      "title": "Desalination Plant Study",
+      "description": "Research the feasibility of a desalination plant.",
+      "status": "In Progress"
+    },
+    {
+      "task_id": 5,
+      "ministry_id": 2,
+      "title": "Power Grid Maintenance",
+      "description": "Routine maintenance of the state power grid.",
+      "status": "In Progress"
+    },
+    {
+      "task_id": 6,
+      "ministry_id": 2,
+      "title": "Solar Panel Installation",
+      "description": "Install solar panels in government buildings.",
+      "status": "Pending"
+    },
+    {
+      "task_id": 7,
+      "ministry_id": 2,
+      "title": "Power Cable Inspection",
+      "description": "Inspect and replace worn-out power cables.",
+      "status": "Completed"
+    },
+    {
+      "task_id": 8,
+      "ministry_id": 3,
+      "title": "Road Resurfacing Project",
+      "description": "Resurface main roads in urban areas.",
+      "status": "In Progress"
+    },
+    {
+      "task_id": 9,
+      "ministry_id": 3,
+      "title": "Traffic Signal Upgrade",
+      "description": "Upgrade traffic signals to modern LED systems.",
+      "status": "Pending"
+    },
+    {
+      "task_id": 10,
+      "ministry_id": 3,
+      "title": "New Road Construction",
+      "description": "Construct new roads to improve connectivity.",
+      "status": "Planning"
+    }
+  ]
+}

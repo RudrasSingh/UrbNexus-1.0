@@ -1,8 +1,8 @@
 {
-    "editor.quickSuggestions": {
-        "other": "inline",
-        "comments": "inline",
-        "strings": "inline"
-    },
-    "editor.semanticTokenColorCustomizations": {}
+  "editor.quickSuggestions": {
+    "other": "inline",
+    "comments": "inline",
+    "strings": "inline"
+  },
+  "editor.semanticTokenColorCustomizations": {}
 }
