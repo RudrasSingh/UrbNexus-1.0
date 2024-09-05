@@ -3,5 +3,6 @@
         "other": "inline",
         "comments": "inline",
         "strings": "inline"
-    }
+    },
+    "editor.semanticTokenColorCustomizations": {}
 }

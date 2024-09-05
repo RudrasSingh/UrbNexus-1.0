@@ -24,8 +24,8 @@ oauth.register(
 firebase = initialize_app(Config.FIREBASE_CONFIG)
 auth = firebase.auth()
 # -----------------------------------------------------------------------------
-#api endpoints
 
+#authentications
 #Google Login
 @app.route("/callback/<flow>")
 def googleCallback(flow):
@@ -150,6 +150,7 @@ def logout():
     session.clear()
     return jsonify({"message":"Log out success"})
 
+# ---------------------------------------------------------------------------------------
 
 
 
