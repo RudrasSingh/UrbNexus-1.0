@@ -52,22 +52,22 @@ def load_model():
         return None
 
 # Function to detect overlapping projects based on location and time
-def detect_project_overlap(new_project, db_session):
+# def detect_project_overlap(new_project, db_session):
     new_location = new_project['location']
     new_start_date = new_project['start_date']
     new_end_date = new_project['end_date']
     
-    overlapping_projects = db_session.query(Project).filter(
-        func.ST_DWithin(Project.location, new_location, PROXIMITY_RADIUS),
-        and_(Project.start_date <= new_end_date, Project.end_date >= new_start_date)
-    ).all()
+    # overlapping_projects = db_session.query(Project).filter(
+    #     func.ST_DWithin(Project.location, new_location, PROXIMITY_RADIUS),
+    #     and_(Project.start_date <= new_end_date, Project.end_date >= new_start_date)
+    # ).all()
 
-    return overlapping_projects
+    # return overlapping_projects
 
 # Function to notify departments of overlapping projects
-def notify_departments(overlapping_projects, new_project):
+# def notify_departments(overlapping_projects, new_project):
     for project in overlapping_projects:
-        department = get_department_by_id(project.department_id)
+        # department = get_department_by_id(project.department_id)
         
         # Email notification
         send_email_notification(
