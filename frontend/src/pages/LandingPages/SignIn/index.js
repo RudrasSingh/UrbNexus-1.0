@@ -1,7 +1,8 @@
 import { useState } from "react";
-
-// react-router-dom components
-import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setUserData } from "../../../redux/action";
+import { Link, useNavigate } from "react-router-dom";
+import { database } from "../DummyJson/login";
 
 // @mui material components
 import Card from "@mui/material/Card";
@@ -30,12 +31,51 @@ import routes from "routes";
 // Images
 import bgImage from "assets/images/bg-sign-in-basic.jpeg";
 
-//signup
+const authenticateUser = (username, password, dispatch) => {
+  for (const ministry of database.ministries) {
+    for (const member of ministry.members) {
+      if (member.username === username && verifyPassword(password, member.password)) {
+        const userData = {
+          userId: ministry.id,
+          ministryName: ministry.name,
+          memberInfo: member,
+        };
+
+        // Dispatch action to update Redux store
+        dispatch(setUserData(userData));
+        console.log(userData);
+        return userData;
+      }
+    }
+  }
+
+  dispatch(setUserData(null));
+  return null;
+};
+
+const verifyPassword = (inputPassword, storedHashedPassword) => {
+  return inputPassword === storedHashedPassword; // For example purposes, no hashing here
+};
 
 function SignInBasic() {
+  const dispatch = useDispatch();
   const [rememberMe, setRememberMe] = useState(false);
+  const [email, setEmail] = useState(""); // State for email
+  const [password, setPassword] = useState(""); // State for password
+  const navigate = useNavigate(); // Initialize navigate function
 
   const handleSetRememberMe = () => setRememberMe(!rememberMe);
+
+  const handleSignIn = () => {
+    const userData = authenticateUser(email, password, dispatch);
+    if (userData) {
+      // User is authenticated successfully, navigate to home page
+      navigate("/");
+    } else {
+      // Handle authentication failure
+      console.error("Authentication failed");
+    }
+  };
 
   return (
     <>
@@ -107,10 +147,22 @@ function SignInBasic() {
               <MKBox pt={4} pb={3} px={3}>
                 <MKBox component="form" role="form">
                   <MKBox mb={2}>
-                    <MKInput type="email" label="Email" fullWidth />
+                    <MKInput
+                      type="email"
+                      label="Email"
+                      fullWidth
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
                   </MKBox>
                   <MKBox mb={2}>
-                    <MKInput type="password" label="Password" fullWidth />
+                    <MKInput
+                      type="password"
+                      label="Password"
+                      fullWidth
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                    />
                   </MKBox>
                   <MKBox display="flex" alignItems="center" ml={-1}>
                     <Switch checked={rememberMe} onChange={handleSetRememberMe} />
@@ -125,13 +177,13 @@ function SignInBasic() {
                     </MKTypography>
                   </MKBox>
                   <MKBox mt={4} mb={1}>
-                    <MKButton variant="gradient" color="info" fullWidth>
-                      sign in
+                    <MKButton variant="gradient" color="info" fullWidth onClick={handleSignIn}>
+                      Sign In
                     </MKButton>
                   </MKBox>
                   <MKBox mt={3} mb={1} textAlign="center">
                     <MKTypography variant="button" color="text">
-                      Don&apos;t have an account?{"signup"}
+                      Don&apos;t have an account?{" "}
                       <MKTypography
                         component={Link}
                         to="/authentication/sign-up/cover"

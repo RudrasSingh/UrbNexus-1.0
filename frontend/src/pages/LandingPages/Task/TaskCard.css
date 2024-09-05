@@ -1,0 +1,118 @@
+.task-card {
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px;
+  width: 100%; /* Full width of its container */
+  max-width: 350px; /* Maximum width for better responsiveness */
+  background: #ffffff; /* Solid white background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif; /* Consistent font */
+}
+
+.task-card:hover {
+  transform: translateY(-5px); /* Slight lift effect on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+
+.ministry-name {
+  font-size: 1em;
+  font-weight: bold;
+  color: #2e8b57; /* Green color for ministry name */
+  margin-bottom: 4px;
+}
+
+.task-title {
+  font-size: 1.2em; /* Larger font size for task title */
+  font-weight: bold;
+  color: #333;
+}
+
+.date-assigned,
+.task-description,
+.deadline {
+  margin-bottom: 12px;
+}
+
+.date-assigned {
+  font-size: 0.9em;
+  color: #888; /* Light grey color for date */
+  display: flex;
+  align-items: center;
+}
+
+.date-assigned i {
+  margin-right: 8px;
+}
+
+.task-description {
+  font-size: 0.95em; /* Slightly larger font size */
+  line-height: 1.4;
+  color: #555;
+}
+
+.deadline {
+  font-size: 0.9em;
+  color: #d9534f; /* Red color for deadline */
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.deadline i {
+  margin-right: 8px;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto; /* Pushes footer to the bottom */
+}
+
+.ongoing-button {
+  background-color: #5bc0de; /* Blue color for button */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px; /* Adjusted padding */
+  font-size: 0.9em; /* Slightly smaller font size */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
+.ongoing-button i {
+  margin-right: 8px;
+}
+
+.ongoing-button:hover {
+  background-color: #31b0d5;
+}
+
+.request-section {
+  display: flex;
+  align-items: center;
+}
+
+.plus-icon {
+  font-size: 1.2em; /* Adjusted icon size */
+  margin-right: 8px;
+  color: #5bc0de; /* Blue color for plus icon */
+}
+
+.request-description {
+  font-size: 0.9em;
+  color: #5bc0de; /* Blue color for request text */
+  font-weight: bold;
+}

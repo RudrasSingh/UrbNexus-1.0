@@ -9,7 +9,7 @@ import AboutUs from "layouts/pages/landing-pages/about-us";
 import ContactUs from "layouts/pages/landing-pages/contact-us";
 import Author from "layouts/pages/landing-pages/author";
 import SignIn from "layouts/pages/authentication/sign-in";
-
+import DepartmentTask from "pages/LandingPages/DepartmentTask";
 // Sections
 import PageHeaders from "layouts/sections/page-sections/page-headers";
 import Features from "layouts/sections/page-sections/featuers";
@@ -77,10 +77,10 @@ const routes = [
   },
 
   {
-    name: "Subhro",
+    name: "Dept Task",
     icon: <Icon>dashboard</Icon>,
-    route: "/pages/landing-pages/task",
-    component: <Task />,
+    route: "/pages/landing-pages/departmenttask",
+    component: <DepartmentTask />,
   },
 
   {
