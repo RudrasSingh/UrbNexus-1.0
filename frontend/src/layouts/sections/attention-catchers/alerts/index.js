@@ -28,7 +28,10 @@ function Alerts() {
     <BaseLayout
       title="Alerts"
       breadcrumb={[
-        { label: "Page Sections", route: "/sections/attention-catchers/alerts" },
+        {
+          label: "Page Sections",
+          route: "/sections/attention-catchers/alerts",
+        },
         { label: "Alerts" },
       ]}
     >

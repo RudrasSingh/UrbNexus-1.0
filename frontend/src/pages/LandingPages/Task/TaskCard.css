@@ -6,7 +6,9 @@
   max-width: 350px; /* Maximum width for better responsiveness */
   background: #ffffff; /* Solid white background */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
   overflow: hidden;
   display: flex;
   flex-direction: column;

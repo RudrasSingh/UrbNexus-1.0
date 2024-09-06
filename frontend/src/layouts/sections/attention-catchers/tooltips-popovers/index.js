@@ -30,7 +30,10 @@ function TooltipsPopovers() {
     <BaseLayout
       title="Tooltip & Popovers"
       breadcrumb={[
-        { label: "Page Sections", route: "/sections/attention-catchers/tooltips-popovers" },
+        {
+          label: "Page Sections",
+          route: "/sections/attention-catchers/tooltips-popovers",
+        },
         { label: "Tooltip & Popovers" },
       ]}
     >
