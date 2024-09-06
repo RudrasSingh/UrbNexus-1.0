@@ -1,9 +1,6 @@
 // @mui material components
 import Icon from "@mui/material/Icon";
 
-// @mui icons
-import GitHubIcon from "@mui/icons-material/GitHub";
-
 // Pages
 import AboutUs from "layouts/pages/landing-pages/about-us";
 import ContactUs from "layouts/pages/landing-pages/contact-us";
@@ -26,7 +23,6 @@ import Avatars from "layouts/sections/elements/avatars";
 import Badges from "layouts/sections/elements/badges";
 import BreadcrumbsEl from "layouts/sections/elements/breadcrumbs";
 import Buttons from "layouts/sections/elements/buttons";
-import Dropdowns from "layouts/sections/elements/dropdowns";
 import ProgressBars from "layouts/sections/elements/progress-bars";
 import Toggles from "layouts/sections/elements/toggles";
 import Typography from "layouts/sections/elements/typography";
@@ -34,7 +30,7 @@ import Task from "pages/LandingPages/Task";
 
 const routes = [
   {
-    name: "Pages",
+    name: "Home",
     icon: <Icon>dashboard</Icon>,
     columns: 1,
     rowsPerColumn: 2,
@@ -78,10 +74,10 @@ const routes = [
   },
 
   {
-    name: "Dept Task",
+    name: "AboutUs",
     icon: <Icon>dashboard</Icon>,
-    route: "/pages/landing-pages/departmenttask",
-    component: <DepartmentTask />,
+    route: "/pages/landing-pages/about-us",
+    component: <AboutUs />,
   },
   {
     name: "Create Task",
@@ -90,11 +86,11 @@ const routes = [
     component: <CreateTask />,
   },
   {
-    name: "sections",
+    name: "Features",
     icon: <Icon>view_day</Icon>,
     collapse: [
       {
-        name: "page sections",
+        name: "carbon emissions calculator ",
         description: "See all sections",
         dropdown: true,
         collapse: [
@@ -111,7 +107,7 @@ const routes = [
         ],
       },
       {
-        name: "navigation",
+        name: "Forum",
         description: "See all navigations",
         dropdown: true,
         collapse: [
@@ -133,7 +129,7 @@ const routes = [
         ],
       },
       {
-        name: "input areas",
+        name: "Chat Server",
         description: "See all input areas",
         dropdown: true,
         collapse: [
@@ -198,11 +194,6 @@ const routes = [
             component: <Buttons />,
           },
           {
-            name: "dropdowns",
-            route: "/sections/elements/dropdowns",
-            component: <Dropdowns />,
-          },
-          {
             name: "progress bars",
             route: "/sections/elements/progress-bars",
             component: <ProgressBars />,
@@ -222,35 +213,10 @@ const routes = [
     ],
   },
   {
-    name: "docs",
+    name: "Dept Task",
     icon: <Icon>article</Icon>,
-    collapse: [
-      {
-        name: "getting started",
-        description: "All about overview, quick start, license and contents",
-        href: "https://www.creative-tim.com/learning-lab/react/quick-start/material-kit/",
-      },
-      {
-        name: "foundation",
-        description: "See our colors, icons and typography",
-        href: "https://www.creative-tim.com/learning-lab/react/colors/material-kit/",
-      },
-      {
-        name: "components",
-        description: "Explore our collection of fully designed components",
-        href: "https://www.creative-tim.com/learning-lab/react/alerts/material-kit/",
-      },
-      {
-        name: "plugins",
-        description: "Check how you can integrate our plugins",
-        href: "https://www.creative-tim.com/learning-lab/react/datepicker/material-kit/",
-      },
-    ],
-  },
-  {
-    name: "github",
-    icon: <GitHubIcon />,
-    href: "https://www.github.com/creativetimofficial/material-kit-react",
+    route: "/pages/landing-pages/DepartmentTask",
+    component: <DepartmentTask />,
   },
 ];
 
