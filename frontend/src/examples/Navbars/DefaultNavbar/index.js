@@ -250,7 +250,11 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
             {item.collapse && (
               <Icon
                 fontSize="small"
-                sx={{ fontWeight: "normal", verticalAlign: "middle", mr: -0.5 }}
+                sx={{
+                  fontWeight: "normal",
+                  verticalAlign: "middle",
+                  mr: -0.5,
+                }}
               >
                 keyboard_arrow_right
               </Icon>
@@ -382,7 +386,11 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
                     {item.collapse && (
                       <Icon
                         fontSize="small"
-                        sx={{ fontWeight: "normal", verticalAlign: "middle", mr: -0.5 }}
+                        sx={{
+                          fontWeight: "normal",
+                          verticalAlign: "middle",
+                          mr: -0.5,
+                        }}
                       >
                         keyboard_arrow_right
                       </Icon>

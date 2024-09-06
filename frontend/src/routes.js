@@ -7,6 +7,7 @@ import ContactUs from "layouts/pages/landing-pages/contact-us";
 import Author from "layouts/pages/landing-pages/author";
 import SignIn from "layouts/pages/authentication/sign-in";
 import DepartmentTask from "pages/LandingPages/DepartmentTask";
+import CreateTask from "pages/LandingPages/CreateTask";
 // Sections
 import PageHeaders from "layouts/sections/page-sections/page-headers";
 import Features from "layouts/sections/page-sections/featuers";
@@ -78,7 +79,12 @@ const routes = [
     route: "/pages/landing-pages/about-us",
     component: <AboutUs />,
   },
-
+  {
+    name: "Create Task",
+    icon: <Icon>dashboard</Icon>,
+    route: "/pages/landing-pages/CreateTask",
+    component: <CreateTask />,
+  },
   {
     name: "Features",
     icon: <Icon>view_day</Icon>,
