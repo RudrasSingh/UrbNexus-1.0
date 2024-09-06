@@ -22,7 +22,6 @@ import Avatars from "layouts/sections/elements/avatars";
 import Badges from "layouts/sections/elements/badges";
 import BreadcrumbsEl from "layouts/sections/elements/breadcrumbs";
 import Buttons from "layouts/sections/elements/buttons";
-import Dropdowns from "layouts/sections/elements/dropdowns";
 import ProgressBars from "layouts/sections/elements/progress-bars";
 import Toggles from "layouts/sections/elements/toggles";
 import Typography from "layouts/sections/elements/typography";
@@ -187,11 +186,6 @@ const routes = [
             name: "buttons",
             route: "/sections/elements/buttons",
             component: <Buttons />,
-          },
-          {
-            name: "dropdowns",
-            route: "/sections/elements/dropdowns",
-            component: <Dropdowns />,
           },
           {
             name: "progress bars",
