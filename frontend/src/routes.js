@@ -5,7 +5,9 @@ import Icon from "@mui/material/Icon";
 import AboutUs from "layouts/pages/landing-pages/about-us";
 import DepartmentTask from "pages/LandingPages/DepartmentTask";
 import CreateTask from "pages/LandingPages/CreateTask";
-
+import Task from "pages/LandingPages/Task";
+import SignIn from "pages/LandingPages/SignIn";
+import Dashboard from "pages/LandingPages/Dashboard";
 const routes = [
   {
     name: "Home",
@@ -25,7 +27,7 @@ const routes = [
     name: "Task",
     icon: <Icon>dashboard</Icon>,
     route: "/pages/landing-pages/CreateTask",
-    component: <CreateTask />,
+    component: <Task />,
   },
   {
     name: "Inventory",
@@ -44,7 +46,7 @@ const routes = [
         collapse: [
           {
             name: "Dept. Task",
-            route: " /",
+            route: "/pages/landing-pages/DepartmentTask",
             component: <DepartmentTask />,
           },
           {
@@ -98,10 +100,18 @@ const routes = [
       },
     ],
   },
+
   {
-    name: "",
-    route: " /",
-    component: <CreateTask />,
+    name: "SignIn",
+    icon: <Icon>dashboard</Icon>,
+    route: "/pages/landing-pages/SignIn",
+    component: <SignIn />,
+  },
+  {
+    name: "Dashboard",
+    icon: <Icon>dashboard</Icon>,
+    route: "/pages/landing-pages/Dashboard",
+    component: <Dashboard />,
   },
 ];
 
