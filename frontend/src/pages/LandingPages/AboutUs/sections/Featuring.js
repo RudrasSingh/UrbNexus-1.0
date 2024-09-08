@@ -19,7 +19,7 @@ function Featuring() {
               separator=","
               suffix="+"
               title="Dept."
-              description="Of “high-performing” level are led by a certified task manager"
+              description="collaboration on UrbNexus."
             />
           </Grid>
           <Grid item xs={12} md={3}>
@@ -28,7 +28,7 @@ function Featuring() {
               separator=","
               suffix="+"
               title="Tasks"
-              description="That meets quality standards required by our users"
+              description="Effortlessly create and manage tasks to streamline project coordination."
             />
           </Grid>
           <Grid item xs={12} md={3}>

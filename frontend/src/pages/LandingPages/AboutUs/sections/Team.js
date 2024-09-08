@@ -10,10 +10,12 @@ import MKTypography from "components/MKTypography";
 import HorizontalTeamCard from "examples/Cards/TeamCards/HorizontalTeamCard";
 
 // Images
-import team1 from "assets/images/team-5.jpg";
-import team2 from "assets/images/bruce-mars.jpg";
-import team3 from "assets/images/ivana-squares.jpg";
+import team1 from "assets/images/atul.jpg";
+import team2 from "assets/images/subhradeep.PNG";
+import team3 from "assets/images/utsav.jpg";
 import team4 from "assets/images/ivana-square.jpg";
+import team5 from "assets/images/kritii.jpeg";
+import team6 from "assets/images/srijita.jpg";
 
 function Team() {
   return (
@@ -45,7 +47,7 @@ function Team() {
                 image={team1}
                 name="Atul Kumar Singh"
                 position={{ color: "info", label: "backend Developer" }}
-                description="Artist is a term applied to a person who engages in an activity deemed to be an art."
+                description="Crafting seamless connections between data and functionality, empowering the digital world."
               />
             </MKBox>
           </Grid>
@@ -55,7 +57,7 @@ function Team() {
                 image={team2}
                 name="Subhradeep Bhattacharya"
                 position={{ color: "info", label: "Frontend Developer" }}
-                description="Artist is a term applied to a person who engages in an activity deemed to be an art."
+                description="Turning designs into dynamic, user-friendly interfaces with precision and creativity."
               />
             </MKBox>
           </Grid>
@@ -65,7 +67,7 @@ function Team() {
                 image={team3}
                 name="Utsav Tiwari"
                 position={{ color: "info", label: "Frontend Developer" }}
-                description="Artist is a term applied to a person who engages in an activity deemed to be an art."
+                description="Turning designs into interactive, pixel-perfect, and responsive experiences."
               />
             </MKBox>
           </Grid>
@@ -75,27 +77,27 @@ function Team() {
                 image={team4}
                 name="Rishav Gupta"
                 position={{ color: "info", label: "Backend Developer" }}
-                description="Artist is a term applied to a person who engages in an activity deemed to be an art."
+                description="Designing algorithms that transform data into action, powering the core of every digital experience."
               />
             </MKBox>
           </Grid>
           <Grid item xs={12} lg={6}>
             <MKBox mb={{ xs: 1, lg: 0 }}>
               <HorizontalTeamCard
-                image={team4}
+                image={team5}
                 name="Kriti Raj"
                 position={{ color: "info", label: "Database Administrator" }}
-                description="Artist is a term applied to a person who engages in an activity deemed to be an art."
+                description="Optimizing data storage and retrieval to ensure efficient, secure, and reliable database management."
               />
             </MKBox>
           </Grid>
           <Grid item xs={12} lg={6}>
             <MKBox mb={{ xs: 1, lg: 0 }}>
               <HorizontalTeamCard
-                image={team4}
+                image={team6}
                 name="Srijita Jana"
                 position={{ color: "info", label: "business analyzer" }}
-                description="Artist is a term applied to a person who engages in an activity deemed to be an art."
+                description="Analyzing data to uncover trends and inform strategic decisions for business growth and efficiency."
               />
             </MKBox>
           </Grid>
