@@ -23,8 +23,8 @@ function Information() {
                 <MKBox mb={5}>
                   <DefaultInfoCard
                     icon="public"
-                    title="Fully integrated"
-                    description="We get insulted by others, lose trust for those We get back freezes"
+                    title="Centralized Data Exchange"
+                    description="Access and share data, resources, and expertise across departments for optimized coordination and decision-making."
                   />
                 </MKBox>
               </Grid>
@@ -32,8 +32,8 @@ function Information() {
                 <MKBox mb={5}>
                   <DefaultInfoCard
                     icon="payments"
-                    title="Payments functionality"
-                    description="We get insulted by others, lose trust for those We get back freezes"
+                    title="Collaborative Project Management"
+                    description="Tools for scheduling, task distribution, and reporting to streamline inter-departmental projects."
                   />
                 </MKBox>
               </Grid>
@@ -41,8 +41,8 @@ function Information() {
                 <MKBox mb={{ xs: 5, md: 0 }}>
                   <DefaultInfoCard
                     icon="apps"
-                    title="Prebuilt components"
-                    description="We get insulted by others, lose trust for those We get back freezes"
+                    title="Unified Project Planning"
+                    description="Identify overlapping projects, organize joint planning, and coordinate execution to reduce delays and costs."
                   />
                 </MKBox>
               </Grid>
@@ -50,8 +50,8 @@ function Information() {
                 <MKBox mb={{ xs: 5, md: 0 }}>
                   <DefaultInfoCard
                     icon="3p"
-                    title="Improved platform"
-                    description="We get insulted by others, lose trust for those We get back freezes"
+                    title="Chat and Forums"
+                    description="Engage in interactive forums and chat for knowledge sharing and public discussions."
                   />
                 </MKBox>
               </Grid>
@@ -61,7 +61,7 @@ function Information() {
             <CenteredBlogCard
               image={analysisImage}
               title="Get insights on Search"
-              description="Website visitors today demand a frictionless user expericence — especially when using search. Because of the hight standards."
+              description="UrbNexus ensures a smooth search experience for accessing data and resources, enhancing efficiency and collaboration."
               action={{
                 type: "internal",
                 route: "pages/company/about-us",
