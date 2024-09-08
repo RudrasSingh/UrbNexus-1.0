@@ -1,19 +1,4 @@
-/**
-=========================================================
-* Material Kit 2 React - v2.1.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-kit-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
-// prop-types is a library for typechecking of props
+ // prop-types is a library for typechecking of props
 import PropTypes from "prop-types";
 
 // @mui material components
@@ -107,12 +92,12 @@ function CenteredFooter({ company, links, socials, light }) {
 CenteredFooter.defaultProps = {
   company: { href: "https://www.creative-tim.com/", name: "Creative Tim" },
   links: [
-    { href: "https://www.creative-tim.com/", name: "Company" },
-    { href: "https://www.creative-tim.com/presentation", name: "About Us" },
-    { href: "https://www.creative-tim.com/presentation", name: "Team" },
-    { href: "https://www.creative-tim.com/templates/react", name: "Products" },
-    { href: "https://www.creative-tim.com/blog", name: "Blog" },
-    { href: "https://www.creative-tim.com/license", name: "License" },
+    { href: " /", name: "Company" },
+    { href: " /", name: "Home" },
+    { href: " /", name: "About Us" },
+    { href: " /", name: "Tasks" },
+    { href: " /", name: "Inventory" },
+    { href: " /", name: "Department" },
   ],
   socials: [
     {
