@@ -480,12 +480,12 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
           >
             {renderNavbarItems}
           </MKBox>
-          <MKBox ml={{ xs: "auto", lg: 0 }}>
+          <MKBox ml={{ lg: 0 }}>
             {action &&
               (action.type === "internal" ? (
                 <MKButton
-                  component={Link}
-                  to={action.route}
+                  component="button" // Use a button element for handling click events
+                  onClick={action.functions} // Update this line
                   variant={
                     action.color === "white" || action.color === "default"
                       ? "contained"
@@ -514,6 +514,7 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
                 </MKButton>
               ))}
           </MKBox>
+
           <MKBox
             display={{ xs: "inline-block", lg: "none" }}
             lineHeight={0}

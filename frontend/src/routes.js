@@ -6,7 +6,7 @@ import AboutUs from "layouts/pages/landing-pages/about-us";
 import CreateTask from "pages/LandingPages/CreateTask";
 // import CreateTask from "pages/LandingPages/CreateTask";
 import Task from "pages/LandingPages/Task";
-import SignIn from "pages/LandingPages/SignIn";
+// import SignIn from "pages/LandingPages/SignIn";
 import Dashboard from "pages/LandingPages/Dashboard";
 import DepartmentTask from "pages/LandingPages/DepartmentTask";
 const routes = [
@@ -106,12 +106,6 @@ const routes = [
     icon: <Icon>dashboard</Icon>,
     route: "/pages/landing-pages/Dashboard",
     component: <Dashboard />,
-  },
-  {
-    name: "SignIn",
-    icon: <Icon>dashboard</Icon>,
-    route: "/pages/landing-pages/SignIn",
-    component: <SignIn />,
   },
 ];
 
