@@ -4,6 +4,7 @@ from flask_cors import CORS
 from config import Config
 from authlib.integrations.flask_client import OAuth
 from pyrebase import *
+import database as db
 
 #----------------------application setup---------------------------------------
 app = Flask(__name__) 
@@ -152,14 +153,20 @@ def logout():
 
 # ---------------------------------------------------------------------------------------
 #functionality code
-@app.route('/new-task', methods=['GET'])
+@app.route('/new-task', methods=['GET','POST'])
 def createTask():
-    #TODO: write the mechanism to get the details from the front end and store it in the database
-    #TODO: allocate the resources for the task using Resource Allocation Algorithm and notify upon success
-    #TODO: run the task overlapping algorithm to check for overlapping tasks and notify the user
-    #TODO: check for the overlapping tasks and ask them if they want to merge the task and if yes then merge the task and modify the database accordingly for merged tasks and notify the user about the same and return the task details
+    if "user" in session:
+        #TODO: write the mechanism to get the details from the front end and store it in the database
+        info = request.get_json()
+        try:
+            db.
 
-    return jsonify({"message":"Task created successfully"})
+        
+        #TODO: allocate the resources for the task using Resource Allocation Algorithm and notify upon success
+        #TODO: run the task overlapping algorithm to check for overlapping tasks and notify the user
+        #TODO: check for the overlapping tasks and ask them if they want to merge the task and if yes then merge the task and modify the database accordingly for merged tasks and notify the user about the same and return the task details
+
+        return jsonify({"message":"Task created successfully","info":info})
 
 
 
