@@ -40,10 +40,9 @@ const authenticateUser = (username, password, dispatch) => {
           ministryName: ministry.name,
           memberInfo: member,
         };
-
         // Dispatch action to update Redux store
         dispatch(setUserData(userData));
-        console.log(userData);
+
         return userData;
       }
     }
@@ -70,7 +69,7 @@ function SignInBasic() {
     const userData = authenticateUser(email, password, dispatch);
     if (userData) {
       // User is authenticated successfully, navigate to home page
-      navigate("/");
+      navigate("/presentation");
     } else {
       // Handle authentication failure
       console.error("Authentication failed");

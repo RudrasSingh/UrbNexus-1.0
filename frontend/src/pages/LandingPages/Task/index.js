@@ -9,7 +9,25 @@ import tasksData from "../DummyJson/Ministry_Task.json";
 import { database } from "../DummyJson/login"; // Import the database with ministry details
 import "./Task.css"; // Import the CSS file for grid styling
 
+import { useDispatch } from "react-redux";
+import { logoutUser } from "../../../redux/action";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+
 const Task = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const UserState = useSelector((state) => state.userData);
+  const label = UserState == null ? "Sign In" : "Sign Out";
+
+  const handleActionClick = () => {
+    if (UserState == null) {
+      navigate("/signin"); // Redirect to the SignIn page
+    } else {
+      dispatch(logoutUser());
+      alert("Please sign out to continue");
+    }
+  };
   // Create a mapping of ministry ID to ministry name
   const ministryMap = database.ministries.reduce((acc, ministry) => {
     acc[ministry.id] = ministry.name;
@@ -21,12 +39,13 @@ const Task = () => {
       <MKBox position="fixed" top="0.5rem" width="100%">
         <DefaultNavbar
           routes={routes}
-          // action={{
-          //   type: "external",
-          //   route: "https://www.creative-tim.com/product/material-kit-react",
-          //   label: "free download",
-          //   color: "info",
-          // }}
+          action={{
+            type: "internal",
+            label: label,
+            color: "info",
+            functions: handleActionClick, // Use the function directly
+          }}
+          sticky
         />
       </MKBox>
       <MKBox pt={6} px={1} mt={6}>

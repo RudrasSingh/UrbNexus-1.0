@@ -1,23 +1,29 @@
 // @mui material components
 import Icon from "@mui/material/Icon";
+import { store } from "./redux/store";
+// import {setUserlogoutUser} from "./redux/actions";
 
 // Pages
 import AboutUs from "layouts/pages/landing-pages/about-us";
 import CreateTask from "pages/LandingPages/CreateTask";
-// import CreateTask from "pages/LandingPages/CreateTask";
 import Task from "pages/LandingPages/Task";
-import SignIn from "pages/LandingPages/SignIn";
 import Dashboard from "pages/LandingPages/Dashboard";
 import DepartmentTask from "pages/LandingPages/DepartmentTask";
+
+const state = store.getState();
+console.log(state);
+const isAuthenticated = state.userData != null;
+
+console.log(isAuthenticated);
+
 const routes = [
   {
     name: "Home",
     icon: <Icon>dashboard</Icon>,
-    route: " /",
+    route: "/",
     columns: 1,
     rowsPerColumn: 2,
   },
-
   {
     name: "AboutUs",
     icon: <Icon>dashboard</Icon>,
@@ -33,7 +39,7 @@ const routes = [
   {
     name: "Inventory",
     icon: <Icon>dashboard</Icon>,
-    route: " /",
+    route: "/",
     component: <CreateTask />,
   },
   {
@@ -52,19 +58,27 @@ const routes = [
           },
           {
             name: "Dept. Inventory",
-            route: " /",
+            route: "/",
             component: <CreateTask />,
           },
-          {
-            name: "Create Task",
-            route: "/pages/landing-pages/CreateTask",
-            component: <CreateTask />,
-          },
-          {
-            name: "Add Inventory",
-            route: " /",
-            component: <CreateTask />,
-          },
+          ...(isAuthenticated
+            ? [
+                {
+                  name: "Create Task",
+                  route: "/pages/landing-pages/CreateTask",
+                  component: <CreateTask />,
+                },
+              ]
+            : []),
+          ...(isAuthenticated
+            ? [
+                {
+                  name: "Add Inventory",
+                  route: "/",
+                  component: <CreateTask />,
+                },
+              ]
+            : []),
         ],
       },
       {
@@ -74,22 +88,22 @@ const routes = [
         collapse: [
           {
             name: "Admin",
-            route: " /",
+            route: "/",
             component: <CreateTask />,
           },
           {
             name: "Officer",
-            route: " /",
+            route: "/",
             component: <CreateTask />,
           },
           {
-            name: "Tech Expart",
-            route: " /",
+            name: "Tech Expert",
+            route: "/",
             component: <CreateTask />,
           },
           {
             name: "Employee",
-            route: " /",
+            route: "/",
             component: <CreateTask />,
           },
         ],
@@ -101,18 +115,16 @@ const routes = [
       },
     ],
   },
-  {
-    name: "Dashboard",
-    icon: <Icon>dashboard</Icon>,
-    route: "/pages/landing-pages/Dashboard",
-    component: <Dashboard />,
-  },
-  {
-    name: "SignIn",
-    icon: <Icon>dashboard</Icon>,
-    route: "/pages/landing-pages/SignIn",
-    component: <SignIn />,
-  },
+  ...(isAuthenticated
+    ? [
+        {
+          name: "Dashboard",
+          icon: <Icon>dashboard</Icon>,
+          route: "/pages/landing-pages/Dashboard",
+          component: <Dashboard />,
+        },
+      ]
+    : []),
 ];
 
 export default routes;

@@ -10,7 +10,24 @@ import tasksData from "../DummyJson/Ministry_Task.json";
 import { database } from "../DummyJson/login"; // Import the database with ministry details
 import "../Task/Task.css"; // Import the CSS file for grid styling
 
+import { useDispatch } from "react-redux";
+import { logoutUser } from "../../../redux/action";
+import { useNavigate } from "react-router-dom";
+
 const DepartmentTask = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const UserState = useSelector((state) => state.userData);
+  const label = UserState == null ? "Sign In" : "Sign Out";
+
+  const handleActionClick = () => {
+    if (UserState == null) {
+      navigate("/signin"); // Redirect to the SignIn page
+    } else {
+      dispatch(logoutUser());
+      alert("Please sign out to continue");
+    }
+  };
   // Get the signed-in user's ministry ID from Redux state
   const userData = useSelector((state) => state.userData);
   const signedInMinistryId = userData ? userData.userId : null;
@@ -29,12 +46,13 @@ const DepartmentTask = () => {
       <MKBox position="fixed" top="0.5rem" width="100%">
         <DefaultNavbar
           routes={routes}
-          // action={{
-          //   type: "external",
-          //   route: "/*give dashboard route*/",
-          //   label: "Dashboard",
-          //   color: "info",
-          // }}
+          action={{
+            type: "internal",
+            label: label,
+            color: "info",
+            functions: handleActionClick, // Use the function directly
+          }}
+          sticky
         />
       </MKBox>
       <MKBox pt={6} px={1} mt={6}>
