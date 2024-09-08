@@ -35,16 +35,7 @@ import bgImage from "assets/images/bg-presentation.jpg";
 function Presentation() {
   return (
     <>
-      <DefaultNavbar
-        routes={routes}
-        action={{
-          type: "external",
-          route: "/*make dashboard routing*/",
-          label: "Dashboard",
-          color: "info",
-        }}
-        sticky
-      />
+      <DefaultNavbar routes={routes} sticky />
       <MKBox
         minHeight="75vh"
         width="100%"
