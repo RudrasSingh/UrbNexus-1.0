@@ -30,12 +30,12 @@ function AboutUs() {
     <>
       <DefaultNavbar
         routes={routes}
-        action={{
-          type: "external",
-          route: "/*give dashboard route*/",
-          label: "Dashboard",
-          color: "default",
-        }}
+        // action={{
+        //   type: "external",
+        //   route: "/*give dashboard route*/",
+        //   label: "Dashboard",
+        //   color: "default",
+        // }}
         transparent
         light
       />
