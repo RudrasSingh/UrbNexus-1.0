@@ -14,7 +14,7 @@ const date = new Date().getFullYear();
 
 export default {
   brand: {
-    name: "Material Kit 2",
+    name: "UrbNexus",
     image: logoCT,
     route: "/",
   },
@@ -40,68 +40,76 @@ export default {
     {
       name: "company",
       items: [
-        { name: "about us", href: "https://www.creative-tim.com/presentation" },
+        { name: "Home", href: " /" },
         {
-          name: "freebies",
-          href: "https://www.creative-tim.com/templates/free",
+          name: "About Us",
+          href: " /",
         },
         {
-          name: "premium tools",
-          href: "https://www.creative-tim.com/templates/premium",
+          name: "Tasks",
+          href: " /",
         },
-        { name: "blog", href: "https://www.creative-tim.com/blog" },
-      ],
-    },
-    {
-      name: "resources",
-      items: [
-        { name: "illustrations", href: "https://iradesign.io/" },
-        { name: "bits & snippets", href: "https://www.creative-tim.com/bits" },
+        { name: "Investors", href: " /" },
         {
-          name: "affiliate program",
-          href: "https://www.creative-tim.com/affiliates/new",
+          name: "Departments",
+          href: " /",
         },
       ],
     },
     {
-      name: "help & support",
+      name: "Department",
       items: [
-        { name: "contact us", href: "https://www.creative-tim.com/contact-us" },
+        { name: "Dept. Work", href: " /" },
+        { name: "Dept. Team", href: " /" },
         {
-          name: "knowledge center",
-          href: "https://www.creative-tim.com/knowledge-center",
-        },
-        {
-          name: "custom development",
-          href: "https://services.creative-tim.com/",
-        },
-        {
-          name: "sponsorships",
-          href: "https://www.creative-tim.com/sponsorships",
+          name: "Dept. Chat",
+          href: " /",
         },
       ],
     },
     {
-      name: "legal",
+      name: "Dept. Work",
+      items: [
+        { name: "Dept. Task", href: " /" },
+        {
+          name: "Dept. Inventory",
+          href: " /",
+        },
+        {
+          name: "Create Task",
+          href: " /",
+        },
+        {
+          name: "Add Inventory",
+          href: " /",
+        },
+      ],
+    },
+    {
+      name: "Dept. Team",
       items: [
         {
-          name: "terms & conditions",
-          href: "https://www.creative-tim.com/terms",
+          name: "Admin",
+          href: " /",
         },
         {
-          name: "privacy policy",
-          href: "https://www.creative-tim.com/privacy",
+          name: "Officer",
+          href: " /",
         },
         {
-          name: "licenses (EULA)",
-          href: "https://www.creative-tim.com/license",
+          name: "Tech Expert",
+          href: " /",
+        },
+        {
+          name: "Employee",
+          href: " /",
         },
       ],
     },
   ],
   copyright: (
     <MKTypography variant="button" fontWeight="regular">
-      All rights reserved. Copyright &copy; {date} Material Kit by{" "}
+      All rights reserved. Copyright &copy; {date} UrbNexus by{" "}
       <MKTypography
         component="a"
         href="https://www.creative-tim.com"
@@ -110,7 +118,7 @@ export default {
         variant="button"
         fontWeight="regular"
       >
-        Creative Tim
+        Invokators
       </MKTypography>
       .
     </MKTypography>
