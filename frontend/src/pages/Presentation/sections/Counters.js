@@ -19,7 +19,7 @@ function Counters() {
               count={6}
               suffix="+"
               title="Complete tasks"
-              description="From buttons, to inputs, navbars, alerts or cards, you are covered"
+              description="Track and review all tasks that have been successfully completed."
             />
           </Grid>
           <Grid item xs={12} md={4} display="flex">
@@ -28,7 +28,7 @@ function Counters() {
               count={10}
               suffix="+"
               title="Upcoming Tusks"
-              description="Mix the sections, change the colors and unleash your creativity"
+              description="Explore and plan for tasks that are scheduled to start in the near future."
             />
             <Divider orientation="vertical" sx={{ display: { xs: "none", md: "block" }, ml: 0 }} />
           </Grid>
@@ -36,7 +36,7 @@ function Counters() {
             <DefaultCounterCard
               count={10}
               title="Dept."
-              description="Save 3-4 weeks of work when you use our pre-made pages for your website"
+              description="Explore and plan for tasks that are scheduled to start in the near future."
             />
           </Grid>
         </Grid>

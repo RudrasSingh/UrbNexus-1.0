@@ -13,7 +13,7 @@ import HorizontalTeamCard from "examples/Cards/TeamCards/HorizontalTeamCard";
 import team1 from "assets/images/atul.jpg";
 import team2 from "assets/images/subhradeep.PNG";
 import team3 from "assets/images/utsav.jpg";
-import team4 from "assets/images/ivana-square.jpg";
+import team4 from "assets/images/rishav.jpeg";
 import team5 from "assets/images/kritii.jpeg";
 import team6 from "assets/images/srijita.jpg";
 
