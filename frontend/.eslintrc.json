@@ -3,7 +3,11 @@
     "browser": true,
     "es2021": true
   },
-  "extends": ["eslint:recommended", "plugin:react/recommended", "prettier"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended" // Prettier integration
+  ],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -16,7 +20,7 @@
     "prettier/prettier": [
       "error",
       {
-        "endOfLine": "auto"
+        "endOfLine": "auto" // Handling different OS line endings
       }
     ],
     "react/react-in-jsx-scope": "off",
@@ -31,5 +35,11 @@
     "default-param-last": "off",
     "react/display-name": "off"
   },
-  "settings": { "import/resolver": { "node": { "paths": ["src"] } } }
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"]
+      }
+    }
+  }
 }

@@ -60,7 +60,10 @@ function BreadcrumbsEl() {
                 <Breadcrumbs
                   routes={[
                     { label: "Home", route: "/sections/elements/breadcrumbs" },
-                    { label: "Library", route: "/sections/elements/breadcrumbs" },
+                    {
+                      label: "Library",
+                      route: "/sections/elements/breadcrumbs",
+                    },
                     { label: "Data" },
                   ]}
                 />
