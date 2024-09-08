@@ -29,10 +29,10 @@ function Information() {
                   <>
                     Feel the
                     <br />
-                    Material Kit
+                    UrbNexus.
                   </>
                 }
-                description="All the MUI components that you need in a development have been re-design with the new look."
+                description="UrbNexus to simplify coordination, streamline project management, and enhance collaboration across departments, ensuring efficient urban governance."
               />
               <RotatingCardBack
                 image={bgBack}
@@ -40,8 +40,8 @@ function Information() {
                 description="You will save a lot of time going from prototyping to full-functional code because all elements are implemented."
                 action={{
                   type: "internal",
-                  route: "/sections/page-sections/page-headers",
-                  label: "start with header",
+                  route: " /",
+                  label: "start with task",
                 }}
               />
             </RotatingCard>
