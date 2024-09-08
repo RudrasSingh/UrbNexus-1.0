@@ -36,7 +36,7 @@ function Counters() {
             <DefaultCounterCard
               count={10}
               title="Dept."
-              description="Manage and oversee various departments to enhance collaboration and coordination."
+              description="Explore and plan for tasks that are scheduled to start in the near future."
             />
           </Grid>
         </Grid>

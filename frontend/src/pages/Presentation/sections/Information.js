@@ -51,16 +51,15 @@ function Information() {
               <Grid item xs={12} md={6}>
                 <DefaultInfoCard
                   icon="content_copy"
-                  title="Full Documentation"
-                  description="Built by developers for developers. Check the foundation and you will find
-                    everything inside our documentation."
+                  title="Centralized Data Exchange"
+                  description="Built by developers for developers. Check the foundation and you will find everything inside our documentation."
                 />
               </Grid>
               <Grid item xs={12} md={6}>
                 <DefaultInfoCard
                   icon="flip_to_front"
-                  title="MUI Ready"
-                  description="The world's most popular react components library for building user interfaces."
+                  title="Collaborative Project Management"
+                  description="Tools for scheduling, task distribution, and reporting to streamline inter-departmental projects."
                 />
               </Grid>
             </Grid>
