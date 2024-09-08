@@ -69,7 +69,7 @@ function Presentation() {
                 },
               })}
             >
-              UrbNexus{" "}
+              {" "}
             </MKTypography>
             <MKTypography
               variant="body1"
@@ -77,10 +77,7 @@ function Presentation() {
               textAlign="center"
               px={{ xs: 6, lg: 12 }}
               mt={1}
-            >
-              UrbNexus is a dynamic platform designed to streamline task management and delegation
-              within departments.
-            </MKTypography>
+            ></MKTypography>
           </Grid>
         </Container>
       </MKBox>
