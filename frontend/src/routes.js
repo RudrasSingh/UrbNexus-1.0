@@ -3,11 +3,12 @@ import Icon from "@mui/material/Icon";
 
 // Pages
 import AboutUs from "layouts/pages/landing-pages/about-us";
-import DepartmentTask from "pages/LandingPages/DepartmentTask";
 import CreateTask from "pages/LandingPages/CreateTask";
+// import CreateTask from "pages/LandingPages/CreateTask";
 import Task from "pages/LandingPages/Task";
 import SignIn from "pages/LandingPages/SignIn";
 import Dashboard from "pages/LandingPages/Dashboard";
+import DepartmentTask from "pages/LandingPages/DepartmentTask";
 const routes = [
   {
     name: "Home",
@@ -26,7 +27,7 @@ const routes = [
   {
     name: "Task",
     icon: <Icon>dashboard</Icon>,
-    route: "/pages/landing-pages/CreateTask",
+    route: "/pages/landing-pages/Task",
     component: <Task />,
   },
   {
@@ -100,18 +101,17 @@ const routes = [
       },
     ],
   },
-
-  {
-    name: "SignIn",
-    icon: <Icon>dashboard</Icon>,
-    route: "/pages/landing-pages/SignIn",
-    component: <SignIn />,
-  },
   {
     name: "Dashboard",
     icon: <Icon>dashboard</Icon>,
     route: "/pages/landing-pages/Dashboard",
     component: <Dashboard />,
+  },
+  {
+    name: "SignIn",
+    icon: <Icon>dashboard</Icon>,
+    route: "/pages/landing-pages/SignIn",
+    component: <SignIn />,
   },
 ];
 

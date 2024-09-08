@@ -35,7 +35,16 @@ import bgImage from "assets/images/bg-presentation.jpg";
 function Presentation() {
   return (
     <>
-      <DefaultNavbar routes={routes} sticky />
+      <DefaultNavbar
+        routes={routes}
+        // action={{
+        //   type: "external",
+        //   route: "pages/LandingPages/SignIn",
+        //   label: "Sign In",
+        //   color: "info",
+        // }}
+        sticky
+      />
       <MKBox
         minHeight="75vh"
         width="100%"
