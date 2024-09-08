@@ -42,7 +42,7 @@ const authenticateUser = (username, password, dispatch) => {
         };
         // Dispatch action to update Redux store
         dispatch(setUserData(userData));
-
+        console.log(userData);
         return userData;
       }
     }
@@ -75,10 +75,16 @@ function SignInBasic() {
       console.error("Authentication failed");
     }
   };
-
+  const filteredRoutes = routes.filter(
+    (route) =>
+      route.name !== "Dashboard" &&
+      route.name !== "Task" &&
+      route.name !== "Inventory" &&
+      route.name !== "Dept."
+  );
   return (
     <>
-      <DefaultNavbar routes={routes} transparent light />
+      <DefaultNavbar routes={filteredRoutes} transparent light />
       <MKBox
         position="absolute"
         top={0}

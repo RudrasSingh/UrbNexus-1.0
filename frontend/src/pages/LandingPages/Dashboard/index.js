@@ -27,10 +27,30 @@ const Dashboard = () => {
       navigate("/signin"); // Redirect to the SignIn page
     } else {
       dispatch(logoutUser());
-      alert("Please sign out to continue");
+      alert("LOGGED OUT SUCCESSFULLY");
     }
   };
-
+  const filterRoutes = (routes) => {
+    return routes
+      .filter(
+        (route) =>
+          route.name !== "Dashboard" &&
+          route.name !== "Dept." &&
+          route.name !== "Create Task" &&
+          route.name !== "Add Inventory"
+      )
+      .map((route) => {
+        // If a route has a `collapse` property, we need to filter it recursively
+        if (route.collapse) {
+          return {
+            ...route,
+            collapse: filterRoutes(route.collapse), // Recursively filter the collapse array
+          };
+        }
+        return route;
+      });
+  };
+  const filteredRoutes = UserState ? routes : filterRoutes(routes);
   return (
     <MKBox sx={{ backgroundColor: "#f5f5f5", minHeight: "100vh" }}>
       <MKBox
@@ -40,7 +60,7 @@ const Dashboard = () => {
         sx={{ backgroundColor: "white", zIndex: 1 }}
       >
         <DefaultNavbar
-          routes={routes}
+          routes={filteredRoutes}
           action={{
             type: "internal",
             label: label,

@@ -25,7 +25,7 @@ const DepartmentTask = () => {
       navigate("/signin"); // Redirect to the SignIn page
     } else {
       dispatch(logoutUser());
-      alert("Please sign out to continue");
+      alert("Logout Successful");
     }
   };
   // Get the signed-in user's ministry ID from Redux state
@@ -40,12 +40,32 @@ const DepartmentTask = () => {
 
   // Filter tasks based on the signed-in user's ministry ID
   const filteredTasks = tasksData.tasks.filter((task) => task.ministry_id === signedInMinistryId);
-
+  const filterRoutes = (routes) => {
+    return routes
+      .filter(
+        (route) =>
+          route.name !== "Dashboard" &&
+          route.name !== "Dept." &&
+          route.name !== "Create Task" &&
+          route.name !== "Add Inventory"
+      )
+      .map((route) => {
+        // If a route has a `collapse` property, we need to filter it recursively
+        if (route.collapse) {
+          return {
+            ...route,
+            collapse: filterRoutes(route.collapse), // Recursively filter the collapse array
+          };
+        }
+        return route;
+      });
+  };
+  const filteredRoutes = UserState ? routes : filterRoutes(routes);
   return (
     <>
       <MKBox position="fixed" top="0.5rem" width="100%">
         <DefaultNavbar
-          routes={routes}
+          routes={filteredRoutes}
           action={{
             type: "internal",
             label: label,

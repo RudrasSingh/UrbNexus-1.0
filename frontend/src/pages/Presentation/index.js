@@ -41,6 +41,29 @@ function Presentation() {
   const UserState = useSelector((state) => state.userData);
   const label = UserState == null ? "Sign In" : "Sign Out";
 
+  //filtering routes logic
+  const filterRoutes = (routes) => {
+    return routes
+      .filter(
+        (route) =>
+          route.name !== "Dashboard" &&
+          route.name !== "Dept." &&
+          route.name !== "Create Task" &&
+          route.name !== "Add Inventory"
+      )
+      .map((route) => {
+        // If a route has a `collapse` property, we need to filter it recursively
+        if (route.collapse) {
+          return {
+            ...route,
+            collapse: filterRoutes(route.collapse), // Recursively filter the collapse array
+          };
+        }
+        return route;
+      });
+  };
+  const filteredRoutes = UserState ? routes : filterRoutes(routes);
+
   const handleActionClick = () => {
     if (UserState == null) {
       navigate("/signin"); // Redirect to the SignIn page
@@ -53,7 +76,7 @@ function Presentation() {
   return (
     <>
       <DefaultNavbar
-        routes={routes}
+        routes={filteredRoutes}
         action={{
           type: "internal",
           label: label,

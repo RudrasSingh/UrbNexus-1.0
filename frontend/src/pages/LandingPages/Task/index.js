@@ -33,12 +33,32 @@ const Task = () => {
     acc[ministry.id] = ministry.name;
     return acc;
   }, {});
-
+  const filterRoutes = (routes) => {
+    return routes
+      .filter(
+        (route) =>
+          route.name !== "Dashboard" &&
+          route.name !== "Dept." &&
+          route.name !== "Create Task" &&
+          route.name !== "Add Inventory"
+      )
+      .map((route) => {
+        // If a route has a `collapse` property, we need to filter it recursively
+        if (route.collapse) {
+          return {
+            ...route,
+            collapse: filterRoutes(route.collapse), // Recursively filter the collapse array
+          };
+        }
+        return route;
+      });
+  };
+  const filteredRoutes = UserState ? routes : filterRoutes(routes);
   return (
     <>
       <MKBox position="fixed" top="0.5rem" width="100%">
         <DefaultNavbar
-          routes={routes}
+          routes={filteredRoutes}
           action={{
             type: "internal",
             label: label,
