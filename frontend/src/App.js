@@ -2,6 +2,7 @@ import { useEffect } from "react";
 
 // react-router components
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import SignIn from "../src/pages/LandingPages/SignIn";
 
 // @mui material components
 import { ThemeProvider } from "@mui/material/styles";
@@ -43,6 +44,7 @@ export default function App() {
         {getRoutes(routes)}
         <Route path="/presentation" element={<Presentation />} />
         <Route path="*" element={<Navigate to="/presentation" />} />
+        <Route path="/signin" element={<SignIn />} />
       </Routes>
     </ThemeProvider>
   );

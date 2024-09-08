@@ -40,7 +40,6 @@ const authenticateUser = (username, password, dispatch) => {
           ministryName: ministry.name,
           memberInfo: member,
         };
-
         // Dispatch action to update Redux store
         dispatch(setUserData(userData));
         console.log(userData);
@@ -70,16 +69,22 @@ function SignInBasic() {
     const userData = authenticateUser(email, password, dispatch);
     if (userData) {
       // User is authenticated successfully, navigate to home page
-      navigate("/");
+      navigate("/presentation");
     } else {
       // Handle authentication failure
       console.error("Authentication failed");
     }
   };
-
+  const filteredRoutes = routes.filter(
+    (route) =>
+      route.name !== "Dashboard" &&
+      route.name !== "Task" &&
+      route.name !== "Inventory" &&
+      route.name !== "Dept."
+  );
   return (
     <>
-      <DefaultNavbar routes={routes} transparent light />
+      <DefaultNavbar routes={filteredRoutes} transparent light />
       <MKBox
         position="absolute"
         top={0}
