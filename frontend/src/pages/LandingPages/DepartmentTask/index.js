@@ -29,12 +29,12 @@ const DepartmentTask = () => {
       <MKBox position="fixed" top="0.5rem" width="100%">
         <DefaultNavbar
           routes={routes}
-          action={{
-            type: "external",
-            route: "/*give dashboard route*/",
-            label: "Dashboard",
-            color: "info",
-          }}
+          // action={{
+          //   type: "external",
+          //   route: "/*give dashboard route*/",
+          //   label: "Dashboard",
+          //   color: "info",
+          // }}
         />
       </MKBox>
       <MKBox pt={6} px={1} mt={6}>
