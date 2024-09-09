@@ -205,3 +205,104 @@
 .modal-actions button.cancel-btn:hover {
   background-color: #ddd; /* Slight hover effect for cancel button */
 }
+
+/* Post Modal Container */
+.reply-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Modal Content Box */
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  width: 400px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+/* Modal Header */
+.modal-content h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #1a73e8; /* Matching color scheme */
+  text-align: center;
+}
+
+/* Post Title Input */
+.post-title-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  border: 1px solid #dcdcdc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+/* Post Description Input (Textarea) */
+.post-description-input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  border: 1px solid #dcdcdc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  resize: none;
+  transition: border-color 0.3s;
+}
+
+/* Input Focus State */
+.post-title-input:focus,
+.post-description-input:focus {
+  outline: none;
+  border-color: #1a73e8;
+  box-shadow: 0 0 5px rgba(26, 115, 232, 0.5);
+}
+
+/* Modal Actions (Buttons) */
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Submit Button */
+.modal-actions button {
+  padding: 10px 15px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Submit Post Button Styling */
+.modal-actions button:first-child {
+  background-color: #1a73e8;
+  color: #fff;
+}
+
+.modal-actions button:first-child:hover {
+  background-color: #005cbf;
+}
+
+/* Cancel Button Styling */
+.modal-actions button:last-child {
+  background-color: #f1f1f1;
+  color: #333;
+}
+
+.modal-actions button:last-child:hover {
+  background-color: #ddd;
+}
