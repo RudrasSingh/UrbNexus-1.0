@@ -1,7 +1,9 @@
-import React from "react";
+/* eslint-disable react/no-unescaped-entities */
+import React, { useState } from "react";
 import "./forum.css"; // Add your CSS here
 
 const ForumPage = () => {
+  // Sample post data
   const posts = [
     {
       id: 1,
@@ -28,6 +30,33 @@ const ForumPage = () => {
     },
   ];
 
+  // State to manage the visibility of the reply popup
+  const [showReplyModal, setShowReplyModal] = useState(false);
+  const [currentPost, setCurrentPost] = useState(null);
+  const [replyContent, setReplyContent] = useState("");
+
+  // Open reply modal
+  const handleReplyClick = (post) => {
+    setCurrentPost(post);
+    setShowReplyModal(true);
+  };
+
+  // Close reply modal
+  const handleCloseModal = () => {
+    setShowReplyModal(false);
+    setCurrentPost(null);
+    setReplyContent("");
+  };
+
+  // Handle reply submission
+  const handleReplySubmit = () => {
+    if (replyContent) {
+      console.log("Reply to post:", currentPost.id, "Reply:", replyContent);
+      // You can add further actions such as saving the reply in state or sending it to a server
+      handleCloseModal();
+    }
+  };
+
   return (
     <div className="forum-page">
       <div className="comment-box">
@@ -53,7 +82,9 @@ const ForumPage = () => {
             </div>
             <div className="post-content">{post.content}</div>
             <div className="post-actions">
-              <button className="reply-button">Reply</button>
+              <button className="reply-button" onClick={() => handleReplyClick(post)}>
+                Reply
+              </button>
               <button className="share-button">Share</button>
               <button className="like-button">❤️</button>
               <button className="follow-post-button">Follow Post</button>
@@ -62,6 +93,25 @@ const ForumPage = () => {
           </div>
         ))}
       </div>
+
+      {/* Reply Modal */}
+      {showReplyModal && (
+        <div className="reply-modal">
+          <div className="modal-content">
+            <h3>Reply to {currentPost.user}'s post</h3>
+            <textarea
+              value={replyContent}
+              onChange={(e) => setReplyContent(e.target.value)}
+              placeholder="Write your reply here..."
+              rows="5"
+            />
+            <div className="modal-actions">
+              <button onClick={handleReplySubmit}>Submit Reply</button>
+              <button onClick={handleCloseModal}>Cancel</button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
