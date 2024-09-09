@@ -27,7 +27,7 @@ function Information() {
                 icon="touch_app"
                 title={
                   <>
-                    Feel the
+                    Touch the
                     <br />
                     UrbNexus.
                   </>
