@@ -1,0 +1,124 @@
+/* Overall Forum Page Styling */
+.forum-page {
+  padding: 20px;
+  max-width: 1200px; /* Limiting the width of the forum page */
+  margin: 0 auto; /* Center the content */
+  background-color: #f9f9f9;
+}
+
+/* Comment Box Styling */
+.comment-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 10px 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.comment-box input {
+  width: 85%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  outline: none;
+}
+
+.comment-box button {
+  padding: 12px 24px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.comment-box button:hover {
+  background-color: #0056b3;
+}
+
+/* Filters Section Styling */
+.filters {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.filters button {
+  padding: 10px 15px;
+  background-color: #e0e0e0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 14px;
+}
+
+.filters button:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Post Cards */
+.post-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.user-info {
+  font-size: 14px;
+  color: #777;
+}
+
+.user-name {
+  font-weight: bold;
+  color: #007bff;
+}
+
+.post-content {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+  margin-top: 15px;
+}
+
+.post-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.post-actions button {
+  padding: 8px 12px;
+  background-color: #e0e0e0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.post-actions button:hover {
+  background-color: #007bff;
+  color: white;
+}
