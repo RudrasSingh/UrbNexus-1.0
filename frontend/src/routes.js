@@ -13,6 +13,8 @@ import DepartmentTask from "pages/LandingPages/DepartmentTask";
 
 //import forumpage
 import ForumPage from "pages/LandingPages/ForumPage";
+
+//dashboard2
 import Dashboard2 from "pages/LandingPages/Dashboard2";
 
 const routes = [
