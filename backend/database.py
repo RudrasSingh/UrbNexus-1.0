@@ -3,25 +3,34 @@ from flask import g
 from psycopg2.extras import RealDictCursor
 import uuid
 import datetime
+import json
 
 
-def get_connection():
-    if 'db' not in g:
-        g.db = psycopg2.connect(
-            dbname="Dep1_db",
-            host="localhost",
-            port="5432",
-            user="postgres", 
-            password="3842"
-    )
-    return g.db
+with open('db_config.json') as config_file:
+    config = json.load(config_file)
+
+db_config = config["Servers"]["1"]
+
 
 def generate_uuid():
     return str(uuid.uuid4())
 
 
 def current_timestamp():
-    return datetime.now()
+    return datetime.datetime.now()
+
+def get_connection():
+    if 'db' not in g:
+        g.db = psycopg2.connect(
+            dbname=db_config["MaintenanceDB"],
+            user=db_config["Username"],
+            password="AVNS_Et-85-7P60UpTC9xNwE",
+            host=db_config["Host"],
+            port=db_config["Port"],
+            sslmode=db_config["SSLMode"],
+            sslrootcert=db_config["sslrootcert"]
+        )
+    return g.db
 
 
 #Table1-Dep_heads
