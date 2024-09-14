@@ -1,38 +1,41 @@
-/* TeamMembers.css */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f7fa;
+.team-members-container {
+    padding: 30px;
+    max-width: 1200px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
-  .team-members-container {
-    padding: 20px;
-    max-width: 1000px;
-    margin: 0 auto;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  .team-members-container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
   }
   
   h2 {
-    margin-bottom: 20px;
-    color: #333;
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #222;
   }
   
   .add-user-button {
     background-color: #1e88e5;
     color: #fff;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 25px;
     border-radius: 5px;
     cursor: pointer;
     float: right;
     margin-bottom: 20px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(30, 136, 229, 0.4);
   }
   
   .add-user-button:hover {
     background-color: #1565c0;
+    transform: translateY(-2px);
   }
   
   .team-members-table {
@@ -46,19 +49,20 @@ body {
   }
   
   th, td {
-    padding: 15px;
+    padding: 18px;
     text-align: left;
     border-bottom: 1px solid #e0e0e0;
+    transition: background-color 0.3s ease;
   }
   
   thead th {
-    background-color: #f1f1f1;
+    background-color: #f9f9f9;
     color: #555;
     font-weight: 600;
   }
   
   tbody tr:hover {
-    background-color: #f9f9f9;
+    background-color: #f3f3f3;
   }
   
   .user-info {
@@ -70,24 +74,25 @@ body {
     display: inline-block;
     background-color: #1e88e5;
     color: #fff;
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     text-align: center;
-    line-height: 35px;
-    margin-right: 10px;
+    line-height: 40px;
+    margin-right: 15px;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 15px;
   }
   
   .status-badge {
     display: inline-block;
-    background-color: #e0f2f1;
-    color: #26a69a;
-    padding: 5px 15px;
+    background-color: #e0f7fa;
+    color: #00796b;
+    padding: 6px 20px;
     border-radius: 15px;
-    font-size: 12px;
-    font-weight: bold;
+    font-size: 13px;
+    font-weight: 600;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
   .edit-button, .delete-button {
@@ -96,6 +101,7 @@ body {
     cursor: pointer;
     margin-right: 10px;
     font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease;
   }
   
   .edit-button {
@@ -103,7 +109,8 @@ body {
   }
   
   .edit-button:hover {
-    text-decoration: underline;
+    color: #1565c0;
+    transform: translateY(-1px);
   }
   
   .delete-button {
@@ -111,6 +118,6 @@ body {
   }
   
   .delete-button:hover {
-    text-decoration: underline;
+    color: #b71c1c;
+    transform: translateY(-1px);
   }
-  

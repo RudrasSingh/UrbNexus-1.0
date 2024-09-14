@@ -1,4 +1,6 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash, faUndo, faRedo } from "@fortawesome/free-solid-svg-icons";
 import "./TrashedTasks.css"; // Optional CSS file for styling
 
 const TrashedTasks = () => {
@@ -84,10 +86,10 @@ const TrashedTasks = () => {
         <h1>Trashed Tasks</h1>
         <div className="header-actions">
           <button className="restore-all" onClick={handleRestoreAll}>
-            &#8634; Restore All
+            <FontAwesomeIcon icon={faRedo} /> Restore All
           </button>
           <button className="delete-all" onClick={handleDeleteAll}>
-            &#128465; Delete All
+            <FontAwesomeIcon icon={faTrash} /> Delete All
           </button>
         </div>
       </div>
@@ -108,11 +110,19 @@ const TrashedTasks = () => {
             <div className="task-stage">{task.stage}</div>
             <div className="task-date">
               {task.date}
-              <button className="restore-btn" onClick={() => handleRestoreTask(task.title)}>
-                &#8634;
+              <button
+                className="restore-btn"
+                title={`Restore ${task.title}`}
+                onClick={() => handleRestoreTask(task.title)}
+              >
+                <FontAwesomeIcon icon={faUndo} />
               </button>
-              <button className="delete-btn" onClick={() => handleDeleteTask(task.title)}>
-                &#128465;
+              <button
+                className="delete-btn"
+                title={`Delete ${task.title}`}
+                onClick={() => handleDeleteTask(task.title)}
+              >
+                <FontAwesomeIcon icon={faTrash} />
               </button>
             </div>
           </div>
