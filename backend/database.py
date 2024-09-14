@@ -1,9 +1,15 @@
+import os
 import psycopg2
 from flask import g
 from psycopg2.extras import RealDictCursor
 import uuid
 import datetime
 import json
+from dotenv import load_dotenv
+
+
+#Load environment variables from .env file
+load_dotenv()
 
 
 with open('db_config.json') as config_file:
@@ -21,14 +27,18 @@ def current_timestamp():
 
 def get_connection():
     if 'db' not in g:
+         # Get the path for sslrootcert
+        sslrootcert_path = os.path.join(os.path.dirname(__file__), db_config["sslrootcert"])
+
+        #Establish the connection
         g.db = psycopg2.connect(
             dbname=db_config["MaintenanceDB"],
             user=db_config["Username"],
-            password="yaha password daalna ha",
+            password=os.getenv("DB_PASSWORD"),
             host=db_config["Host"],
             port=db_config["Port"],
             sslmode=db_config["SSLMode"],
-            sslrootcert=db_config["sslrootcert"]
+            sslrootcert=sslrootcert_path
         )
     return g.db
 

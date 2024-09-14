@@ -8,7 +8,7 @@
             "MaintenanceDB": "Dep1",
             "Username": "avnadmin",
             "SSLMode": "require",
-            "sslrootcert": "E:/KRITI FOLDER/SIH'24/ca.pem"
+            "sslrootcert": "ca.pem"
         }
     }
 }
