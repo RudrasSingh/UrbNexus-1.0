@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import TaskManager from "./task";
 
 function Sidebar() {
   return (
@@ -6,25 +8,27 @@ function Sidebar() {
       <h2>TaskMe</h2>
       <ul>
         <li>
-          <a href="#">Dashboard</a>
+          <Link to="/dashboard">Dashboard</Link>
         </li>
         <li>
-          <a href="#">Tasks</a>
+          <Link to="./task" component={TaskManager}>
+            Tasks
+          </Link>
         </li>
         <li>
-          <a href="#">Completed</a>
+          <Link to="/completed">Completed</Link>
         </li>
         <li>
-          <a href="#">In Progress</a>
+          <Link to="/in-progress">In Progress</Link>
         </li>
         <li>
-          <a href="#">To Do</a>
+          <Link to="/to-do">To Do</Link>
         </li>
         <li>
-          <a href="#">Team</a>
+          <Link to="/team">Team</Link>
         </li>
         <li>
-          <a href="#">Trash</a>
+          <Link to="/trash">Trash</Link>
         </li>
       </ul>
     </div>
