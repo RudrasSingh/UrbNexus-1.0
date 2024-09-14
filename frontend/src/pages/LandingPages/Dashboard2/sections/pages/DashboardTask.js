@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./task.css"; // Optional CSS for styling (if needed)
 
 const TaskManager = () => {
-  const [view, setView] = useState("board"); // View toggle state
+  const [view] = useState("board"); // View toggle state
   // eslint-disable-next-line no-unused-vars
   const [tasks, setTasks] = useState({
     todo: [
@@ -37,10 +37,6 @@ const TaskManager = () => {
     ],
   });
 
-  const handleViewToggle = (newView) => {
-    setView(newView);
-  };
-
   const handleCreateTask = () => {
     alert("Create task button clicked!");
     // Logic to add task can go here
@@ -60,20 +56,6 @@ const TaskManager = () => {
     <div className="task-container">
       <div className="task-header">
         <h1>Tasks</h1>
-        <div className="view-toggle">
-          <button
-            className={`view-button ${view === "board" ? "active" : ""}`}
-            onClick={() => handleViewToggle("board")}
-          >
-            Board View
-          </button>
-          <button
-            className={`view-button ${view === "list" ? "active" : ""}`}
-            onClick={() => handleViewToggle("list")}
-          >
-            List View
-          </button>
-        </div>
         <button className="create-task-btn" onClick={handleCreateTask}>
           + Create Task
         </button>
