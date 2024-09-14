@@ -11,9 +11,6 @@ from dotenv import load_dotenv
 #Load environment variables from .env file
 load_dotenv()
 
-#Load sslrootcert_path from JSON file
-sslrootcert_path = os.path.join(os.path.dirname(__file__), db_config["sslrootcert"])
-
 
 with open('db_config.json') as config_file:
     config = json.load(config_file)
@@ -30,6 +27,10 @@ def current_timestamp():
 
 def get_connection():
     if 'db' not in g:
+         # Get the path for sslrootcert
+        sslrootcert_path = os.path.join(os.path.dirname(__file__), db_config["sslrootcert"])
+
+        #Establish the connection
         g.db = psycopg2.connect(
             dbname=db_config["MaintenanceDB"],
             user=db_config["Username"],
