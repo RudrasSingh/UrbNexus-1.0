@@ -4,11 +4,19 @@ import Icon from "@mui/material/Icon";
 // Pages
 import AboutUs from "layouts/pages/landing-pages/about-us";
 import CreateTask from "pages/LandingPages/CreateTask";
+
 // import CreateTask from "pages/LandingPages/CreateTask";
 import Task from "pages/LandingPages/Task";
 // import SignIn from "pages/LandingPages/SignIn";
 import Dashboard from "pages/LandingPages/Dashboard";
 import DepartmentTask from "pages/LandingPages/DepartmentTask";
+
+//import forumpage
+import ForumPage from "pages/LandingPages/ForumPage";
+
+//dashboard2
+import Dashboard2 from "pages/LandingPages/Dashboard2";
+
 const routes = [
   {
     name: "Home",
@@ -74,8 +82,8 @@ const routes = [
         collapse: [
           {
             name: "Admin",
-            route: " /",
-            component: <CreateTask />,
+            route: "/pages/landing-pages/Dashboard2",
+            component: <Dashboard2 />,
           },
           {
             name: "Officer",
@@ -96,6 +104,8 @@ const routes = [
       },
       {
         name: "Dept. Chat",
+        route: "/pages/landing-pages/ForumPage",
+        component: <ForumPage />,
         description: "See all input areas",
         dropdown: true,
       },

@@ -21,11 +21,10 @@ import FilledInfoCard from "examples/Cards/InfoCards/FilledInfoCard";
 import Counters from "pages/Presentation/sections/Counters";
 import Information from "pages/Presentation/sections/Information";
 import DesignBlocks from "pages/Presentation/sections/DesignBlocks";
-import Pages from "pages/Presentation/sections/Pages";
-import Testimonials from "pages/Presentation/sections/Testimonials";
 import Download from "pages/Presentation/sections/Download";
 
 // Presentation page components
+
 import BuiltByDevelopers from "pages/Presentation/components/BuiltByDevelopers";
 
 // Routes
@@ -110,7 +109,7 @@ function Presentation() {
                 },
               })}
             >
-              UrbNexus{" "}
+              {" "}
             </MKTypography>
             <MKTypography
               variant="body1"
@@ -118,10 +117,7 @@ function Presentation() {
               textAlign="center"
               px={{ xs: 6, lg: 12 }}
               mt={1}
-            >
-              UrbNexus is a dynamic platform designed to streamline task management and delegation
-              within departments.
-            </MKTypography>
+            ></MKTypography>
           </Grid>
         </Container>
       </MKBox>
@@ -139,7 +135,6 @@ function Presentation() {
         <Counters />
         <Information />
         <DesignBlocks />
-        <Pages />
         <Container sx={{ mt: 6 }}>
           <BuiltByDevelopers />
         </Container>
@@ -154,7 +149,7 @@ function Presentation() {
                 description="Check the possible ways of working with our product and the necessary files for building your own project."
                 action={{
                   type: "external",
-                  route: "https://www.creative-tim.com/learning-lab/react/overview/material-kit/",
+                  route: "",
                   label: "Let's start",
                 }}
               />
@@ -187,7 +182,6 @@ function Presentation() {
             </Grid>
           </Grid>
         </Container>
-        <Testimonials />
         <Download />
         <MKBox pt={18} pb={6}>
           <Container>

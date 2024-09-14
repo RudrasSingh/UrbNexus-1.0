@@ -181,7 +181,7 @@ function SignInBasic() {
                       Don&apos;t have an account?{" "}
                       <MKTypography
                         component={Link}
-                        to="/authentication/sign-up/cover"
+                        to="/signup"
                         variant="button"
                         color="info"
                         fontWeight="medium"

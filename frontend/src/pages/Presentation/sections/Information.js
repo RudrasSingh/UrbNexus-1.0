@@ -27,12 +27,12 @@ function Information() {
                 icon="touch_app"
                 title={
                   <>
-                    Feel the
+                    Touch the
                     <br />
-                    Material Kit
+                    UrbNexus.
                   </>
                 }
-                description="All the MUI components that you need in a development have been re-design with the new look."
+                description="UrbNexus to simplify coordination, streamline project management, and enhance collaboration across departments, ensuring efficient urban governance."
               />
               <RotatingCardBack
                 image={bgBack}
@@ -40,8 +40,8 @@ function Information() {
                 description="You will save a lot of time going from prototyping to full-functional code because all elements are implemented."
                 action={{
                   type: "internal",
-                  route: "/sections/page-sections/page-headers",
-                  label: "start with header",
+                  route: " /",
+                  label: "start with task",
                 }}
               />
             </RotatingCard>
@@ -51,16 +51,15 @@ function Information() {
               <Grid item xs={12} md={6}>
                 <DefaultInfoCard
                   icon="content_copy"
-                  title="Full Documentation"
-                  description="Built by developers for developers. Check the foundation and you will find
-                    everything inside our documentation."
+                  title="Centralized Data Exchange"
+                  description="Built by developers for developers. Check the foundation and you will find everything inside our documentation."
                 />
               </Grid>
               <Grid item xs={12} md={6}>
                 <DefaultInfoCard
                   icon="flip_to_front"
-                  title="MUI Ready"
-                  description="The world's most popular react components library for building user interfaces."
+                  title="Collaborative Project Management"
+                  description="Tools for scheduling, task distribution, and reporting to streamline inter-departmental projects."
                 />
               </Grid>
             </Grid>
