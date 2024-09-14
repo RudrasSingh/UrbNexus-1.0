@@ -24,7 +24,7 @@ def get_connection():
         g.db = psycopg2.connect(
             dbname=db_config["MaintenanceDB"],
             user=db_config["Username"],
-            password="AVNS_Et-85-7P60UpTC9xNwE",
+            password="yaha password daalna ha",
             host=db_config["Host"],
             port=db_config["Port"],
             sslmode=db_config["SSLMode"],
