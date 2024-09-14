@@ -26,6 +26,7 @@ python ./backend/app.py
 
 ```
 cd frontend
+npm i
 npm start
 ```
 
