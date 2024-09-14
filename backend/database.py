@@ -12,7 +12,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-with open('db_config.json') as config_file:
+with open('db_conf.json') as config_file:
     config = json.load(config_file)
 
 db_config = config["Servers"]["1"]
