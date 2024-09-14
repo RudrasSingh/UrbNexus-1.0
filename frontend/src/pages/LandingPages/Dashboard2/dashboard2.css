@@ -1,14 +1,14 @@
 /* General Styling */
 body {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   background-color: #f4f6f9;
   color: #333;
 }
 
 .dashboard-container {
   display: flex;
-  margin-top:5rem;
+  margin-top: 5rem;
   min-height: 100vh;
   padding-left: 24px; /* Add padding to prevent overlap by sidebar */
   padding-right: 20px; /* Add space on the right side */
@@ -109,7 +109,9 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
 }
 
 .card:hover {
@@ -199,7 +201,8 @@ table {
   border-collapse: collapse;
 }
 
-th, td {
+th,
+td {
   padding: 15px;
   text-align: left;
   border-bottom: 1px solid #ddd;
@@ -229,4 +232,3 @@ tr:hover {
 .status-low {
   color: #4caf50;
 }
-
