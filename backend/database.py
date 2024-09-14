@@ -18,13 +18,15 @@ with open('db_config.json') as config_file:
 db_config = config["Servers"]["1"]
 
 
+#Function to generate uuid
 def generate_uuid():
     return str(uuid.uuid4())
 
-
+#Function to get current timestamp
 def current_timestamp():
     return datetime.datetime.now()
 
+#Function to get connection
 def get_connection():
     if 'db' not in g:
          # Get the path for sslrootcert
