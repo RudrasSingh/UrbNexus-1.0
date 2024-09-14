@@ -1,0 +1,120 @@
+.trashed-tasks-container {
+    padding: 20px 40px; /* Added left and right padding for space */
+    background-color: #f2f4f7; /* Lighter background for a cleaner look */
+    min-height: 100vh; /* Full height to cover the screen */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header-actions button {
+    margin-left: 10px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 16px;
+    transition: color 0.3s; /* Transition for a smoother hover effect */
+}
+
+.header-actions button:hover {
+    color: #0056b3; /* Slight color change on hover */
+}
+
+.restore-all {
+    color: #17a2b8;
+}
+
+.delete-all {
+    color: #dc3545;
+}
+
+.task-table {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px; /* Rounded corners for a modern look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Softer shadow for depth */
+    margin: 0 auto; /* Center the table */
+    max-width: 1200px; /* Restrict maximum width */
+}
+
+.table-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 2fr;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #6c757d; /* Softer color for the header */
+}
+
+.table-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 2fr;
+    align-items: center;
+    border-top: 1px solid #eaeaea;
+    padding: 10px 0;
+    transition: background-color 0.3s; /* Smooth hover effect */
+}
+
+.table-row:hover {
+    background-color: #f8f9fa; /* Light background on hover */
+}
+
+.task-title {
+    display: flex;
+    align-items: center;
+}
+
+.task-dot {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.task-dot.blue {
+    background-color: #007bff;
+}
+
+.task-dot.orange {
+    background-color: #fd7e14;
+}
+
+.task-dot.green {
+    background-color: #28a745;
+}
+
+.task-dot.gray {
+    background-color: #6c757d;
+}
+
+.task-date {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.restore-btn,
+.delete-btn {
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 18px; /* Slightly larger icons */
+    transition: transform 0.2s; /* Add scale effect on hover */
+}
+
+.restore-btn:hover,
+.delete-btn:hover {
+    transform: scale(1.2); /* Enlarge icon on hover */
+}
+
+.restore-btn {
+    color: #17a2b8;
+}
+
+.delete-btn {
+    color: #dc3545;
+}
