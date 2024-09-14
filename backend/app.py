@@ -173,17 +173,17 @@ def createTask():
         #     if id.get("t_id") != task:
         #         taskId = task
         taskinfo = {
-            "id" : taskId,
+            "id" : task,
             "title": info.get("title"),
             "desc": info.get("desc"),
             "projManager": info.get("projManager"),
-            "deppartment": department,
+            "department": depart,
             "stat": info.get("stat"),
             "priority": info.get("priority"),
             "location": info.get("location"),
             "deadline": info.get("deadline")
         }
-        response = db.create_task(taskId, info.get("title"), info.get("desc"), info.get("projManager"), department, info.get("stat"), info.get("priority"), info.get("location"), info.get("deadline"))
+        db.create_task(taskId, info.get("title"), info.get("desc"), info.get("projManager"), department, info.get("stat"), info.get("priority"), info.get("location"), info.get("deadline"))
 
         return jsonify({"message":"Task created successfully","task details":taskinfo})
     
@@ -203,6 +203,7 @@ def discussionForum():
     if "user" in session:
         pass
     else:
+        pass
         
     
 

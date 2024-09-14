@@ -25,7 +25,7 @@ class ResourceAllocator:
 
     def _convert_priorities(self):
         # Convert priority strings to numeric values (1: High, 2: Medium, 3: Low)
-        priority_map = {"high": 1, "medium": 2, "low": 3}
+        priority_map = {"high": 3, "medium": 2, "low": 1}
 
         for project in self.projects:
             priority_str = project['priority']
@@ -36,10 +36,12 @@ class ResourceAllocator:
 
 # ek use case
 projects = [
-    {"name": "Project A", "priority": "HIGH", "requirements": {"machinery": 5, "workers": 10}},
-    {"name": "Project B", "priority": "medium", "requirements": {"machinery": 3, "workers": 8}},
+    {"name": "Project A", "priority": "high", "requirements": {"machinery": 5, "workers": 10}},
+    {"name": "Project B", "priority": "low", "requirements": {"machinery": 3, "workers": 8}},
+    {"name":"Project C", "priority": "medium", "requirements": {"machinery": 5, "workers":12}},
+    {"name":"Project D", "priority": "high", "requirements":{"machinery": 5, "workers":18}}
 ]
-resources = {"machinery": 8, "workers": 15}
+resources = {"machinery": 8, "workers": 32}
 
 allocator = ResourceAllocator(projects, resources)
 allocation = allocator.allocate_resources()
