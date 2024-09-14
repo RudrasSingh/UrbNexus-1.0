@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "Servers": {
         "1": {
             "Name": "Db_connection",
@@ -10,5 +11,18 @@
             "SSLMode": "require",
             "sslrootcert": "ca.pem"
         }
+=======
+  "Servers": {
+    "1": {
+      "Name": "Db_connection",
+      "Group": "UrbNexus",
+      "Host": "pg-155ea646-urbnexus1.j.aivencloud.com",
+      "Port": 14538,
+      "MaintenanceDB": "Dep1",
+      "Username": "avnadmin",
+      "SSLMode": "require",
+      "sslrootcert": "ca.pem"
+>>>>>>> 45aed957564f6221e71b56029cdde9d5022a59eb
     }
+  }
 }
