@@ -12,7 +12,7 @@ def get_connection():
             host="localhost",
             port="5432",
             user="postgres", 
-            password="3842"
+            password="3843"
     )
     return g.db
 
@@ -78,15 +78,15 @@ def delete_dep_head(email):
 #Table2- departments 
 
 # Create a Department
-def create_department(dep_name, loc, contact, description=None):
+def create_department(dep_id,dep_name, loc, contact, description=None):
     query = """
-    INSERT INTO departments (dep_name, loc, contact, description, created_at, updated_at)
+    INSERT INTO departments (dep_id,dep_name, loc, contact, description, created_at, updated_at)
     VALUES (%s, %s, %s, %s, %s, %s)
     RETURNING dep_id;
     """
     conn = get_connection()
     with conn.cursor() as cursor:
-        cursor.execute(query, (dep_name, loc, contact, description, current_timestamp(), current_timestamp()))
+        cursor.execute(query, (dep_id,dep_name, loc, contact, description, current_timestamp(), current_timestamp()))
         conn.commit()
         return cursor.fetchone()[0]
 
@@ -328,7 +328,7 @@ def delete_public_user(email):
 
 #Table7-tasks
 # Create a Task
-def create_task(title, descr=None, assign_to=None, dept_id=None, stat='Pending', priority='Medium', loc=None, due=None, req=None):
+def create_task(title, descr=None, assign_to=None, dept_id=None, stat='Pending', priority=None, loc=None, due=None, req=None):
     query = """
     INSERT INTO tasks (title, descr, assign_to, dept_id, stat, priority, loc, due, req, created_at, updated_at)
     VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
