@@ -1,0 +1,182 @@
+/* Task Manager CSS */
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px; /* Base font size */
+  line-height: 1.5;
+  color: #333;
+}
+
+.task-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 1.25rem; /* Slightly larger for headers */
+}
+
+.view-toggle {
+  display: flex;
+  gap: 10px;
+}
+
+.view-button {
+  background-color: white;
+  border: 1px solid #1e88e5;
+  color: #1e88e5;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  font-size: 1rem; /* Consistent button text size */
+}
+
+.view-button:hover {
+  background-color: #1e88e5;
+  color: white;
+}
+
+.view-button.active {
+  background-color: #1e88e5;
+  color: white;
+}
+
+.create-task-btn {
+  background-color: #1e88e5;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 1rem; /* Consistent button text size */
+}
+
+.create-task-btn:hover {
+  background-color: #1565c0;
+}
+
+.task-columns {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.task-column {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  flex: 1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s;
+}
+
+.task-column:hover {
+  transform: translateY(-5px);
+}
+
+.task-category-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 1.25rem; /* Slightly larger for headers */
+}
+
+.category-label {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.to-do {
+  background-color: blue;
+}
+
+.in-progress {
+  background-color: orange;
+}
+
+.completed {
+  background-color: green;
+}
+
+.add-task-btn {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 1rem; /* Consistent button text size */
+}
+
+.add-task-btn:hover {
+  background-color: #f0f0f0;
+}
+
+.task-card {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  text-align: center;
+  margin: 0 auto; /* Center the task card */
+  font-size: 1rem; /* Consistent card text size */
+}
+
+.task-card:hover {
+  transform: translateY(-5px);
+}
+
+.task-priority {
+  font-size: 0.875rem; /* Slightly smaller for priority text */
+  font-weight: bold;
+}
+
+.high-priority {
+  color: red;
+}
+
+.medium-priority {
+  color: orange;
+}
+
+.task-date {
+  color: #888;
+  font-size: 0.875rem; /* Slightly smaller for date text */
+}
+
+.task-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 0.875rem; /* Slightly smaller for meta text */
+}
+
+.add-subtask-btn {
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+  font-size: 1rem; /* Consistent button text size */
+}
+
+.add-subtask-btn:hover {
+  background-color: #f0f0f0;
+}
