@@ -8,6 +8,7 @@ body {
 
 .dashboard-container {
   display: flex;
+  margin-top:5rem;
   min-height: 100vh;
   padding-left: 24px; /* Add padding to prevent overlap by sidebar */
   padding-right: 20px; /* Add space on the right side */

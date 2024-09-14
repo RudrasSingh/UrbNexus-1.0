@@ -3,6 +3,16 @@ import { useEffect } from "react";
 // react-router components
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import SignIn from "../src/pages/LandingPages/SignIn";
+import SignUp from "../src/pages/LandingPages/SignUp";
+
+//Dashboard 2 sections
+import Completed from "../src/pages/LandingPages/Dashboard2/sections/pages/Completed";
+import Inprogress from "../src/pages/LandingPages/Dashboard2/sections/pages/Inprogress";
+import ToDo from "../src/pages/LandingPages/Dashboard2/sections/pages/ToDo";
+import Trash from "../src/pages/LandingPages/Dashboard2/sections/pages/Trash";
+import DashboardTask from "../src/pages/LandingPages/Dashboard2/sections/pages/DashboardTask";
+import TeamDashboard from "../src/pages/LandingPages/Dashboard2/sections/pages/TeamDashboard";
+import Dashboard2 from "../src/pages/LandingPages/Dashboard2";
 
 // @mui material components
 import { ThemeProvider } from "@mui/material/styles";
@@ -45,6 +55,15 @@ export default function App() {
         <Route path="/presentation" element={<Presentation />} />
         <Route path="*" element={<Navigate to="/presentation" />} />
         <Route path="/signin" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
+        {/* Dashboard 2 routes */}
+        <Route path="/completed" element={<Completed />} />
+        <Route path="/inprogress" element={<Inprogress />} />
+        <Route path="/todo" element={<ToDo />} />
+        <Route path="/trash" element={<Trash />} />
+        <Route path="/dashboardtask" element={<DashboardTask />} />
+        <Route path="/teamdashboard" element={<TeamDashboard />} />
+        <Route path="/dashboard2" element={<Dashboard2 />} />
       </Routes>
     </ThemeProvider>
   );
