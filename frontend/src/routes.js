@@ -10,6 +10,7 @@ import Task from "pages/LandingPages/Task";
 // import SignIn from "pages/LandingPages/SignIn";
 import Dashboard from "pages/LandingPages/Dashboard";
 import DepartmentTask from "pages/LandingPages/DepartmentTask";
+import Inventory from "pages/LandingPages/Inventory";
 
 //import forumpage
 import ForumPage from "pages/LandingPages/ForumPage";
@@ -41,8 +42,8 @@ const routes = [
   {
     name: "Inventory",
     icon: <Icon>dashboard</Icon>,
-    route: " /",
-    component: <CreateTask />,
+    route: "/inventory",
+    component: <Inventory />,
   },
   {
     name: "Dept.",

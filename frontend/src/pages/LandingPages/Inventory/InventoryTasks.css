@@ -1,0 +1,91 @@
+.inventory-container {
+margin-top: 5rem;
+  padding: 40px 60px;
+  background-color: #f5f7fa;
+  min-height: 100vh;
+  font-family: "Arial", sans-serif;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.header h1 {
+  font-size: 20px;
+  color: #333;
+
+}
+
+.task-table {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.table-head {
+  display: grid;
+  gap: 5rem;
+  grid-template-columns: 2fr 1fr 1fr 2fr 2fr;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #555;
+  text-transform: uppercase;
+  font-size: 14px;
+  border-bottom: 2px solid #eaeaea;
+  padding-bottom: 10px;
+}
+
+.table-roww {
+  display: grid;
+  gap: 5rem;
+  grid-template-columns: 2fr 1fr 1fr 2fr 2fr;
+  align-items: center;
+  border-bottom: 1px solid #eaeaea;
+  padding: 15px 0;
+  transition:
+    background-color 0.3s,
+    transform 0.3s;
+  font-size: 14px;
+}
+
+.table-row:hover {
+  background-color: #f1f3f5;
+  transform: scale(1.01);
+}
+
+.item-name, .item-quantity, .item-description, .item-department, .item-actions {
+  padding: 5px;
+}
+
+.item-actions {
+ height: 100%;
+}
+
+.request-btn {
+  cursor: pointer;
+  background: #17a2b8;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  padding: 8px 12px;
+  transition: background-color 0.3s ease;
+}
+
+.request-btn:hover {
+  background-color: #1394a3;
+}

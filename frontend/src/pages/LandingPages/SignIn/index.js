@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { setUserData } from "../../../redux/action";
 import { Link, useNavigate } from "react-router-dom";
 import { database } from "../DummyJson/login";
+import axios from "axios";
 
 // @mui material components
 import Card from "@mui/material/Card";
@@ -64,17 +65,33 @@ function SignInBasic() {
   const navigate = useNavigate(); // Initialize navigate function
 
   const handleSetRememberMe = () => setRememberMe(!rememberMe);
+  const handleSignIn = async () => {
+    try {
+      // Send the email and password to the backend for authentication
+      const response = await axios.post("/api/data", {
+        email,
+        password,
+      });
+      console.log(response.data);
+      // Assuming the API returns user data if authentication is successful
+      const userData = authenticateUser(email, password, dispatch);
 
-  const handleSignIn = () => {
-    const userData = authenticateUser(email, password, dispatch);
-    if (userData) {
-      // User is authenticated successfully, navigate to home page
-      navigate("/presentation");
-    } else {
-      // Handle authentication failure
-      console.error("Authentication failed");
+      if (userData) {
+        // Dispatch action to update Redux store with user data
+        dispatch(setUserData(userData));
+        // Navigate to the home page or desired route
+        navigate("/presentation");
+      } else {
+        // Handle authentication failure
+        console.error("Authentication failed");
+        alert("Invalid email or password");
+      }
+    } catch (error) {
+      console.error("Error during sign-in:", error);
+      alert("An error occurred. Please try again later.");
     }
   };
+
   const filteredRoutes = routes.filter(
     (route) =>
       route.name !== "Dashboard" &&
