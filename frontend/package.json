@@ -27,6 +27,7 @@
     "@testing-library/jest-dom": "5.16.5",
     "@testing-library/react": "14.0.0",
     "@testing-library/user-event": "14.4.3",
+    "axios": "^1.7.7",
     "chart.js": "^4.4.4",
     "chroma-js": "2.4.2",
     "dayjs": "^1.11.13",
@@ -49,7 +50,7 @@
     "web-vitals": "3.3.1"
   },
   "scripts": {
-    "start": "set PORT=5000 && react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

@@ -5,6 +5,7 @@ from config import Config
 from authlib.integrations.flask_client import OAuth
 from pyrebase import *
 import database as db
+from resource_allocator_algo import ResourceAllocator
 import random
 
 
@@ -156,6 +157,21 @@ def logout():
 #functionality code
 @app.route('/new-task', methods=['GET','POST'])
 def createTask():
+    if "user" in session:
+
+        #TODO: write the mechanism to get the details from the front end and store it in the database
+       # info = request.get_json()
+       # try:
+         #   db.
+
+        
+        #TODO: allocate the resources for the task using Resource Allocation Algorithm and notify upon success
+
+        info = request.get_json()
+
+        allocation_result= allocation_for_task(info)
+
+
     #TODO: write the mechanism to get the details from the front end and store it in the database
     info = request.get_json()
     depart = info.get("department")
@@ -205,8 +221,52 @@ def discussionForum():
     else:
         pass
         
-    
 
+
+          #TODO: run the task overlapping algorithm to check for overlapping tasks and notify the user
+        #if overlapping_tasks:
+         #   merge_decision = handle_task_overlap(overlapping_tasks, info)
+
+         #TODO: check for the overlapping tasks and ask them if they want to merge the task and if yes then merge the task and modify the database accordingly for merged tasks and notify the user about the same and return the task details
+
+        #return jsonify({"message":"Task created successfully","info":info})
+        return jsonify({
+            "message": "Task processed successfully",
+            "task_info": info,
+            "allocation": allocation_result
+        })
+    else:
+        return jsonify({"message": "User not logged in"}), 401
+
+def allocation_for_task(info):
+    
+    try:
+        # Extract task details from the info object
+        project_name = info.get("name")
+        project_priority = info.get("priority", "low")  # Default to 'low' if not provided
+        project_requirements = info.get("requirements", {})  # Get task requirements from the JSON
+
+        #fetch these from the DB ------>
+        available_resources = {
+            "machinery": 8,
+            "workers": 15
+        }
+
+        # Create the project as a dictionary with name, priority, and requirements
+        new_project = [{
+            "name": project_name,
+            "priority": project_priority,
+            "requirements": project_requirements
+        }]
+
+       
+        allocator = ResourceAllocator(new_project, available_resources)
+        allocation = allocator.allocate_resources()
+
+        # Return the allocated resources
+        return allocation
+    except Exception as e:
+        raise Exception(f"Resource allocation failed: {str(e)}")
 
 
 if __name__ == '__main__':
