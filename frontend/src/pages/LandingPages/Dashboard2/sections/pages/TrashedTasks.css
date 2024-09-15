@@ -21,9 +21,9 @@
 }
 
 .header h1 {
-  font-size: 20px; /* Uniform font size */
-  color: #333;
   margin: 0;
+  color: #1e88e5;
+  font-size: 1.8rem;
 }
 
 .header-actions button {

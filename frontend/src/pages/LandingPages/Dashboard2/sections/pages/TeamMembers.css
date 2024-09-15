@@ -16,6 +16,11 @@
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
+.team-members-container h2 {
+  color: #1e88e5;
+  font-size: 1.8rem;
+}
+
 h2 {
   margin-bottom: 30px;
   font-size: 24px;

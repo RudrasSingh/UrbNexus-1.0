@@ -10,6 +10,70 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import DefaultFooter from "examples/Footers/DefaultFooter";
 import footerRoutes from "footer.routes";
+import { FaPlus } from "react-icons/fa"; // Import plus icon
+
+// Task Modal Component
+// eslint-disable-next-line react/prop-types
+const TaskModal = ({ show, onClose, onSave, taskData, isEditing }) => {
+  const [task, setTask] = useState(
+    taskData || {
+      title: "",
+      priority: "low",
+      date: "",
+      description: "",
+      assignees: "",
+      status: "todo",
+    }
+  );
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setTask((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSave = () => {
+    onSave(task);
+    onClose();
+  };
+
+  if (!show) return null;
+
+  return (
+    <div className="modal-overlay">
+      <div className="modal-content">
+        <h2>{isEditing ? "Edit Task" : "Create Task"}</h2>
+        <label>
+          Title:
+          <input type="text" name="title" value={task.title} onChange={handleChange} />
+        </label>
+        <label>
+          Priority:
+          <select name="priority" value={task.priority} onChange={handleChange}>
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </select>
+        </label>
+        <label>
+          Date:
+          <input type="date" name="date" value={task.date} onChange={handleChange} />
+        </label>
+        <label>
+          Description:
+          <textarea name="description" value={task.description} onChange={handleChange} />
+        </label>
+        <label>
+          Assignees:
+          <input type="text" name="assignees" value={task.assignees} onChange={handleChange} />
+        </label>
+        <div className="modal-actions">
+          <button onClick={handleSave}>{isEditing ? "Save" : "Create"}</button>
+          <button onClick={onClose}>Cancel</button>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const TaskManager = () => {
   const dispatch = useDispatch();
@@ -25,6 +89,7 @@ const TaskManager = () => {
       alert("Logged out successfully");
     }
   };
+
   const filterRoutes = (routes) => {
     return routes
       .filter(
@@ -45,55 +110,98 @@ const TaskManager = () => {
         return route;
       });
   };
+
   const filteredRoutes = UserState ? routes : filterRoutes(routes);
-  const [view] = useState("board"); // View toggle state
-  // eslint-disable-next-line no-unused-vars
+
   const [tasks, setTasks] = useState({
     todo: [
       {
         title: "Test Task",
         priority: "high",
-        date: "9-Feb-2024",
+        date: "2024-02-09",
         description: "Task manager youtube tutorial",
         assignees: "AJ JS CA",
-        status: "0/1",
+        status: "todo",
       },
     ],
     inProgress: [
       {
         title: "Review Code Changes",
         priority: "medium",
-        date: "9-Feb-2024",
+        date: "2024-02-09",
         description: "Blog App Admin Dashboard",
         assignees: "EW AJ",
-        status: "0/1",
+        status: "inProgress",
       },
     ],
     completed: [
       {
         title: "Website Project Proposal Review",
         priority: "high",
-        date: "7-Feb-2024",
+        date: "2024-02-07",
         description: "Blog App Dashboard",
         assignees: "JS JD CA",
-        status: "0/2",
+        status: "completed",
       },
     ],
   });
 
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [currentTask, setCurrentTask] = useState(null);
+  const [editingTask, setEditingTask] = useState(false);
+  const [currentCategory, setCurrentCategory] = useState("todo");
+
+  const openModal = (category, task = null) => {
+    setCurrentCategory(category);
+    setCurrentTask(task);
+    setEditingTask(!!task);
+    setModalOpen(true);
+  };
+
   const handleCreateTask = () => {
-    alert("Create task button clicked!");
-    // Logic to add task can go here
+    openModal("todo");
   };
 
   const handleAddTask = (category) => {
-    alert(`Add task to ${category} clicked!`);
-    // Logic to add a task in the respective category can go here
+    openModal(category);
   };
 
-  const handleAddSubtask = (task) => {
-    alert(`Add subtask to ${task.title} clicked!`);
-    // Logic to add a subtask can go here
+  const handleSaveTask = (task) => {
+    if (editingTask) {
+      // Update the task
+      setTasks((prev) => {
+        const updatedTasks = { ...prev };
+        updatedTasks[currentCategory] = updatedTasks[currentCategory].map((t) =>
+          t.title === currentTask.title ? task : t
+        );
+        return updatedTasks;
+      });
+    } else {
+      // Add the new task
+      setTasks((prev) => ({
+        ...prev,
+        [currentCategory]: [...prev[currentCategory], task],
+      }));
+    }
+  };
+
+  const handleStatusChange = (task, newStatus) => {
+    setTasks((prev) => {
+      const updatedTasks = { ...prev };
+
+      // Remove the task from the current category
+      updatedTasks[task.status] = updatedTasks[task.status].filter((t) => t.title !== task.title);
+
+      // Add the task to the new category
+      task.status = newStatus; // Update the status
+      updatedTasks[newStatus] = [...updatedTasks[newStatus], task];
+
+      return updatedTasks;
+    });
+  };
+
+  const handleEditTask = (task) => {
+    openModal(currentCategory, task);
   };
 
   return (
@@ -112,7 +220,7 @@ const TaskManager = () => {
             type: "internal",
             label: label,
             color: "info",
-            functions: handleActionClick, // Use the function directly
+            functions: handleActionClick,
           }}
           sticky
         />
@@ -125,101 +233,127 @@ const TaskManager = () => {
             + Create Task
           </button>
         </div>
-
-        {view === "board" ? (
-          <div className="task-columns">
-            {/* To Do Column */}
-            <div className="task-column">
-              <div className="task-category-header">
-                <span className="category-label to-do"></span>
-                <span>To Do</span>
-                <button className="add-task-btn" onClick={() => handleAddTask("todo")}>
-                  +
-                </button>
-              </div>
-              {tasks.todo.map((task, index) => (
-                <div key={index} className="task-card">
-                  <div className={`task-priority ${task.priority}-priority`}>
-                    {task.priority.toUpperCase()} PRIORITY
-                  </div>
-                  <h2>{task.title}</h2>
-                  <p className="task-date">{task.date}</p>
-                  <p>{task.description}</p>
-                  <div className="task-meta">
-                    <span className="task-status">{task.status}</span>
-                    <span className="assignees">{task.assignees}</span>
-                  </div>
-                  <button className="add-subtask-btn" onClick={() => handleAddSubtask(task)}>
-                    Add Subtask
-                  </button>
-                </div>
-              ))}
+        <div className="task-columns">
+          {/* To Do Column */}
+          <div className="task-column">
+            <div className="task-category-header">
+              <span className="category-label to-do"></span>
+              <span>To Do</span>
+              <button className="add-task-btn" onClick={() => handleAddTask("todo")}>
+                +
+              </button>
             </div>
-
-            {/* In Progress Column */}
-            <div className="task-column">
-              <div className="task-category-header">
-                <span className="category-label in-progress"></span>
-                <span>In Progress</span>
-                <button className="add-task-btn" onClick={() => handleAddTask("inProgress")}>
-                  +
-                </button>
-              </div>
-              {tasks.inProgress.map((task, index) => (
-                <div key={index} className="task-card">
-                  <div className={`task-priority ${task.priority}-priority`}>
-                    {task.priority.toUpperCase()} PRIORITY
-                  </div>
-                  <h2>{task.title}</h2>
-                  <p className="task-date">{task.date}</p>
-                  <p>{task.description}</p>
-                  <div className="task-meta">
-                    <span className="task-status">{task.status}</span>
-                    <span className="assignees">{task.assignees}</span>
-                  </div>
-                  <button className="add-subtask-btn" onClick={() => handleAddSubtask(task)}>
-                    Add Subtask
-                  </button>
+            {tasks.todo.map((task, index) => (
+              <div key={index} className="task-card">
+                <div className={`task-priority ${task.priority}-priority`}>
+                  {task.priority.toUpperCase()} PRIORITY
                 </div>
-              ))}
-            </div>
-
-            {/* Completed Column */}
-            <div className="task-column">
-              <div className="task-category-header">
-                <span className="category-label completed"></span>
-                <span>Completed</span>
-                <button className="add-task-btn" onClick={() => handleAddTask("completed")}>
-                  +
-                </button>
-              </div>
-              {tasks.completed.map((task, index) => (
-                <div key={index} className="task-card">
-                  <div className={`task-priority ${task.priority}-priority`}>
-                    {task.priority.toUpperCase()} PRIORITY
-                  </div>
-                  <h2>{task.title}</h2>
-                  <p className="task-date">{task.date}</p>
-                  <p>{task.description}</p>
-                  <div className="task-meta">
-                    <span className="task-status">{task.status}</span>
-                    <span className="assignees">{task.assignees}</span>
-                  </div>
-                  <button className="add-subtask-btn" onClick={() => handleAddSubtask(task)}>
-                    Add Subtask
-                  </button>
+                <h2>{task.title}</h2>
+                <p className="task-date">{task.date}</p>
+                <p>{task.description}</p>
+                <div className="task-meta">
+                  <span className="task-status">{task.status}</span>
+                  <span className="assignees">{task.assignees}</span>
                 </div>
-              ))}
-            </div>
+                <div className="task-actions">
+                  <select
+                    value={task.status}
+                    onChange={(e) => handleStatusChange(task, e.target.value)}
+                  >
+                    <option value="todo">To Do</option>
+                    <option value="inProgress">In Progress</option>
+                    <option value="completed">Completed</option>
+                  </select>
+                  <FaPlus className="edit-icon" onClick={() => handleEditTask(task)} />
+                </div>
+              </div>
+            ))}
           </div>
-        ) : (
-          <div className="list-view">
-            {/* Implement list view structure here */}
-            <p>List View not yet implemented</p>
+
+          {/* In Progress Column */}
+          <div className="task-column">
+            <div className="task-category-header">
+              <span className="category-label in-progress"></span>
+              <span>In Progress</span>
+              <button className="add-task-btn" onClick={() => handleAddTask("inProgress")}>
+                +
+              </button>
+            </div>
+            {tasks.inProgress.map((task, index) => (
+              <div key={index} className="task-card">
+                <div className={`task-priority ${task.priority}-priority`}>
+                  {task.priority.toUpperCase()} PRIORITY
+                </div>
+                <h2>{task.title}</h2>
+                <p className="task-date">{task.date}</p>
+                <p>{task.description}</p>
+                <div className="task-meta">
+                  <span className="task-status">{task.status}</span>
+                  <span className="assignees">{task.assignees}</span>
+                </div>
+                <div className="task-actions">
+                  <select
+                    value={task.status}
+                    onChange={(e) => handleStatusChange(task, e.target.value)}
+                  >
+                    <option value="todo">To Do</option>
+                    <option value="inProgress">In Progress</option>
+                    <option value="completed">Completed</option>
+                  </select>
+                  <FaPlus className="edit-icon" onClick={() => handleEditTask(task)} />
+                </div>
+              </div>
+            ))}
           </div>
-        )}
+
+          {/* Completed Column */}
+          <div className="task-column">
+            <div className="task-category-header">
+              <span className="category-label completed"></span>
+              <span>Completed</span>
+              <button className="add-task-btn" onClick={() => handleAddTask("completed")}>
+                +
+              </button>
+            </div>
+            {tasks.completed.map((task, index) => (
+              <div key={index} className="task-card">
+                <div className={`task-priority ${task.priority}-priority`}>
+                  {task.priority.toUpperCase()} PRIORITY
+                </div>
+                <h2>{task.title}</h2>
+                <p className="task-date">{task.date}</p>
+                <p>{task.description}</p>
+                <div className="task-meta">
+                  <span className="task-status">{task.status}</span>
+                  <span className="assignees">{task.assignees}</span>
+                </div>
+                <div className="task-actions">
+                  <select
+                    value={task.status}
+                    onChange={(e) => handleStatusChange(task, e.target.value)}
+                  >
+                    <option value="todo">To Do</option>
+                    <option value="inProgress">In Progress</option>
+                    <option value="completed">Completed</option>
+                  </select>
+                  <FaPlus className="edit-icon" onClick={() => handleEditTask(task)} />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
-      <MKBox pt={6} px={1} mt={6} mb={0}>
+
+      {/* Task Modal for creating and editing tasks */}
+      <TaskModal
+        show={isModalOpen}
+        onClose={() => setModalOpen(false)}
+        onSave={handleSaveTask}
+        taskData={currentTask}
+        isEditing={editingTask}
+      />
+
+      <MKBox pt={6} px={1} mt={6}>
         <DefaultFooter content={footerRoutes} />
       </MKBox>
     </>
