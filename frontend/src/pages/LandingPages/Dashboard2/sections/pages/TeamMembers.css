@@ -1,7 +1,8 @@
 .team-members-container {
+  margin-left: 250px; /* Offset for the fixed sidebar */
   padding: 30px;
-  max-width: 1200px;
-  margin: 40px auto;
+  width: 80%;
+  margin-top: 120px;
   background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
@@ -29,7 +30,6 @@ h2 {
   padding: 12px 25px;
   border-radius: 5px;
   cursor: pointer;
-  float: right;
   margin-bottom: 20px;
   transition:
     background-color 0.3s ease,
