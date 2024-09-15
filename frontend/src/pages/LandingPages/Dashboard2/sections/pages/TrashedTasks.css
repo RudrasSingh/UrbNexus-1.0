@@ -1,4 +1,5 @@
 .trashed-tasks-container {
+  margin-left: 250px; /* Offset for the fixed sidebar */
   padding: 40px 60px; /* More padding for a spacious layout */
   background-color: #f5f7fa; /* Slightly darker background */
   min-height: 100vh;

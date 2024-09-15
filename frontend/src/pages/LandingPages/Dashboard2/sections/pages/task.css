@@ -1,6 +1,5 @@
 .task-container {
   width: 80%;
-  max-width: none; /* Slightly narrower max-width */
   margin-top: 6%;
   margin-left: 15%;
   padding: 20px 20px 20px 0; /* Remove right padding */
@@ -33,11 +32,7 @@
   font-size: 1rem; /* Consistent button text size */
 }
 
-.view-button:hover {
-  background-color: #1e88e5;
-  color: white;
-}
-
+.view-button:hover,
 .view-button.active {
   background-color: #1e88e5;
   color: white;
@@ -59,17 +54,18 @@
 }
 
 .task-columns {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns */
   gap: 20px;
-  justify-content: flex-start; /* Align to the left */
+  justify-content: space-between; /* Add space between columns */
 }
 
 .task-column {
   background-color: white;
-  padding: 15px;
+  padding: 20px;
   border-radius: 8px;
-  flex: 1;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Softer shadow */
+  transition: transform 0.3s;
 }
 
 .task-category-header {
@@ -112,9 +108,17 @@
   background-color: #f0f0f0;
 }
 
-/* Minimalist Task Card Design */
+/* Task Card Design */
 .task-card {
-  background-color: white;
+  background-color: #fff;
+  max-width: 100%;
+  padding: 20px;
+  margin: 0 auto 20px auto; /* Center card horizontally */
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  text-align: center;
+  width: 100%; /* Make card take full width of column */
 }
 
 .task-card:hover {
