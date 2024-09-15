@@ -1,0 +1,1001 @@
+task_id,department,task,latitude,longitude,start_time,end_time,inventory_used,inventory_count,task_type,task_status,task_description,optimization_suggestion,similar_tasks
+1,Transport,Meeting,43.47909,-91.838933,20:36,22-01-2024 23:36,Laptop,9,Construction,Planned,Report generation for annual review,None,[]
+2,Health,Meeting,-50.645165,1.927904,13-02-2024 17:38,13-02-2024 18:38,Scanner,4,Report,Ongoing,Training on new software,None,[1]
+3,Health,Training,35.665091,-57.509814,07-09-2024 10:37,07-09-2024 13:37,Projector,6,Construction,Completed,Report generation for annual review,None,[]
+4,Agriculture,Maintenance,18.670686,110.566178,03-05-2024 08:42,03-05-2024 16:42,Scanner,2,Training,Completed,Presentation preparation for stakeholders,Reallocate resources,"[3, 2]"
+5,Agriculture,Meeting,29.027397,98.304603,07-08-2024 19:07,07-08-2024 21:07,Projector,2,Training,Ongoing,Report generation for annual review,Reschedule task 4,"[2, 4]"
+6,Education,Presentation,24.296092,12.290356,08-09-2024 07:30,08-09-2024 11:30,Projector,8,Training,Ongoing,Presentation preparation for stakeholders,None,[3]
+7,Finance,Training,57.924467,109.816488,02-09-2024 22:11,03-09-2024 05:11,Whiteboard,2,Maintenance,Planned,Maintenance of office equipment,Reschedule task 6,[6]
+8,Finance,Maintenance,-64.866542,88.196034,20-02-2024 13:54,20-02-2024 18:54,Scanner,7,Report,Ongoing,Maintenance of office equipment,Reallocate resources,[2]
+9,Education,Meeting,64.998524,-124.977125,31-12-2023 20:29,31-12-2023 23:29,Printer,10,Construction,Ongoing,Report generation for annual review,Reallocate resources,"[5, 8, 1]"
+10,Education,Presentation,45.158004,96.695544,30-03-2024 19:32,31-03-2024 01:32,Laptop,5,Training,Completed,Report generation for annual review,None,[]
+11,Education,Presentation,47.153196,2.765403,15-03-2024 15:04,15-03-2024 17:04,Whiteboard,9,Report,Completed,Training on new software,None,"[3, 9]"
+12,Education,Meeting,17.810025,-4.101945,21-08-2024 09:35,21-08-2024 11:35,Whiteboard,5,Maintenance,Completed,Training on new software,None,[]
+13,Health,Report,56.884186,172.074418,26-10-2023 15:31,26-10-2023 18:31,Projector,8,Report,Completed,Maintenance of office equipment,None,"[4, 9, 12]"
+14,Health,Maintenance,-11.141985,6.327303,31-03-2024 01:05,31-03-2024 03:05,Projector,4,Construction,Ongoing,Meeting to discuss quarterly budget,Merge with task 10,[10]
+15,Education,Training,-77.867941,-168.691335,05-02-2024 11:50,05-02-2024 17:50,Laptop,9,Maintenance,Ongoing,Report generation for annual review,Merge with task 9,[9]
+16,Transport,Report,55.34946,-111.452431,19-03-2024 14:53,19-03-2024 16:53,Printer,6,Training,Ongoing,Report generation for annual review,None,[]
+17,Agriculture,Meeting,-17.528169,-57.851062,31-07-2024 00:42,31-07-2024 02:42,Projector,4,Maintenance,Planned,Report generation for annual review,Merge with task 14,[14]
+18,Transport,Meeting,-10.236466,130.085678,30-04-2024 13:53,30-04-2024 15:53,Laptop,9,Construction,Completed,Training on new software,Reschedule task 14,[14]
+19,Health,Meeting,-60.365318,-179.224064,11-06-2024 15:14,11-06-2024 22:14,Whiteboard,8,Administrative,Ongoing,Presentation preparation for stakeholders,Merge with task 5,"[5, 7, 10]"
+20,Health,Presentation,-79.027637,-67.102268,02-03-2024 19:47,02-03-2024 20:47,Scanner,8,Report,Planned,Training on new software,None,[]
+21,Transport,Meeting,63.241658,-155.33232,10-01-2024 16:01,10-01-2024 18:01,Projector,7,Construction,Planned,Training on new software,None,[]
+22,Education,Meeting,-14.539515,30.122024,12-04-2024 14:40,12-04-2024 20:40,Whiteboard,4,Administrative,Completed,Maintenance of office equipment,Reschedule task 5,"[5, 10, 15]"
+23,Transport,Report,21.808666,22.677712,04-11-2023 04:42,04-11-2023 06:42,Laptop,9,Maintenance,Planned,Maintenance of office equipment,None,[12]
+24,Health,Maintenance,-38.70227,-22.253554,12-08-2024 11:33,12-08-2024 16:33,Scanner,9,Construction,Planned,Presentation preparation for stakeholders,None,"[22, 4]"
+25,Transport,Maintenance,-69.222839,-141.467048,04-12-2023 02:14,04-12-2023 05:14,Whiteboard,5,Report,Completed,Maintenance of office equipment,Reallocate resources,[22]
+26,Transport,Presentation,-2.064267,145.921137,06-07-2024 13:41,06-07-2024 14:41,Laptop,7,Administrative,Completed,Meeting to discuss quarterly budget,Reallocate resources,"[25, 5]"
+27,Agriculture,Training,43.421564,18.604952,05-08-2024 13:49,05-08-2024 20:49,Scanner,1,Construction,Completed,Training on new software,None,[]
+28,Transport,Presentation,9.454517,-25.276783,22-01-2024 13:38,22-01-2024 14:38,Whiteboard,6,Construction,Ongoing,Training on new software,Merge with task 22,[22]
+29,Education,Training,76.637488,-94.77456,21-06-2024 06:15,21-06-2024 09:15,Projector,7,Construction,Completed,Maintenance of office equipment,None,"[26, 22, 28]"
+30,Health,Maintenance,-61.344388,72.460148,22-07-2024 15:03,22-07-2024 22:03,Laptop,8,Maintenance,Completed,Report generation for annual review,None,"[10, 27]"
+31,Transport,Training,-85.740402,-110.473276,04-12-2023 06:30,04-12-2023 12:30,Whiteboard,2,Administrative,Ongoing,Presentation preparation for stakeholders,Reschedule task 22,"[22, 27, 18]"
+32,Education,Maintenance,-57.857793,166.512354,26-12-2023 18:13,26-12-2023 23:13,Laptop,2,Report,Ongoing,Maintenance of office equipment,None,"[14, 20]"
+33,Finance,Report,71.910852,-111.571641,21-05-2024 02:12,21-05-2024 03:12,Printer,1,Report,Planned,Training on new software,None,"[28, 5]"
+34,Transport,Presentation,-33.495184,125.285501,09-04-2024 01:29,09-04-2024 06:29,Scanner,5,Training,Ongoing,Report generation for annual review,Reschedule task 13,"[9, 13]"
+35,Agriculture,Presentation,12.438946,-33.812939,21-04-2024 14:22,21-04-2024 15:22,Whiteboard,5,Maintenance,Ongoing,Presentation preparation for stakeholders,Reschedule task 30,"[30, 29]"
+36,Finance,Report,52.872372,165.539521,28-11-2023 12:16,28-11-2023 15:16,Laptop,5,Report,Planned,Presentation preparation for stakeholders,Reallocate resources,"[6, 16]"
+37,Agriculture,Training,-63.476287,-163.363061,24-08-2024 22:56,25-08-2024 06:56,Scanner,2,Training,Ongoing,Presentation preparation for stakeholders,Reschedule task 25,[25]
+38,Transport,Meeting,70.678769,129.758604,10-09-2024 00:27,10-09-2024 02:27,Printer,4,Maintenance,Planned,Presentation preparation for stakeholders,None,"[4, 36, 16]"
+39,Agriculture,Report,-65.998961,-12.728435,06-01-2024 01:58,06-01-2024 07:58,Printer,10,Report,Ongoing,Presentation preparation for stakeholders,Merge with task 11,"[11, 31, 29]"
+40,Finance,Presentation,-2.772537,-93.871489,28-09-2023 07:23,28-09-2023 15:23,Laptop,5,Maintenance,Ongoing,Maintenance of office equipment,Merge with task 35,"[35, 6]"
+41,Agriculture,Training,37.155446,-156.877614,19-08-2024 20:09,20-08-2024 03:09,Whiteboard,9,Training,Ongoing,Meeting to discuss quarterly budget,Reschedule task 27,[27]
+42,Transport,Report,-4.143648,159.386997,25-07-2024 20:26,26-07-2024 01:26,Printer,7,Report,Planned,Presentation preparation for stakeholders,Merge with task 32,[32]
+43,Health,Meeting,-20.005703,60.794503,02-01-2024 11:42,02-01-2024 18:42,Projector,8,Maintenance,Planned,Presentation preparation for stakeholders,None,[]
+44,Transport,Presentation,11.590557,-170.243263,23-11-2023 02:35,23-11-2023 09:35,Projector,8,Maintenance,Completed,Maintenance of office equipment,Reschedule task 14,"[21, 14, 30]"
+45,Transport,Report,-44.591124,-150.513756,21-04-2024 21:59,21-04-2024 22:59,Scanner,1,Administrative,Completed,Meeting to discuss quarterly budget,None,[]
+46,Health,Training,-54.115077,-172.663194,03-01-2024 20:40,03-01-2024 23:40,Projector,3,Training,Planned,Meeting to discuss quarterly budget,Reallocate resources,[30]
+47,Transport,Training,19.060685,166.944508,19-10-2023 15:49,19-10-2023 17:49,Projector,5,Construction,Planned,Meeting to discuss quarterly budget,None,"[37, 44]"
+48,Health,Report,79.464708,-108.60128,01-05-2024 00:06,01-05-2024 04:06,Laptop,5,Report,Completed,Presentation preparation for stakeholders,None,[]
+49,Health,Presentation,-12.891958,-46.594485,21-07-2024 22:21,22-07-2024 04:21,Laptop,7,Training,Completed,Report generation for annual review,None,"[41, 30]"
+50,Finance,Training,42.083155,167.570543,03-09-2024 01:14,03-09-2024 06:14,Scanner,9,Training,Ongoing,Report generation for annual review,None,"[21, 16]"
+51,Health,Maintenance,68.693613,-92.209162,15-02-2024 13:36,15-02-2024 21:36,Scanner,10,Training,Ongoing,Meeting to discuss quarterly budget,Merge with task 12,"[21, 12, 32]"
+52,Finance,Maintenance,68.457596,72.42615,12-02-2024 23:45,13-02-2024 04:45,Scanner,1,Report,Completed,Meeting to discuss quarterly budget,Reschedule task 47,[47]
+53,Transport,Report,-9.328581,-173.792427,15-06-2024 07:31,15-06-2024 12:31,Projector,7,Maintenance,Ongoing,Presentation preparation for stakeholders,Reallocate resources,"[31, 36]"
+54,Agriculture,Presentation,-30.457567,73.027779,20-01-2024 23:06,21-01-2024 04:06,Whiteboard,5,Maintenance,Completed,Training on new software,Reallocate resources,"[8, 48]"
+55,Agriculture,Training,-51.050765,-5.688509,25-06-2024 16:27,25-06-2024 21:27,Laptop,4,Administrative,Completed,Maintenance of office equipment,Merge with task 20,[20]
+56,Finance,Meeting,85.373088,19.209228,06-08-2024 01:50,06-08-2024 04:50,Printer,2,Construction,Planned,Maintenance of office equipment,Merge with task 31,"[31, 29, 22]"
+57,Education,Report,-69.464315,-156.476363,13-08-2024 09:43,13-08-2024 17:43,Laptop,10,Construction,Completed,Training on new software,Merge with task 16,"[6, 16]"
+58,Finance,Presentation,52.333349,-98.752631,30-10-2023 17:55,31-10-2023 00:55,Printer,8,Administrative,Planned,Report generation for annual review,Merge with task 37,"[37, 40]"
+59,Agriculture,Training,-42.363697,-150.772512,21-12-2023 02:46,21-12-2023 06:46,Projector,9,Construction,Completed,Meeting to discuss quarterly budget,Reschedule task 29,"[29, 45, 39]"
+60,Education,Maintenance,37.252049,73.075521,15-12-2023 19:33,16-12-2023 03:33,Laptop,4,Administrative,Planned,Presentation preparation for stakeholders,Merge with task 28,[28]
+61,Finance,Maintenance,58.793609,-154.292459,21-04-2024 03:07,21-04-2024 06:07,Whiteboard,10,Report,Ongoing,Report generation for annual review,None,[]
+62,Education,Maintenance,35.952063,159.363447,26-07-2024 17:09,27-07-2024 01:09,Printer,2,Report,Completed,Report generation for annual review,Merge with task 39,"[39, 17]"
+63,Transport,Presentation,81.14153,179.84607,11-12-2023 16:40,11-12-2023 21:40,Scanner,1,Maintenance,Ongoing,Presentation preparation for stakeholders,None,"[59, 18, 12]"
+64,Finance,Report,84.429942,-10.796258,03-03-2024 11:46,03-03-2024 18:46,Whiteboard,6,Construction,Completed,Maintenance of office equipment,Reallocate resources,"[45, 32, 19]"
+65,Finance,Presentation,-83.394517,-148.298475,20-02-2024 22:51,21-02-2024 03:51,Whiteboard,2,Training,Planned,Meeting to discuss quarterly budget,Reallocate resources,"[53, 7, 25]"
+66,Education,Report,22.573574,93.596593,05-06-2024 21:31,06-06-2024 01:31,Whiteboard,9,Maintenance,Ongoing,Report generation for annual review,None,"[16, 4, 31]"
+67,Finance,Presentation,-87.538596,-33.123353,17-03-2024 08:01,17-03-2024 12:01,Laptop,8,Construction,Planned,Training on new software,Reschedule task 66,"[38, 66, 35]"
+68,Finance,Training,-7.778435,-127.928891,18-07-2024 00:53,18-07-2024 04:53,Scanner,9,Maintenance,Completed,Maintenance of office equipment,None,"[44, 65, 35]"
+69,Transport,Maintenance,60.745666,28.772418,03-09-2024 13:21,03-09-2024 21:21,Projector,8,Report,Ongoing,Maintenance of office equipment,None,"[49, 59]"
+70,Health,Training,12.923576,-95.917519,27-08-2024 05:00,27-08-2024 12:00,Laptop,6,Training,Planned,Report generation for annual review,Merge with task 5,"[20, 64, 5]"
+71,Education,Meeting,67.354267,-21.489764,26-11-2023 13:43,26-11-2023 21:43,Laptop,3,Training,Planned,Training on new software,None,[]
+72,Education,Maintenance,-29.058978,69.373655,30-10-2023 07:24,30-10-2023 09:24,Whiteboard,9,Training,Ongoing,Report generation for annual review,None,[]
+73,Education,Meeting,-47.741356,66.383847,21-02-2024 08:56,21-02-2024 13:56,Projector,2,Training,Completed,Meeting to discuss quarterly budget,Merge with task 22,"[22, 39, 4]"
+74,Transport,Maintenance,-22.528604,-127.594874,05-09-2024 18:09,06-09-2024 01:09,Scanner,3,Maintenance,Completed,Meeting to discuss quarterly budget,Merge with task 19,"[31, 64, 19]"
+75,Education,Report,-44.041193,-176.616925,11-03-2024 05:28,11-03-2024 13:28,Whiteboard,9,Maintenance,Completed,Report generation for annual review,Reallocate resources,"[39, 55]"
+76,Finance,Maintenance,-54.14094,-41.51043,20-12-2023 17:26,21-12-2023 01:26,Laptop,4,Training,Planned,Maintenance of office equipment,None,"[38, 3]"
+77,Transport,Maintenance,-88.542366,131.424263,01-01-2024 05:18,01-01-2024 06:18,Scanner,8,Administrative,Completed,Presentation preparation for stakeholders,Reallocate resources,"[29, 25]"
+78,Education,Meeting,72.612667,52.682619,09-12-2023 18:41,09-12-2023 23:41,Printer,1,Report,Ongoing,Training on new software,None,[]
+79,Agriculture,Maintenance,44.546556,-116.769575,07-08-2024 19:19,07-08-2024 22:19,Scanner,6,Report,Planned,Maintenance of office equipment,None,[33]
+80,Education,Maintenance,44.380683,-58.062509,19-06-2024 08:43,19-06-2024 10:43,Printer,2,Maintenance,Completed,Report generation for annual review,Merge with task 12,"[12, 51]"
+81,Transport,Maintenance,31.109109,62.042687,17-04-2024 01:21,17-04-2024 08:21,Whiteboard,2,Maintenance,Ongoing,Meeting to discuss quarterly budget,Reallocate resources,"[79, 29]"
+82,Finance,Maintenance,26.8631,-137.996663,02-04-2024 08:37,02-04-2024 09:37,Laptop,5,Training,Completed,Meeting to discuss quarterly budget,Merge with task 69,[69]
+83,Health,Presentation,-14.557184,87.216845,03-09-2024 13:37,03-09-2024 16:37,Printer,2,Training,Planned,Report generation for annual review,Merge with task 48,"[5, 48]"
+84,Health,Maintenance,-72.116168,66.844896,14-08-2024 00:40,14-08-2024 06:40,Laptop,7,Administrative,Completed,Meeting to discuss quarterly budget,Reallocate resources,"[12, 28, 83]"
+85,Health,Meeting,51.623026,-92.315197,08-04-2024 21:51,09-04-2024 00:51,Scanner,4,Construction,Planned,Training on new software,Reschedule task 30,[30]
+86,Health,Meeting,-40.090528,174.250127,29-09-2023 20:51,29-09-2023 23:51,Scanner,5,Maintenance,Completed,Meeting to discuss quarterly budget,Reschedule task 2,[2]
+87,Education,Maintenance,-87.159405,-84.467697,22-05-2024 21:58,23-05-2024 00:58,Printer,9,Construction,Planned,Meeting to discuss quarterly budget,Reallocate resources,"[58, 47, 66]"
+88,Transport,Presentation,-50.121044,41.438461,10-07-2024 21:19,11-07-2024 02:19,Printer,1,Construction,Ongoing,Report generation for annual review,Merge with task 14,"[14, 63, 57]"
+89,Transport,Presentation,-63.299911,-134.571028,08-02-2024 00:55,08-02-2024 06:55,Printer,10,Report,Ongoing,Report generation for annual review,Reallocate resources,"[13, 15, 84]"
+90,Agriculture,Training,-12.587411,139.712768,25-06-2024 21:52,26-06-2024 04:52,Whiteboard,8,Training,Ongoing,Meeting to discuss quarterly budget,Reallocate resources,"[55, 41]"
+91,Transport,Training,33.627786,-9.263561,06-12-2023 08:25,06-12-2023 10:25,Laptop,2,Training,Completed,Maintenance of office equipment,Merge with task 72,[72]
+92,Health,Report,-26.352346,59.522587,02-10-2023 01:01,02-10-2023 08:01,Laptop,5,Report,Ongoing,Maintenance of office equipment,None,[]
+93,Health,Presentation,-51.707015,56.425069,22-09-2023 21:24,23-09-2023 01:24,Laptop,6,Report,Ongoing,Meeting to discuss quarterly budget,None,"[74, 29]"
+94,Agriculture,Presentation,20.44319,51.371699,03-08-2024 19:12,03-08-2024 20:12,Scanner,5,Construction,Completed,Maintenance of office equipment,Merge with task 44,"[44, 45]"
+95,Transport,Report,-77.474624,86.748861,22-09-2023 17:57,22-09-2023 18:57,Laptop,9,Maintenance,Ongoing,Report generation for annual review,Reschedule task 21,"[44, 21, 48]"
+96,Agriculture,Presentation,-74.707733,-161.060822,05-01-2024 23:47,06-01-2024 02:47,Scanner,1,Construction,Ongoing,Report generation for annual review,Reschedule task 63,"[63, 78, 57]"
+97,Education,Meeting,-27.868886,-140.079682,28-06-2024 02:08,28-06-2024 10:08,Scanner,5,Construction,Completed,Report generation for annual review,None,[]
+98,Transport,Training,-35.744515,-103.955767,12-07-2024 08:15,12-07-2024 11:15,Whiteboard,5,Administrative,Completed,Meeting to discuss quarterly budget,Merge with task 23,"[96, 56, 23]"
+99,Health,Presentation,10.570242,60.497342,01-05-2024 23:34,02-05-2024 05:34,Laptop,7,Construction,Ongoing,Meeting to discuss quarterly budget,Reschedule task 41,"[10, 41, 74]"
+100,Agriculture,Maintenance,-69.268793,-172.491639,10-11-2023 22:20,11-11-2023 04:20,Projector,10,Training,Planned,Maintenance of office equipment,None,[]
+101,Health,Meeting,-46.203035,31.993664,14-12-2023 03:21,14-12-2023 05:21,Printer,5,Administrative,Completed,Maintenance of office equipment,Reallocate resources,[10]
+102,Education,Presentation,1.791371,146.132183,08-04-2024 22:55,09-04-2024 04:55,Whiteboard,3,Maintenance,Completed,Training on new software,Reallocate resources,"[26, 23]"
+103,Health,Training,81.232585,46.061558,29-10-2023 00:57,29-10-2023 08:57,Scanner,10,Training,Planned,Presentation preparation for stakeholders,Merge with task 81,"[81, 41]"
+104,Health,Report,23.649322,106.678684,07-02-2024 23:37,08-02-2024 00:37,Whiteboard,9,Construction,Ongoing,Report generation for annual review,None,"[5, 8, 48]"
+105,Transport,Meeting,20.70151,2.544414,15-03-2024 21:43,16-03-2024 05:43,Scanner,9,Construction,Ongoing,Presentation preparation for stakeholders,Reallocate resources,[42]
+106,Transport,Training,82.390025,-17.811681,09-06-2024 00:40,09-06-2024 06:40,Laptop,9,Maintenance,Completed,Training on new software,Reallocate resources,"[57, 68, 67]"
+107,Education,Maintenance,75.228622,-40.530039,08-09-2024 17:41,08-09-2024 23:41,Scanner,1,Administrative,Completed,Maintenance of office equipment,None,[]
+108,Finance,Report,-38.853545,80.544116,23-02-2024 04:37,23-02-2024 07:37,Whiteboard,2,Report,Planned,Training on new software,Reallocate resources,"[40, 84]"
+109,Health,Training,17.107421,157.680792,22-01-2024 08:40,22-01-2024 13:40,Scanner,7,Administrative,Completed,Presentation preparation for stakeholders,None,[]
+110,Agriculture,Presentation,-24.870943,-49.464839,25-07-2024 20:24,25-07-2024 23:24,Projector,6,Training,Completed,Training on new software,Merge with task 20,[20]
+111,Education,Presentation,60.321569,138.12558,08-08-2024 10:47,08-08-2024 11:47,Whiteboard,10,Maintenance,Planned,Report generation for annual review,Merge with task 21,[21]
+112,Health,Meeting,-16.04545,63.490652,24-07-2024 08:05,24-07-2024 12:05,Printer,10,Administrative,Planned,Report generation for annual review,Merge with task 69,[69]
+113,Agriculture,Maintenance,32.095229,25.350982,21-01-2024 15:25,21-01-2024 23:25,Printer,5,Training,Planned,Presentation preparation for stakeholders,None,"[21, 105, 26]"
+114,Health,Maintenance,-80.607635,-6.987364,25-06-2024 09:19,25-06-2024 15:19,Scanner,2,Report,Completed,Maintenance of office equipment,None,[]
+115,Agriculture,Maintenance,-9.12254,4.806986,19-12-2023 23:33,20-12-2023 06:33,Laptop,4,Training,Ongoing,Meeting to discuss quarterly budget,Reschedule task 51,"[7, 51, 65]"
+116,Finance,Maintenance,-49.583023,-65.273445,23-02-2024 09:23,23-02-2024 11:23,Whiteboard,3,Maintenance,Completed,Maintenance of office equipment,None,"[90, 107, 18]"
+117,Agriculture,Report,20.762686,146.108696,08-04-2024 18:21,08-04-2024 19:21,Whiteboard,4,Maintenance,Planned,Presentation preparation for stakeholders,Merge with task 15,"[15, 100, 37]"
+118,Education,Training,-14.431402,105.803679,26-02-2024 01:07,26-02-2024 09:07,Laptop,2,Training,Planned,Presentation preparation for stakeholders,None,[]
+119,Education,Presentation,-46.451136,-128.312338,02-03-2024 16:46,02-03-2024 23:46,Laptop,10,Administrative,Completed,Presentation preparation for stakeholders,Reallocate resources,"[24, 86, 11]"
+120,Transport,Meeting,81.612662,15.869506,19-09-2023 10:45,19-09-2023 11:45,Printer,8,Construction,Planned,Report generation for annual review,Merge with task 33,"[33, 96]"
+121,Health,Training,41.929384,46.172506,28-10-2023 13:23,28-10-2023 19:23,Projector,1,Administrative,Planned,Maintenance of office equipment,None,[107]
+122,Education,Report,23.712453,112.139165,11-09-2024 20:28,11-09-2024 22:28,Printer,1,Administrative,Completed,Meeting to discuss quarterly budget,Merge with task 114,[114]
+123,Health,Report,88.042086,15.491051,05-12-2023 14:51,05-12-2023 19:51,Laptop,4,Administrative,Ongoing,Meeting to discuss quarterly budget,None,"[35, 16]"
+124,Education,Report,43.795387,142.069498,17-11-2023 22:50,18-11-2023 05:50,Whiteboard,3,Training,Planned,Report generation for annual review,Reallocate resources,"[119, 103]"
+125,Transport,Report,-75.793139,36.883188,13-01-2024 15:33,13-01-2024 18:33,Scanner,5,Administrative,Completed,Meeting to discuss quarterly budget,Reschedule task 38,"[85, 38]"
+126,Transport,Report,-26.721543,-164.752141,16-12-2023 14:46,16-12-2023 20:46,Scanner,7,Administrative,Planned,Meeting to discuss quarterly budget,None,[]
+127,Finance,Maintenance,2.355484,89.963274,07-10-2023 10:07,07-10-2023 13:07,Laptop,3,Report,Planned,Report generation for annual review,None,[]
+128,Education,Meeting,-47.520832,52.258635,01-08-2024 07:22,01-08-2024 13:22,Printer,10,Construction,Planned,Training on new software,None,"[122, 48, 57]"
+129,Agriculture,Training,5.302779,-36.707743,16-11-2023 19:43,17-11-2023 00:43,Projector,2,Construction,Planned,Training on new software,None,"[100, 31, 68]"
+130,Health,Training,89.34572,-77.192324,05-05-2024 09:51,05-05-2024 17:51,Projector,2,Maintenance,Completed,Report generation for annual review,None,[114]
+131,Agriculture,Maintenance,37.717288,17.998973,22-06-2024 01:10,22-06-2024 06:10,Whiteboard,3,Maintenance,Ongoing,Presentation preparation for stakeholders,None,[32]
+132,Health,Training,52.267151,-170.53775,23-09-2023 15:24,23-09-2023 21:24,Printer,9,Maintenance,Planned,Meeting to discuss quarterly budget,None,[]
+133,Health,Report,89.927108,78.793078,13-02-2024 16:23,13-02-2024 23:23,Printer,10,Construction,Completed,Maintenance of office equipment,None,[]
+134,Education,Report,32.419618,-55.974679,14-02-2024 18:41,14-02-2024 21:41,Projector,7,Report,Completed,Meeting to discuss quarterly budget,Merge with task 78,[78]
+135,Education,Maintenance,80.546965,6.803206,29-02-2024 22:32,01-03-2024 03:32,Laptop,5,Maintenance,Planned,Presentation preparation for stakeholders,Reallocate resources,"[33, 78]"
+136,Education,Presentation,25.377737,33.05104,26-09-2023 08:29,26-09-2023 11:29,Projector,10,Report,Ongoing,Presentation preparation for stakeholders,None,[]
+137,Agriculture,Meeting,-81.816875,50.923344,27-07-2024 00:08,27-07-2024 05:08,Projector,10,Training,Planned,Meeting to discuss quarterly budget,Merge with task 124,"[75, 78, 124]"
+138,Agriculture,Maintenance,-8.362056,67.900886,09-09-2024 23:58,10-09-2024 02:58,Printer,7,Training,Ongoing,Training on new software,None,"[37, 81]"
+139,Finance,Maintenance,85.567343,-132.924185,02-07-2024 18:48,03-07-2024 00:48,Scanner,9,Construction,Ongoing,Training on new software,Merge with task 32,"[32, 69, 116]"
+140,Health,Maintenance,80.169281,131.098986,27-07-2024 18:04,28-07-2024 01:04,Projector,3,Administrative,Planned,Maintenance of office equipment,Reschedule task 41,[41]
+141,Agriculture,Maintenance,-0.473351,-147.582326,19-08-2024 00:37,19-08-2024 07:37,Scanner,8,Maintenance,Completed,Presentation preparation for stakeholders,Reschedule task 73,"[13, 73]"
+142,Agriculture,Presentation,-88.528067,-141.30105,16-02-2024 02:02,16-02-2024 05:02,Whiteboard,6,Training,Ongoing,Meeting to discuss quarterly budget,Reallocate resources,"[14, 50, 93]"
+143,Finance,Report,0.765995,95.185481,14-07-2024 01:42,14-07-2024 06:42,Scanner,10,Construction,Completed,Meeting to discuss quarterly budget,None,"[96, 87, 94]"
+144,Agriculture,Presentation,1.642053,0.028045,24-03-2024 22:23,24-03-2024 23:23,Laptop,3,Administrative,Ongoing,Presentation preparation for stakeholders,Reschedule task 36,"[39, 132, 36]"
+145,Education,Training,-19.268174,41.940175,18-02-2024 05:59,18-02-2024 10:59,Scanner,6,Report,Planned,Presentation preparation for stakeholders,Reschedule task 5,"[77, 122, 5]"
+146,Education,Report,15.066386,106.831733,15-07-2024 18:13,15-07-2024 19:13,Scanner,8,Administrative,Planned,Presentation preparation for stakeholders,Reallocate resources,[14]
+147,Transport,Presentation,23.224543,43.10489,20-10-2023 08:53,20-10-2023 15:53,Projector,4,Construction,Planned,Meeting to discuss quarterly budget,Reschedule task 5,[5]
+148,Transport,Report,34.290047,-32.264133,17-02-2024 09:00,17-02-2024 17:00,Laptop,3,Report,Completed,Presentation preparation for stakeholders,Reschedule task 123,"[123, 135]"
+149,Finance,Presentation,-28.381137,-52.456684,06-04-2024 18:03,06-04-2024 23:03,Scanner,8,Maintenance,Completed,Maintenance of office equipment,None,"[58, 77]"
+150,Transport,Report,-32.932666,-54.430857,01-01-2024 21:29,02-01-2024 02:29,Whiteboard,2,Report,Planned,Presentation preparation for stakeholders,Merge with task 89,"[102, 89, 38]"
+151,Transport,Maintenance,76.321734,56.149938,06-05-2024 00:12,06-05-2024 08:12,Projector,4,Report,Ongoing,Presentation preparation for stakeholders,Reallocate resources,"[36, 28]"
+152,Education,Training,-46.357553,61.140227,22-11-2023 15:46,22-11-2023 19:46,Projector,1,Construction,Ongoing,Maintenance of office equipment,None,"[26, 36, 2]"
+153,Finance,Report,27.520704,137.033085,06-01-2024 16:13,07-01-2024 00:13,Printer,4,Administrative,Ongoing,Maintenance of office equipment,None,[]
+154,Health,Presentation,-48.200364,85.927148,21-08-2024 09:28,21-08-2024 10:28,Projector,7,Maintenance,Completed,Report generation for annual review,Merge with task 10,"[48, 75, 10]"
+155,Health,Meeting,77.121872,-59.384839,16-03-2024 07:38,16-03-2024 15:38,Scanner,9,Training,Completed,Presentation preparation for stakeholders,Reschedule task 29,"[70, 50, 29]"
+156,Education,Maintenance,39.347671,-174.92969,09-09-2024 09:57,09-09-2024 15:57,Whiteboard,10,Maintenance,Completed,Presentation preparation for stakeholders,Merge with task 84,"[110, 132, 84]"
+157,Education,Training,86.703335,-8.116525,17-05-2024 10:03,17-05-2024 14:03,Laptop,5,Training,Completed,Report generation for annual review,Reallocate resources,"[85, 78]"
+158,Transport,Meeting,-42.920433,-50.561247,25-03-2024 01:00,25-03-2024 05:00,Laptop,2,Training,Ongoing,Training on new software,Reallocate resources,"[129, 80, 31]"
+159,Education,Maintenance,20.632581,-101.113704,30-11-2023 00:17,30-11-2023 03:17,Printer,3,Training,Planned,Presentation preparation for stakeholders,None,"[107, 141]"
+160,Transport,Training,47.134732,64.923091,23-03-2024 08:32,23-03-2024 10:32,Scanner,8,Report,Planned,Maintenance of office equipment,None,[]
+161,Agriculture,Meeting,-78.883551,17.15373,09-03-2024 15:15,09-03-2024 19:15,Scanner,9,Maintenance,Completed,Maintenance of office equipment,Reschedule task 150,"[30, 53, 150]"
+162,Education,Meeting,-8.382186,4.769224,16-01-2024 12:50,16-01-2024 20:50,Scanner,1,Report,Ongoing,Maintenance of office equipment,None,[]
+163,Finance,Maintenance,56.961581,88.489614,03-07-2024 04:07,03-07-2024 06:07,Laptop,7,Administrative,Planned,Meeting to discuss quarterly budget,None,[]
+164,Agriculture,Report,-84.287723,-32.807903,27-10-2023 08:29,27-10-2023 11:29,Printer,6,Training,Ongoing,Report generation for annual review,Reallocate resources,"[21, 139, 35]"
+165,Transport,Meeting,-57.874747,13.413055,29-09-2023 06:26,29-09-2023 09:26,Projector,1,Construction,Ongoing,Report generation for annual review,Merge with task 98,"[137, 98, 59]"
+166,Finance,Maintenance,-56.073519,135.074943,13-06-2024 07:10,13-06-2024 09:10,Laptop,7,Report,Completed,Training on new software,Merge with task 18,[18]
+167,Agriculture,Presentation,30.964255,133.99647,15-03-2024 10:29,15-03-2024 14:29,Laptop,7,Training,Completed,Presentation preparation for stakeholders,Merge with task 15,[15]
+168,Transport,Presentation,-32.597335,35.250363,06-04-2024 16:17,06-04-2024 22:17,Projector,5,Maintenance,Planned,Presentation preparation for stakeholders,Reschedule task 106,[106]
+169,Transport,Presentation,68.3485,148.16796,10-02-2024 01:14,10-02-2024 08:14,Scanner,8,Construction,Ongoing,Report generation for annual review,Merge with task 105,"[107, 105]"
+170,Education,Presentation,-4.766612,125.762736,15-07-2024 15:20,15-07-2024 20:20,Projector,8,Construction,Planned,Report generation for annual review,Reschedule task 136,"[143, 136, 35]"
+171,Agriculture,Maintenance,26.407053,152.001398,06-09-2024 09:03,06-09-2024 15:03,Laptop,9,Maintenance,Completed,Maintenance of office equipment,Merge with task 19,"[155, 11, 19]"
+172,Health,Training,-3.709043,133.010587,10-03-2024 11:50,10-03-2024 17:50,Whiteboard,1,Maintenance,Completed,Meeting to discuss quarterly budget,Reschedule task 63,"[63, 155, 53]"
+173,Health,Maintenance,49.592499,-42.961772,12-09-2024 21:46,13-09-2024 03:46,Whiteboard,5,Administrative,Planned,Report generation for annual review,None,"[26, 121, 82]"
+174,Transport,Maintenance,-15.492569,22.508902,04-04-2024 05:36,04-04-2024 09:36,Projector,1,Administrative,Planned,Presentation preparation for stakeholders,Reschedule task 40,"[76, 40, 51]"
+175,Finance,Training,-0.125733,55.658868,16-05-2024 02:28,16-05-2024 08:28,Whiteboard,8,Training,Ongoing,Training on new software,None,"[44, 36]"
+176,Finance,Training,75.04189,15.169268,23-04-2024 00:26,23-04-2024 01:26,Scanner,1,Construction,Planned,Meeting to discuss quarterly budget,None,[]
+177,Transport,Training,61.658049,-96.683979,07-06-2024 09:36,07-06-2024 12:36,Laptop,4,Report,Ongoing,Maintenance of office equipment,None,[]
+178,Agriculture,Presentation,74.295262,57.342363,29-07-2024 01:07,29-07-2024 02:07,Laptop,9,Report,Ongoing,Meeting to discuss quarterly budget,None,[]
+179,Finance,Maintenance,6.432859,-76.792127,21-03-2024 04:15,21-03-2024 11:15,Projector,2,Construction,Planned,Training on new software,Reallocate resources,[50]
+180,Agriculture,Maintenance,-41.881547,-37.117288,11-11-2023 04:10,11-11-2023 10:10,Printer,8,Report,Completed,Training on new software,Reallocate resources,"[176, 21]"
+181,Education,Meeting,-17.049906,-44.218955,23-08-2024 17:02,24-08-2024 01:02,Laptop,1,Maintenance,Completed,Report generation for annual review,None,"[166, 85, 145]"
+182,Finance,Presentation,75.447399,-97.284061,25-01-2024 22:24,26-01-2024 06:24,Whiteboard,1,Construction,Planned,Maintenance of office equipment,None,[]
+183,Agriculture,Maintenance,-87.181543,-105.423078,12-11-2023 11:23,12-11-2023 14:23,Printer,2,Administrative,Completed,Presentation preparation for stakeholders,None,[146]
+184,Finance,Presentation,-30.288629,92.019335,08-04-2024 07:31,08-04-2024 10:31,Laptop,9,Administrative,Completed,Meeting to discuss quarterly budget,Reallocate resources,"[60, 20, 88]"
+185,Transport,Presentation,-18.593451,98.47977,21-06-2024 09:08,21-06-2024 10:08,Whiteboard,8,Training,Completed,Maintenance of office equipment,Reallocate resources,"[111, 48, 175]"
+186,Education,Meeting,48.990133,-73.663387,27-10-2023 19:59,27-10-2023 23:59,Laptop,2,Administrative,Completed,Report generation for annual review,Reschedule task 100,[100]
+187,Education,Meeting,79.732841,-19.895089,06-08-2024 22:02,07-08-2024 03:02,Laptop,3,Construction,Completed,Report generation for annual review,Merge with task 143,"[143, 132, 105]"
+188,Education,Presentation,-73.248433,35.295767,09-04-2024 21:04,10-04-2024 03:04,Printer,1,Administrative,Ongoing,Report generation for annual review,None,[]
+189,Transport,Training,12.952878,-118.950148,04-11-2023 04:33,04-11-2023 11:33,Projector,3,Administrative,Ongoing,Maintenance of office equipment,Reschedule task 17,"[38, 17, 43]"
+190,Education,Report,50.879992,-49.995032,16-02-2024 16:19,16-02-2024 20:19,Printer,10,Report,Completed,Report generation for annual review,None,[]
+191,Transport,Maintenance,-88.781874,-37.550888,30-06-2024 08:13,30-06-2024 15:13,Whiteboard,8,Administrative,Ongoing,Presentation preparation for stakeholders,Reschedule task 77,[77]
+192,Education,Maintenance,-58.025291,-36.63375,28-12-2023 22:51,29-12-2023 04:51,Whiteboard,8,Report,Completed,Maintenance of office equipment,Merge with task 94,"[72, 101, 94]"
+193,Health,Presentation,89.507687,-115.226203,12-11-2023 21:07,12-11-2023 22:07,Printer,4,Training,Ongoing,Meeting to discuss quarterly budget,Reallocate resources,"[173, 128, 36]"
+194,Health,Maintenance,28.559334,77.485101,28-09-2023 08:53,28-09-2023 15:53,Laptop,8,Report,Ongoing,Presentation preparation for stakeholders,Reschedule task 137,"[137, 130, 178]"
+195,Agriculture,Presentation,16.88759,149.18445,05-11-2023 05:17,05-11-2023 07:17,Projector,6,Maintenance,Planned,Presentation preparation for stakeholders,None,[]
+196,Education,Report,84.026004,-60.625187,05-03-2024 06:35,05-03-2024 13:35,Laptop,1,Construction,Ongoing,Training on new software,Reschedule task 115,[115]
+197,Health,Presentation,-62.865912,179.172981,05-05-2024 06:25,05-05-2024 14:25,Laptop,5,Training,Completed,Meeting to discuss quarterly budget,Reschedule task 90,[90]
+198,Education,Presentation,-3.07332,-8.581489,12-10-2023 00:39,12-10-2023 08:39,Printer,6,Construction,Ongoing,Meeting to discuss quarterly budget,None,[]
+199,Education,Maintenance,26.634585,63.77016,31-03-2024 16:18,31-03-2024 19:18,Projector,9,Maintenance,Planned,Training on new software,None,"[144, 110]"
+200,Health,Report,23.356857,-112.900707,24-07-2024 07:54,24-07-2024 14:54,Printer,1,Report,Completed,Report generation for annual review,Merge with task 2,"[100, 2, 181]"
+201,Finance,Presentation,-71.684631,133.912559,29-11-2023 02:18,29-11-2023 05:18,Whiteboard,6,Maintenance,Ongoing,Meeting to discuss quarterly budget,Reallocate resources,"[172, 126]"
+202,Education,Presentation,-20.044933,-38.684158,01-02-2024 05:15,01-02-2024 07:15,Whiteboard,6,Training,Planned,Training on new software,Merge with task 158,"[158, 152]"
+203,Agriculture,Meeting,-47.056909,-137.898395,28-01-2024 23:48,29-01-2024 05:48,Projector,9,Training,Ongoing,Presentation preparation for stakeholders,Reschedule task 148,[148]
+204,Finance,Presentation,34.817927,52.293634,10-12-2023 19:11,10-12-2023 22:11,Scanner,3,Training,Ongoing,Training on new software,None,[81]
+205,Health,Meeting,65.794002,162.663102,04-12-2023 18:47,05-12-2023 02:47,Projector,4,Training,Planned,Presentation preparation for stakeholders,Reschedule task 176,"[105, 176, 126]"
+206,Agriculture,Training,-75.119287,-168.890146,29-12-2023 02:50,29-12-2023 06:50,Whiteboard,1,Administrative,Completed,Presentation preparation for stakeholders,Reschedule task 200,"[44, 200]"
+207,Finance,Presentation,-69.622021,-138.885606,14-08-2024 09:01,14-08-2024 15:01,Scanner,1,Training,Planned,Training on new software,None,"[27, 189, 168]"
+208,Agriculture,Meeting,-9.048178,-54.512288,13-11-2023 06:04,13-11-2023 08:04,Printer,2,Maintenance,Completed,Presentation preparation for stakeholders,Reallocate resources,"[182, 157]"
+209,Health,Presentation,-64.937706,-105.616924,02-09-2024 13:52,02-09-2024 17:52,Laptop,10,Administrative,Planned,Maintenance of office equipment,None,[83]
+210,Agriculture,Maintenance,13.092404,162.863044,07-04-2024 06:23,07-04-2024 08:23,Projector,7,Construction,Ongoing,Training on new software,Merge with task 64,[64]
+211,Agriculture,Report,-1.897429,27.873191,27-06-2024 23:55,28-06-2024 04:55,Printer,7,Training,Completed,Meeting to discuss quarterly budget,Reallocate resources,"[132, 192, 72]"
+212,Education,Report,81.045734,-62.175859,09-09-2024 22:40,09-09-2024 23:40,Laptop,8,Administrative,Completed,Presentation preparation for stakeholders,Reschedule task 110,"[56, 110, 55]"
+213,Transport,Maintenance,8.515896,-132.98607,17-07-2024 10:08,17-07-2024 18:08,Whiteboard,1,Construction,Completed,Report generation for annual review,None,[]
+214,Transport,Training,-10.568529,-179.756665,03-02-2024 20:52,04-02-2024 03:52,Projector,3,Administrative,Completed,Maintenance of office equipment,None,[]
+215,Transport,Maintenance,-75.164304,59.223172,28-10-2023 13:22,28-10-2023 16:22,Laptop,7,Administrative,Planned,Training on new software,Merge with task 168,"[168, 24, 181]"
+216,Agriculture,Meeting,-66.114037,-98.57129,29-10-2023 12:22,29-10-2023 20:22,Laptop,1,Administrative,Completed,Report generation for annual review,Merge with task 123,[123]
+217,Education,Meeting,-71.423724,-47.677792,17-02-2024 11:55,17-02-2024 16:55,Projector,7,Maintenance,Planned,Training on new software,None,[]
+218,Education,Presentation,-88.474546,54.007277,24-09-2023 00:54,24-09-2023 08:54,Whiteboard,4,Maintenance,Ongoing,Presentation preparation for stakeholders,Merge with task 56,"[56, 23, 26]"
+219,Health,Report,-26.723585,-25.420053,24-08-2024 18:50,24-08-2024 21:50,Projector,5,Construction,Completed,Presentation preparation for stakeholders,Merge with task 177,"[200, 177]"
+220,Health,Presentation,19.246837,-112.087252,22-06-2024 16:29,22-06-2024 23:29,Whiteboard,1,Maintenance,Ongoing,Report generation for annual review,None,[]
+221,Agriculture,Report,24.854819,-154.435679,12-09-2024 19:38,12-09-2024 20:38,Whiteboard,6,Maintenance,Ongoing,Presentation preparation for stakeholders,Merge with task 140,"[94, 140, 175]"
+222,Agriculture,Meeting,15.725429,-175.034367,05-07-2024 15:51,05-07-2024 19:51,Laptop,1,Training,Planned,Maintenance of office equipment,Merge with task 103,"[109, 180, 103]"
+223,Transport,Presentation,-62.51752,-149.905053,26-09-2023 11:38,26-09-2023 13:38,Scanner,4,Maintenance,Planned,Maintenance of office equipment,None,"[151, 163, 196]"
+224,Health,Maintenance,35.761659,82.785016,27-08-2024 06:44,27-08-2024 10:44,Laptop,4,Construction,Ongoing,Meeting to discuss quarterly budget,Reschedule task 15,"[157, 156, 15]"
+225,Health,Meeting,-87.720305,-130.603753,11-11-2023 15:10,11-11-2023 16:10,Projector,8,Administrative,Planned,Presentation preparation for stakeholders,Merge with task 96,"[43, 96]"
+226,Agriculture,Meeting,-29.698015,-25.443155,11-06-2024 22:06,12-06-2024 00:06,Whiteboard,10,Construction,Ongoing,Report generation for annual review,None,"[15, 128]"
+227,Health,Maintenance,-61.684203,98.398423,19-05-2024 20:02,19-05-2024 22:02,Projector,9,Construction,Completed,Meeting to discuss quarterly budget,Reschedule task 12,[12]
+228,Transport,Training,77.608814,128.694671,17-11-2023 20:28,18-11-2023 03:28,Projector,6,Maintenance,Ongoing,Maintenance of office equipment,Reallocate resources,"[212, 20]"
+229,Finance,Presentation,31.198629,-161.038026,24-10-2023 11:53,24-10-2023 15:53,Scanner,1,Training,Completed,Report generation for annual review,Reschedule task 199,"[199, 217]"
+230,Transport,Report,-88.565549,-107.758385,13-08-2024 05:59,13-08-2024 10:59,Scanner,4,Training,Ongoing,Presentation preparation for stakeholders,None,"[198, 199, 51]"
+231,Education,Training,-62.898052,155.663112,19-03-2024 06:41,19-03-2024 07:41,Projector,9,Administrative,Planned,Meeting to discuss quarterly budget,Reallocate resources,"[1, 195]"
+232,Education,Meeting,-53.065013,173.921667,23-07-2024 16:22,23-07-2024 23:22,Printer,1,Maintenance,Planned,Maintenance of office equipment,None,[]
+233,Education,Training,71.511745,7.113319,24-03-2024 03:14,24-03-2024 09:14,Printer,2,Report,Completed,Presentation preparation for stakeholders,None,[164]
+234,Health,Presentation,12.207731,-23.406164,07-08-2024 21:14,08-08-2024 00:14,Projector,5,Administrative,Ongoing,Report generation for annual review,Merge with task 82,"[82, 116]"
+235,Transport,Training,50.388657,30.494893,05-02-2024 06:40,05-02-2024 09:40,Laptop,3,Training,Ongoing,Maintenance of office equipment,None,"[31, 138, 92]"
+236,Agriculture,Report,-34.504611,-84.597146,28-08-2024 19:35,28-08-2024 21:35,Laptop,3,Administrative,Planned,Presentation preparation for stakeholders,None,[]
+237,Health,Maintenance,-63.301716,76.016663,24-08-2024 05:17,24-08-2024 11:17,Printer,9,Construction,Planned,Maintenance of office equipment,Merge with task 45,"[210, 45]"
+238,Finance,Presentation,44.65412,-90.053054,26-07-2024 07:08,26-07-2024 15:08,Laptop,3,Construction,Completed,Meeting to discuss quarterly budget,Merge with task 34,[34]
+239,Finance,Meeting,14.818284,-86.824565,08-04-2024 05:06,08-04-2024 07:06,Laptop,2,Maintenance,Planned,Report generation for annual review,None,[24]
+240,Education,Meeting,-82.314663,-14.041828,16-06-2024 19:57,16-06-2024 22:57,Scanner,7,Training,Ongoing,Meeting to discuss quarterly budget,Reschedule task 175,"[175, 110, 45]"
+241,Health,Maintenance,-9.717942,-126.492693,23-04-2024 04:34,23-04-2024 08:34,Whiteboard,8,Training,Planned,Report generation for annual review,None,[]
+242,Health,Maintenance,-21.05725,-29.075464,21-04-2024 09:01,21-04-2024 13:01,Scanner,1,Training,Planned,Maintenance of office equipment,Reschedule task 125,"[140, 201, 125]"
+243,Health,Maintenance,-20.091371,-115.266285,13-06-2024 05:11,13-06-2024 11:11,Scanner,4,Construction,Ongoing,Meeting to discuss quarterly budget,Reallocate resources,"[136, 92, 197]"
+244,Finance,Training,-71.975819,56.471192,11-11-2023 15:57,11-11-2023 20:57,Scanner,1,Maintenance,Planned,Report generation for annual review,None,"[240, 215]"
+245,Health,Training,-47.420796,-65.518427,29-09-2023 05:46,29-09-2023 11:46,Scanner,1,Administrative,Planned,Presentation preparation for stakeholders,None,[145]
+246,Agriculture,Presentation,-34.370447,-3.442889,01-02-2024 05:13,01-02-2024 07:13,Laptop,4,Report,Completed,Meeting to discuss quarterly budget,Reallocate resources,"[1, 85, 235]"
+247,Education,Maintenance,39.048774,150.761083,09-08-2024 11:08,09-08-2024 17:08,Laptop,1,Maintenance,Planned,Training on new software,None,[]
+248,Health,Maintenance,82.900575,-45.507319,03-12-2023 22:07,04-12-2023 05:07,Scanner,2,Administrative,Ongoing,Maintenance of office equipment,None,[41]
+249,Finance,Report,26.852448,-117.287038,10-12-2023 13:54,10-12-2023 19:54,Projector,10,Maintenance,Ongoing,Maintenance of office equipment,None,"[33, 46]"
+250,Education,Report,63.136254,97.498941,09-02-2024 16:31,09-02-2024 17:31,Projector,10,Administrative,Planned,Training on new software,None,[]
+251,Agriculture,Training,-30.389683,-151.98961,04-10-2023 19:31,05-10-2023 01:31,Whiteboard,3,Construction,Planned,Maintenance of office equipment,Merge with task 3,"[3, 68, 54]"
+252,Finance,Maintenance,51.663601,79.348892,06-06-2024 21:53,06-06-2024 22:53,Printer,8,Training,Completed,Report generation for annual review,Reallocate resources,"[226, 97, 90]"
+253,Agriculture,Report,51.971399,28.099977,16-06-2024 04:52,16-06-2024 08:52,Projector,8,Construction,Completed,Maintenance of office equipment,None,[]
+254,Health,Maintenance,81.299184,-153.287855,10-07-2024 06:06,10-07-2024 09:06,Printer,3,Construction,Planned,Meeting to discuss quarterly budget,Reallocate resources,"[153, 253]"
+255,Agriculture,Meeting,-12.3618,55.308663,19-10-2023 11:27,19-10-2023 18:27,Projector,1,Construction,Ongoing,Training on new software,Reallocate resources,[105]
+256,Finance,Maintenance,28.907621,-72.935767,31-12-2023 06:17,31-12-2023 08:17,Laptop,7,Report,Planned,Report generation for annual review,Reschedule task 14,[14]
+257,Finance,Maintenance,58.301515,45.032743,11-10-2023 23:01,12-10-2023 07:01,Projector,2,Construction,Completed,Training on new software,None,"[42, 243]"
+258,Health,Report,-5.229998,142.155894,02-05-2024 04:58,02-05-2024 09:58,Laptop,9,Training,Completed,Maintenance of office equipment,Merge with task 96,"[190, 96, 229]"
+259,Transport,Maintenance,-49.27639,-83.317682,17-07-2024 15:17,17-07-2024 16:17,Projector,2,Construction,Planned,Maintenance of office equipment,None,"[117, 32, 199]"
+260,Education,Presentation,33.672228,157.090117,08-01-2024 04:13,08-01-2024 08:13,Printer,5,Construction,Ongoing,Meeting to discuss quarterly budget,None,[62]
+261,Health,Training,80.831067,-119.820677,07-02-2024 18:49,07-02-2024 22:49,Projector,3,Construction,Ongoing,Meeting to discuss quarterly budget,Reschedule task 133,"[104, 76, 133]"
+262,Agriculture,Meeting,-20.142152,-36.952202,09-04-2024 11:32,09-04-2024 17:32,Whiteboard,9,Training,Completed,Presentation preparation for stakeholders,Merge with task 77,"[58, 213, 77]"
+263,Transport,Meeting,76.48707,22.566153,14-06-2024 12:15,14-06-2024 14:15,Whiteboard,9,Administrative,Ongoing,Maintenance of office equipment,Merge with task 243,"[249, 243, 20]"
+264,Transport,Presentation,19.557948,69.718051,13-02-2024 16:38,13-02-2024 17:38,Printer,6,Maintenance,Completed,Report generation for annual review,Reschedule task 11,"[191, 11]"
+265,Finance,Maintenance,61.712382,128.964522,06-09-2024 09:51,06-09-2024 11:51,Projector,3,Administrative,Planned,Report generation for annual review,Reallocate resources,"[138, 214]"
+266,Education,Training,-10.491012,148.83581,18-08-2024 20:52,19-08-2024 03:52,Printer,9,Administrative,Completed,Presentation preparation for stakeholders,Reschedule task 34,[34]
+267,Education,Presentation,68.279866,-169.578663,28-02-2024 23:44,29-02-2024 03:44,Projector,1,Maintenance,Completed,Report generation for annual review,None,[]
+268,Transport,Training,-40.68405,116.462265,01-02-2024 13:51,01-02-2024 20:51,Laptop,1,Maintenance,Ongoing,Report generation for annual review,Reschedule task 243,"[91, 243, 180]"
+269,Agriculture,Maintenance,-85.058912,-162.125625,12-03-2024 04:25,12-03-2024 08:25,Projector,4,Maintenance,Ongoing,Report generation for annual review,None,[]
+270,Transport,Report,74.072779,53.05376,04-02-2024 00:20,04-02-2024 01:20,Projector,5,Report,Ongoing,Maintenance of office equipment,Merge with task 179,"[193, 179, 236]"
+271,Health,Presentation,58.375948,-37.025086,09-01-2024 11:22,09-01-2024 13:22,Laptop,9,Administrative,Planned,Presentation preparation for stakeholders,Reschedule task 56,"[153, 56]"
+272,Education,Maintenance,65.068488,-85.987113,25-12-2023 07:22,25-12-2023 12:22,Projector,3,Report,Completed,Meeting to discuss quarterly budget,Reallocate resources,"[164, 72, 14]"
+273,Health,Maintenance,73.244081,-34.344398,23-10-2023 22:15,23-10-2023 23:15,Scanner,10,Maintenance,Ongoing,Training on new software,None,"[184, 260, 154]"
+274,Finance,Training,-37.11887,-10.518886,23-05-2024 15:38,23-05-2024 20:38,Scanner,3,Administrative,Planned,Meeting to discuss quarterly budget,Merge with task 182,[182]
+275,Finance,Maintenance,-23.097163,30.80545,28-04-2024 19:49,29-04-2024 03:49,Laptop,8,Construction,Planned,Presentation preparation for stakeholders,None,[]
+276,Health,Training,0.085927,132.299192,17-01-2024 00:59,17-01-2024 07:59,Scanner,5,Training,Completed,Training on new software,Reschedule task 103,[103]
+277,Education,Maintenance,65.23091,-115.071563,14-08-2024 14:11,14-08-2024 16:11,Printer,6,Maintenance,Ongoing,Meeting to discuss quarterly budget,None,[]
+278,Agriculture,Maintenance,-52.311174,98.475218,24-05-2024 12:47,24-05-2024 15:47,Printer,2,Maintenance,Planned,Report generation for annual review,Reschedule task 207,"[207, 220, 245]"
+279,Education,Training,41.518633,162.024702,08-01-2024 04:37,08-01-2024 10:37,Scanner,4,Construction,Planned,Meeting to discuss quarterly budget,Reallocate resources,[116]
+280,Transport,Maintenance,-66.792456,-41.921829,05-11-2023 19:20,06-11-2023 00:20,Projector,2,Construction,Ongoing,Maintenance of office equipment,Reschedule task 173,"[267, 269, 173]"
+281,Education,Maintenance,89.305005,-3.535674,03-10-2023 07:32,03-10-2023 11:32,Projector,7,Construction,Completed,Training on new software,None,[109]
+282,Agriculture,Presentation,-59.582746,-48.027077,17-04-2024 03:30,17-04-2024 04:30,Printer,5,Report,Planned,Meeting to discuss quarterly budget,None,[]
+283,Finance,Meeting,-81.31769,-138.315663,17-04-2024 13:12,17-04-2024 21:12,Printer,2,Report,Ongoing,Report generation for annual review,Reallocate resources,[106]
+284,Agriculture,Maintenance,-14.243138,-143.647255,08-03-2024 08:06,08-03-2024 13:06,Scanner,10,Maintenance,Ongoing,Meeting to discuss quarterly budget,None,[]
+285,Finance,Meeting,51.256812,-0.813937,03-01-2024 22:57,04-01-2024 02:57,Whiteboard,9,Maintenance,Ongoing,Report generation for annual review,Reallocate resources,"[83, 21]"
+286,Transport,Report,-30.491349,-179.01432,12-12-2023 23:59,13-12-2023 01:59,Laptop,10,Training,Completed,Meeting to discuss quarterly budget,None,[]
+287,Transport,Maintenance,25.980622,-15.569555,23-01-2024 07:11,23-01-2024 12:11,Whiteboard,8,Construction,Completed,Training on new software,None,[]
+288,Transport,Maintenance,54.287298,-67.425441,07-01-2024 22:57,08-01-2024 00:57,Laptop,1,Construction,Completed,Training on new software,None,"[184, 225]"
+289,Agriculture,Meeting,-22.928012,-56.61982,24-11-2023 23:56,25-11-2023 01:56,Printer,7,Training,Ongoing,Report generation for annual review,Merge with task 58,"[216, 86, 58]"
+290,Transport,Training,-71.331641,148.041634,16-08-2024 04:02,16-08-2024 12:02,Scanner,8,Maintenance,Planned,Report generation for annual review,Reschedule task 67,"[15, 67]"
+291,Transport,Report,-10.676182,-157.199023,09-09-2024 12:06,09-09-2024 18:06,Laptop,9,Report,Planned,Presentation preparation for stakeholders,Reallocate resources,[174]
+292,Finance,Meeting,-12.087377,81.594709,11-02-2024 01:32,11-02-2024 09:32,Whiteboard,7,Maintenance,Planned,Presentation preparation for stakeholders,None,[]
+293,Agriculture,Training,1.002163,-11.055983,07-07-2024 19:27,08-07-2024 03:27,Projector,2,Training,Ongoing,Training on new software,Reallocate resources,"[143, 26]"
+294,Health,Report,-17.410141,-95.4,15-03-2024 20:08,16-03-2024 04:08,Printer,10,Training,Completed,Report generation for annual review,None,"[162, 61, 255]"
+295,Agriculture,Meeting,-17.380861,-167.100504,12-04-2024 14:07,12-04-2024 15:07,Laptop,10,Report,Planned,Maintenance of office equipment,None,[234]
+296,Finance,Meeting,56.985964,123.954278,10-07-2024 19:09,11-07-2024 01:09,Scanner,10,Report,Ongoing,Maintenance of office equipment,Merge with task 50,"[59, 50, 114]"
+297,Transport,Presentation,3.957316,72.754579,07-09-2024 15:31,07-09-2024 16:31,Projector,8,Maintenance,Planned,Report generation for annual review,None,[]
+298,Finance,Presentation,-54.734136,-136.531509,20-08-2024 00:02,20-08-2024 07:02,Projector,8,Maintenance,Planned,Maintenance of office equipment,None,[]
+299,Health,Meeting,76.792775,121.487845,31-12-2023 06:10,31-12-2023 08:10,Printer,8,Report,Planned,Training on new software,Reallocate resources,"[3, 272, 25]"
+300,Finance,Presentation,-3.072247,2.999844,27-12-2023 18:33,27-12-2023 21:33,Scanner,3,Maintenance,Completed,Report generation for annual review,Reschedule task 259,"[259, 197]"
+301,Health,Report,83.446837,169.376994,27-11-2023 06:19,27-11-2023 14:19,Projector,3,Training,Planned,Presentation preparation for stakeholders,None,"[281, 161]"
+302,Finance,Training,-53.839965,44.700332,13-11-2023 05:45,13-11-2023 10:45,Whiteboard,3,Maintenance,Planned,Presentation preparation for stakeholders,Reallocate resources,"[60, 181]"
+303,Education,Presentation,79.681257,75.644507,03-01-2024 04:08,03-01-2024 09:08,Printer,1,Report,Completed,Meeting to discuss quarterly budget,Merge with task 75,"[75, 28, 29]"
+304,Agriculture,Maintenance,-63.64289,-157.668183,14-10-2023 07:04,14-10-2023 12:04,Projector,9,Construction,Ongoing,Report generation for annual review,None,[]
+305,Agriculture,Presentation,65.671467,87.268585,12-01-2024 08:45,12-01-2024 15:45,Projector,9,Administrative,Planned,Meeting to discuss quarterly budget,None,"[199, 214, 161]"
+306,Finance,Meeting,43.860594,-106.8886,15-04-2024 15:16,15-04-2024 23:16,Projector,6,Report,Planned,Presentation preparation for stakeholders,Merge with task 100,[100]
+307,Agriculture,Training,83.245545,84.628615,07-10-2023 13:31,07-10-2023 15:31,Printer,1,Training,Ongoing,Presentation preparation for stakeholders,Reallocate resources,"[67, 83]"
+308,Agriculture,Meeting,-30.498698,75.488147,15-08-2024 21:19,16-08-2024 00:19,Laptop,3,Administrative,Planned,Meeting to discuss quarterly budget,Reallocate resources,"[252, 294]"
+309,Agriculture,Maintenance,4.571112,164.515578,04-06-2024 19:46,04-06-2024 21:46,Scanner,3,Training,Planned,Presentation preparation for stakeholders,None,"[48, 179, 114]"
+310,Health,Maintenance,-25.056392,-101.359697,01-01-2024 23:51,02-01-2024 07:51,Scanner,1,Construction,Planned,Maintenance of office equipment,Reallocate resources,"[124, 125, 21]"
+311,Education,Report,74.867837,160.195561,24-08-2024 01:10,24-08-2024 08:10,Whiteboard,9,Administrative,Completed,Presentation preparation for stakeholders,Reschedule task 264,"[264, 261]"
+312,Transport,Training,-32.343704,-150.355639,23-01-2024 11:56,23-01-2024 13:56,Projector,9,Report,Completed,Meeting to discuss quarterly budget,None,[110]
+313,Health,Meeting,-52.995678,118.349522,04-09-2024 17:18,05-09-2024 00:18,Laptop,3,Construction,Ongoing,Maintenance of office equipment,None,[]
+314,Finance,Meeting,-80.231747,105.917323,10-10-2023 04:32,10-10-2023 06:32,Scanner,4,Administrative,Ongoing,Report generation for annual review,Merge with task 162,"[208, 222, 162]"
+315,Education,Presentation,-88.938193,79.302845,18-04-2024 12:54,18-04-2024 14:54,Scanner,1,Construction,Ongoing,Presentation preparation for stakeholders,None,[]
+316,Finance,Maintenance,19.181851,-78.65372,09-10-2023 10:00,09-10-2023 18:00,Printer,7,Construction,Ongoing,Training on new software,None,[70]
+317,Education,Maintenance,82.824168,-128.132807,09-06-2024 23:54,10-06-2024 05:54,Laptop,9,Report,Completed,Meeting to discuss quarterly budget,None,[]
+318,Education,Presentation,17.39788,13.374737,11-03-2024 08:12,11-03-2024 10:12,Whiteboard,4,Administrative,Completed,Report generation for annual review,Merge with task 83,[83]
+319,Finance,Meeting,-57.355563,107.877619,01-05-2024 06:14,01-05-2024 07:14,Scanner,8,Report,Completed,Maintenance of office equipment,None,[]
+320,Health,Meeting,-54.464833,29.014435,19-06-2024 16:17,19-06-2024 22:17,Whiteboard,3,Maintenance,Completed,Maintenance of office equipment,None,[]
+321,Finance,Maintenance,-2.544979,-61.795412,03-03-2024 01:19,03-03-2024 06:19,Scanner,3,Report,Planned,Maintenance of office equipment,Merge with task 220,"[220, 87]"
+322,Agriculture,Report,-40.19763,-50.58504,29-02-2024 20:57,01-03-2024 02:57,Printer,8,Training,Ongoing,Maintenance of office equipment,Reallocate resources,"[283, 56, 90]"
+323,Agriculture,Maintenance,64.568458,-129.599399,07-08-2024 03:56,07-08-2024 07:56,Whiteboard,2,Construction,Completed,Presentation preparation for stakeholders,None,[]
+324,Agriculture,Presentation,-17.075796,32.413072,11-06-2024 05:04,11-06-2024 06:04,Scanner,5,Report,Planned,Report generation for annual review,Reschedule task 188,[188]
+325,Health,Report,0.202171,-147.400551,13-04-2024 14:55,13-04-2024 20:55,Scanner,1,Maintenance,Planned,Training on new software,Merge with task 229,[229]
+326,Agriculture,Maintenance,-82.724431,94.130056,19-02-2024 10:13,19-02-2024 14:13,Laptop,5,Administrative,Completed,Meeting to discuss quarterly budget,None,[266]
+327,Agriculture,Report,-5.458639,-16.328358,30-08-2024 02:35,30-08-2024 03:35,Laptop,6,Construction,Planned,Presentation preparation for stakeholders,Reallocate resources,"[135, 297]"
+328,Finance,Report,27.661556,-48.49316,04-08-2024 19:11,04-08-2024 21:11,Scanner,5,Training,Completed,Presentation preparation for stakeholders,None,"[181, 177, 250]"
+329,Education,Meeting,0.330657,-129.971409,18-07-2024 10:07,18-07-2024 13:07,Projector,2,Report,Planned,Maintenance of office equipment,Merge with task 77,[77]
+330,Health,Meeting,28.999736,-30.739073,30-07-2024 09:47,30-07-2024 15:47,Laptop,8,Training,Ongoing,Training on new software,Merge with task 211,[211]
+331,Finance,Presentation,16.622579,-131.499343,13-06-2024 15:35,13-06-2024 16:35,Scanner,3,Construction,Completed,Maintenance of office equipment,None,[265]
+332,Health,Presentation,24.772087,136.263234,13-04-2024 15:37,13-04-2024 20:37,Laptop,4,Training,Planned,Report generation for annual review,Reallocate resources,"[88, 113, 211]"
+333,Finance,Training,22.178113,3.889767,15-02-2024 20:48,15-02-2024 23:48,Whiteboard,8,Report,Planned,Meeting to discuss quarterly budget,Reschedule task 194,[194]
+334,Health,Training,4.088042,147.36212,25-11-2023 01:50,25-11-2023 08:50,Projector,10,Construction,Completed,Report generation for annual review,None,[]
+335,Education,Presentation,45.428967,-146.451612,07-02-2024 18:03,07-02-2024 21:03,Scanner,9,Construction,Planned,Report generation for annual review,Reschedule task 23,"[190, 23, 272]"
+336,Education,Maintenance,16.028656,86.901855,29-08-2024 20:16,29-08-2024 22:16,Printer,3,Administrative,Ongoing,Training on new software,None,[]
+337,Agriculture,Presentation,67.817936,-32.887186,26-12-2023 19:20,26-12-2023 23:20,Laptop,1,Report,Planned,Meeting to discuss quarterly budget,None,[]
+338,Agriculture,Training,33.798013,-66.275383,28-08-2024 16:33,28-08-2024 22:33,Laptop,3,Training,Planned,Presentation preparation for stakeholders,Reschedule task 275,"[134, 275]"
+339,Education,Maintenance,88.523761,-36.916507,19-06-2024 10:38,19-06-2024 14:38,Printer,9,Report,Ongoing,Training on new software,Reschedule task 285,"[287, 285]"
+340,Agriculture,Maintenance,49.355007,-36.673289,05-01-2024 07:35,05-01-2024 10:35,Laptop,4,Training,Planned,Training on new software,None,[]
+341,Education,Presentation,-17.899037,-58.162375,07-05-2024 21:26,07-05-2024 22:26,Projector,7,Construction,Completed,Training on new software,Merge with task 308,"[308, 223, 46]"
+342,Health,Meeting,19.625195,80.818097,05-05-2024 11:32,05-05-2024 18:32,Scanner,9,Administrative,Planned,Presentation preparation for stakeholders,None,[]
+343,Education,Report,-10.985031,-107.385393,08-12-2023 00:48,08-12-2023 05:48,Projector,1,Report,Planned,Presentation preparation for stakeholders,Merge with task 315,[315]
+344,Education,Training,27.903441,171.232524,22-10-2023 02:48,22-10-2023 04:48,Whiteboard,7,Administrative,Planned,Report generation for annual review,Merge with task 266,"[301, 103, 266]"
+345,Agriculture,Meeting,8.926678,81.409935,06-02-2024 03:14,06-02-2024 09:14,Whiteboard,5,Maintenance,Planned,Training on new software,Merge with task 295,"[207, 295, 3]"
+346,Education,Meeting,10.553528,1.1409,16-03-2024 00:28,16-03-2024 06:28,Laptop,9,Administrative,Planned,Presentation preparation for stakeholders,Reallocate resources,"[227, 194]"
+347,Health,Maintenance,83.022971,-14.814565,02-11-2023 22:38,03-11-2023 06:38,Scanner,1,Training,Completed,Maintenance of office equipment,None,[]
+348,Finance,Training,31.844336,-97.22515,05-09-2024 06:19,05-09-2024 12:19,Printer,6,Report,Planned,Meeting to discuss quarterly budget,Merge with task 148,"[128, 148]"
+349,Agriculture,Presentation,77.651323,-8.440037,28-06-2024 00:13,28-06-2024 06:13,Projector,10,Administrative,Completed,Training on new software,None,"[103, 121, 124]"
+350,Education,Training,-53.502019,-90.109644,02-04-2024 02:38,02-04-2024 08:38,Projector,2,Construction,Completed,Report generation for annual review,None,[]
+351,Finance,Meeting,62.641907,-46.369247,12-01-2024 18:23,13-01-2024 00:23,Printer,10,Administrative,Ongoing,Training on new software,None,"[204, 114]"
+352,Finance,Meeting,4.63238,-27.656688,12-02-2024 12:50,12-02-2024 13:50,Scanner,6,Training,Planned,Training on new software,Reschedule task 62,"[62, 266, 236]"
+353,Transport,Training,-21.702959,-143.730783,17-04-2024 02:36,17-04-2024 08:36,Scanner,5,Maintenance,Planned,Maintenance of office equipment,Reschedule task 138,[138]
+354,Health,Training,-0.221397,-104.208306,30-10-2023 22:40,31-10-2023 04:40,Whiteboard,7,Administrative,Ongoing,Training on new software,Reallocate resources,[295]
+355,Transport,Maintenance,54.735765,19.922417,28-11-2023 11:34,28-11-2023 18:34,Projector,3,Maintenance,Ongoing,Meeting to discuss quarterly budget,Reschedule task 216,[216]
+356,Health,Maintenance,-44.824674,129.060714,19-03-2024 12:16,19-03-2024 13:16,Printer,2,Maintenance,Completed,Training on new software,Merge with task 323,"[244, 323]"
+357,Transport,Maintenance,-25.144816,20.696936,15-03-2024 03:25,15-03-2024 08:25,Whiteboard,1,Training,Completed,Maintenance of office equipment,Reallocate resources,[296]
+358,Health,Training,86.287164,-77.540857,30-12-2023 09:01,30-12-2023 15:01,Scanner,8,Training,Completed,Report generation for annual review,None,"[238, 324]"
+359,Transport,Maintenance,-14.073032,40.43165,13-12-2023 06:26,13-12-2023 13:26,Laptop,2,Maintenance,Ongoing,Training on new software,Merge with task 335,"[163, 335]"
+360,Transport,Report,-41.175342,-19.83658,11-10-2023 04:56,11-10-2023 10:56,Scanner,9,Training,Ongoing,Training on new software,Merge with task 12,[12]
+361,Finance,Meeting,-52.097132,-37.06359,23-05-2024 08:44,23-05-2024 10:44,Laptop,8,Report,Completed,Meeting to discuss quarterly budget,Merge with task 269,"[269, 43, 54]"
+362,Health,Report,-34.313282,-90.937253,11-06-2024 13:40,11-06-2024 18:40,Printer,3,Maintenance,Planned,Training on new software,None,[]
+363,Education,Maintenance,64.866387,-62.927526,11-04-2024 16:11,12-04-2024 00:11,Printer,9,Administrative,Planned,Report generation for annual review,Reallocate resources,[358]
+364,Transport,Presentation,-7.822184,89.608177,13-03-2024 17:45,14-03-2024 00:45,Scanner,9,Administrative,Ongoing,Report generation for annual review,Reschedule task 46,[46]
+365,Agriculture,Maintenance,-61.970843,-176.199905,16-11-2023 20:12,16-11-2023 23:12,Whiteboard,5,Training,Planned,Meeting to discuss quarterly budget,None,"[245, 154, 5]"
+366,Agriculture,Presentation,-48.381229,-177.401525,03-01-2024 13:28,03-01-2024 19:28,Projector,7,Report,Ongoing,Report generation for annual review,None,[84]
+367,Health,Report,-50.293363,-151.484496,03-12-2023 10:36,03-12-2023 14:36,Scanner,10,Administrative,Ongoing,Presentation preparation for stakeholders,None,"[212, 97]"
+368,Agriculture,Training,-37.872846,49.281375,09-11-2023 12:30,09-11-2023 20:30,Whiteboard,10,Training,Completed,Maintenance of office equipment,None,[]
+369,Transport,Meeting,84.548919,-172.032881,24-03-2024 05:21,24-03-2024 07:21,Whiteboard,5,Maintenance,Planned,Report generation for annual review,None,[]
+370,Education,Meeting,-62.876935,-2.311361,29-12-2023 19:33,30-12-2023 01:33,Printer,5,Training,Ongoing,Report generation for annual review,None,[]
+371,Education,Meeting,61.838334,162.591855,09-04-2024 06:35,09-04-2024 07:35,Whiteboard,7,Construction,Planned,Report generation for annual review,None,[99]
+372,Health,Report,59.085369,-136.09384,02-06-2024 15:58,02-06-2024 19:58,Printer,8,Maintenance,Planned,Meeting to discuss quarterly budget,None,[236]
+373,Transport,Presentation,29.881419,-104.959032,10-10-2023 09:53,10-10-2023 16:53,Whiteboard,6,Maintenance,Planned,Meeting to discuss quarterly budget,None,[]
+374,Finance,Report,24.933602,-108.459493,28-10-2023 06:32,28-10-2023 07:32,Projector,2,Maintenance,Planned,Report generation for annual review,None,"[8, 86]"
+375,Education,Meeting,-18.754506,-92.48784,29-09-2023 11:18,29-09-2023 12:18,Scanner,8,Report,Completed,Maintenance of office equipment,None,[]
+376,Transport,Training,-0.014543,66.940072,22-11-2023 06:02,22-11-2023 12:02,Laptop,1,Administrative,Planned,Training on new software,None,[]
+377,Finance,Report,-48.118566,173.403256,26-03-2024 22:34,27-03-2024 04:34,Printer,4,Construction,Planned,Report generation for annual review,Merge with task 371,"[371, 69]"
+378,Transport,Report,10.624462,15.384268,29-06-2024 15:36,29-06-2024 23:36,Projector,10,Maintenance,Planned,Maintenance of office equipment,Merge with task 375,"[375, 240]"
+379,Finance,Presentation,-62.095414,-73.557842,07-06-2024 12:57,07-06-2024 17:57,Scanner,6,Training,Completed,Presentation preparation for stakeholders,Reallocate resources,"[376, 95, 10]"
+380,Education,Presentation,-47.01842,79.561283,25-06-2024 20:10,26-06-2024 03:10,Projector,9,Training,Planned,Training on new software,Reallocate resources,"[166, 210]"
+381,Finance,Meeting,4.176097,-155.995256,24-03-2024 11:58,24-03-2024 14:58,Projector,1,Maintenance,Completed,Report generation for annual review,Merge with task 51,[51]
+382,Agriculture,Presentation,22.314687,32.508328,16-09-2023 07:05,16-09-2023 08:05,Whiteboard,4,Report,Planned,Meeting to discuss quarterly budget,None,[]
+383,Agriculture,Report,77.112669,119.547971,16-12-2023 13:50,16-12-2023 21:50,Laptop,6,Report,Planned,Report generation for annual review,None,"[363, 30]"
+384,Finance,Presentation,-82.682433,-154.660273,12-10-2023 20:39,13-10-2023 01:39,Laptop,4,Report,Completed,Meeting to discuss quarterly budget,Reschedule task 273,[273]
+385,Transport,Training,12.60498,161.101204,03-12-2023 11:01,03-12-2023 18:01,Laptop,10,Administrative,Planned,Report generation for annual review,Reallocate resources,"[54, 86, 93]"
+386,Health,Maintenance,28.355739,12.204172,04-06-2024 09:12,04-06-2024 17:12,Whiteboard,6,Report,Ongoing,Maintenance of office equipment,Reschedule task 325,"[325, 221, 372]"
+387,Transport,Presentation,-51.492936,95.654959,04-11-2023 06:11,04-11-2023 11:11,Whiteboard,8,Training,Ongoing,Meeting to discuss quarterly budget,None,[]
+388,Finance,Presentation,-87.065559,-131.369145,15-01-2024 02:31,15-01-2024 07:31,Laptop,5,Maintenance,Completed,Maintenance of office equipment,None,[]
+389,Finance,Presentation,2.028868,25.440554,09-06-2024 10:58,09-06-2024 13:58,Laptop,1,Training,Ongoing,Training on new software,Reschedule task 136,[136]
+390,Transport,Maintenance,55.993363,-146.914156,25-01-2024 15:09,25-01-2024 22:09,Scanner,4,Construction,Planned,Maintenance of office equipment,None,"[89, 250, 354]"
+391,Agriculture,Presentation,25.605832,-166.546225,15-03-2024 23:15,16-03-2024 06:15,Laptop,1,Administrative,Ongoing,Report generation for annual review,Reallocate resources,"[62, 117, 383]"
+392,Finance,Meeting,24.099679,47.589703,04-11-2023 10:21,04-11-2023 11:21,Whiteboard,9,Construction,Ongoing,Presentation preparation for stakeholders,Reallocate resources,[168]
+393,Transport,Training,-80.906433,83.368286,21-08-2024 16:23,21-08-2024 23:23,Printer,10,Report,Planned,Meeting to discuss quarterly budget,Merge with task 222,[222]
+394,Transport,Training,-29.489728,-8.692324,21-06-2024 20:17,21-06-2024 21:17,Scanner,7,Administrative,Completed,Report generation for annual review,Merge with task 391,"[358, 67, 391]"
+395,Transport,Report,-18.842615,25.679046,23-05-2024 01:03,23-05-2024 05:03,Projector,2,Administrative,Ongoing,Maintenance of office equipment,None,[]
+396,Health,Report,-13.762692,-54.609172,01-03-2024 17:38,01-03-2024 23:38,Whiteboard,10,Construction,Ongoing,Training on new software,Reallocate resources,"[316, 227]"
+397,Agriculture,Meeting,76.358377,-95.943745,11-10-2023 16:54,11-10-2023 22:54,Projector,2,Construction,Planned,Meeting to discuss quarterly budget,None,[318]
+398,Education,Meeting,-28.211153,109.541079,25-11-2023 21:00,26-11-2023 02:00,Printer,8,Construction,Ongoing,Training on new software,Reallocate resources,[105]
+399,Transport,Presentation,-3.055261,82.77249,06-09-2024 19:39,06-09-2024 22:39,Laptop,7,Report,Planned,Presentation preparation for stakeholders,None,[]
+400,Finance,Training,-79.180191,-107.749419,05-06-2024 08:14,05-06-2024 13:14,Laptop,8,Construction,Completed,Report generation for annual review,Reschedule task 340,"[340, 338]"
+401,Transport,Maintenance,66.13388,53.788012,09-03-2024 13:22,09-03-2024 17:22,Printer,9,Construction,Ongoing,Report generation for annual review,None,[]
+402,Health,Training,0.117148,-15.124946,30-04-2024 03:11,30-04-2024 04:11,Laptop,4,Report,Ongoing,Maintenance of office equipment,Merge with task 81,"[202, 382, 81]"
+403,Health,Maintenance,22.541575,-94.966284,26-08-2024 02:26,26-08-2024 07:26,Laptop,5,Training,Completed,Presentation preparation for stakeholders,Reschedule task 78,"[116, 78]"
+404,Education,Meeting,41.38014,7.458424,19-10-2023 13:17,19-10-2023 17:17,Printer,4,Report,Completed,Report generation for annual review,Reschedule task 310,"[310, 169]"
+405,Agriculture,Training,14.585526,66.257509,13-05-2024 19:38,13-05-2024 23:38,Projector,5,Report,Completed,Report generation for annual review,None,[336]
+406,Finance,Maintenance,-77.793473,11.866157,15-01-2024 07:58,15-01-2024 09:58,Projector,6,Maintenance,Planned,Meeting to discuss quarterly budget,Reschedule task 211,"[212, 211]"
+407,Finance,Training,-70.781142,-113.491261,19-12-2023 11:44,19-12-2023 16:44,Scanner,10,Report,Completed,Presentation preparation for stakeholders,Reallocate resources,[119]
+408,Transport,Meeting,33.865431,-8.423201,12-07-2024 20:40,13-07-2024 04:40,Whiteboard,3,Training,Ongoing,Report generation for annual review,Merge with task 84,[84]
+409,Agriculture,Meeting,76.578315,162.071295,15-05-2024 09:53,15-05-2024 13:53,Projector,4,Construction,Completed,Report generation for annual review,None,"[353, 167, 235]"
+410,Transport,Report,49.718649,38.854785,09-03-2024 09:11,09-03-2024 16:11,Whiteboard,7,Report,Planned,Presentation preparation for stakeholders,None,[]
+411,Transport,Meeting,-8.710273,117.723637,25-12-2023 23:47,26-12-2023 00:47,Projector,9,Report,Ongoing,Meeting to discuss quarterly budget,None,"[265, 392, 323]"
+412,Finance,Maintenance,-10.880303,138.383127,05-03-2024 00:33,05-03-2024 05:33,Printer,3,Training,Ongoing,Presentation preparation for stakeholders,None,[]
+413,Agriculture,Training,-6.555788,52.596543,10-09-2024 15:41,10-09-2024 17:41,Scanner,2,Maintenance,Planned,Presentation preparation for stakeholders,Reschedule task 202,[202]
+414,Education,Training,-8.337468,142.782303,23-10-2023 03:22,23-10-2023 07:22,Printer,2,Administrative,Ongoing,Training on new software,None,[]
+415,Finance,Meeting,37.120808,48.266071,23-07-2024 12:56,23-07-2024 14:56,Scanner,7,Report,Planned,Training on new software,None,"[282, 195, 23]"
+416,Finance,Presentation,66.834973,130.562092,14-10-2023 05:00,14-10-2023 08:00,Projector,3,Construction,Ongoing,Maintenance of office equipment,None,"[374, 394]"
+417,Education,Training,-68.840284,-132.634429,20-04-2024 05:19,20-04-2024 09:19,Laptop,10,Administrative,Completed,Report generation for annual review,Merge with task 279,"[256, 279, 414]"
+418,Agriculture,Training,15.995219,-8.743684,24-12-2023 15:48,24-12-2023 22:48,Printer,2,Report,Planned,Meeting to discuss quarterly budget,Merge with task 281,[281]
+419,Agriculture,Training,-63.31389,55.179676,22-05-2024 02:03,22-05-2024 03:03,Projector,1,Report,Planned,Maintenance of office equipment,Merge with task 45,"[45, 26]"
+420,Finance,Maintenance,19.996156,68.944903,18-08-2024 03:13,18-08-2024 06:13,Printer,10,Administrative,Completed,Meeting to discuss quarterly budget,None,"[166, 189]"
+421,Agriculture,Report,61.795733,-156.626688,12-07-2024 10:55,12-07-2024 18:55,Projector,2,Administrative,Ongoing,Presentation preparation for stakeholders,Merge with task 269,"[269, 108, 357]"
+422,Agriculture,Presentation,41.351134,46.432296,06-03-2024 04:12,06-03-2024 06:12,Printer,10,Administrative,Ongoing,Presentation preparation for stakeholders,Reallocate resources,"[133, 270]"
+423,Finance,Maintenance,76.878966,41.144393,19-09-2023 07:34,19-09-2023 15:34,Scanner,8,Training,Completed,Presentation preparation for stakeholders,Merge with task 363,[363]
+424,Education,Meeting,-85.682376,45.165867,09-09-2024 09:18,09-09-2024 11:18,Projector,10,Training,Ongoing,Meeting to discuss quarterly budget,None,"[180, 287]"
+425,Health,Meeting,25.311296,68.406142,22-06-2024 06:37,22-06-2024 11:37,Laptop,5,Administrative,Planned,Presentation preparation for stakeholders,Merge with task 4,"[393, 4]"
+426,Transport,Report,40.391396,41.757603,26-06-2024 14:31,26-06-2024 15:31,Projector,4,Administrative,Ongoing,Report generation for annual review,Merge with task 409,"[409, 19, 331]"
+427,Agriculture,Presentation,71.267148,-13.510773,13-04-2024 06:13,13-04-2024 13:13,Laptop,9,Administrative,Planned,Maintenance of office equipment,None,[]
+428,Health,Presentation,33.388794,107.83272,04-06-2024 17:48,04-06-2024 23:48,Laptop,3,Administrative,Completed,Maintenance of office equipment,Reallocate resources,"[321, 274, 85]"
+429,Education,Training,17.134536,131.253729,20-07-2024 09:10,20-07-2024 14:10,Whiteboard,1,Administrative,Ongoing,Meeting to discuss quarterly budget,None,"[122, 191, 232]"
+430,Education,Training,4.518076,-116.995412,06-11-2023 11:47,06-11-2023 17:47,Laptop,4,Construction,Ongoing,Presentation preparation for stakeholders,None,[]
+431,Health,Presentation,-62.266,-57.558274,22-07-2024 23:23,23-07-2024 07:23,Scanner,5,Administrative,Completed,Meeting to discuss quarterly budget,None,[106]
+432,Finance,Report,38.46193,8.044154,19-11-2023 10:04,19-11-2023 11:04,Whiteboard,1,Report,Completed,Maintenance of office equipment,None,"[24, 53, 267]"
+433,Finance,Meeting,13.96077,-67.628557,05-10-2023 22:45,06-10-2023 02:45,Whiteboard,4,Maintenance,Ongoing,Maintenance of office equipment,Reallocate resources,"[396, 226]"
+434,Finance,Training,-61.650717,-138.794258,04-07-2024 21:53,04-07-2024 23:53,Projector,9,Administrative,Planned,Maintenance of office equipment,None,"[73, 361]"
+435,Transport,Training,-59.170504,-67.904079,26-05-2024 05:58,26-05-2024 11:58,Scanner,8,Construction,Completed,Meeting to discuss quarterly budget,Reschedule task 346,"[346, 26, 55]"
+436,Transport,Report,-57.783061,34.603691,07-11-2023 07:54,07-11-2023 15:54,Scanner,6,Administrative,Ongoing,Training on new software,None,[]
+437,Transport,Presentation,-66.27685,112.626366,14-06-2024 13:06,14-06-2024 21:06,Laptop,8,Administrative,Planned,Report generation for annual review,None,"[119, 115, 74]"
+438,Finance,Maintenance,74.31509,-38.852309,29-10-2023 19:51,30-10-2023 01:51,Whiteboard,8,Training,Completed,Meeting to discuss quarterly budget,Reschedule task 58,"[58, 180, 246]"
+439,Education,Maintenance,18.799242,-134.138159,03-02-2024 12:46,03-02-2024 14:46,Printer,2,Administrative,Planned,Meeting to discuss quarterly budget,Reschedule task 237,"[273, 237]"
+440,Agriculture,Presentation,-46.135609,-122.752696,08-02-2024 11:45,08-02-2024 19:45,Printer,2,Administrative,Completed,Presentation preparation for stakeholders,None,"[402, 223, 291]"
+441,Education,Training,-58.844618,61.057871,11-11-2023 03:25,11-11-2023 11:25,Laptop,10,Report,Ongoing,Maintenance of office equipment,None,[]
+442,Transport,Training,-34.55357,-33.914269,01-11-2023 11:36,01-11-2023 13:36,Scanner,7,Administrative,Ongoing,Meeting to discuss quarterly budget,None,[]
+443,Agriculture,Training,69.707077,145.172162,21-04-2024 12:54,21-04-2024 13:54,Projector,3,Training,Planned,Maintenance of office equipment,Merge with task 229,"[316, 296, 229]"
+444,Agriculture,Maintenance,12.649753,148.753535,21-02-2024 07:30,21-02-2024 12:30,Printer,6,Construction,Planned,Meeting to discuss quarterly budget,Merge with task 66,"[434, 66, 437]"
+445,Transport,Meeting,-89.848203,21.610893,13-12-2023 12:35,13-12-2023 18:35,Laptop,5,Construction,Completed,Report generation for annual review,Reschedule task 163,"[321, 163, 365]"
+446,Finance,Presentation,-51.981107,-117.572362,17-11-2023 04:17,17-11-2023 07:17,Projector,9,Training,Ongoing,Report generation for annual review,None,[148]
+447,Education,Training,-87.911505,53.420127,30-11-2023 04:43,30-11-2023 07:43,Printer,7,Maintenance,Completed,Training on new software,Reallocate resources,"[441, 234, 404]"
+448,Agriculture,Presentation,-57.636472,3.389369,23-11-2023 23:19,24-11-2023 07:19,Printer,6,Maintenance,Completed,Report generation for annual review,None,[]
+449,Finance,Report,62.4247,-94.770012,17-01-2024 09:24,17-01-2024 14:24,Printer,9,Report,Ongoing,Meeting to discuss quarterly budget,None,[]
+450,Transport,Report,36.878858,-139.260827,24-08-2024 21:14,25-08-2024 05:14,Laptop,3,Report,Ongoing,Report generation for annual review,None,[]
+451,Agriculture,Presentation,-74.079657,-9.917434,21-01-2024 15:26,21-01-2024 17:26,Scanner,10,Administrative,Planned,Meeting to discuss quarterly budget,Merge with task 399,"[274, 399]"
+452,Transport,Report,13.313754,-60.654964,07-03-2024 12:43,07-03-2024 18:43,Whiteboard,5,Maintenance,Completed,Presentation preparation for stakeholders,Reallocate resources,"[373, 402]"
+453,Health,Report,14.065396,26.229598,04-03-2024 13:11,04-03-2024 18:11,Scanner,1,Administrative,Ongoing,Meeting to discuss quarterly budget,Merge with task 259,[259]
+454,Education,Training,20.843597,-80.921839,25-04-2024 05:32,25-04-2024 10:32,Laptop,2,Report,Completed,Presentation preparation for stakeholders,Reschedule task 338,[338]
+455,Education,Training,-2.714668,107.773922,15-07-2024 11:36,15-07-2024 12:36,Whiteboard,2,Maintenance,Planned,Training on new software,Reschedule task 395,"[386, 212, 395]"
+456,Agriculture,Training,-52.045785,84.37,03-02-2024 00:27,03-02-2024 06:27,Laptop,5,Construction,Completed,Training on new software,Reschedule task 155,"[205, 244, 155]"
+457,Agriculture,Report,33.031793,-39.574625,09-03-2024 10:17,09-03-2024 15:17,Projector,9,Training,Completed,Maintenance of office equipment,None,"[196, 348, 162]"
+458,Health,Meeting,75.188185,49.472694,12-08-2024 07:13,12-08-2024 14:13,Scanner,5,Administrative,Ongoing,Maintenance of office equipment,None,[]
+459,Finance,Presentation,-19.592323,98.334366,30-06-2024 18:19,30-06-2024 22:19,Scanner,4,Report,Ongoing,Training on new software,Reallocate resources,"[281, 6]"
+460,Education,Meeting,-15.975222,9.095135,01-01-2024 15:15,01-01-2024 23:15,Whiteboard,4,Administrative,Ongoing,Training on new software,None,[]
+461,Education,Presentation,-73.450569,157.861968,10-07-2024 02:58,10-07-2024 06:58,Scanner,2,Construction,Completed,Presentation preparation for stakeholders,Reallocate resources,[193]
+462,Transport,Training,71.280293,70.435308,04-02-2024 02:49,04-02-2024 07:49,Whiteboard,8,Construction,Planned,Report generation for annual review,Reallocate resources,"[394, 219]"
+463,Agriculture,Maintenance,-60.846114,-153.361058,30-11-2023 06:33,30-11-2023 07:33,Printer,7,Administrative,Completed,Maintenance of office equipment,Merge with task 92,"[92, 226]"
+464,Health,Report,-57.880409,-2.859374,31-01-2024 19:21,31-01-2024 22:21,Scanner,7,Maintenance,Planned,Meeting to discuss quarterly budget,Merge with task 367,"[367, 133, 53]"
+465,Transport,Maintenance,49.90269,-173.244674,14-01-2024 11:27,14-01-2024 19:27,Projector,1,Construction,Planned,Report generation for annual review,Reschedule task 359,"[78, 359]"
+466,Finance,Meeting,2.768941,158.367986,07-07-2024 20:29,08-07-2024 04:29,Printer,7,Training,Planned,Meeting to discuss quarterly budget,Reschedule task 2,[2]
+467,Finance,Presentation,6.354734,176.976497,22-02-2024 00:41,22-02-2024 06:41,Whiteboard,7,Construction,Planned,Meeting to discuss quarterly budget,None,"[274, 437]"
+468,Agriculture,Report,46.881555,-75.614879,31-10-2023 19:34,31-10-2023 23:34,Projector,9,Construction,Ongoing,Training on new software,None,"[357, 200]"
+469,Health,Report,-74.724753,47.804857,24-05-2024 15:23,24-05-2024 19:23,Projector,1,Maintenance,Completed,Presentation preparation for stakeholders,Reschedule task 251,[251]
+470,Finance,Presentation,83.691692,112.240111,10-08-2024 23:45,11-08-2024 00:45,Laptop,6,Construction,Ongoing,Meeting to discuss quarterly budget,Reallocate resources,"[61, 109, 414]"
+471,Health,Report,79.216162,133.272011,30-11-2023 00:50,30-11-2023 03:50,Scanner,4,Construction,Completed,Training on new software,None,"[335, 10, 242]"
+472,Agriculture,Meeting,-46.317141,53.563111,21-03-2024 08:05,21-03-2024 09:05,Projector,1,Administrative,Completed,Report generation for annual review,Reallocate resources,[428]
+473,Transport,Meeting,-0.514171,107.70308,26-06-2024 22:33,27-06-2024 02:33,Laptop,4,Training,Ongoing,Report generation for annual review,Reallocate resources,"[62, 351]"
+474,Education,Maintenance,60.556877,105.516601,17-05-2024 22:56,17-05-2024 23:56,Scanner,3,Administrative,Completed,Meeting to discuss quarterly budget,Reschedule task 388,"[73, 388]"
+475,Agriculture,Training,-11.040982,153.243191,28-10-2023 12:24,28-10-2023 13:24,Projector,2,Report,Ongoing,Training on new software,None,[]
+476,Finance,Meeting,-88.857076,-115.411372,14-12-2023 12:09,14-12-2023 14:09,Scanner,5,Training,Planned,Report generation for annual review,Merge with task 106,[106]
+477,Transport,Report,-15.834362,157.71226,13-10-2023 01:32,13-10-2023 02:32,Scanner,3,Training,Planned,Meeting to discuss quarterly budget,Merge with task 179,"[179, 215]"
+478,Finance,Meeting,87.588634,171.644933,15-05-2024 04:06,15-05-2024 10:06,Scanner,9,Maintenance,Ongoing,Training on new software,Merge with task 28,"[28, 100]"
+479,Finance,Report,-58.261713,61.251349,30-09-2023 04:00,30-09-2023 05:00,Laptop,6,Administrative,Completed,Report generation for annual review,None,"[172, 316]"
+480,Education,Meeting,-71.204202,-161.115631,14-08-2024 15:10,14-08-2024 18:10,Projector,1,Training,Planned,Meeting to discuss quarterly budget,None,[]
+481,Education,Report,16.687199,-62.649967,15-11-2023 19:15,15-11-2023 23:15,Whiteboard,4,Construction,Ongoing,Training on new software,None,[]
+482,Agriculture,Report,66.579535,-44.80834,02-07-2024 13:54,02-07-2024 17:54,Laptop,8,Report,Ongoing,Meeting to discuss quarterly budget,Reallocate resources,"[75, 111, 476]"
+483,Transport,Report,-22.772685,-15.213531,08-09-2024 16:35,08-09-2024 20:35,Whiteboard,5,Maintenance,Ongoing,Training on new software,None,[]
+484,Finance,Meeting,-39.491252,-140.000663,11-01-2024 15:36,11-01-2024 23:36,Printer,7,Maintenance,Ongoing,Training on new software,None,"[310, 81]"
+485,Transport,Training,14.06186,18.99203,11-01-2024 09:46,11-01-2024 13:46,Laptop,7,Report,Ongoing,Training on new software,Merge with task 237,"[429, 237, 143]"
+486,Education,Training,-31.086729,28.608131,12-05-2024 13:07,12-05-2024 16:07,Scanner,1,Training,Completed,Meeting to discuss quarterly budget,Merge with task 259,"[376, 394, 259]"
+487,Agriculture,Report,55.748974,70.795262,31-10-2023 01:32,31-10-2023 03:32,Printer,8,Maintenance,Completed,Presentation preparation for stakeholders,None,[]
+488,Finance,Training,-66.11184,-73.515446,24-02-2024 05:23,24-02-2024 07:23,Laptop,8,Administrative,Completed,Report generation for annual review,None,[]
+489,Health,Report,48.930301,134.711654,10-01-2024 03:58,10-01-2024 10:58,Projector,6,Training,Planned,Meeting to discuss quarterly budget,None,[]
+490,Education,Maintenance,5.565659,-73.227607,12-12-2023 11:42,12-12-2023 16:42,Scanner,9,Report,Completed,Meeting to discuss quarterly budget,Merge with task 478,"[377, 478]"
+491,Education,Meeting,-21.068101,-12.472965,30-01-2024 11:00,30-01-2024 12:00,Whiteboard,6,Maintenance,Planned,Presentation preparation for stakeholders,None,[]
+492,Health,Training,-65.086955,-59.425316,13-10-2023 21:03,13-10-2023 23:03,Printer,10,Maintenance,Planned,Training on new software,Merge with task 460,"[181, 460]"
+493,Health,Meeting,-78.593548,-55.718431,24-06-2024 09:00,24-06-2024 17:00,Scanner,9,Construction,Ongoing,Presentation preparation for stakeholders,Reschedule task 232,"[232, 318]"
+494,Health,Report,-74.284425,-39.354299,16-06-2024 13:27,16-06-2024 16:27,Whiteboard,2,Construction,Completed,Maintenance of office equipment,None,[]
+495,Agriculture,Report,-62.910348,-106.467783,11-04-2024 08:28,11-04-2024 09:28,Whiteboard,7,Report,Completed,Report generation for annual review,None,"[216, 228]"
+496,Finance,Maintenance,-55.969081,-172.066817,28-02-2024 08:55,28-02-2024 12:55,Scanner,6,Training,Planned,Maintenance of office equipment,Reallocate resources,"[249, 304]"
+497,Finance,Presentation,-9.853865,-70.530358,01-02-2024 23:40,02-02-2024 02:40,Whiteboard,3,Administrative,Completed,Report generation for annual review,None,"[148, 395]"
+498,Health,Maintenance,-38.811234,164.236988,01-05-2024 22:09,02-05-2024 01:09,Scanner,5,Maintenance,Completed,Training on new software,Merge with task 122,[122]
+499,Finance,Training,-10.640045,-46.918028,24-11-2023 04:06,24-11-2023 08:06,Scanner,1,Administrative,Ongoing,Training on new software,None,"[230, 277]"
+500,Education,Maintenance,-68.131796,-171.026926,27-06-2024 14:39,27-06-2024 22:39,Projector,8,Administrative,Completed,Meeting to discuss quarterly budget,Merge with task 362,"[332, 362]"
+501,Education,Training,53.923711,82.275764,08-09-2024 11:35,08-09-2024 19:35,Whiteboard,2,Training,Completed,Training on new software,None,[]
+502,Transport,Meeting,-17.706614,122.71569,23-04-2024 18:34,24-04-2024 02:34,Whiteboard,2,Administrative,Completed,Presentation preparation for stakeholders,Reallocate resources,[299]
+503,Education,Training,-85.941244,13.828426,22-01-2024 11:36,22-01-2024 19:36,Laptop,9,Training,Completed,Report generation for annual review,Reallocate resources,"[309, 310]"
+504,Health,Maintenance,-18.43956,77.746958,24-01-2024 01:40,24-01-2024 08:40,Whiteboard,7,Administrative,Completed,Maintenance of office equipment,None,"[180, 158]"
+505,Agriculture,Meeting,-51.174872,139.609756,30-06-2024 19:00,01-07-2024 02:00,Printer,5,Maintenance,Planned,Report generation for annual review,Reallocate resources,"[72, 428, 301]"
+506,Education,Training,-35.418395,175.817674,04-11-2023 04:48,04-11-2023 10:48,Laptop,10,Training,Completed,Meeting to discuss quarterly budget,Reschedule task 140,"[328, 469, 140]"
+507,Transport,Presentation,45.943875,-130.706266,04-12-2023 23:03,05-12-2023 02:03,Printer,5,Report,Ongoing,Meeting to discuss quarterly budget,Reschedule task 300,"[428, 300]"
+508,Agriculture,Meeting,52.419519,-124.551371,07-03-2024 08:22,07-03-2024 13:22,Printer,2,Administrative,Ongoing,Training on new software,Merge with task 465,"[465, 353, 331]"
+509,Health,Report,88.979932,-155.979063,20-04-2024 16:33,20-04-2024 22:33,Scanner,8,Report,Ongoing,Maintenance of office equipment,Merge with task 419,"[499, 356, 419]"
+510,Agriculture,Meeting,62.150412,-121.374996,06-05-2024 16:57,06-05-2024 17:57,Projector,6,Training,Planned,Training on new software,Merge with task 28,"[84, 28]"
+511,Health,Meeting,-37.825884,10.660439,23-07-2024 13:56,23-07-2024 15:56,Scanner,4,Maintenance,Completed,Presentation preparation for stakeholders,Reschedule task 279,[279]
+512,Health,Maintenance,33.37987,67.804791,06-11-2023 22:08,07-11-2023 00:08,Scanner,10,Administrative,Completed,Meeting to discuss quarterly budget,Merge with task 266,[266]
+513,Transport,Maintenance,75.763328,-121.309509,08-12-2023 18:42,08-12-2023 22:42,Projector,9,Maintenance,Completed,Presentation preparation for stakeholders,None,[]
+514,Finance,Report,74.885609,-138.036366,17-01-2024 08:19,17-01-2024 11:19,Laptop,8,Administrative,Ongoing,Maintenance of office equipment,None,[453]
+515,Finance,Presentation,47.446118,-56.863753,22-03-2024 00:55,22-03-2024 05:55,Laptop,2,Maintenance,Completed,Training on new software,Merge with task 315,[315]
+516,Education,Report,34.347265,102.2507,06-08-2024 20:55,06-08-2024 22:55,Laptop,8,Training,Completed,Training on new software,None,[]
+517,Education,Presentation,16.771711,-11.130357,05-02-2024 00:53,05-02-2024 05:53,Laptop,2,Administrative,Planned,Meeting to discuss quarterly budget,None,[]
+518,Agriculture,Presentation,-53.027786,144.422952,07-02-2024 06:57,07-02-2024 09:57,Whiteboard,1,Construction,Completed,Maintenance of office equipment,None,"[361, 165]"
+519,Transport,Training,0.883661,-155.398666,25-02-2024 01:39,25-02-2024 02:39,Scanner,4,Maintenance,Ongoing,Training on new software,None,[]
+520,Health,Training,75.685892,126.466852,26-02-2024 08:28,26-02-2024 16:28,Whiteboard,10,Maintenance,Ongoing,Meeting to discuss quarterly budget,None,[364]
+521,Agriculture,Training,2.565181,-33.271931,02-02-2024 15:31,02-02-2024 21:31,Laptop,8,Construction,Planned,Training on new software,Merge with task 296,"[370, 296, 42]"
+522,Agriculture,Report,-38.94994,36.140223,13-09-2024 20:14,14-09-2024 01:14,Printer,4,Report,Ongoing,Maintenance of office equipment,None,"[194, 72, 488]"
+523,Health,Training,-87.698548,62.697208,13-09-2024 18:59,13-09-2024 20:59,Printer,8,Report,Planned,Meeting to discuss quarterly budget,None,[]
+524,Health,Report,-17.887628,32.600604,09-02-2024 02:57,09-02-2024 04:57,Projector,2,Administrative,Completed,Maintenance of office equipment,Merge with task 414,[414]
+525,Finance,Maintenance,47.667062,95.749979,17-10-2023 10:47,17-10-2023 15:47,Printer,6,Training,Planned,Presentation preparation for stakeholders,Merge with task 524,"[497, 524, 286]"
+526,Finance,Meeting,-44.875825,-0.981438,05-12-2023 11:14,05-12-2023 14:14,Laptop,2,Construction,Completed,Report generation for annual review,None,[]
+527,Finance,Report,18.825106,-62.295881,28-05-2024 04:23,28-05-2024 09:23,Scanner,10,Construction,Completed,Presentation preparation for stakeholders,Reallocate resources,"[478, 207, 301]"
+528,Finance,Presentation,-42.900251,-56.298366,29-01-2024 21:40,29-01-2024 22:40,Laptop,7,Construction,Ongoing,Report generation for annual review,Reschedule task 386,"[386, 454]"
+529,Finance,Presentation,28.693985,100.577689,12-08-2024 06:03,12-08-2024 09:03,Printer,7,Maintenance,Ongoing,Report generation for annual review,Reschedule task 113,"[113, 503, 482]"
+530,Agriculture,Meeting,-19.550732,-1.911193,13-12-2023 03:00,13-12-2023 10:00,Scanner,6,Administrative,Ongoing,Meeting to discuss quarterly budget,None,[]
+531,Education,Meeting,-66.924349,-48.092366,19-02-2024 18:35,19-02-2024 19:35,Whiteboard,7,Construction,Ongoing,Maintenance of office equipment,Merge with task 422,"[422, 360]"
+532,Health,Training,26.654908,33.3114,31-05-2024 00:56,31-05-2024 02:56,Whiteboard,2,Administrative,Completed,Meeting to discuss quarterly budget,Reallocate resources,"[39, 472]"
+533,Finance,Presentation,2.656768,-28.377854,08-03-2024 22:50,08-03-2024 23:50,Printer,10,Construction,Ongoing,Report generation for annual review,Merge with task 501,"[331, 101, 501]"
+534,Agriculture,Maintenance,-0.588349,112.124584,09-10-2023 10:15,09-10-2023 16:15,Projector,10,Administrative,Ongoing,Report generation for annual review,Reallocate resources,[509]
+535,Education,Presentation,-51.465581,-84.544164,28-04-2024 03:49,28-04-2024 08:49,Scanner,7,Maintenance,Planned,Meeting to discuss quarterly budget,None,[]
+536,Transport,Maintenance,-40.794312,23.914186,16-08-2024 14:11,16-08-2024 22:11,Printer,4,Administrative,Completed,Maintenance of office equipment,Merge with task 321,"[444, 321]"
+537,Health,Presentation,2.766462,61.761689,02-04-2024 18:47,02-04-2024 21:47,Laptop,9,Maintenance,Planned,Report generation for annual review,Merge with task 479,[479]
+538,Health,Meeting,4.008525,-48.861119,02-02-2024 16:17,02-02-2024 19:17,Projector,3,Administrative,Ongoing,Report generation for annual review,None,"[66, 209]"
+539,Transport,Maintenance,26.287678,-87.679211,28-10-2023 22:00,29-10-2023 02:00,Printer,4,Construction,Completed,Training on new software,None,[]
+540,Transport,Maintenance,-6.451254,21.537004,03-09-2024 02:39,03-09-2024 09:39,Printer,1,Maintenance,Completed,Maintenance of office equipment,Merge with task 30,[30]
+541,Health,Training,25.972888,-164.796346,14-01-2024 23:05,15-01-2024 07:05,Laptop,1,Construction,Ongoing,Presentation preparation for stakeholders,None,"[66, 417]"
+542,Agriculture,Report,79.769186,80.724403,23-06-2024 09:11,23-06-2024 12:11,Projector,2,Report,Planned,Presentation preparation for stakeholders,None,[]
+543,Health,Presentation,80.94141,155.360025,23-07-2024 10:32,23-07-2024 15:32,Printer,2,Maintenance,Planned,Meeting to discuss quarterly budget,None,"[338, 400]"
+544,Education,Report,-50.758491,-141.546955,11-09-2024 09:49,11-09-2024 13:49,Whiteboard,8,Training,Ongoing,Presentation preparation for stakeholders,None,[]
+545,Transport,Presentation,-22.553103,161.53592,09-02-2024 03:54,09-02-2024 09:54,Scanner,7,Training,Planned,Training on new software,Reschedule task 372,"[149, 372]"
+546,Agriculture,Meeting,26.171566,145.882595,27-01-2024 09:06,27-01-2024 10:06,Laptop,4,Administrative,Planned,Report generation for annual review,Reallocate resources,"[372, 125]"
+547,Agriculture,Report,-20.075217,147.524076,17-12-2023 12:31,17-12-2023 19:31,Whiteboard,5,Construction,Completed,Maintenance of office equipment,None,[165]
+548,Education,Report,52.077132,-81.346851,08-08-2024 04:18,08-08-2024 06:18,Printer,8,Training,Ongoing,Report generation for annual review,None,[]
+549,Education,Maintenance,1.140213,-53.331715,24-08-2024 21:50,25-08-2024 03:50,Printer,1,Construction,Planned,Training on new software,Merge with task 4,"[140, 4, 411]"
+550,Transport,Presentation,-75.198231,-123.183922,09-03-2024 16:11,09-03-2024 19:11,Scanner,7,Administrative,Ongoing,Report generation for annual review,Merge with task 267,[267]
+551,Education,Training,-74.808189,-47.664157,16-12-2023 04:26,16-12-2023 11:26,Printer,10,Maintenance,Completed,Meeting to discuss quarterly budget,None,[92]
+552,Finance,Maintenance,36.227008,-119.247856,17-09-2023 04:06,17-09-2023 11:06,Scanner,7,Report,Ongoing,Training on new software,None,[]
+553,Transport,Training,80.503832,-137.753813,15-07-2024 00:32,15-07-2024 07:32,Printer,8,Construction,Completed,Training on new software,Merge with task 273,[273]
+554,Transport,Training,-12.364454,-105.621857,11-06-2024 02:02,11-06-2024 06:02,Whiteboard,4,Training,Completed,Report generation for annual review,Merge with task 30,[30]
+555,Transport,Presentation,-8.824196,-90.605535,10-02-2024 09:50,10-02-2024 17:50,Laptop,1,Training,Completed,Maintenance of office equipment,None,"[218, 393, 434]"
+556,Education,Meeting,-72.849704,-158.849167,18-01-2024 12:53,18-01-2024 18:53,Projector,8,Administrative,Planned,Presentation preparation for stakeholders,None,[]
+557,Health,Maintenance,0.81756,-42.862437,03-09-2024 04:55,03-09-2024 11:55,Whiteboard,3,Report,Completed,Presentation preparation for stakeholders,Merge with task 267,[267]
+558,Health,Report,-66.254484,-65.765741,18-08-2024 08:13,18-08-2024 15:13,Projector,5,Construction,Ongoing,Meeting to discuss quarterly budget,None,[512]
+559,Health,Maintenance,76.722668,-78.146817,21-03-2024 04:33,21-03-2024 09:33,Scanner,5,Report,Ongoing,Report generation for annual review,None,[324]
+560,Education,Training,10.021447,152.22701,15-08-2024 22:08,16-08-2024 06:08,Laptop,4,Maintenance,Completed,Training on new software,Reschedule task 37,[37]
+561,Health,Report,-69.115672,142.263078,29-08-2024 11:35,29-08-2024 19:35,Laptop,8,Administrative,Planned,Presentation preparation for stakeholders,None,"[469, 505, 116]"
+562,Finance,Meeting,-27.071226,-106.655864,28-07-2024 06:46,28-07-2024 11:46,Projector,3,Report,Ongoing,Presentation preparation for stakeholders,Reallocate resources,[5]
+563,Agriculture,Training,-15.044582,-152.339233,02-06-2024 22:16,03-06-2024 06:16,Laptop,6,Construction,Ongoing,Meeting to discuss quarterly budget,Merge with task 383,"[383, 109, 332]"
+564,Health,Report,-8.270007,163.872551,22-06-2024 19:36,22-06-2024 20:36,Whiteboard,1,Report,Ongoing,Maintenance of office equipment,None,[217]
+565,Agriculture,Maintenance,53.666455,87.767997,02-03-2024 17:43,03-03-2024 00:43,Laptop,7,Administrative,Completed,Training on new software,Merge with task 22,"[92, 22, 214]"
+566,Education,Training,-68.291643,-3.295765,13-03-2024 04:26,13-03-2024 11:26,Whiteboard,10,Maintenance,Ongoing,Meeting to discuss quarterly budget,Reschedule task 205,"[525, 205]"
+567,Health,Maintenance,11.350274,-27.694591,16-02-2024 21:14,17-02-2024 04:14,Whiteboard,10,Maintenance,Ongoing,Report generation for annual review,None,[]
+568,Health,Presentation,-28.485927,-13.131045,23-10-2023 04:45,23-10-2023 08:45,Projector,8,Report,Planned,Presentation preparation for stakeholders,None,[]
+569,Transport,Report,-11.276007,146.594776,30-03-2024 19:35,31-03-2024 03:35,Whiteboard,3,Maintenance,Planned,Maintenance of office equipment,Reschedule task 536,[536]
+570,Health,Meeting,75.114362,4.829226,22-12-2023 19:50,23-12-2023 02:50,Printer,2,Training,Planned,Presentation preparation for stakeholders,Reallocate resources,"[364, 261]"
+571,Education,Meeting,-69.491612,58.168196,26-05-2024 22:59,27-05-2024 01:59,Projector,7,Construction,Completed,Report generation for annual review,None,"[322, 466]"
+572,Health,Presentation,55.410132,-57.119623,09-02-2024 21:13,10-02-2024 00:13,Projector,3,Construction,Planned,Presentation preparation for stakeholders,Reallocate resources,"[109, 445]"
+573,Finance,Report,-68.997913,-118.175274,07-06-2024 14:02,07-06-2024 22:02,Printer,7,Report,Planned,Report generation for annual review,None,"[370, 405]"
+574,Health,Training,-65.67949,-111.31125,18-04-2024 11:25,18-04-2024 12:25,Projector,1,Maintenance,Ongoing,Training on new software,None,[447]
+575,Finance,Training,-74.503162,97.099613,27-01-2024 15:55,27-01-2024 18:55,Printer,7,Construction,Completed,Training on new software,None,[456]
+576,Finance,Meeting,64.76336,30.681457,31-05-2024 15:31,31-05-2024 19:31,Whiteboard,10,Training,Completed,Maintenance of office equipment,None,[]
+577,Health,Report,86.307649,125.501854,14-05-2024 22:17,15-05-2024 03:17,Laptop,8,Training,Ongoing,Presentation preparation for stakeholders,Merge with task 541,"[238, 63, 541]"
+578,Finance,Presentation,-78.568098,141.435791,28-07-2024 17:29,29-07-2024 00:29,Printer,2,Training,Planned,Maintenance of office equipment,Merge with task 447,"[447, 22, 166]"
+579,Finance,Maintenance,-11.140076,2.74894,10-05-2024 08:13,10-05-2024 14:13,Scanner,8,Maintenance,Ongoing,Report generation for annual review,Reallocate resources,"[369, 484, 166]"
+580,Education,Meeting,30.070161,-133.525241,20-12-2023 17:33,20-12-2023 21:33,Projector,10,Training,Completed,Report generation for annual review,Reallocate resources,"[311, 241, 215]"
+581,Agriculture,Maintenance,68.563099,-51.464205,30-08-2024 17:55,30-08-2024 20:55,Projector,9,Construction,Completed,Maintenance of office equipment,Reallocate resources,"[117, 233, 124]"
+582,Agriculture,Maintenance,88.859308,102.558889,19-01-2024 09:39,19-01-2024 10:39,Scanner,5,Maintenance,Planned,Presentation preparation for stakeholders,None,[]
+583,Health,Report,53.817639,166.552959,08-11-2023 10:10,08-11-2023 12:10,Laptop,10,Report,Completed,Presentation preparation for stakeholders,None,[]
+584,Transport,Meeting,-59.931666,-137.498634,20-04-2024 13:50,20-04-2024 17:50,Whiteboard,3,Administrative,Planned,Report generation for annual review,Reschedule task 102,"[102, 158, 373]"
+585,Transport,Training,-10.960477,-30.330058,05-08-2024 05:37,05-08-2024 06:37,Projector,8,Administrative,Ongoing,Presentation preparation for stakeholders,Merge with task 88,[88]
+586,Finance,Training,-62.709981,91.262582,12-02-2024 01:52,12-02-2024 08:52,Projector,3,Training,Ongoing,Report generation for annual review,Reschedule task 529,"[529, 371, 31]"
+587,Transport,Meeting,-74.739921,-66.670354,09-12-2023 09:17,09-12-2023 12:17,Printer,1,Training,Completed,Training on new software,None,[]
+588,Finance,Maintenance,-14.525046,138.881826,22-09-2023 03:25,22-09-2023 08:25,Whiteboard,6,Construction,Ongoing,Presentation preparation for stakeholders,Reschedule task 414,[414]
+589,Finance,Presentation,51.901484,54.733351,26-12-2023 01:05,26-12-2023 07:05,Printer,4,Administrative,Completed,Meeting to discuss quarterly budget,Reallocate resources,"[400, 130]"
+590,Education,Maintenance,-51.527787,4.201778,02-12-2023 07:55,02-12-2023 12:55,Scanner,6,Maintenance,Completed,Meeting to discuss quarterly budget,None,"[248, 312]"
+591,Agriculture,Meeting,41.75751,122.970039,11-02-2024 21:27,12-02-2024 02:27,Scanner,6,Construction,Completed,Meeting to discuss quarterly budget,Reschedule task 306,"[306, 587, 6]"
+592,Finance,Presentation,38.636482,157.514193,23-04-2024 16:29,23-04-2024 20:29,Whiteboard,5,Administrative,Planned,Presentation preparation for stakeholders,Reallocate resources,[387]
+593,Health,Meeting,-30.987547,29.652857,02-11-2023 01:07,02-11-2023 07:07,Printer,2,Maintenance,Planned,Report generation for annual review,Reschedule task 84,"[84, 95, 64]"
+594,Health,Training,-9.690464,-47.054082,02-09-2024 14:06,02-09-2024 21:06,Scanner,9,Report,Ongoing,Maintenance of office equipment,None,"[434, 451, 502]"
+595,Health,Training,-64.017687,-134.235368,16-10-2023 14:31,16-10-2023 22:31,Projector,9,Report,Completed,Training on new software,None,"[485, 34, 161]"
+596,Agriculture,Meeting,18.288038,-32.896851,04-03-2024 07:08,04-03-2024 09:08,Whiteboard,10,Administrative,Completed,Presentation preparation for stakeholders,Reschedule task 121,[121]
+597,Health,Maintenance,-2.533403,104.833332,21-10-2023 20:20,21-10-2023 23:20,Scanner,7,Construction,Ongoing,Maintenance of office equipment,None,[188]
+598,Finance,Meeting,-67.980977,-54.48638,18-05-2024 19:55,18-05-2024 20:55,Printer,8,Report,Ongoing,Presentation preparation for stakeholders,None,"[346, 387, 487]"
+599,Agriculture,Training,47.151222,1.71499,11-09-2024 21:12,12-09-2024 05:12,Printer,8,Maintenance,Planned,Maintenance of office equipment,None,[]
+600,Health,Presentation,-16.266901,-96.183978,11-10-2023 19:25,12-10-2023 02:25,Whiteboard,9,Construction,Planned,Report generation for annual review,None,"[91, 170]"
+601,Finance,Maintenance,10.987984,-135.43862,30-07-2024 20:24,30-07-2024 22:24,Projector,10,Report,Planned,Meeting to discuss quarterly budget,Reallocate resources,[488]
+602,Health,Meeting,28.485795,11.469397,29-12-2023 09:23,29-12-2023 10:23,Whiteboard,4,Maintenance,Planned,Presentation preparation for stakeholders,Reschedule task 87,"[87, 547, 329]"
+603,Transport,Meeting,-28.80782,-115.017118,05-07-2024 06:19,05-07-2024 07:19,Scanner,6,Training,Ongoing,Meeting to discuss quarterly budget,None,[]
+604,Agriculture,Presentation,-59.731921,-128.147669,14-02-2024 16:21,14-02-2024 21:21,Laptop,3,Administrative,Ongoing,Training on new software,None,[]
+605,Agriculture,Maintenance,-57.337589,76.788224,22-12-2023 22:59,23-12-2023 03:59,Printer,2,Administrative,Completed,Report generation for annual review,None,"[265, 385]"
+606,Health,Meeting,-53.539298,90.768146,31-12-2023 20:47,01-01-2024 00:47,Printer,9,Report,Ongoing,Meeting to discuss quarterly budget,Reschedule task 326,"[63, 326]"
+607,Finance,Report,-84.796841,48.074866,03-11-2023 01:36,03-11-2023 02:36,Whiteboard,9,Report,Planned,Meeting to discuss quarterly budget,Reallocate resources,[569]
+608,Agriculture,Maintenance,12.284215,-19.446388,17-10-2023 10:36,17-10-2023 14:36,Projector,6,Report,Completed,Training on new software,Merge with task 463,"[569, 463, 43]"
+609,Finance,Maintenance,27.550593,-119.742597,15-01-2024 07:26,15-01-2024 08:26,Printer,5,Report,Ongoing,Report generation for annual review,None,"[218, 600]"
+610,Agriculture,Meeting,-60.945065,12.272143,19-05-2024 06:33,19-05-2024 08:33,Whiteboard,2,Training,Planned,Meeting to discuss quarterly budget,None,[570]
+611,Finance,Training,19.880156,164.670183,30-04-2024 07:22,30-04-2024 13:22,Whiteboard,5,Training,Ongoing,Training on new software,Reschedule task 216,"[350, 216]"
+612,Agriculture,Training,26.359793,-179.262895,17-05-2024 01:17,17-05-2024 09:17,Laptop,1,Maintenance,Ongoing,Presentation preparation for stakeholders,None,"[403, 552, 84]"
+613,Education,Presentation,-84.429446,119.550191,08-12-2023 03:12,08-12-2023 11:12,Laptop,6,Training,Planned,Maintenance of office equipment,Reschedule task 182,"[182, 9, 128]"
+614,Transport,Meeting,-50.126262,-172.878599,18-02-2024 14:31,18-02-2024 19:31,Whiteboard,4,Construction,Planned,Maintenance of office equipment,None,[240]
+615,Health,Meeting,-39.463856,145.622732,17-08-2024 18:27,17-08-2024 22:27,Laptop,4,Training,Completed,Maintenance of office equipment,Reallocate resources,"[175, 566, 199]"
+616,Agriculture,Presentation,11.725242,-156.470175,03-08-2024 08:29,03-08-2024 11:29,Laptop,3,Administrative,Planned,Training on new software,None,"[197, 24]"
+617,Education,Presentation,-44.474207,21.641752,08-06-2024 13:13,08-06-2024 21:13,Laptop,7,Construction,Ongoing,Report generation for annual review,Reschedule task 125,"[281, 125, 531]"
+618,Agriculture,Meeting,69.084439,-99.162646,15-10-2023 17:59,15-10-2023 22:59,Printer,9,Training,Ongoing,Meeting to discuss quarterly budget,None,"[200, 343, 84]"
+619,Education,Training,86.05721,-27.424708,23-04-2024 03:42,23-04-2024 05:42,Projector,4,Maintenance,Ongoing,Maintenance of office equipment,None,[]
+620,Education,Meeting,-3.606044,110.901267,13-12-2023 20:27,14-12-2023 02:27,Whiteboard,4,Construction,Ongoing,Training on new software,Reallocate resources,"[56, 342]"
+621,Education,Meeting,49.634905,43.04396,26-10-2023 14:45,26-10-2023 16:45,Printer,10,Construction,Completed,Meeting to discuss quarterly budget,None,[]
+622,Health,Maintenance,70.215073,69.61092,03-04-2024 06:18,03-04-2024 09:18,Laptop,8,Construction,Ongoing,Presentation preparation for stakeholders,Reallocate resources,"[68, 105, 58]"
+623,Transport,Report,-17.697049,42.228711,08-02-2024 08:21,08-02-2024 15:21,Projector,10,Report,Completed,Report generation for annual review,Reschedule task 104,"[476, 439, 104]"
+624,Transport,Report,3.098321,31.612808,25-11-2023 05:13,25-11-2023 07:13,Laptop,1,Report,Planned,Meeting to discuss quarterly budget,Merge with task 587,[587]
+625,Agriculture,Report,-3.348125,43.506319,15-09-2023 16:20,15-09-2023 19:20,Projector,3,Construction,Completed,Training on new software,Reallocate resources,"[599, 447]"
+626,Transport,Maintenance,15.059866,14.811734,19-12-2023 22:18,20-12-2023 01:18,Projector,8,Administrative,Planned,Maintenance of office equipment,Reallocate resources,"[378, 9]"
+627,Transport,Meeting,-47.270276,114.906164,18-08-2024 19:41,18-08-2024 20:41,Printer,6,Maintenance,Completed,Training on new software,None,[]
+628,Education,Training,30.214825,70.121368,24-11-2023 16:26,25-11-2023 00:26,Scanner,6,Report,Planned,Maintenance of office equipment,Merge with task 337,"[429, 337]"
+629,Finance,Report,-50.506941,-178.669054,04-07-2024 22:51,05-07-2024 02:51,Projector,8,Report,Completed,Training on new software,Reschedule task 340,"[340, 385, 211]"
+630,Transport,Meeting,-76.728392,-169.193668,18-11-2023 17:44,18-11-2023 19:44,Projector,5,Training,Completed,Presentation preparation for stakeholders,Merge with task 31,"[45, 31]"
+631,Education,Training,69.368801,78.781203,31-12-2023 20:08,01-01-2024 02:08,Scanner,4,Maintenance,Completed,Meeting to discuss quarterly budget,None,[269]
+632,Finance,Training,-21.793904,103.469069,01-02-2024 16:33,01-02-2024 18:33,Whiteboard,4,Administrative,Ongoing,Training on new software,None,"[382, 176]"
+633,Transport,Report,68.109811,-156.464093,12-12-2023 18:04,12-12-2023 21:04,Projector,4,Maintenance,Planned,Report generation for annual review,Reschedule task 326,"[326, 614]"
+634,Agriculture,Presentation,15.718657,127.596756,14-08-2024 11:22,14-08-2024 16:22,Projector,6,Maintenance,Completed,Maintenance of office equipment,None,[521]
+635,Education,Training,40.913738,102.47948,16-03-2024 14:16,16-03-2024 16:16,Projector,9,Training,Planned,Presentation preparation for stakeholders,Reschedule task 532,"[511, 532]"
+636,Finance,Presentation,35.011741,77.633954,09-07-2024 11:39,09-07-2024 19:39,Printer,5,Report,Ongoing,Presentation preparation for stakeholders,None,[]
+637,Transport,Training,71.079233,-17.251175,08-06-2024 14:57,08-06-2024 18:57,Printer,4,Administrative,Ongoing,Report generation for annual review,Merge with task 384,[384]
+638,Transport,Meeting,-36.891357,6.775459,13-04-2024 05:49,13-04-2024 09:49,Scanner,1,Training,Planned,Presentation preparation for stakeholders,Reschedule task 462,"[437, 462]"
+639,Health,Report,-32.936323,-42.346466,26-05-2024 19:03,26-05-2024 22:03,Printer,4,Administrative,Planned,Meeting to discuss quarterly budget,None,"[85, 302]"
+640,Finance,Presentation,25.857792,102.914387,18-01-2024 16:30,18-01-2024 20:30,Laptop,2,Construction,Ongoing,Meeting to discuss quarterly budget,Merge with task 342,[342]
+641,Agriculture,Maintenance,44.138042,96.653827,02-04-2024 16:38,02-04-2024 21:38,Projector,10,Maintenance,Planned,Presentation preparation for stakeholders,Merge with task 307,"[9, 307]"
+642,Education,Report,57.935037,92.810187,06-11-2023 00:23,06-11-2023 01:23,Printer,9,Maintenance,Ongoing,Training on new software,Reschedule task 215,[215]
+643,Education,Maintenance,52.54468,-67.29306,09-11-2023 20:54,10-11-2023 00:54,Printer,7,Maintenance,Ongoing,Report generation for annual review,None,[]
+644,Agriculture,Training,13.951521,-133.795569,24-02-2024 13:00,24-02-2024 14:00,Printer,6,Administrative,Completed,Report generation for annual review,Reschedule task 414,"[414, 551, 307]"
+645,Education,Meeting,75.985954,-124.671154,06-09-2024 05:25,06-09-2024 11:25,Scanner,10,Report,Planned,Report generation for annual review,Reallocate resources,"[210, 401, 66]"
+646,Agriculture,Report,-70.445096,25.025404,26-04-2024 14:22,26-04-2024 22:22,Whiteboard,2,Maintenance,Completed,Presentation preparation for stakeholders,None,[33]
+647,Transport,Report,-85.169069,-108.360455,18-08-2024 21:23,19-08-2024 04:23,Whiteboard,4,Maintenance,Ongoing,Presentation preparation for stakeholders,None,[]
+648,Agriculture,Meeting,-23.642592,-176.023048,19-01-2024 01:05,19-01-2024 07:05,Printer,7,Maintenance,Completed,Training on new software,None,"[490, 71, 399]"
+649,Agriculture,Training,66.680832,-68.487417,12-06-2024 05:09,12-06-2024 13:09,Projector,10,Report,Ongoing,Presentation preparation for stakeholders,None,[515]
+650,Health,Maintenance,-53.693509,176.790641,28-03-2024 09:02,28-03-2024 17:02,Laptop,7,Report,Completed,Presentation preparation for stakeholders,Reschedule task 583,"[583, 503]"
+651,Education,Maintenance,26.333845,150.802512,06-11-2023 07:02,06-11-2023 13:02,Whiteboard,7,Report,Completed,Report generation for annual review,None,[184]
+652,Education,Report,-20.760301,57.268813,04-01-2024 15:50,04-01-2024 17:50,Printer,1,Maintenance,Completed,Maintenance of office equipment,None,"[69, 223]"
+653,Agriculture,Presentation,-68.178488,-47.256456,23-05-2024 12:48,23-05-2024 14:48,Scanner,6,Training,Ongoing,Training on new software,Merge with task 213,"[213, 519]"
+654,Finance,Report,-21.391998,88.544677,24-02-2024 06:14,24-02-2024 10:14,Printer,1,Construction,Ongoing,Meeting to discuss quarterly budget,Reallocate resources,[335]
+655,Health,Report,-6.95574,-150.282493,09-11-2023 19:00,09-11-2023 23:00,Printer,3,Training,Ongoing,Training on new software,Reallocate resources,[19]
+656,Education,Maintenance,-67.652751,86.920734,11-07-2024 05:08,11-07-2024 08:08,Laptop,1,Administrative,Completed,Report generation for annual review,None,"[183, 222]"
+657,Agriculture,Training,-10.429534,-162.807832,05-04-2024 21:51,05-04-2024 23:51,Printer,5,Training,Completed,Presentation preparation for stakeholders,None,[]
+658,Education,Report,48.080563,154.375399,12-05-2024 06:57,12-05-2024 12:57,Projector,4,Construction,Completed,Report generation for annual review,None,[]
+659,Agriculture,Maintenance,57.694779,64.785429,31-03-2024 23:47,01-04-2024 01:47,Projector,2,Maintenance,Planned,Training on new software,None,[]
+660,Transport,Presentation,-70.616911,-62.229072,24-04-2024 02:50,24-04-2024 06:50,Scanner,4,Report,Ongoing,Report generation for annual review,None,[]
+661,Health,Training,-70.940643,-63.587582,12-04-2024 04:54,12-04-2024 05:54,Printer,6,Construction,Ongoing,Training on new software,Reallocate resources,"[226, 68, 286]"
+662,Education,Meeting,-77.880372,-101.318092,09-01-2024 00:10,09-01-2024 05:10,Scanner,8,Construction,Planned,Presentation preparation for stakeholders,None,[258]
+663,Education,Maintenance,86.654861,70.673532,08-09-2024 16:09,08-09-2024 19:09,Whiteboard,3,Administrative,Planned,Report generation for annual review,None,[]
+664,Agriculture,Meeting,19.535998,30.613289,03-02-2024 13:30,03-02-2024 20:30,Scanner,4,Report,Planned,Meeting to discuss quarterly budget,Reallocate resources,[22]
+665,Education,Maintenance,-47.448661,-25.740766,25-08-2024 20:16,26-08-2024 00:16,Scanner,2,Construction,Completed,Maintenance of office equipment,Reschedule task 156,"[304, 207, 156]"
+666,Health,Training,76.213645,35.307068,29-06-2024 14:55,29-06-2024 22:55,Whiteboard,3,Administrative,Ongoing,Meeting to discuss quarterly budget,Merge with task 25,"[664, 296, 25]"
+667,Agriculture,Maintenance,-46.395183,14.152231,15-06-2024 09:43,15-06-2024 13:43,Projector,10,Training,Planned,Maintenance of office equipment,Reallocate resources,[453]
+668,Health,Report,-77.402714,-110.712439,30-07-2024 02:15,30-07-2024 05:15,Projector,3,Construction,Completed,Presentation preparation for stakeholders,Reallocate resources,[242]
+669,Education,Report,-33.936665,79.802556,05-09-2024 23:07,06-09-2024 03:07,Printer,3,Report,Completed,Maintenance of office equipment,None,"[591, 460]"
+670,Health,Maintenance,65.236595,-6.778545,25-11-2023 20:10,26-11-2023 02:10,Printer,7,Maintenance,Ongoing,Report generation for annual review,None,"[518, 625, 444]"
+671,Health,Meeting,47.147274,-26.136977,07-09-2024 11:55,07-09-2024 13:55,Whiteboard,10,Report,Completed,Presentation preparation for stakeholders,Reschedule task 264,[264]
+672,Transport,Maintenance,-22.473561,38.169128,01-08-2024 00:30,01-08-2024 02:30,Whiteboard,3,Training,Completed,Training on new software,Merge with task 5,[5]
+673,Health,Report,76.624393,158.502595,04-12-2023 07:21,04-12-2023 13:21,Printer,8,Administrative,Planned,Presentation preparation for stakeholders,None,[]
+674,Transport,Meeting,88.645044,-135.188097,15-04-2024 06:41,15-04-2024 09:41,Projector,7,Administrative,Planned,Maintenance of office equipment,Reallocate resources,"[651, 378, 60]"
+675,Agriculture,Training,-46.376484,-167.577274,28-09-2023 20:18,29-09-2023 02:18,Laptop,3,Administrative,Planned,Report generation for annual review,Merge with task 261,[261]
+676,Health,Meeting,48.774993,51.983061,04-06-2024 07:40,04-06-2024 14:40,Printer,10,Construction,Planned,Training on new software,Reallocate resources,"[170, 438, 259]"
+677,Agriculture,Presentation,28.527491,-42.1961,13-07-2024 04:58,13-07-2024 09:58,Printer,2,Construction,Planned,Presentation preparation for stakeholders,None,"[147, 276]"
+678,Health,Maintenance,-88.844345,-119.376471,10-03-2024 20:51,11-03-2024 04:51,Laptop,2,Construction,Planned,Report generation for annual review,Merge with task 296,"[671, 296, 442]"
+679,Education,Training,-54.356305,-114.485641,01-04-2024 05:54,01-04-2024 07:54,Printer,10,Maintenance,Completed,Training on new software,None,[]
+680,Agriculture,Training,-43.316655,144.818384,23-04-2024 21:39,24-04-2024 04:39,Printer,10,Construction,Planned,Training on new software,None,[]
+681,Education,Meeting,-22.008863,-80.365607,06-04-2024 22:29,07-04-2024 04:29,Laptop,10,Maintenance,Ongoing,Report generation for annual review,None,[]
+682,Finance,Meeting,-42.105465,163.876944,20-02-2024 00:54,20-02-2024 01:54,Laptop,4,Report,Completed,Report generation for annual review,None,"[498, 485]"
+683,Agriculture,Report,-29.420964,65.4696,25-09-2023 05:39,25-09-2023 11:39,Whiteboard,4,Administrative,Planned,Report generation for annual review,None,"[626, 59, 365]"
+684,Agriculture,Meeting,-7.754533,71.390977,13-09-2024 00:21,13-09-2024 03:21,Laptop,10,Construction,Planned,Maintenance of office equipment,Reschedule task 378,[378]
+685,Agriculture,Report,28.841114,-178.873521,13-04-2024 19:07,14-04-2024 01:07,Laptop,6,Construction,Planned,Maintenance of office equipment,Reschedule task 497,"[240, 622, 497]"
+686,Finance,Maintenance,-12.97507,155.334049,05-10-2023 06:23,05-10-2023 14:23,Laptop,7,Administrative,Planned,Training on new software,None,[533]
+687,Agriculture,Meeting,-66.984956,106.855474,13-01-2024 14:59,13-01-2024 19:59,Scanner,8,Maintenance,Ongoing,Meeting to discuss quarterly budget,Merge with task 679,"[679, 554, 247]"
+688,Finance,Meeting,-11.719187,77.675456,30-03-2024 03:31,30-03-2024 06:31,Whiteboard,7,Administrative,Completed,Maintenance of office equipment,Merge with task 682,"[687, 127, 682]"
+689,Education,Meeting,53.197284,-60.191598,15-01-2024 12:29,15-01-2024 16:29,Scanner,10,Construction,Planned,Maintenance of office equipment,None,"[391, 670, 658]"
+690,Finance,Training,-49.76085,-138.351613,25-04-2024 07:00,25-04-2024 09:00,Laptop,2,Administrative,Planned,Presentation preparation for stakeholders,Reallocate resources,[119]
+691,Transport,Maintenance,81.732351,27.690063,09-11-2023 02:58,09-11-2023 03:58,Whiteboard,1,Report,Planned,Training on new software,None,"[434, 328, 374]"
+692,Finance,Presentation,29.4737,32.679354,06-05-2024 09:39,06-05-2024 11:39,Printer,1,Report,Ongoing,Maintenance of office equipment,None,[304]
+693,Health,Report,-63.463436,-77.978583,23-02-2024 19:25,23-02-2024 20:25,Scanner,6,Administrative,Planned,Meeting to discuss quarterly budget,Reallocate resources,"[588, 490]"
+694,Finance,Report,-37.530881,167.938453,30-04-2024 12:33,30-04-2024 13:33,Whiteboard,3,Maintenance,Planned,Training on new software,None,[]
+695,Education,Report,40.931183,-72.32336,17-09-2023 09:41,17-09-2023 12:41,Laptop,9,Training,Ongoing,Report generation for annual review,Reallocate resources,"[357, 401, 74]"
+696,Finance,Maintenance,35.347737,-109.766816,28-02-2024 18:13,29-02-2024 01:13,Laptop,3,Administrative,Planned,Meeting to discuss quarterly budget,Merge with task 469,"[469, 671]"
+697,Education,Report,-37.605318,-127.863762,26-01-2024 09:13,26-01-2024 13:13,Projector,1,Administrative,Planned,Presentation preparation for stakeholders,None,[]
+698,Health,Report,81.071668,-26.240017,02-06-2024 22:28,03-06-2024 01:28,Laptop,2,Administrative,Ongoing,Training on new software,None,[]
+699,Transport,Presentation,27.017605,33.62126,04-01-2024 23:13,05-01-2024 02:13,Printer,4,Construction,Completed,Training on new software,None,"[501, 310, 611]"
+700,Finance,Meeting,49.991546,131.362484,30-05-2024 12:07,30-05-2024 19:07,Whiteboard,8,Administrative,Completed,Meeting to discuss quarterly budget,None,[]
+701,Agriculture,Meeting,-1.940681,60.765196,23-11-2023 11:45,23-11-2023 15:45,Laptop,10,Report,Planned,Report generation for annual review,Merge with task 608,"[97, 608]"
+702,Health,Maintenance,12.856158,-144.201148,25-09-2023 06:37,25-09-2023 08:37,Scanner,3,Training,Planned,Meeting to discuss quarterly budget,Reschedule task 543,"[570, 550, 543]"
+703,Health,Presentation,38.474842,104.424369,01-04-2024 09:17,01-04-2024 11:17,Projector,2,Maintenance,Planned,Training on new software,None,[]
+704,Finance,Report,54.092335,-135.703691,26-12-2023 07:28,26-12-2023 10:28,Scanner,4,Maintenance,Completed,Presentation preparation for stakeholders,None,"[36, 87]"
+705,Finance,Maintenance,-24.559265,15.993774,08-07-2024 06:41,08-07-2024 13:41,Laptop,4,Administrative,Completed,Presentation preparation for stakeholders,Reschedule task 547,"[675, 547]"
+706,Transport,Presentation,73.940968,178.846978,05-07-2024 11:23,05-07-2024 15:23,Laptop,1,Maintenance,Completed,Training on new software,None,[307]
+707,Agriculture,Training,18.38599,-102.225612,13-04-2024 22:44,14-04-2024 04:44,Whiteboard,3,Report,Ongoing,Meeting to discuss quarterly budget,Reallocate resources,"[267, 391]"
+708,Transport,Report,-7.907805,160.106574,04-03-2024 22:09,05-03-2024 05:09,Projector,9,Maintenance,Completed,Maintenance of office equipment,Reallocate resources,[382]
+709,Finance,Presentation,-60.472247,115.76441,25-03-2024 02:53,25-03-2024 08:53,Printer,7,Construction,Planned,Training on new software,None,[]
+710,Finance,Meeting,5.66463,66.232529,25-10-2023 18:55,26-10-2023 01:55,Laptop,6,Construction,Ongoing,Maintenance of office equipment,Merge with task 150,"[150, 232]"
+711,Transport,Training,-21.846177,-142.199017,12-09-2024 18:29,12-09-2024 20:29,Projector,9,Administrative,Planned,Report generation for annual review,None,[]
+712,Transport,Maintenance,36.081996,131.543406,22-12-2023 21:57,23-12-2023 02:57,Scanner,2,Construction,Completed,Maintenance of office equipment,None,"[186, 354, 695]"
+713,Education,Presentation,17.031056,125.866806,10-05-2024 17:20,11-05-2024 01:20,Scanner,3,Administrative,Completed,Presentation preparation for stakeholders,Merge with task 674,[674]
+714,Finance,Maintenance,-80.484367,81.150938,28-03-2024 16:51,28-03-2024 22:51,Projector,10,Training,Planned,Report generation for annual review,None,[450]
+715,Finance,Presentation,-38.372461,162.941876,02-02-2024 00:58,02-02-2024 04:58,Whiteboard,2,Administrative,Ongoing,Maintenance of office equipment,None,[]
+716,Transport,Meeting,41.391545,160.152101,25-09-2023 20:46,25-09-2023 23:46,Scanner,1,Construction,Planned,Maintenance of office equipment,Reallocate resources,"[11, 435, 694]"
+717,Transport,Report,-0.395063,66.643871,25-06-2024 01:14,25-06-2024 03:14,Printer,1,Report,Completed,Meeting to discuss quarterly budget,None,"[548, 354, 251]"
+718,Transport,Presentation,-82.375923,-18.485264,25-08-2024 23:42,26-08-2024 02:42,Scanner,4,Maintenance,Completed,Maintenance of office equipment,Reschedule task 527,[527]
+719,Health,Report,-21.762942,-45.617868,13-11-2023 23:36,14-11-2023 01:36,Whiteboard,4,Report,Completed,Maintenance of office equipment,Merge with task 495,"[495, 301]"
+720,Finance,Report,-50.856625,-70.264872,12-09-2024 11:03,12-09-2024 12:03,Printer,10,Training,Completed,Maintenance of office equipment,None,[]
+721,Finance,Report,-30.860676,-52.598612,05-10-2023 12:40,05-10-2023 13:40,Whiteboard,3,Training,Ongoing,Meeting to discuss quarterly budget,None,[]
+722,Transport,Report,-54.442002,10.474763,03-07-2024 19:45,03-07-2024 22:45,Printer,2,Training,Completed,Training on new software,Reschedule task 482,"[232, 482]"
+723,Transport,Report,70.594809,13.113858,19-02-2024 20:52,20-02-2024 01:52,Laptop,8,Training,Completed,Training on new software,Reschedule task 445,"[445, 6]"
+724,Health,Training,-38.718042,-131.875081,21-01-2024 04:06,21-01-2024 11:06,Whiteboard,1,Maintenance,Planned,Training on new software,Reschedule task 122,"[682, 273, 122]"
+725,Transport,Training,-31.520214,95.181375,23-08-2024 09:24,23-08-2024 16:24,Scanner,7,Maintenance,Completed,Meeting to discuss quarterly budget,None,[]
+726,Education,Training,-28.058301,-175.086376,23-05-2024 06:33,23-05-2024 10:33,Laptop,6,Training,Planned,Meeting to discuss quarterly budget,Reschedule task 297,"[492, 297, 289]"
+727,Agriculture,Presentation,-62.55077,4.046341,24-02-2024 14:40,24-02-2024 18:40,Whiteboard,2,Administrative,Planned,Training on new software,None,"[204, 486, 724]"
+728,Transport,Presentation,19.99808,-112.079161,15-07-2024 01:53,15-07-2024 04:53,Projector,2,Maintenance,Ongoing,Meeting to discuss quarterly budget,Reschedule task 197,"[197, 150]"
+729,Transport,Meeting,-21.536523,8.989626,30-06-2024 19:00,30-06-2024 23:00,Projector,6,Training,Ongoing,Meeting to discuss quarterly budget,Merge with task 53,"[660, 53, 312]"
+730,Education,Maintenance,38.085408,-91.091291,27-04-2024 05:12,27-04-2024 06:12,Projector,1,Construction,Completed,Maintenance of office equipment,Reschedule task 293,[293]
+731,Finance,Training,-44.592652,-3.136915,24-04-2024 15:54,24-04-2024 21:54,Whiteboard,2,Construction,Planned,Meeting to discuss quarterly budget,Reschedule task 340,[340]
+732,Finance,Presentation,18.848485,-94.229201,04-10-2023 12:00,04-10-2023 17:00,Projector,10,Training,Completed,Meeting to discuss quarterly budget,None,[645]
+733,Finance,Meeting,15.581062,148.383659,08-07-2024 03:11,08-07-2024 07:11,Projector,8,Construction,Completed,Presentation preparation for stakeholders,None,"[309, 486]"
+734,Health,Presentation,39.738504,-164.228002,12-12-2023 04:25,12-12-2023 08:25,Printer,9,Administrative,Planned,Maintenance of office equipment,None,"[460, 645]"
+735,Agriculture,Meeting,-3.092289,8.554594,04-02-2024 18:54,04-02-2024 19:54,Projector,10,Administrative,Planned,Training on new software,Merge with task 47,"[47, 580]"
+736,Education,Report,33.24497,133.292059,05-07-2024 17:45,05-07-2024 19:45,Projector,8,Report,Ongoing,Presentation preparation for stakeholders,Merge with task 411,"[411, 622, 279]"
+737,Health,Presentation,-50.79461,70.819829,16-01-2024 03:37,16-01-2024 11:37,Scanner,9,Administrative,Ongoing,Training on new software,Reallocate resources,"[726, 275]"
+738,Finance,Training,-81.789756,-94.241961,10-12-2023 21:19,10-12-2023 22:19,Projector,5,Maintenance,Ongoing,Meeting to discuss quarterly budget,Reallocate resources,[216]
+739,Education,Maintenance,23.882918,169.998706,19-11-2023 07:20,19-11-2023 13:20,Laptop,9,Administrative,Planned,Training on new software,None,"[627, 302, 333]"
+740,Agriculture,Maintenance,-50.529673,167.481887,04-01-2024 03:23,04-01-2024 06:23,Whiteboard,1,Report,Planned,Presentation preparation for stakeholders,None,[]
+741,Education,Maintenance,66.604642,48.349995,25-08-2024 09:31,25-08-2024 13:31,Printer,4,Administrative,Ongoing,Training on new software,None,"[160, 457, 238]"
+742,Agriculture,Maintenance,-63.299846,-7.557521,23-10-2023 05:14,23-10-2023 13:14,Projector,8,Maintenance,Completed,Training on new software,Merge with task 185,"[185, 664, 289]"
+743,Agriculture,Report,33.726029,-112.374714,06-03-2024 16:29,06-03-2024 19:29,Laptop,7,Maintenance,Ongoing,Report generation for annual review,None,[]
+744,Education,Training,40.817632,110.877382,05-04-2024 13:54,05-04-2024 15:54,Printer,7,Construction,Completed,Meeting to discuss quarterly budget,None,[]
+745,Education,Training,48.621173,-83.643669,19-09-2023 22:37,19-09-2023 23:37,Laptop,2,Report,Planned,Maintenance of office equipment,None,[]
+746,Finance,Training,-3.523423,22.626444,02-07-2024 13:40,02-07-2024 21:40,Projector,5,Administrative,Ongoing,Training on new software,Reallocate resources,[58]
+747,Education,Presentation,-67.846407,116.972965,02-01-2024 14:54,02-01-2024 16:54,Scanner,5,Construction,Planned,Report generation for annual review,None,[2]
+748,Transport,Training,-13.115622,-126.944456,14-02-2024 16:17,14-02-2024 21:17,Projector,7,Construction,Ongoing,Training on new software,None,[]
+749,Transport,Meeting,82.163968,-78.546862,07-05-2024 21:18,07-05-2024 23:18,Scanner,6,Construction,Ongoing,Meeting to discuss quarterly budget,None,[]
+750,Agriculture,Training,-57.9478,10.973031,24-03-2024 16:21,24-03-2024 19:21,Printer,3,Administrative,Planned,Maintenance of office equipment,None,"[107, 278]"
+751,Agriculture,Maintenance,55.929495,76.070406,05-12-2023 12:09,05-12-2023 14:09,Laptop,3,Maintenance,Ongoing,Training on new software,None,"[458, 739, 490]"
+752,Transport,Presentation,-13.058431,81.614782,24-03-2024 17:36,24-03-2024 20:36,Laptop,6,Maintenance,Completed,Report generation for annual review,Reschedule task 507,"[327, 507]"
+753,Education,Maintenance,-65.12017,159.850896,25-02-2024 01:56,25-02-2024 05:56,Printer,7,Report,Ongoing,Presentation preparation for stakeholders,Reschedule task 236,"[546, 550, 236]"
+754,Health,Presentation,14.017759,69.659623,16-01-2024 17:17,16-01-2024 21:17,Laptop,4,Administrative,Completed,Training on new software,None,[]
+755,Finance,Presentation,-4.693257,-131.906635,14-10-2023 01:36,14-10-2023 03:36,Laptop,6,Administrative,Completed,Maintenance of office equipment,Merge with task 148,"[148, 565, 432]"
+756,Finance,Training,-68.897554,70.481065,23-05-2024 22:55,24-05-2024 01:55,Printer,1,Training,Ongoing,Meeting to discuss quarterly budget,None,[]
+757,Transport,Meeting,-4.171217,33.813233,02-04-2024 04:32,02-04-2024 07:32,Laptop,3,Administrative,Completed,Meeting to discuss quarterly budget,Merge with task 79,[79]
+758,Agriculture,Training,-5.442347,-129.559537,29-08-2024 12:48,29-08-2024 17:48,Printer,7,Administrative,Ongoing,Meeting to discuss quarterly budget,Merge with task 114,"[114, 160]"
+759,Education,Training,0.593176,-176.087673,26-06-2024 09:58,26-06-2024 16:58,Printer,9,Administrative,Planned,Presentation preparation for stakeholders,Reschedule task 727,"[727, 233]"
+760,Health,Meeting,3.870188,172.053462,10-08-2024 09:27,10-08-2024 12:27,Projector,7,Report,Completed,Training on new software,None,"[189, 573, 620]"
+761,Agriculture,Report,-33.625861,51.0807,04-07-2024 19:11,05-07-2024 02:11,Projector,1,Administrative,Planned,Report generation for annual review,Merge with task 277,[277]
+762,Health,Presentation,50.183507,-59.230202,07-05-2024 01:13,07-05-2024 05:13,Whiteboard,3,Report,Completed,Meeting to discuss quarterly budget,Merge with task 612,[612]
+763,Education,Presentation,-53.689334,154.512687,22-12-2023 21:45,23-12-2023 01:45,Whiteboard,2,Report,Planned,Meeting to discuss quarterly budget,Merge with task 50,"[47, 50, 323]"
+764,Education,Maintenance,45.302297,165.146048,08-10-2023 13:09,08-10-2023 17:09,Whiteboard,7,Administrative,Completed,Meeting to discuss quarterly budget,Reallocate resources,"[418, 760]"
+765,Agriculture,Training,-85.736644,106.584947,16-03-2024 04:14,16-03-2024 12:14,Scanner,1,Administrative,Completed,Training on new software,None,"[81, 641, 96]"
+766,Transport,Training,55.345686,55.519254,10-08-2024 17:34,10-08-2024 20:34,Scanner,9,Report,Planned,Presentation preparation for stakeholders,Reschedule task 135,"[459, 135]"
+767,Health,Report,-82.797678,76.594493,12-01-2024 22:33,13-01-2024 05:33,Projector,4,Report,Planned,Meeting to discuss quarterly budget,Reallocate resources,[581]
+768,Education,Meeting,54.85076,-128.655892,15-06-2024 21:13,16-06-2024 02:13,Scanner,2,Training,Completed,Report generation for annual review,Merge with task 303,"[174, 303]"
+769,Education,Maintenance,-26.393674,-154.391789,10-02-2024 21:08,11-02-2024 05:08,Whiteboard,8,Administrative,Ongoing,Training on new software,None,[]
+770,Agriculture,Report,-82.873325,129.241172,20-07-2024 22:12,21-07-2024 05:12,Printer,10,Maintenance,Ongoing,Maintenance of office equipment,Reallocate resources,"[383, 86]"
+771,Education,Report,-42.691062,135.193124,07-06-2024 16:11,07-06-2024 17:11,Scanner,1,Maintenance,Planned,Presentation preparation for stakeholders,None,[]
+772,Education,Meeting,-37.681092,-123.045911,15-07-2024 00:38,15-07-2024 07:38,Laptop,4,Training,Ongoing,Meeting to discuss quarterly budget,Reallocate resources,"[478, 480]"
+773,Agriculture,Meeting,-74.551942,83.440124,14-08-2024 07:49,14-08-2024 14:49,Printer,4,Training,Ongoing,Meeting to discuss quarterly budget,Reschedule task 619,"[351, 619]"
+774,Health,Maintenance,-8.175844,16.22924,15-01-2024 04:09,15-01-2024 12:09,Projector,4,Administrative,Planned,Meeting to discuss quarterly budget,None,"[64, 371, 441]"
+775,Transport,Meeting,-51.93128,-171.740615,04-11-2023 23:37,05-11-2023 06:37,Whiteboard,5,Maintenance,Completed,Training on new software,None,[]
+776,Education,Report,-75.29236,134.55932,22-10-2023 09:45,22-10-2023 17:45,Printer,9,Maintenance,Planned,Maintenance of office equipment,Merge with task 56,[56]
+777,Finance,Maintenance,-60.384009,-54.260547,13-03-2024 09:57,13-03-2024 16:57,Printer,8,Report,Planned,Training on new software,Reschedule task 364,"[364, 710, 585]"
+778,Agriculture,Presentation,-54.259204,80.180526,12-10-2023 06:39,12-10-2023 09:39,Whiteboard,6,Construction,Completed,Report generation for annual review,None,[512]
+779,Health,Report,-42.695515,80.022974,12-02-2024 16:23,13-02-2024 00:23,Projector,8,Report,Completed,Meeting to discuss quarterly budget,None,[764]
+780,Health,Presentation,49.389191,36.339609,23-08-2024 16:06,23-08-2024 20:06,Whiteboard,4,Maintenance,Planned,Presentation preparation for stakeholders,None,[]
+781,Transport,Maintenance,-87.085572,142.795769,01-11-2023 09:06,01-11-2023 11:06,Printer,8,Training,Ongoing,Maintenance of office equipment,Reallocate resources,"[556, 437]"
+782,Health,Meeting,76.742795,-14.823517,10-06-2024 22:07,11-06-2024 04:07,Projector,9,Report,Completed,Presentation preparation for stakeholders,Reallocate resources,"[391, 292, 676]"
+783,Education,Maintenance,36.376672,157.644552,16-01-2024 03:35,16-01-2024 05:35,Laptop,2,Construction,Planned,Meeting to discuss quarterly budget,None,"[107, 509, 768]"
+784,Health,Meeting,24.034527,1.210147,19-09-2023 22:14,19-09-2023 23:14,Whiteboard,7,Maintenance,Completed,Report generation for annual review,None,"[118, 201, 481]"
+785,Agriculture,Report,-15.671746,115.350471,01-09-2024 18:02,02-09-2024 01:02,Laptop,6,Maintenance,Planned,Maintenance of office equipment,Reschedule task 271,"[675, 271]"
+786,Health,Meeting,72.033706,-30.759602,09-05-2024 22:33,09-05-2024 23:33,Laptop,3,Administrative,Planned,Presentation preparation for stakeholders,None,"[344, 175]"
+787,Health,Training,10.033125,-39.109539,20-02-2024 20:27,21-02-2024 03:27,Laptop,10,Training,Completed,Report generation for annual review,None,[413]
+788,Transport,Training,-11.267714,-144.151947,31-07-2024 09:09,31-07-2024 12:09,Scanner,2,Report,Ongoing,Maintenance of office equipment,Merge with task 331,[331]
+789,Health,Report,-87.923138,97.211603,17-12-2023 08:30,17-12-2023 11:30,Laptop,10,Report,Completed,Presentation preparation for stakeholders,Merge with task 761,"[26, 761, 752]"
+790,Education,Training,-46.850061,143.247327,16-11-2023 06:57,16-11-2023 11:57,Projector,9,Maintenance,Planned,Report generation for annual review,Merge with task 676,"[676, 53]"
+791,Transport,Presentation,66.049028,-140.064653,19-07-2024 20:06,19-07-2024 22:06,Laptop,3,Administrative,Ongoing,Training on new software,None,[]
+792,Agriculture,Report,62.03225,148.578887,07-02-2024 15:53,07-02-2024 19:53,Printer,2,Training,Completed,Report generation for annual review,None,[]
+793,Health,Meeting,-52.146725,-28.833437,30-09-2023 16:53,30-09-2023 22:53,Printer,3,Maintenance,Ongoing,Meeting to discuss quarterly budget,Reallocate resources,[676]
+794,Transport,Meeting,-68.902715,-56.588237,19-07-2024 09:00,19-07-2024 15:00,Printer,10,Report,Planned,Meeting to discuss quarterly budget,None,[535]
+795,Agriculture,Training,19.099939,12.943504,26-09-2023 14:22,26-09-2023 17:22,Projector,6,Construction,Completed,Meeting to discuss quarterly budget,Merge with task 142,"[142, 226]"
+796,Agriculture,Maintenance,-3.316523,163.16257,26-04-2024 10:56,26-04-2024 16:56,Scanner,5,Training,Planned,Report generation for annual review,Merge with task 525,"[525, 410, 198]"
+797,Education,Report,-71.478972,105.535164,03-07-2024 02:07,03-07-2024 07:07,Projector,4,Training,Ongoing,Report generation for annual review,None,"[611, 766, 279]"
+798,Finance,Meeting,19.313217,-25.447329,13-05-2024 19:57,14-05-2024 01:57,Whiteboard,2,Training,Completed,Meeting to discuss quarterly budget,Merge with task 420,"[601, 420]"
+799,Finance,Meeting,-69.363008,111.254568,24-07-2024 09:17,24-07-2024 16:17,Projector,6,Maintenance,Completed,Training on new software,None,"[381, 149]"
+800,Agriculture,Meeting,-32.653955,-176.075631,03-06-2024 09:56,03-06-2024 15:56,Projector,8,Report,Ongoing,Training on new software,None,[]
+801,Transport,Maintenance,18.324344,9.81445,05-02-2024 17:18,05-02-2024 19:18,Scanner,5,Report,Planned,Meeting to discuss quarterly budget,Reschedule task 775,"[699, 775, 446]"
+802,Finance,Training,-81.061246,-2.183665,12-08-2024 00:15,12-08-2024 01:15,Whiteboard,7,Construction,Completed,Report generation for annual review,Reschedule task 616,[616]
+803,Health,Presentation,-86.171634,-173.578932,09-12-2023 22:18,09-12-2023 23:18,Printer,5,Maintenance,Ongoing,Meeting to discuss quarterly budget,None,[]
+804,Health,Meeting,-77.498259,-145.756866,28-09-2023 17:19,29-09-2023 00:19,Whiteboard,5,Administrative,Ongoing,Report generation for annual review,None,[]
+805,Finance,Maintenance,-1.112652,-163.053802,11-02-2024 15:01,11-02-2024 20:01,Printer,8,Construction,Ongoing,Presentation preparation for stakeholders,None,[]
+806,Finance,Training,-81.389837,-176.25743,06-05-2024 11:23,06-05-2024 13:23,Whiteboard,7,Maintenance,Completed,Meeting to discuss quarterly budget,None,[742]
+807,Agriculture,Presentation,88.121705,156.279728,01-12-2023 16:11,01-12-2023 17:11,Whiteboard,1,Construction,Completed,Maintenance of office equipment,None,[]
+808,Agriculture,Maintenance,33.825887,104.986019,05-10-2023 07:07,05-10-2023 14:07,Whiteboard,3,Maintenance,Planned,Report generation for annual review,None,[]
+809,Transport,Maintenance,65.141082,91.092538,12-08-2024 13:16,12-08-2024 20:16,Printer,2,Report,Planned,Training on new software,Reschedule task 288,"[678, 502, 288]"
+810,Finance,Training,-73.476113,95.832714,21-04-2024 21:45,21-04-2024 23:45,Whiteboard,9,Maintenance,Planned,Training on new software,None,[]
+811,Education,Report,-79.151953,-175.273882,01-07-2024 22:33,02-07-2024 02:33,Printer,7,Maintenance,Ongoing,Meeting to discuss quarterly budget,None,"[214, 605]"
+812,Agriculture,Maintenance,46.887833,-67.742845,30-10-2023 22:35,31-10-2023 06:35,Projector,9,Construction,Completed,Training on new software,None,"[395, 464]"
+813,Finance,Training,50.403791,-112.33675,26-06-2024 13:00,26-06-2024 18:00,Printer,3,Administrative,Planned,Meeting to discuss quarterly budget,None,[473]
+814,Transport,Training,-87.014172,-14.095145,04-02-2024 03:12,04-02-2024 08:12,Laptop,8,Report,Ongoing,Maintenance of office equipment,Merge with task 564,"[122, 564]"
+815,Education,Training,-18.55296,-24.894568,16-11-2023 22:01,17-11-2023 04:01,Laptop,8,Administrative,Ongoing,Meeting to discuss quarterly budget,None,[]
+816,Finance,Report,-55.092307,-111.798132,09-03-2024 15:14,09-03-2024 18:14,Scanner,5,Report,Planned,Report generation for annual review,Reallocate resources,"[112, 698, 52]"
+817,Education,Training,-69.266177,142.221046,24-04-2024 21:35,25-04-2024 02:35,Projector,2,Report,Completed,Maintenance of office equipment,Reallocate resources,[636]
+818,Agriculture,Report,-19.280624,-100.840213,24-12-2023 11:12,24-12-2023 16:12,Printer,4,Maintenance,Completed,Maintenance of office equipment,Merge with task 723,"[723, 611]"
+819,Finance,Training,0.583227,72.169642,23-04-2024 05:40,23-04-2024 13:40,Whiteboard,4,Maintenance,Ongoing,Meeting to discuss quarterly budget,Reschedule task 192,[192]
+820,Agriculture,Meeting,29.885648,-25.947882,13-02-2024 21:30,13-02-2024 22:30,Projector,5,Construction,Completed,Meeting to discuss quarterly budget,Merge with task 486,"[486, 598]"
+821,Transport,Meeting,-81.868226,-173.739304,05-09-2024 07:38,05-09-2024 12:38,Projector,9,Report,Completed,Training on new software,None,[]
+822,Education,Maintenance,54.700671,-59.156153,18-05-2024 02:01,18-05-2024 10:01,Whiteboard,9,Administrative,Planned,Report generation for annual review,Merge with task 470,"[374, 470]"
+823,Finance,Maintenance,70.447035,98.829466,19-09-2023 22:21,20-09-2023 06:21,Laptop,5,Report,Planned,Meeting to discuss quarterly budget,None,[421]
+824,Agriculture,Maintenance,-0.390198,-92.02759,11-05-2024 01:20,11-05-2024 08:20,Whiteboard,4,Construction,Completed,Report generation for annual review,None,[]
+825,Health,Presentation,71.859849,-18.263035,05-11-2023 19:12,05-11-2023 22:12,Whiteboard,6,Administrative,Ongoing,Presentation preparation for stakeholders,Merge with task 196,"[283, 317, 196]"
+826,Transport,Presentation,-67.866973,106.319846,15-12-2023 00:14,15-12-2023 06:14,Whiteboard,2,Construction,Ongoing,Training on new software,None,"[698, 154, 536]"
+827,Health,Presentation,29.577658,-70.687584,15-12-2023 20:37,16-12-2023 01:37,Laptop,5,Construction,Ongoing,Meeting to discuss quarterly budget,None,[290]
+828,Agriculture,Meeting,-2.09404,-178.167511,06-11-2023 05:34,06-11-2023 11:34,Laptop,1,Administrative,Completed,Maintenance of office equipment,Reallocate resources,"[805, 515]"
+829,Transport,Training,81.663346,76.750956,27-12-2023 08:09,27-12-2023 11:09,Projector,7,Report,Completed,Maintenance of office equipment,Reschedule task 33,[33]
+830,Transport,Report,-13.938608,168.086453,12-01-2024 16:23,12-01-2024 18:23,Whiteboard,5,Report,Ongoing,Training on new software,Reallocate resources,"[696, 331, 824]"
+831,Health,Maintenance,-65.575665,19.542157,07-03-2024 13:49,07-03-2024 18:49,Whiteboard,2,Administrative,Planned,Report generation for annual review,None,[385]
+832,Education,Meeting,-65.050222,-20.915521,16-02-2024 12:25,16-02-2024 18:25,Scanner,6,Training,Ongoing,Report generation for annual review,Merge with task 473,"[431, 421, 473]"
+833,Health,Report,-74.082782,-129.389187,31-12-2023 05:04,31-12-2023 10:04,Projector,10,Report,Ongoing,Training on new software,None,"[55, 774]"
+834,Agriculture,Report,30.614262,-13.389186,10-09-2024 10:04,10-09-2024 18:04,Laptop,2,Construction,Ongoing,Meeting to discuss quarterly budget,None,"[609, 100]"
+835,Health,Report,34.306722,131.153085,13-03-2024 02:44,13-03-2024 04:44,Scanner,9,Construction,Planned,Training on new software,None,[576]
+836,Finance,Training,-49.762155,63.245074,20-12-2023 13:43,20-12-2023 16:43,Whiteboard,5,Construction,Ongoing,Presentation preparation for stakeholders,Merge with task 118,[118]
+837,Transport,Meeting,3.568061,-91.005809,09-05-2024 14:42,09-05-2024 16:42,Printer,1,Report,Ongoing,Report generation for annual review,None,[]
+838,Agriculture,Maintenance,-17.17968,173.770656,06-04-2024 09:25,06-04-2024 13:25,Scanner,5,Report,Planned,Report generation for annual review,None,[]
+839,Finance,Training,24.51549,-113.469173,29-10-2023 04:04,29-10-2023 08:04,Projector,9,Report,Completed,Report generation for annual review,None,"[297, 684, 103]"
+840,Education,Maintenance,30.185939,-39.171881,14-12-2023 16:08,14-12-2023 18:08,Printer,7,Training,Completed,Meeting to discuss quarterly budget,Reallocate resources,"[469, 124]"
+841,Agriculture,Presentation,-35.502917,52.239236,07-06-2024 01:12,07-06-2024 09:12,Laptop,6,Maintenance,Ongoing,Report generation for annual review,Reschedule task 10,"[10, 163]"
+842,Education,Presentation,-19.687621,-157.404322,17-04-2024 05:29,17-04-2024 08:29,Whiteboard,10,Administrative,Ongoing,Training on new software,Reallocate resources,"[804, 781]"
+843,Finance,Meeting,74.908804,52.248242,05-11-2023 16:27,05-11-2023 23:27,Printer,10,Maintenance,Planned,Presentation preparation for stakeholders,Reschedule task 715,"[133, 715]"
+844,Transport,Presentation,59.379528,-155.67481,27-01-2024 11:15,27-01-2024 12:15,Projector,4,Construction,Planned,Meeting to discuss quarterly budget,None,"[696, 488, 332]"
+845,Agriculture,Meeting,71.962976,-117.360735,14-04-2024 04:46,14-04-2024 11:46,Printer,2,Construction,Planned,Maintenance of office equipment,None,[]
+846,Transport,Meeting,-10.524879,-45.244039,25-03-2024 17:56,25-03-2024 18:56,Projector,6,Construction,Planned,Report generation for annual review,Reallocate resources,"[137, 653, 588]"
+847,Transport,Maintenance,-1.601457,64.385648,27-02-2024 09:12,27-02-2024 13:12,Projector,3,Training,Planned,Training on new software,None,[]
+848,Transport,Meeting,23.240819,60.71697,12-09-2024 20:29,13-09-2024 00:29,Laptop,3,Construction,Ongoing,Report generation for annual review,None,[]
+849,Education,Training,32.825017,164.787701,07-03-2024 13:21,07-03-2024 21:21,Projector,4,Report,Ongoing,Presentation preparation for stakeholders,None,"[366, 634]"
+850,Education,Meeting,-11.001949,45.169452,13-08-2024 22:57,14-08-2024 00:57,Scanner,2,Maintenance,Planned,Maintenance of office equipment,None,[]
+851,Finance,Report,-48.496769,36.536251,12-02-2024 07:22,12-02-2024 13:22,Laptop,4,Administrative,Ongoing,Report generation for annual review,None,"[70, 162]"
+852,Finance,Presentation,13.564057,127.150278,02-01-2024 22:01,03-01-2024 03:01,Printer,10,Construction,Planned,Meeting to discuss quarterly budget,Merge with task 669,"[270, 669, 31]"
+853,Agriculture,Training,-29.782576,95.304929,20-06-2024 12:33,20-06-2024 15:33,Projector,9,Administrative,Planned,Meeting to discuss quarterly budget,Merge with task 506,[506]
+854,Agriculture,Meeting,80.983401,35.333146,14-07-2024 21:25,14-07-2024 23:25,Scanner,8,Maintenance,Ongoing,Meeting to discuss quarterly budget,None,[]
+855,Finance,Report,1.368768,54.121309,27-08-2024 05:03,27-08-2024 12:03,Printer,5,Maintenance,Completed,Meeting to discuss quarterly budget,None,[]
+856,Finance,Presentation,19.465001,-43.42018,11-10-2023 22:02,11-10-2023 23:02,Scanner,8,Construction,Ongoing,Report generation for annual review,None,[441]
+857,Transport,Training,-69.195024,-137.52268,22-03-2024 01:16,22-03-2024 07:16,Whiteboard,4,Administrative,Ongoing,Meeting to discuss quarterly budget,Merge with task 238,[238]
+858,Finance,Report,44.545624,139.800722,12-10-2023 19:21,12-10-2023 20:21,Laptop,4,Construction,Completed,Meeting to discuss quarterly budget,Merge with task 450,[450]
+859,Agriculture,Maintenance,18.434882,140.552892,18-02-2024 01:09,18-02-2024 06:09,Projector,10,Training,Ongoing,Meeting to discuss quarterly budget,None,[]
+860,Agriculture,Maintenance,78.906626,-105.890054,24-10-2023 08:52,24-10-2023 14:52,Projector,8,Administrative,Ongoing,Presentation preparation for stakeholders,Reallocate resources,"[670, 251]"
+861,Transport,Maintenance,35.598904,1.240345,11-10-2023 02:55,11-10-2023 03:55,Whiteboard,7,Report,Ongoing,Maintenance of office equipment,None,[]
+862,Finance,Training,61.456563,7.558181,20-07-2024 02:45,20-07-2024 07:45,Scanner,4,Construction,Ongoing,Training on new software,None,[]
+863,Transport,Report,26.983456,-16.645325,15-11-2023 02:27,15-11-2023 04:27,Laptop,8,Construction,Ongoing,Maintenance of office equipment,Merge with task 87,"[308, 848, 87]"
+864,Finance,Report,-86.607274,-42.268255,28-10-2023 03:13,28-10-2023 11:13,Laptop,4,Maintenance,Ongoing,Training on new software,Reschedule task 677,"[546, 54, 677]"
+865,Health,Meeting,73.80972,91.612107,28-08-2024 17:16,28-08-2024 23:16,Whiteboard,10,Maintenance,Completed,Maintenance of office equipment,None,"[438, 802, 747]"
+866,Finance,Meeting,9.592949,162.890494,18-08-2024 12:22,18-08-2024 17:22,Scanner,8,Training,Planned,Presentation preparation for stakeholders,Reschedule task 167,"[167, 391]"
+867,Education,Meeting,-39.473976,65.735544,29-04-2024 18:17,29-04-2024 23:17,Laptop,4,Report,Ongoing,Maintenance of office equipment,Reschedule task 281,"[40, 631, 281]"
+868,Transport,Presentation,-87.778959,-69.517744,05-08-2024 20:26,06-08-2024 02:26,Whiteboard,3,Training,Ongoing,Meeting to discuss quarterly budget,None,"[10, 478, 38]"
+869,Health,Presentation,-50.78835,-158.909459,05-10-2023 22:10,06-10-2023 00:10,Whiteboard,10,Report,Ongoing,Meeting to discuss quarterly budget,None,"[185, 265, 785]"
+870,Agriculture,Report,-67.099954,46.921744,03-06-2024 10:00,03-06-2024 13:00,Scanner,1,Maintenance,Completed,Meeting to discuss quarterly budget,Reallocate resources,[701]
+871,Transport,Presentation,-32.879801,19.226782,18-10-2023 01:52,18-10-2023 05:52,Laptop,5,Administrative,Completed,Maintenance of office equipment,None,[]
+872,Finance,Training,-27.048663,-152.107509,26-10-2023 12:05,26-10-2023 20:05,Laptop,9,Construction,Completed,Training on new software,None,"[585, 381]"
+873,Health,Meeting,25.539665,135.30713,18-08-2024 11:40,18-08-2024 14:40,Laptop,6,Report,Ongoing,Maintenance of office equipment,None,"[668, 384, 482]"
+874,Education,Presentation,-84.391667,-47.411311,13-01-2024 22:43,14-01-2024 03:43,Projector,10,Construction,Completed,Presentation preparation for stakeholders,Reschedule task 828,[828]
+875,Finance,Report,59.530818,-168.26417,23-06-2024 06:55,23-06-2024 09:55,Printer,2,Construction,Completed,Presentation preparation for stakeholders,None,"[552, 751, 125]"
+876,Finance,Meeting,19.278362,57.311193,22-03-2024 08:44,22-03-2024 16:44,Whiteboard,5,Maintenance,Planned,Maintenance of office equipment,Merge with task 337,[337]
+877,Transport,Report,-33.333052,170.062867,02-01-2024 04:26,02-01-2024 08:26,Printer,7,Administrative,Completed,Maintenance of office equipment,None,[]
+878,Education,Report,18.939345,-18.371512,25-05-2024 11:35,25-05-2024 18:35,Projector,10,Maintenance,Planned,Training on new software,Merge with task 599,"[691, 599, 682]"
+879,Education,Maintenance,-33.508019,-150.657855,12-12-2023 02:31,12-12-2023 09:31,Scanner,3,Report,Ongoing,Training on new software,Merge with task 465,[465]
+880,Agriculture,Maintenance,47.79172,76.097475,18-04-2024 20:22,19-04-2024 04:22,Laptop,3,Construction,Ongoing,Meeting to discuss quarterly budget,Merge with task 75,[75]
+881,Finance,Maintenance,-67.058462,70.894332,27-05-2024 18:02,27-05-2024 22:02,Whiteboard,2,Administrative,Ongoing,Presentation preparation for stakeholders,None,[]
+882,Agriculture,Meeting,42.974716,-52.215252,06-10-2023 19:02,07-10-2023 03:02,Printer,8,Training,Ongoing,Report generation for annual review,Merge with task 752,[752]
+883,Agriculture,Meeting,16.839592,-46.845393,07-06-2024 08:20,07-06-2024 16:20,Printer,6,Training,Completed,Presentation preparation for stakeholders,Merge with task 100,"[792, 100]"
+884,Agriculture,Meeting,11.543641,143.028585,09-10-2023 12:02,09-10-2023 19:02,Whiteboard,6,Training,Ongoing,Training on new software,None,[43]
+885,Health,Report,3.444295,27.049616,24-02-2024 22:02,25-02-2024 04:02,Laptop,6,Administrative,Completed,Meeting to discuss quarterly budget,Reschedule task 281,"[281, 499]"
+886,Transport,Maintenance,87.985003,91.24877,17-05-2024 04:25,17-05-2024 08:25,Whiteboard,3,Construction,Completed,Presentation preparation for stakeholders,Reallocate resources,[29]
+887,Agriculture,Presentation,6.824866,-109.75224,27-06-2024 13:40,27-06-2024 21:40,Laptop,6,Maintenance,Ongoing,Presentation preparation for stakeholders,Merge with task 456,"[750, 456, 534]"
+888,Agriculture,Meeting,38.925164,150.906121,27-01-2024 11:57,27-01-2024 13:57,Printer,7,Training,Ongoing,Meeting to discuss quarterly budget,None,[286]
+889,Transport,Maintenance,54.655395,87.939913,04-08-2024 03:43,04-08-2024 07:43,Laptop,6,Maintenance,Planned,Maintenance of office equipment,None,"[465, 646]"
+890,Education,Maintenance,70.609052,-166.191536,14-01-2024 16:24,14-01-2024 18:24,Scanner,6,Maintenance,Planned,Meeting to discuss quarterly budget,None,[]
+891,Finance,Training,15.541807,133.961336,08-04-2024 09:35,08-04-2024 13:35,Projector,5,Training,Completed,Report generation for annual review,Reschedule task 752,[752]
+892,Agriculture,Meeting,81.149896,128.576447,20-04-2024 05:48,20-04-2024 09:48,Laptop,7,Construction,Ongoing,Presentation preparation for stakeholders,Merge with task 728,[728]
+893,Transport,Presentation,-21.547759,30.203624,22-01-2024 17:10,22-01-2024 23:10,Printer,9,Maintenance,Ongoing,Training on new software,Reschedule task 497,"[685, 497]"
+894,Finance,Maintenance,7.814397,-73.649801,04-11-2023 11:20,04-11-2023 15:20,Laptop,5,Training,Ongoing,Maintenance of office equipment,Reschedule task 679,[679]
+895,Transport,Maintenance,28.910315,-54.871713,08-03-2024 14:13,08-03-2024 21:13,Projector,8,Training,Planned,Report generation for annual review,Merge with task 30,[30]
+896,Agriculture,Meeting,11.206316,-63.650874,05-05-2024 08:15,05-05-2024 14:15,Printer,7,Training,Ongoing,Report generation for annual review,Reschedule task 56,"[56, 275]"
+897,Transport,Meeting,-34.468083,-32.467844,05-05-2024 23:49,06-05-2024 02:49,Scanner,4,Construction,Planned,Presentation preparation for stakeholders,Reallocate resources,"[133, 620]"
+898,Education,Report,-73.754512,73.702987,16-12-2023 09:07,16-12-2023 15:07,Scanner,2,Construction,Planned,Training on new software,None,"[549, 204]"
+899,Agriculture,Report,64.75011,-97.439591,28-07-2024 04:19,28-07-2024 07:19,Whiteboard,6,Training,Completed,Presentation preparation for stakeholders,Merge with task 14,[14]
+900,Health,Meeting,0.269878,104.883646,04-07-2024 05:09,04-07-2024 06:09,Projector,5,Administrative,Completed,Training on new software,Merge with task 35,[35]
+901,Health,Report,-66.385226,86.589265,30-11-2023 09:57,30-11-2023 14:57,Laptop,2,Construction,Planned,Report generation for annual review,None,[]
+902,Finance,Presentation,18.876935,-125.334879,27-06-2024 17:03,28-06-2024 00:03,Projector,10,Administrative,Ongoing,Report generation for annual review,None,[]
+903,Education,Maintenance,-7.396985,-144.115481,20-04-2024 19:58,21-04-2024 03:58,Printer,5,Training,Completed,Training on new software,Merge with task 495,"[575, 286, 495]"
+904,Transport,Presentation,-45.969473,-173.803488,25-06-2024 03:32,25-06-2024 11:32,Printer,6,Report,Planned,Meeting to discuss quarterly budget,Reschedule task 230,"[230, 592, 26]"
+905,Finance,Maintenance,-4.174863,-140.778557,21-08-2024 04:18,21-08-2024 09:18,Whiteboard,3,Construction,Completed,Presentation preparation for stakeholders,None,[213]
+906,Agriculture,Presentation,-45.005569,-129.120996,09-01-2024 18:23,10-01-2024 02:23,Scanner,10,Maintenance,Completed,Report generation for annual review,None,"[422, 319]"
+907,Finance,Meeting,-32.140263,23.51245,16-06-2024 12:00,16-06-2024 19:00,Laptop,5,Maintenance,Planned,Report generation for annual review,Reschedule task 242,"[321, 668, 242]"
+908,Finance,Presentation,9.865304,86.286597,24-11-2023 17:05,24-11-2023 19:05,Laptop,7,Construction,Ongoing,Training on new software,None,[]
+909,Education,Presentation,44.666777,-120.16909,16-01-2024 15:10,16-01-2024 23:10,Laptop,1,Training,Ongoing,Training on new software,Reallocate resources,"[144, 767, 896]"
+910,Transport,Meeting,-36.584816,-23.227415,10-06-2024 19:51,11-06-2024 00:51,Whiteboard,9,Administrative,Planned,Maintenance of office equipment,Merge with task 145,[145]
+911,Transport,Maintenance,3.488361,-89.553829,24-07-2024 04:55,24-07-2024 12:55,Projector,6,Maintenance,Completed,Presentation preparation for stakeholders,Merge with task 326,"[11, 326, 427]"
+912,Agriculture,Meeting,-33.868708,-112.437206,31-07-2024 15:44,31-07-2024 17:44,Scanner,8,Administrative,Completed,Meeting to discuss quarterly budget,Reschedule task 69,"[609, 161, 69]"
+913,Health,Maintenance,23.187916,154.03662,25-04-2024 02:00,25-04-2024 07:00,Whiteboard,7,Report,Planned,Maintenance of office equipment,Reschedule task 786,"[640, 786]"
+914,Transport,Presentation,25.487884,-107.06828,22-09-2023 22:33,23-09-2023 01:33,Laptop,4,Administrative,Completed,Maintenance of office equipment,None,[]
+915,Agriculture,Presentation,15.717071,95.779563,26-12-2023 06:52,26-12-2023 12:52,Scanner,10,Report,Ongoing,Presentation preparation for stakeholders,None,"[215, 173, 3]"
+916,Education,Meeting,77.318481,41.37253,01-10-2023 19:46,01-10-2023 22:46,Projector,8,Construction,Ongoing,Meeting to discuss quarterly budget,None,[]
+917,Agriculture,Presentation,55.30219,-26.853934,02-09-2024 12:59,02-09-2024 20:59,Whiteboard,5,Report,Completed,Training on new software,None,"[387, 793, 395]"
+918,Education,Maintenance,60.956897,-65.890107,11-01-2024 20:49,11-01-2024 22:49,Scanner,4,Maintenance,Planned,Maintenance of office equipment,Reschedule task 861,[861]
+919,Agriculture,Maintenance,33.366165,20.84583,27-02-2024 15:18,27-02-2024 22:18,Whiteboard,3,Construction,Ongoing,Report generation for annual review,Merge with task 746,"[746, 435]"
+920,Education,Maintenance,-57.778992,89.146258,13-09-2024 03:06,13-09-2024 04:06,Projector,8,Administrative,Planned,Training on new software,None,[]
+921,Education,Maintenance,-30.878722,147.974672,27-06-2024 22:12,28-06-2024 03:12,Scanner,1,Report,Ongoing,Meeting to discuss quarterly budget,Reschedule task 491,"[658, 491]"
+922,Finance,Meeting,84.805325,116.397255,27-08-2024 10:11,27-08-2024 18:11,Scanner,8,Training,Completed,Report generation for annual review,None,[]
+923,Finance,Maintenance,-84.809345,141.935449,22-10-2023 03:37,22-10-2023 06:37,Projector,3,Construction,Ongoing,Meeting to discuss quarterly budget,None,[]
+924,Health,Meeting,-33.437421,128.84051,20-06-2024 21:22,21-06-2024 02:22,Projector,10,Construction,Ongoing,Maintenance of office equipment,None,[601]
+925,Agriculture,Presentation,-87.449182,59.218321,26-09-2023 11:31,26-09-2023 18:31,Laptop,2,Maintenance,Planned,Training on new software,Reschedule task 177,"[86, 177]"
+926,Agriculture,Training,33.969007,-32.669456,08-01-2024 03:35,08-01-2024 04:35,Whiteboard,5,Report,Ongoing,Meeting to discuss quarterly budget,None,"[478, 582]"
+927,Education,Presentation,77.449113,-148.261697,10-11-2023 05:58,10-11-2023 07:58,Projector,2,Maintenance,Ongoing,Presentation preparation for stakeholders,None,[]
+928,Agriculture,Meeting,-50.845347,-45.169359,05-10-2023 17:08,05-10-2023 19:08,Projector,5,Maintenance,Planned,Training on new software,None,"[55, 389]"
+929,Education,Maintenance,-64.723307,-66.405247,27-07-2024 03:40,27-07-2024 07:40,Projector,5,Maintenance,Completed,Maintenance of office equipment,Merge with task 451,"[715, 451]"
+930,Transport,Presentation,-24.549624,98.053396,21-06-2024 19:27,22-06-2024 03:27,Projector,1,Report,Ongoing,Training on new software,Reschedule task 720,[720]
+931,Health,Maintenance,35.937689,1.355491,20-07-2024 08:59,20-07-2024 13:59,Laptop,9,Maintenance,Ongoing,Training on new software,Reallocate resources,"[268, 33, 119]"
+932,Health,Report,-64.833249,31.255474,21-08-2024 14:36,21-08-2024 20:36,Scanner,7,Report,Completed,Maintenance of office equipment,None,[]
+933,Health,Meeting,-61.42491,-8.821468,16-06-2024 21:11,17-06-2024 03:11,Laptop,3,Administrative,Ongoing,Training on new software,Merge with task 771,"[560, 191, 771]"
+934,Finance,Presentation,13.673736,-23.411348,12-08-2024 03:38,12-08-2024 10:38,Printer,4,Administrative,Planned,Maintenance of office equipment,Reschedule task 495,"[495, 695]"
+935,Education,Presentation,-70.586043,-26.678078,09-07-2024 07:06,09-07-2024 12:06,Scanner,7,Report,Completed,Training on new software,None,[308]
+936,Health,Training,81.268899,24.475779,10-12-2023 18:51,10-12-2023 21:51,Projector,6,Construction,Completed,Maintenance of office equipment,Reschedule task 821,[821]
+937,Health,Report,-89.848222,-126.903237,19-03-2024 05:26,19-03-2024 08:26,Whiteboard,5,Construction,Completed,Training on new software,Merge with task 448,[448]
+938,Agriculture,Presentation,62.220311,-45.267188,27-09-2023 07:18,27-09-2023 15:18,Projector,6,Construction,Ongoing,Presentation preparation for stakeholders,Reschedule task 218,"[716, 218, 935]"
+939,Health,Training,47.350111,-145.503049,20-11-2023 10:05,20-11-2023 13:05,Whiteboard,3,Training,Ongoing,Maintenance of office equipment,Merge with task 404,"[612, 404, 547]"
+940,Agriculture,Meeting,-50.095072,39.06804,10-03-2024 01:41,10-03-2024 05:41,Whiteboard,6,Administrative,Planned,Meeting to discuss quarterly budget,Merge with task 80,"[937, 80, 662]"
+941,Agriculture,Meeting,-51.978178,-23.255774,29-09-2023 15:18,29-09-2023 21:18,Printer,3,Training,Completed,Maintenance of office equipment,None,"[397, 692]"
+942,Education,Maintenance,82.532294,-28.17472,31-08-2024 23:35,01-09-2024 02:35,Printer,9,Construction,Ongoing,Meeting to discuss quarterly budget,Merge with task 751,"[703, 751]"
+943,Agriculture,Training,-32.57536,26.885595,03-03-2024 22:31,04-03-2024 05:31,Printer,1,Training,Planned,Report generation for annual review,Reschedule task 311,"[790, 56, 311]"
+944,Agriculture,Presentation,55.282516,146.955913,30-12-2023 19:48,31-12-2023 01:48,Printer,6,Report,Ongoing,Meeting to discuss quarterly budget,Reallocate resources,[435]
+945,Health,Meeting,-62.9303,-58.638352,23-07-2024 22:53,24-07-2024 03:53,Projector,9,Report,Planned,Report generation for annual review,Merge with task 476,"[50, 476, 289]"
+946,Health,Maintenance,-80.986768,35.758161,03-12-2023 01:48,03-12-2023 07:48,Whiteboard,7,Administrative,Planned,Maintenance of office equipment,None,[]
+947,Finance,Maintenance,-57.828928,-51.52127,17-06-2024 05:43,17-06-2024 06:43,Printer,6,Administrative,Planned,Meeting to discuss quarterly budget,None,[]
+948,Finance,Meeting,5.628336,-37.362755,14-03-2024 09:36,14-03-2024 12:36,Laptop,9,Construction,Completed,Training on new software,Reschedule task 915,"[442, 915, 282]"
+949,Transport,Training,75.379524,145.288972,26-04-2024 06:38,26-04-2024 14:38,Laptop,2,Administrative,Ongoing,Meeting to discuss quarterly budget,None,[624]
+950,Finance,Report,2.27381,81.143665,14-03-2024 07:32,14-03-2024 13:32,Whiteboard,7,Training,Completed,Training on new software,None,"[739, 669]"
+951,Education,Report,83.728809,105.712126,27-08-2024 04:35,27-08-2024 09:35,Whiteboard,10,Report,Planned,Training on new software,None,[]
+952,Health,Presentation,-4.874688,93.858856,19-07-2024 15:38,19-07-2024 22:38,Whiteboard,3,Administrative,Planned,Meeting to discuss quarterly budget,Merge with task 932,"[932, 186, 695]"
+953,Education,Training,-86.630589,-30.843058,19-03-2024 11:12,19-03-2024 14:12,Whiteboard,5,Training,Planned,Maintenance of office equipment,None,[]
+954,Transport,Training,-86.746874,-63.14082,02-09-2024 07:59,02-09-2024 09:59,Scanner,5,Report,Ongoing,Presentation preparation for stakeholders,Reallocate resources,"[651, 610, 337]"
+955,Agriculture,Presentation,-87.7379,-57.385448,07-01-2024 20:13,08-01-2024 02:13,Printer,3,Training,Planned,Report generation for annual review,Reallocate resources,[546]
+956,Education,Maintenance,-17.47112,57.851458,24-06-2024 03:42,24-06-2024 05:42,Printer,9,Administrative,Completed,Training on new software,None,"[312, 299]"
+957,Agriculture,Report,-84.678378,44.950571,29-03-2024 04:53,29-03-2024 07:53,Scanner,6,Report,Ongoing,Report generation for annual review,None,[]
+958,Transport,Presentation,43.929363,176.284886,21-02-2024 11:46,21-02-2024 18:46,Scanner,3,Training,Planned,Meeting to discuss quarterly budget,None,[]
+959,Education,Training,-51.965069,-140.172204,26-08-2024 20:03,27-08-2024 01:03,Projector,3,Training,Planned,Report generation for annual review,Reschedule task 223,"[770, 223]"
+960,Health,Maintenance,23.449619,59.124448,15-12-2023 01:57,15-12-2023 07:57,Scanner,9,Report,Ongoing,Training on new software,Merge with task 775,"[507, 775, 476]"
+961,Health,Training,-17.990215,-178.798543,05-07-2024 17:19,05-07-2024 23:19,Printer,3,Construction,Ongoing,Presentation preparation for stakeholders,Reallocate resources,"[429, 421, 194]"
+962,Transport,Training,-65.057032,43.171306,11-05-2024 16:32,11-05-2024 18:32,Scanner,10,Training,Completed,Maintenance of office equipment,Reallocate resources,[171]
+963,Agriculture,Meeting,81.332295,-171.820974,26-04-2024 00:34,26-04-2024 07:34,Scanner,9,Maintenance,Completed,Report generation for annual review,Merge with task 896,"[741, 896]"
+964,Agriculture,Maintenance,-66.12299,-156.667384,26-03-2024 10:37,26-03-2024 11:37,Projector,10,Training,Ongoing,Training on new software,None,"[248, 816, 182]"
+965,Health,Meeting,54.663655,121.635162,20-12-2023 15:52,20-12-2023 18:52,Projector,8,Construction,Completed,Meeting to discuss quarterly budget,None,"[888, 533, 482]"
+966,Finance,Report,82.363467,138.008534,07-04-2024 20:41,07-04-2024 22:41,Scanner,9,Construction,Ongoing,Report generation for annual review,None,[]
+967,Health,Report,59.095393,81.054194,06-09-2024 09:24,06-09-2024 10:24,Whiteboard,7,Report,Planned,Report generation for annual review,Merge with task 128,"[807, 128, 107]"
+968,Agriculture,Meeting,39.958959,-48.072778,21-11-2023 11:29,21-11-2023 17:29,Projector,4,Training,Completed,Maintenance of office equipment,None,[]
+969,Finance,Meeting,-7.516436,75.269838,14-12-2023 17:36,14-12-2023 21:36,Whiteboard,6,Administrative,Planned,Report generation for annual review,Reallocate resources,"[807, 462]"
+970,Education,Maintenance,16.997063,94.076186,29-07-2024 22:13,30-07-2024 01:13,Scanner,5,Construction,Completed,Maintenance of office equipment,Reschedule task 731,"[731, 299]"
+971,Finance,Maintenance,-4.448728,-21.649553,01-05-2024 18:21,01-05-2024 23:21,Projector,3,Maintenance,Planned,Maintenance of office equipment,Merge with task 264,"[264, 653, 234]"
+972,Health,Maintenance,-63.294595,-175.655982,27-05-2024 08:50,27-05-2024 14:50,Scanner,9,Training,Ongoing,Presentation preparation for stakeholders,Reallocate resources,[353]
+973,Health,Presentation,-33.426678,-45.22947,21-10-2023 08:47,21-10-2023 16:47,Projector,9,Training,Completed,Report generation for annual review,Merge with task 15,"[15, 685, 970]"
+974,Education,Training,-49.624202,-79.806402,05-02-2024 22:41,06-02-2024 00:41,Projector,6,Training,Ongoing,Presentation preparation for stakeholders,None,[]
+975,Education,Training,43.448015,-49.118281,24-04-2024 14:25,24-04-2024 15:25,Printer,2,Administrative,Planned,Meeting to discuss quarterly budget,None,"[567, 548]"
+976,Education,Meeting,84.6787,-159.849072,18-10-2023 13:04,18-10-2023 17:04,Projector,5,Maintenance,Planned,Training on new software,None,[707]
+977,Education,Meeting,86.287948,-84.325198,17-11-2023 01:57,17-11-2023 06:57,Laptop,4,Construction,Completed,Presentation preparation for stakeholders,Merge with task 213,"[63, 213]"
+978,Health,Meeting,6.648056,101.308531,17-11-2023 05:18,17-11-2023 11:18,Laptop,4,Training,Completed,Report generation for annual review,None,[]
+979,Transport,Training,-72.022336,32.175313,08-02-2024 00:31,08-02-2024 08:31,Whiteboard,10,Construction,Planned,Report generation for annual review,None,[]
+980,Transport,Training,16.008758,48.575719,18-06-2024 23:44,19-06-2024 07:44,Laptop,5,Training,Planned,Maintenance of office equipment,Reallocate resources,"[647, 181, 337]"
+981,Transport,Maintenance,81.258426,-72.130584,10-12-2023 16:49,10-12-2023 20:49,Whiteboard,5,Report,Planned,Maintenance of office equipment,Merge with task 115,"[115, 775, 969]"
+982,Transport,Presentation,-5.308861,-121.272886,24-08-2024 07:58,24-08-2024 09:58,Printer,5,Construction,Ongoing,Maintenance of office equipment,None,[199]
+983,Transport,Training,-34.703939,-70.061825,07-12-2023 09:33,07-12-2023 17:33,Laptop,5,Report,Completed,Presentation preparation for stakeholders,Merge with task 332,[332]
+984,Transport,Training,19.822181,-123.432243,23-03-2024 02:30,23-03-2024 10:30,Scanner,7,Administrative,Completed,Maintenance of office equipment,Reschedule task 957,"[957, 877, 855]"
+985,Health,Maintenance,40.807735,118.523264,29-05-2024 16:47,29-05-2024 22:47,Printer,5,Training,Planned,Report generation for annual review,Reschedule task 781,"[6, 781, 963]"
+986,Agriculture,Training,85.497437,96.137496,07-05-2024 05:33,07-05-2024 06:33,Projector,4,Administrative,Ongoing,Maintenance of office equipment,None,[]
+987,Health,Report,52.365595,-62.753352,20-06-2024 14:16,20-06-2024 18:16,Projector,10,Report,Ongoing,Maintenance of office equipment,None,[]
+988,Transport,Training,-61.12477,80.225694,09-12-2023 16:31,10-12-2023 00:31,Laptop,7,Training,Completed,Maintenance of office equipment,Reallocate resources,"[61, 104, 58]"
+989,Health,Presentation,-23.499211,152.498193,04-11-2023 04:34,04-11-2023 06:34,Printer,3,Construction,Ongoing,Report generation for annual review,Merge with task 895,[895]
+990,Finance,Training,11.130549,-22.225969,11-08-2024 04:15,11-08-2024 10:15,Scanner,9,Administrative,Planned,Presentation preparation for stakeholders,Merge with task 707,"[707, 23]"
+991,Finance,Maintenance,72.918629,-19.497466,15-05-2024 23:39,16-05-2024 03:39,Projector,6,Training,Completed,Report generation for annual review,Reallocate resources,"[342, 204]"
+992,Education,Maintenance,18.65104,155.765249,18-02-2024 08:38,18-02-2024 11:38,Laptop,7,Training,Ongoing,Report generation for annual review,None,[]
+993,Agriculture,Meeting,74.336797,4.414201,27-01-2024 01:10,27-01-2024 02:10,Scanner,7,Construction,Planned,Maintenance of office equipment,Reallocate resources,"[290, 589, 342]"
+994,Finance,Presentation,-73.414166,20.984632,29-09-2023 17:57,29-09-2023 19:57,Scanner,3,Report,Completed,Presentation preparation for stakeholders,None,"[625, 666, 196]"
+995,Agriculture,Maintenance,-6.17127,140.168083,06-04-2024 12:48,06-04-2024 15:48,Whiteboard,2,Maintenance,Planned,Presentation preparation for stakeholders,None,"[465, 541]"
+996,Education,Meeting,-17.736108,-74.227037,21-05-2024 21:00,22-05-2024 04:00,Laptop,1,Maintenance,Ongoing,Report generation for annual review,None,[266]
+997,Finance,Maintenance,5.825569,55.300572,05-04-2024 18:48,05-04-2024 22:48,Scanner,6,Report,Completed,Training on new software,Reschedule task 212,[212]
+998,Finance,Presentation,18.345864,124.091394,08-07-2024 13:14,08-07-2024 16:14,Scanner,6,Construction,Ongoing,Maintenance of office equipment,Merge with task 674,[674]
+999,Transport,Report,88.380653,-96.127614,02-05-2024 21:39,03-05-2024 01:39,Whiteboard,1,Maintenance,Ongoing,Meeting to discuss quarterly budget,None,"[27, 455, 889]"
+1000,Finance,Report,-81.141427,-22.123132,05-10-2023 15:30,05-10-2023 19:30,Projector,7,Report,Completed,Meeting to discuss quarterly budget,None,[519]
