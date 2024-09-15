@@ -125,8 +125,10 @@ def signupAuthority():
 @app.route('/login', methods = ['GET','POST'])
 def login():
     if request.method == 'POST': 
-        email = request.form['email']
-        password = request.form['password']        
+        info = request.get_json()
+        email = info.get("email")
+        password = info.get("password")
+
         try:
             user = auth.sign_in_with_email_and_password(email, password)
             idToken = user["idToken"]
@@ -137,13 +139,13 @@ def login():
                 "emailVerified":user["users"][0]["emailVerified"],
                 "idToken":idToken
             }
-            return redirect('/')
+            return jsonify({"message":"Login Successful","id":1})
         
         except Exception as e:
             login_error = "Invalid email or password. Please try again."
-            return render_template('login.html', login_error = login_error, login_display_error = True)
+            return jsonify({"message":"something went wrong. Please try again later"})
     else:
-        return render_template('login.html')
+        return jsonify({"message":"Login Failure"})
 
 
 @app.route('/logout')
@@ -214,29 +216,31 @@ def createTask():
 
     # return jsonify({"message":"Task created successfully","info":info})
 
-@app.route('/forum',methods=['GET'])
-def discussionForum():
-    if "user" in session:
-        pass
-    else:
-        pass
+# @app.route('/forum',methods=['GET'])
+# def discussionForum():
+#     if "user" in session:
+#         pass
+#     else:
+#         pass
         
 
 
-          #TODO: run the task overlapping algorithm to check for overlapping tasks and notify the user
-        #if overlapping_tasks:
-         #   merge_decision = handle_task_overlap(overlapping_tasks, info)
+#           #TODO: run the task overlapping algorithm to check for overlapping tasks and notify the user
+#         if overlapping_tasks:
+#            merge_decision = handle_task_overlap(overlapping_tasks, info)
 
-         #TODO: check for the overlapping tasks and ask them if they want to merge the task and if yes then merge the task and modify the database accordingly for merged tasks and notify the user about the same and return the task details
+#          #TODO: check for the overlapping tasks and ask them if they want to merge the task and if yes then merge the task and modify the database accordingly for merged tasks and notify the user about the same and return the task details
 
-        #return jsonify({"message":"Task created successfully","info":info})
-        return jsonify({
-            "message": "Task processed successfully",
-            "task_info": info,
-            "allocation": allocation_result
-        })
-    else:
-        return jsonify({"message": "User not logged in"}), 401
+#         return jsonify({"message":"Task created successfully","info":info})
+#         return jsonify({
+#             "message": "Task processed successfully",
+#             "task_info": info,
+#             "allocation": allocation_result
+#         })
+#     else:
+#         return jsonify({"message": "User not logged in"}), 401
+
+
 
 def allocation_for_task(info):
     

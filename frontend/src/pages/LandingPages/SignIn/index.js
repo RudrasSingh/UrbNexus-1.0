@@ -32,60 +32,60 @@ import routes from "routes";
 // Images
 import bgImage from "assets/images/bg-sign-in-basic.jpeg";
 
-const authenticateUser = (username, password, dispatch) => {
-  for (const ministry of database.ministries) {
-    for (const member of ministry.members) {
-      if (member.username === username && verifyPassword(password, member.password)) {
-        const userData = {
-          userId: ministry.id,
-          ministryName: ministry.name,
-          memberInfo: member,
-        };
-        // Dispatch action to update Redux store
-        dispatch(setUserData(userData));
-        console.log(userData);
-        return userData;
-      }
-    }
-  }
+// const authenticateUser = (username, password, dispatch) => {
+//   for (const ministry of database.ministries) {
+//     for (const member of ministry.members) {
+//       if (member.username === username && verifyPassword(password, member.password)) {
+//         const userData = {
+//           userId: ministry.id,
+//           ministryName: ministry.name,
+//           memberInfo: member,
+//         };
+//         // Dispatch action to update Redux store
+//         dispatch(setUserData(userData));
+//         console.log(userData);
+//         return userData;
+//       }
+//     }
+//   }
 
-  dispatch(setUserData(null));
-  return null;
-};
+//   dispatch(setUserData(null));
+//   return null;
+// };
 
-const verifyPassword = (inputPassword, storedHashedPassword) => {
-  return inputPassword === storedHashedPassword; // For example purposes, no hashing here
-};
+// const verifyPassword = (inputPassword, storedHashedPassword) => {
+//   return inputPassword === storedHashedPassword; // For example purposes, no hashing here
+// };
 
 function SignInBasic() {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const [rememberMe, setRememberMe] = useState(false);
   const [email, setEmail] = useState(""); // State for email
   const [password, setPassword] = useState(""); // State for password
-  const navigate = useNavigate(); // Initialize navigate function
+  // const navigate = useNavigate(); // Initialize navigate function
 
   const handleSetRememberMe = () => setRememberMe(!rememberMe);
   const handleSignIn = async () => {
     try {
       // Send the email and password to the backend for authentication
-      const response = await axios.post("/api/data", {
+      const response = await axios.post("/login", {
         email,
         password,
       });
       console.log(response.data);
       // Assuming the API returns user data if authentication is successful
-      const userData = authenticateUser(email, password, dispatch);
+      // const userData = authenticateUser(email, password, dispatch);
 
-      if (userData) {
-        // Dispatch action to update Redux store with user data
-        dispatch(setUserData(userData));
-        // Navigate to the home page or desired route
-        navigate("/presentation");
-      } else {
-        // Handle authentication failure
-        console.error("Authentication failed");
-        alert("Invalid email or password");
-      }
+      //     if (userData) {
+      //       // Dispatch action to update Redux store with user data
+      //       dispatch(setUserData(userData));
+      //       // Navigate to the home page or desired route
+      //       navigate("/presentation");
+      //     } else {
+      //       // Handle authentication failure
+      //       console.error("Authentication failed");
+      //       alert("Invalid email or password");
+      //     }
     } catch (error) {
       console.error("Error during sign-in:", error);
       alert("An error occurred. Please try again later.");
