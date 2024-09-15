@@ -1,34 +1,46 @@
+import os
 import psycopg2
 from flask import g
 from psycopg2.extras import RealDictCursor
 import uuid
 import datetime
 import json
+from dotenv import load_dotenv
 
 
-with open('db_config.json') as config_file:
+#Load environment variables from .env file
+load_dotenv()
+
+
+with open('backend/db_conf.json') as config_file:
     config = json.load(config_file)
 
 db_config = config["Servers"]["1"]
 
 
+#Function to generate uuid
 def generate_uuid():
     return str(uuid.uuid4())
 
-
+#Function to get current timestamp
 def current_timestamp():
     return datetime.datetime.now()
 
+#Function to get connection
 def get_connection():
     if 'db' not in g:
+         # Get the path for sslrootcert
+        sslrootcert_path = os.path.join(os.path.dirname(__file__), db_config["sslrootcert"])
+
+        #Establish the connection
         g.db = psycopg2.connect(
             dbname=db_config["MaintenanceDB"],
             user=db_config["Username"],
-            password="yaha password daalna ha",
+            password=os.getenv("DB_PASSWORD"),
             host=db_config["Host"],
             port=db_config["Port"],
             sslmode=db_config["SSLMode"],
-            sslrootcert=db_config["sslrootcert"]
+            sslrootcert=sslrootcert_path
         )
     return g.db
 
@@ -87,15 +99,15 @@ def delete_dep_head(email):
 #Table2- departments 
 
 # Create a Department
-def create_department(dep_name, loc, contact, description=None):
+def create_department(dep_id,dep_name, loc, contact, description=None):
     query = """
-    INSERT INTO departments (dep_name, loc, contact, description, created_at, updated_at)
+    INSERT INTO departments (dep_id,dep_name, loc, contact, description, created_at, updated_at)
     VALUES (%s, %s, %s, %s, %s, %s)
     RETURNING dep_id;
     """
     conn = get_connection()
     with conn.cursor() as cursor:
-        cursor.execute(query, (dep_name, loc, contact, description, current_timestamp(), current_timestamp()))
+        cursor.execute(query, (dep_id,dep_name, loc, contact, description, current_timestamp(), current_timestamp()))
         conn.commit()
         return cursor.fetchone()[0]
 
@@ -337,7 +349,7 @@ def delete_public_user(email):
 
 #Table7-tasks
 # Create a Task
-def create_task(title, descr=None, assign_to=None, dept_id=None, stat='Pending', priority='Medium', loc=None, due=None, req=None):
+def create_task(title, descr=None, assign_to=None, dept_id=None, stat='Pending', priority=None, loc=None, due=None, req=None):
     query = """
     INSERT INTO tasks (title, descr, assign_to, dept_id, stat, priority, loc, due, req, created_at, updated_at)
     VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)

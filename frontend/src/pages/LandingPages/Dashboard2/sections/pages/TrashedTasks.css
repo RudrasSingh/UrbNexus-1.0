@@ -1,0 +1,151 @@
+.trashed-tasks-container {
+  padding: 40px 60px; /* More padding for a spacious layout */
+  background-color: #f5f7fa; /* Slightly darker background */
+  min-height: 100vh;
+  font-family: "Arial", sans-serif; /* Modern font */
+  color: #333; /* Darker text color for better contrast */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.header h1 {
+  font-size: 20px; /* Uniform font size */
+  color: #333;
+  margin: 0;
+}
+
+.header-actions button {
+  margin-left: 10px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 16px; /* Consistent button font size */
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
+.header-actions button:hover {
+  background-color: #e0e0e0; /* Light gray on hover */
+  color: #0056b3;
+}
+
+.restore-all {
+  color: #17a2b8;
+}
+
+.delete-all {
+  color: #dc3545;
+}
+
+.task-table {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px; /* More rounded corners */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Deeper shadow for depth */
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 2fr;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #555; /* Softer color */
+  text-transform: uppercase; /* Make header text uppercase */
+  font-size: 14px; /* Uniform header font size */
+  border-bottom: 2px solid #eaeaea; /* Divider line */
+  padding-bottom: 10px;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 2fr;
+  align-items: center;
+  border-bottom: 1px solid #eaeaea;
+  padding: 15px 0; /* More padding for rows */
+  transition:
+    background-color 0.3s,
+    transform 0.3s; /* Smooth hover effect */
+  font-size: 14px; /* Consistent row font size */
+}
+
+.table-row:hover {
+  background-color: #f1f3f5;
+  transform: scale(1.01); /* Slight scale effect */
+}
+
+.task-title {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+
+.task-dot {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+.task-dot.blue {
+  background-color: #007bff;
+}
+
+.task-dot.orange {
+  background-color: #fd7e14;
+}
+
+.task-dot.green {
+  background-color: #28a745;
+}
+
+.task-dot.gray {
+  background-color: #6c757d;
+}
+
+.task-date {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.restore-btn,
+.delete-btn {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 16px; /* Consistent icon size */
+  transition:
+    transform 0.2s,
+    color 0.2s; /* Add scale and color effect on hover */
+}
+
+.restore-btn:hover,
+.delete-btn:hover {
+  transform: scale(1.2); /* Enlarge icon on hover */
+  color: #0056b3; /* Change color on hover */
+}
+
+.restore-btn {
+  color: #17a2b8;
+}
+
+.delete-btn {
+  color: #dc3545;
+}

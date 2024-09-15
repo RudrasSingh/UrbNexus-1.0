@@ -6,9 +6,11 @@ from authlib.integrations.flask_client import OAuth
 from pyrebase import *
 import database as db
 from resource_allocator_algo import ResourceAllocator
+import random
 
-#----------------------application setup---------------------------------------
-app = Flask(__name__) 
+
+#----------------------application setup----------------------------------------
+app = Flask(__name__)
 CORS(app)
 
 app.config.from_object(Config)
@@ -26,7 +28,6 @@ oauth.register(
 firebase = initialize_app(Config.FIREBASE_CONFIG)
 auth = firebase.auth()
 # -----------------------------------------------------------------------------
-
 #authentications
 #Google Login
 @app.route("/callback/<flow>")
@@ -152,7 +153,7 @@ def logout():
     session.clear()
     return jsonify({"message":"Log out success"})
 
-# ---------------------------------------------------------------------------------------
+#---------------------------------------------------------------------------------------
 #functionality code
 @app.route('/new-task', methods=['GET','POST'])
 def createTask():
@@ -169,6 +170,57 @@ def createTask():
         info = request.get_json()
 
         allocation_result= allocation_for_task(info)
+
+
+    #TODO: write the mechanism to get the details from the front end and store it in the database
+    info = request.get_json()
+    depart = info.get("department")
+    deptId = []
+    department = ""
+    # for id in db.read_departments():
+    #     deptId.append({"id":id.get("dep_id"),"name":id.get("dep_name")})
+    # for id in deptId:
+    #     if depart==id.get("name"):
+    #         department = id.get("id")
+    try:
+        taskId = None
+        task=f"TK{random.randint(10000,99999)}"
+        # for id in db.read_tasks():
+        #     if id.get("t_id") != task:
+        #         taskId = task
+        taskinfo = {
+            "id" : task,
+            "title": info.get("title"),
+            "desc": info.get("desc"),
+            "projManager": info.get("projManager"),
+            "department": depart,
+            "stat": info.get("stat"),
+            "priority": info.get("priority"),
+            "location": info.get("location"),
+            "deadline": info.get("deadline")
+        }
+        db.create_task(taskId, info.get("title"), info.get("desc"), info.get("projManager"), department, info.get("stat"), info.get("priority"), info.get("location"), info.get("deadline"))
+
+        return jsonify({"message":"Task created successfully","task details":taskinfo})
+    
+    except Exception as e:    
+        return({"message":f"something went wrong! Please try again later{e}"})
+    #TODO: allocate the resources for the task using Resource Allocation Algorithm and notify upon success
+    
+
+    #TODO: run the task overlapping algorithm to check for overlapping tasks and notify the user
+    
+    #TODO: check for the overlapping tasks and ask them if they want to merge the task and if yes then merge the task and modify the database accordingly for merged tasks and notify the user about the same and return the task details
+
+    # return jsonify({"message":"Task created successfully","info":info})
+
+@app.route('/forum',methods=['GET'])
+def discussionForum():
+    if "user" in session:
+        pass
+    else:
+        pass
+        
 
 
           #TODO: run the task overlapping algorithm to check for overlapping tasks and notify the user
