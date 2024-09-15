@@ -349,17 +349,18 @@ def delete_public_user(email):
 
 #Table7-tasks
 # Create a Task
-def create_task(title, descr=None, assign_to=None, dept_id=None, stat='Pending', priority=None, loc=None, due=None, req=None):
+def create_task(t_id,title, descr=None, assign_to=None, dept_id=None, stat='Pending', priority="low", loc=None, due=None, req=None):
     query = """
-    INSERT INTO tasks (title, descr, assign_to, dept_id, stat, priority, loc, due, req, created_at, updated_at)
-    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+    INSERT INTO tasks (t_id, title, descr, assign_to, dept_id, stat, priority, loc, due, req, created_at, updated_at)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
     RETURNING t_id;
     """
     conn = get_connection()
     with conn.cursor() as cursor:
-        cursor.execute(query, (title, descr, assign_to, dept_id, stat, priority, loc, due, req, current_timestamp(), current_timestamp()))
+        cursor.execute(query, (t_id, title, descr, assign_to, dept_id, stat, priority, loc, due, req, current_timestamp(), current_timestamp()))
         conn.commit()
         return cursor.fetchone()[0]
+
 
 
 # Read Tasks

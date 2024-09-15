@@ -160,20 +160,20 @@ def createTask():
     info = request.get_json()
     depart = info.get("department")
     deptId = []
-    department = ""
+    department = 1234
     # for id in db.read_departments():
     #     deptId.append({"id":id.get("dep_id"),"name":id.get("dep_name")})
     # for id in deptId:
     #     if depart==id.get("name"):
     #         department = id.get("id")
     try:
-        taskId = None
+        taskId = 1234
         task=f"TK{random.randint(10000,99999)}"
         # for id in db.read_tasks():
         #     if id.get("t_id") != task:
         #         taskId = task
         taskinfo = {
-            "id" : task,
+            "id" : taskId,
             "title": info.get("title"),
             "desc": info.get("desc"),
             "projManager": info.get("projManager"),
@@ -183,12 +183,12 @@ def createTask():
             "location": info.get("location"),
             "deadline": info.get("deadline")
         }
-        db.create_task(taskId, info.get("title"), info.get("desc"), info.get("projManager"), department, info.get("stat"), info.get("priority"), info.get("location"), info.get("deadline"))
+        # db.create_task(taskId, info.get("title"),None, None,None, info.get("stat"), info.get("priority"), info.get("location"), info.get("deadline"))
 
-        return jsonify({"message":"Task created successfully","task details":taskinfo})
+        return jsonify({"message":"Task created successfully","task details":db.read_tasks()})
     
-    except Exception as e:    
-        return({"message":f"something went wrong! Please try again later{e}"})
+    except Exception as e:   
+        return({"message":f"something went wrong! Please try again later {e}"})
     #TODO: allocate the resources for the task using Resource Allocation Algorithm and notify upon success
     
 
