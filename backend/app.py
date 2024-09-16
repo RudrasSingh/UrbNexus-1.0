@@ -115,7 +115,9 @@ def signupAuthority():
             user = auth.create_user_with_email_and_password(email, password)
 
             #TODO: create user in database with specific role and department
-            db.create_user(user["localId"], name, email, role, department, picture)
+            # db.create_user(user["localId"], name, email, role, department, picture)
+            print(user, name, email, role, department, picture, authorrityId)
+
             return jsonify({"message":"User created successfully","name":name,"email":email,"profile_picture":picture})
         
         except Exception as e:
