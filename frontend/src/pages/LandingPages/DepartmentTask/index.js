@@ -17,7 +17,7 @@ import { useNavigate } from "react-router-dom";
 const DepartmentTask = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const UserState = useSelector((state) => state.userData);
+  const UserState = useSelector((state) => state.user.userData);
   const label = UserState == null ? "Sign In" : "Sign Out";
 
   const handleActionClick = () => {
@@ -29,9 +29,9 @@ const DepartmentTask = () => {
     }
   };
   // Get the signed-in user's ministry ID from Redux state
-  const userData = useSelector((state) => state.userData);
-  const signedInMinistryId = userData ? userData.userId : null;
-
+  const userData = useSelector((state) => state.user.userData);
+  const signedInMinistryId = userData ? userData.id : null;
+  console.log(userData.id);
   // Create a mapping of ministry ID to ministry name
   const ministryMap = database.ministries.reduce((acc, ministry) => {
     acc[ministry.id] = ministry.name;
