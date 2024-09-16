@@ -1,3 +1,4 @@
 /backend/.env
 /venv/
 /backend/test_model.py
+/backend/venv/
