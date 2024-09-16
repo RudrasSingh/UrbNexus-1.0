@@ -67,22 +67,17 @@ function SignInBasic() {
   const handleSetRememberMe = () => setRememberMe(!rememberMe);
   const handleSignIn = async () => {
     try {
-      // Send the email and password to the backend for authentication
       const response = await axios.post("/login", {
         email,
         password,
       });
-      console.log(response.data);
-      // Assuming the API returns user data if authentication is successful
-      // const userData = authenticateUser(email, password, dispatch);
+
+      console.log("API Response:", response.data.message); // Log the entire response
 
       if (response.data) {
-        // Dispatch action to update Redux store with user data
-        dispatch(setUserData(response.data));
-        // Navigate to the home page or desired route
+        dispatch(setUserData(response.data)); // Send data to Redux
         navigate("/presentation");
       } else {
-        // Handle authentication failure
         console.error("Authentication failed");
         alert("Invalid email or password");
       }

@@ -10,7 +10,7 @@ import { useDispatch } from "react-redux";
 // Material Kit 2 React components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
-import MKSocialButton from "components/MKSocialButton";
+// import MKSocialButton from "components/MKSocialButton";
 
 // Material Kit 2 React examples
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
@@ -20,7 +20,7 @@ import FilledInfoCard from "examples/Cards/InfoCards/FilledInfoCard";
 // Presentation page sections
 import Counters from "pages/Presentation/sections/Counters";
 import Information from "pages/Presentation/sections/Information";
-import DesignBlocks from "pages/Presentation/sections/DesignBlocks";
+// import DesignBlocks from "pages/Presentation/sections/DesignBlocks";
 import Download from "pages/Presentation/sections/Download";
 
 // Presentation page components
@@ -33,11 +33,13 @@ import footerRoutes from "footer.routes";
 
 // Images
 import bgImage from "assets/images/bg-presentation.jpg";
+// import Trial from "./sections/Check";
+import DeptTask from "./sections/DeptTask";
 
 function Presentation() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const UserState = useSelector((state) => state.userData);
+  const UserState = useSelector((state) => state.user.userData);
   const label = UserState == null ? "Sign In" : "Sign Out";
 
   //filtering routes logic
@@ -68,7 +70,7 @@ function Presentation() {
       navigate("/signin"); // Redirect to the SignIn page
     } else {
       dispatch(logoutUser());
-      alert("Please sign out to continue");
+      alert("Logout Successful");
     }
   };
 
@@ -134,7 +136,9 @@ function Presentation() {
       >
         <Counters />
         <Information />
-        <DesignBlocks />
+        {/* <DesignBlocks /> */}
+        <DeptTask></DeptTask>
+        {/* <Trial></Trial> */}
         <Container sx={{ mt: 6 }}>
           <BuiltByDevelopers />
         </Container>
@@ -184,7 +188,7 @@ function Presentation() {
         </Container>
         <Download />
         <MKBox pt={18} pb={6}>
-          <Container>
+          {/* <Container>
             <Grid container spacing={3}>
               <Grid item xs={12} lg={5} ml="auto" sx={{ textAlign: { xs: "center", lg: "left" } }}>
                 <MKTypography variant="h4" fontWeight="bold" mb={0.5}>
@@ -193,8 +197,8 @@ function Presentation() {
                 <MKTypography variant="body1" color="text">
                   We deliver the best web products
                 </MKTypography>
-              </Grid>
-              <Grid
+              </Grid> */}
+          {/* <Grid
                 item
                 xs={12}
                 lg={5}
@@ -231,9 +235,9 @@ function Presentation() {
                   <i className="fab fa-pinterest" />
                   &nbsp;Pin it
                 </MKSocialButton>
-              </Grid>
-            </Grid>
-          </Container>
+              </Grid> */}
+          {/* </Grid>
+          </Container> */}
         </MKBox>
       </Card>
       <MKBox pt={6} px={1} mt={6}>

@@ -142,11 +142,12 @@ def login():
                 "emailVerified":user["users"][0]["emailVerified"],
                 "idToken":idToken
             }
+            print(user)
             return jsonify({"message":"Login Successful","id":1,"info":session["user"]})
         
         except Exception as e:
             login_error = "Invalid email or password. Please try again."
-            return jsonify({"message":"something went wrong. Please try again later"})
+            return jsonify({"message":f"something went wrong. Please try again later {e}"})
     else:
         return jsonify({"message":"Login Failure"})
 
