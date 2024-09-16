@@ -99,15 +99,15 @@ def delete_dep_head(email):
 #Table2- departments 
 
 # Create a Department
-def create_department(dep_id,dep_name, loc, contact, description=None):
+def create_department(dep_id,dep_name, loc, resources,contact, description=None):
     query = """
-    INSERT INTO departments (dep_id,dep_name, loc, contact, description, created_at, updated_at)
-    VALUES (%s, %s, %s, %s, %s, %s)
+    INSERT INTO departments (dep_id,dep_name, loc, resources, contact, description, created_at, updated_at)
+    VALUES (%s, %s, %s, %s, %s, %s, %s)
     RETURNING dep_id;
     """
     conn = get_connection()
     with conn.cursor() as cursor:
-        cursor.execute(query, (dep_id,dep_name, loc, contact, description, current_timestamp(), current_timestamp()))
+        cursor.execute(query, (dep_id,dep_name, loc, resources, contact, description, current_timestamp(), current_timestamp()))
         conn.commit()
         return cursor.fetchone()[0]
 
@@ -122,28 +122,36 @@ def read_departments():
 
 
 # Update Department
-def update_department(dep_id, dep_name=None, loc=None, contact=None, description=None):
+def update_department(dep_id, dep_name=None, loc=None, resources=None, contact=None, description=None):
     query = """
     UPDATE departments
     SET dep_name = COALESCE(%s, dep_name),
         loc = COALESCE(%s, loc),
+        resources = COALESCE(%s, resources),
         contact = COALESCE(%s, contact),
         description = COALESCE(%s, description),
-        updated_at = %s
-    WHERE dep_id = %s;
+        updated_at = CURRENT_TIMESTAMP
+    WHERE dep_id = %s
+    RETURNING dep_id;
     """
     conn = get_connection()
     with conn.cursor() as cursor:
-        cursor.execute(query, (dep_name, loc, contact, description, current_timestamp(), dep_id))
+        cursor.execute(query, (dep_name, loc, resources, contact, description, dep_id))
         conn.commit()
+        return cursor.fetchone()[0]
 
 # Delete Department
 def delete_department(dep_id):
-    query = "DELETE FROM departments WHERE dep_id = %s"
+    query = """
+    DELETE FROM departments 
+    WHERE dep_id = %s
+    RETURNING dep_id;
+    """
     conn = get_connection()
     with conn.cursor() as cursor:
         cursor.execute(query, (dep_id,))
         conn.commit()
+        return cursor.fetchone()[0]
 
 
 
