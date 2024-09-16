@@ -8,7 +8,7 @@ import CreateTask from "pages/LandingPages/CreateTask";
 // import CreateTask from "pages/LandingPages/CreateTask";
 import Task from "pages/LandingPages/Task";
 // import SignIn from "pages/LandingPages/SignIn";
-import Dashboard from "pages/LandingPages/Dashboard";
+// import Dashboard from "pages/LandingPages/Dashboard";
 import DepartmentTask from "pages/LandingPages/DepartmentTask";
 import Inventory from "pages/LandingPages/Inventory";
 
@@ -92,7 +92,7 @@ const routes = [
             component: <CreateTask />,
           },
           {
-            name: "Tech Expart",
+            name: "Tech Expert",
             route: " /",
             component: <CreateTask />,
           },
@@ -115,8 +115,8 @@ const routes = [
   {
     name: "Dashboard",
     icon: <Icon>dashboard</Icon>,
-    route: "/pages/landing-pages/Dashboard",
-    component: <Dashboard />,
+    route: "/pages/landing-pages/Dashboard2",
+    component: <Dashboard2 />,
   },
 ];
 

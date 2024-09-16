@@ -31,7 +31,7 @@ const Inventory = () => {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const UserState = useSelector((state) => state.userData);
+  const UserState = useSelector((state) => state.user.userData);
   const label = UserState == null ? "Sign In" : "Sign Out";
 
   const handleActionClick = () => {

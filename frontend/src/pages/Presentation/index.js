@@ -37,7 +37,7 @@ import bgImage from "assets/images/bg-presentation.jpg";
 function Presentation() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const UserState = useSelector((state) => state.userData);
+  const UserState = useSelector((state) => state.user.userData);
   const label = UserState == null ? "Sign In" : "Sign Out";
 
   //filtering routes logic
@@ -68,7 +68,7 @@ function Presentation() {
       navigate("/signin"); // Redirect to the SignIn page
     } else {
       dispatch(logoutUser());
-      alert("Please sign out to continue");
+      alert("Logout Successful");
     }
   };
 
