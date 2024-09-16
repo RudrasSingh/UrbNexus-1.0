@@ -103,6 +103,7 @@ def signupAuthority():
         name = request.json.get('name')
         email = request.json.get('email')
         password = request.json.get('password')
+        authorrityId = request.json.get('authorityId')
         role = request.json.get('role')
         department = request.json.get('department')
         if request.json.get('profile_picture'):
@@ -114,7 +115,7 @@ def signupAuthority():
             user = auth.create_user_with_email_and_password(email, password)
 
             #TODO: create user in database with specific role and department
-
+            db.create_user(user["localId"], name, email, role, department, picture)
             return jsonify({"message":"User created successfully","name":name,"email":email,"profile_picture":picture})
         
         except Exception as e:
