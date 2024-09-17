@@ -5,7 +5,7 @@
   width: 85%;
   max-width: 1200px;
   margin: 20px auto;
-  background: linear-gradient(145deg, #ffffff, #f1f1f1);
+  background: #ffffff;
   border-radius: 15px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   padding: 30px;
@@ -17,15 +17,16 @@
   display: flex;
   align-items: center;
   margin-bottom: 30px;
-  background: #ffffff;
+  background: #f0f8ff; /* Alice Blue */
   padding: 15px;
   border-radius: 10px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
+
 .comment-box input {
   flex: 1;
   padding: 12px;
-  border: 1px solid #ddd;
+  border: 1px solid #d0e7ff; /* Light Blue */
   border-radius: 8px;
   font-size: 16px;
   color: #333;
@@ -35,7 +36,7 @@
   padding: 12px 25px;
   border: none;
   border-radius: 8px;
-  background: linear-gradient(135deg, #4a90e2, #0033cc);
+  background: linear-gradient(135deg, #1e90ff, #4682b4); /* Dodger Blue to Steel Blue */
   color: #fff;
   font-size: 16px;
   cursor: pointer;
@@ -43,7 +44,7 @@
 }
 
 .comment-box button:hover {
-  background: linear-gradient(135deg, #0033cc, #4a90e2);
+  background: linear-gradient(135deg, #4682b4, #1e90ff);
   transform: scale(1.05);
 }
 
@@ -62,7 +63,7 @@
   padding: 12px 20px;
   border: none;
   border-radius: 8px;
-  background: linear-gradient(135deg, #0033cc, #4a90e2);
+  background: linear-gradient(135deg, #1e90ff, #4682b4);
   color: #fff;
   font-size: 14px;
   cursor: pointer;
@@ -70,7 +71,7 @@
 }
 
 .filters button:hover {
-  background: linear-gradient(135deg, #4a90e2, #0033cc);
+  background: linear-gradient(135deg, #4682b4, #1e90ff);
   transform: scale(1.05);
 }
 
@@ -96,14 +97,14 @@
 
 .post-category {
   font-weight: bold;
-  color: linear-gradient(135deg, #0033cc, #4a90e2);
+  color: #1e90ff; /* Dodger Blue */
 }
 
 .follow-button {
   background: none;
-  border: 2px solid #0033cc;
+  border: 2px solid #1e90ff;
   border-radius: 8px;
-  color: #0033cc;
+  color: #1e90ff;
   padding: 8px 15px;
   cursor: pointer;
   font-size: 14px;
@@ -111,7 +112,7 @@
 }
 
 .follow-button:hover {
-  background: #0033cc;
+  background: #1e90ff;
   color: #fff;
 }
 
@@ -158,11 +159,11 @@
 }
 
 .post-actions .reply-button {
-  color: #0033cc;
+  color: #1e90ff;
 }
 
 .post-actions .share-button {
-  color: #4a90e2;
+  color: #4682b4;
 }
 
 .post-actions .like-button {
@@ -170,7 +171,7 @@
 }
 
 .post-actions .follow-post-button {
-  color: #0033cc;
+  color: #1e90ff;
 }
 
 .post-actions .offensive-button {
@@ -180,7 +181,7 @@
 /* Replies Section */
 .replies-section {
   margin-top: 25px;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #d0e7ff; /* Light Blue */
   padding-top: 15px;
 }
 
@@ -245,25 +246,25 @@
 }
 
 .modal-actions .submit-button {
-  background: linear-gradient(135deg, #0033cc, #4a90e2);
+  background: linear-gradient(135deg, #1e90ff, #4682b4);
 }
 
 .modal-actions .submit-button:hover {
-  background: linear-gradient(135deg, #4a90e2, #0033cc);
+  background: linear-gradient(135deg, #4682b4, #1e90ff);
 }
 
 .modal-actions .cancel-button {
-  background: #ccc;
+  background: #d0e7ff;
 }
 
 .modal-actions .cancel-button:hover {
-  background: #aaa;
+  background: #b0d0ff;
 }
 
 textarea {
   width: 100%;
   padding: 12px;
-  border: 1px solid #ddd;
+  border: 1px solid #d0e7ff;
   border-radius: 8px;
   font-size: 16px;
   color: #333;
