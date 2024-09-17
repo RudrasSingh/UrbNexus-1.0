@@ -3,7 +3,7 @@ from flask_cors import CORS
 from config import Config
 from authlib.integrations.flask_client import OAuth
 from pyrebase import *
-import database as db
+#import database as db
 from resource_allocator_algo import ResourceAllocator
 import random
 

@@ -1,46 +1,48 @@
 /* eslint-disable react/no-unescaped-entities */
 import React, { useState } from "react";
 import "./forum.css"; // Add your CSS here
+import PropTypes from "prop-types";
 
-const ForumPage = () => {
+const ForumPage = ({ loggedInUser = { name: "Guest" } }) => {
   const initialPosts = [
     {
       id: 1,
       user: "TheRight",
       role: "Silver Member",
       postTime: "17 mins 32 secs ago",
-      content:
-        "A good buy opportunity for long-term investors. Do your own research before investing as this is not an investment advice.",
+      content: "A good buy opportunity for long-term investors...",
       likes: 0,
       likedByUser: false,
-      isFollowed: false, // To handle following/unfollowing
-      isPostFollowed: false, // To handle following/unfollowing posts
-      isOffensive: false, // To flag offensive posts
+      isFollowed: false,
+      isPostFollowed: false,
+      isOffensive: false,
+      replies: [], // To store replies for this post
     },
     {
       id: 2,
       user: "nnomg",
       role: "New Member",
       postTime: "37 mins 50 secs ago",
-      content:
-        "tannu n mannu hi chal raha hai iss forum par. Stock toh buri tarah pitt raha hai so all of you in dono ko hi enjoy karo.",
+      content: "tannu n mannu hi chal raha hai...",
       likes: 0,
       likedByUser: false,
       isFollowed: false,
       isPostFollowed: false,
       isOffensive: false,
+      replies: [],
     },
     {
       id: 3,
       user: "nagasuda",
       role: "New Member",
       postTime: "1 hour 20 mins ago",
-      content: "28th September is the due date for Dividend payment as advised to NSE by IRFC.",
+      content: "28th September is the due date for Dividend payment...",
       likes: 0,
       likedByUser: false,
       isFollowed: false,
       isPostFollowed: false,
       isOffensive: false,
+      replies: [],
     },
   ];
 
@@ -80,7 +82,25 @@ const ForumPage = () => {
   // Handle reply submission
   const handleReplySubmit = () => {
     if (replyContent) {
-      console.log("Reply to post:", currentPost.id, "Reply:", replyContent);
+      const newReply = {
+        id: currentPost.replies.length + 1,
+        user: loggedInUser.name,
+        role: "Member",
+        postTime: "Just now",
+        content: replyContent,
+      };
+
+      setPosts((prevPosts) =>
+        prevPosts.map((post) => {
+          if (post.id === currentPost.id) {
+            return {
+              ...post,
+              replies: [...post.replies, newReply],
+            };
+          }
+          return post;
+        })
+      );
       handleCloseReplyModal();
     }
   };
@@ -90,8 +110,8 @@ const ForumPage = () => {
     if (newPostTitle && newPostDescription) {
       const newPost = {
         id: posts.length + 1,
-        user: "New User",
-        role: "New Member",
+        user: loggedInUser.name,
+        role: "Member",
         postTime: "Just now",
         content: newPostDescription,
         likes: 0,
@@ -99,6 +119,7 @@ const ForumPage = () => {
         isFollowed: false,
         isPostFollowed: false,
         isOffensive: false,
+        replies: [],
       };
 
       setPosts([newPost, ...posts]);
@@ -228,6 +249,21 @@ const ForumPage = () => {
                 {post.isOffensive ? "Flagged" : "Offensive"}
               </button>
             </div>
+
+            {/* Replies Section */}
+            {post.replies.length > 0 && (
+              <div className="replies-section">
+                {post.replies.map((reply) => (
+                  <div key={reply.id} className="reply-card">
+                    <div className="reply-info">
+                      <span className="reply-user">{reply.user}</span>
+                      <span className="reply-time">{reply.postTime}</span>
+                    </div>
+                    <div className="reply-content">{reply.content}</div>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         ))}
       </div>
@@ -251,23 +287,21 @@ const ForumPage = () => {
         </div>
       )}
 
-      {/* Post Modal */}
+      {/* New Post Modal */}
       {showPostModal && (
-        <div className="reply-modal">
+        <div className="post-modal">
           <div className="modal-content">
             <h3>Create a New Post</h3>
             <input
-              className="post-title-input"
               type="text"
               value={newPostTitle}
               onChange={(e) => setNewPostTitle(e.target.value)}
               placeholder="Post Title"
             />
             <textarea
-              className="post-description-input"
               value={newPostDescription}
               onChange={(e) => setNewPostDescription(e.target.value)}
-              placeholder="Post Description"
+              placeholder="Write your post here..."
               rows="5"
             />
             <div className="modal-actions">
@@ -279,6 +313,12 @@ const ForumPage = () => {
       )}
     </div>
   );
+};
+
+ForumPage.propTypes = {
+  loggedInUser: PropTypes.shape({
+    name: PropTypes.string,
+  }),
 };
 
 export default ForumPage;
