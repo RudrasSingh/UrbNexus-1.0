@@ -27,7 +27,7 @@ function Counters() {
             <DefaultCounterCard
               count={10}
               suffix="+"
-              title="Upcoming Tusks"
+              title="Upcoming Tasks"
               description="Explore and plan for tasks that are scheduled to start in the near future."
             />
             <Divider orientation="vertical" sx={{ display: { xs: "none", md: "block" }, ml: 0 }} />

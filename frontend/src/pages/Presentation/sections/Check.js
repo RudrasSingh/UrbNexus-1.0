@@ -4,27 +4,27 @@ import { FaCheckCircle, FaHourglassHalf, FaExclamationCircle } from "react-icons
 const Trial = () => {
   const departments = [
     {
-      name: "Marketing",
+      name: "Jal Vibhag",
       tasks: [
         { title: "Launch social media campaign", status: "in-progress" },
-        { title: "Prepare Q3 marketing report", status: "pending" },
-        { title: "Design new product brochures", status: "completed" },
+        { title: "Water Conservation Project", status: "pending" },
+        { title: "Rainwater Harvesting Setup", status: "completed" },
       ],
     },
     {
-      name: "Development",
+      name: "Electricity",
       tasks: [
-        { title: "Fix critical security bug", status: "in-progress" },
-        { title: "Implement new API endpoints", status: "pending" },
-        { title: "Optimize database queries", status: "completed" },
+        { title: "Power Grid Maintenance", status: "in-progress" },
+        { title: "Solar Panel Installation", status: "pending" },
+        { title: "Power Cable Inspection", status: "completed" },
       ],
     },
     {
-      name: "Customer Support",
+      name: "Roads",
       tasks: [
-        { title: "Respond to urgent tickets", status: "in-progress" },
-        { title: "Update FAQ section", status: "pending" },
-        { title: "Conduct customer satisfaction survey", status: "completed" },
+        { title: "Road Resurfacing Project", status: "in-progress" },
+        { title: "Traffic Signal Upgrade", status: "pending" },
+        { title: "New Road Construction", status: "completed" },
       ],
     },
   ];
