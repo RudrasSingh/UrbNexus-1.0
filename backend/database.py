@@ -99,15 +99,15 @@ def delete_dep_head(email):
 #Table2- departments 
 
 # Create a Department
-def create_department(dep_id,dep_name, loc, resources,contact, description=None):
+def create_department(dep_id, dep_name, loc, resources, contact, descr=None):
     query = """
-    INSERT INTO departments (dep_id,dep_name, loc, resources, contact, description, created_at, updated_at)
-    VALUES (%s, %s, %s, %s, %s, %s, %s)
+    INSERT INTO departments (dep_id, dep_name, loc, resources, contact, descr, created_at, updated_at)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
     RETURNING dep_id;
     """
     conn = get_connection()
     with conn.cursor() as cursor:
-        cursor.execute(query, (dep_id,dep_name, loc, resources, contact, description, current_timestamp(), current_timestamp()))
+        cursor.execute(query, (dep_id, dep_name, loc, json.dumps(resources), contact, descr, current_timestamp(), current_timestamp()))
         conn.commit()
         return cursor.fetchone()[0]
 
@@ -122,21 +122,21 @@ def read_departments():
 
 
 # Update Department
-def update_department(dep_id, dep_name=None, loc=None, resources=None, contact=None, description=None):
+def update_department(dep_id, dep_name=None, loc=None, resources=None, contact=None, descr=None):
     query = """
     UPDATE departments
     SET dep_name = COALESCE(%s, dep_name),
         loc = COALESCE(%s, loc),
         resources = COALESCE(%s, resources),
         contact = COALESCE(%s, contact),
-        description = COALESCE(%s, description),
-        updated_at = CURRENT_TIMESTAMP
-    WHERE dep_id = %s
-    RETURNING dep_id;
+        resources = COALESCE(%s::jsonb,resources),
+        descr = COALESCE(%s, descr),
+        updated_at = %s
+    WHERE dep_id = %s;
     """
     conn = get_connection()
     with conn.cursor() as cursor:
-        cursor.execute(query, (dep_name, loc, resources, contact, description, dep_id))
+        cursor.execute(query, (dep_name, loc, json.dumps(resources), contact, descr, current_timestamp(), dep_id))
         conn.commit()
         return cursor.fetchone()[0]
 
@@ -303,6 +303,53 @@ def delete_project_manager(pm_id):
 
 
 
+#Table9-Workers
+# Create a Worker
+def create_worker(w_name, pro_pic=None):
+    query = """
+    INSERT INTO workers (w_name, pro_pic)
+    VALUES (%s, %s)
+    RETURNING w_id;
+    """
+    conn = get_connection()
+    with conn.cursor() as cursor:
+        cursor.execute(query, (w_name, pro_pic))
+        conn.commit()
+        return cursor.fetchone()[0]
+    
+
+# Read Workers
+def read_workers():
+    query = "SELECT * FROM workers"
+    conn = get_connection()
+    with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+        cursor.execute(query)
+        return cursor.fetchall()
+    
+
+# Update Worker
+def update_worker(w_id, w_name=None, pro_pic=None):
+    query = """
+    UPDATE workers
+    SET w_name = COALESCE(%s, w_name),
+        pro_pic = COALESCE(%s, pro_pic)
+        updated_at = %s
+    WHERE w_id = %s;
+    """
+    conn = get_connection()
+    with conn.cursor() as cursor:
+        cursor.execute(query, (w_name, pro_pic, current_timestamp(), w_id))
+        conn.commit()
+
+#delete worker
+def delete_worker(w_id):
+    query = "DELETE FROM workers WHERE w_id = %s"
+    conn = get_connection()
+    with conn.cursor() as cursor:
+        cursor.execute(query, (w_id,))
+        conn.commit()
+
+
 #Table6-Public_users
 # Create a Public User
 def create_public_user(uname, email, contact=None, complain=None, pro_pic=None, stat='Pending'):
@@ -365,7 +412,7 @@ def read_public_user_by_email(email):
 
 #Table7-tasks
 # Create a Task
-def create_task(t_id,title, descr=None, assign_to=None, dept_id=None, stat='Pending', priority="low", loc=None, due=None, req=None):
+def create_task(t_id, title, descr=None, assign_to=None, dept_id=None, stat='Pending', priority=None, loc=None, due=None, req=None):
     query = """
     INSERT INTO tasks (t_id, title, descr, assign_to, dept_id, stat, priority, loc, due, req, created_at, updated_at)
     VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
@@ -421,17 +468,18 @@ def delete_task(t_id):
 
 #Table8-inventory
 # Create an Inventory Item
-def create_inventory(in_name, qty, descr=None, dep_id=None):
+def create_inventory(in_name, machinery, dep_id=None):
     query = """
-    INSERT INTO inventory (in_name, qty, descr, dep_id, created_at, updated_at)
-    VALUES (%s, %s, %s, %s, %s, %s)
+    INSERT INTO inventory (in_name, machinery, dep_id, created_at, updated_at)
+    VALUES (%s, %s, %s, %s, %s)
     RETURNING in_id;
     """
     conn = get_connection()
     with conn.cursor() as cursor:
-        cursor.execute(query, (in_name, qty, descr, dep_id, current_timestamp(), current_timestamp()))
+        cursor.execute(query, (in_name, json.dumps(machinery), dep_id, current_timestamp(), current_timestamp()))
         conn.commit()
         return cursor.fetchone()[0]
+
 
 # Read Inventory
 def read_inventory():
@@ -443,19 +491,18 @@ def read_inventory():
 
 
 # Update Inventory Item
-def update_inventory(in_id, in_name=None, qty=None, descr=None, dep_id=None):
+def update_inventory(in_id, in_name=None, machinery=None, dep_id=None):
     query = """
     UPDATE inventory
     SET in_name = COALESCE(%s, in_name),
-        qty = COALESCE(%s, qty),
-        descr = COALESCE(%s, descr),
+        macihery = COALESCE(%s, machinery),
         dep_id = COALESCE(%s, dep_id),
         updated_at = %s
     WHERE in_id = %s;
     """
     conn = get_connection()
     with conn.cursor() as cursor:
-        cursor.execute(query, (in_name, qty, descr, dep_id, current_timestamp(), in_id))
+        cursor.execute(query, (in_name, json.dumps(machinery), dep_id, current_timestamp(), in_id))
         conn.commit()
 
 
