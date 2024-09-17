@@ -6,7 +6,7 @@ import uuid
 import datetime
 import json
 from dotenv import load_dotenv
-
+from datetime import datetime
 
 #Load environment variables from .env file
 load_dotenv()
@@ -353,6 +353,14 @@ def delete_public_user(email):
         cursor.execute(query, (email,))
         conn.commit()
 
+def read_public_user_by_email(email):
+    query = "SELECT * FROM public_users WHERE email = %s"
+    conn = get_connection()
+    with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+        cursor.execute(query, (email,))
+        return cursor.fetchone()  # Return the user record as a dictionary (or None if not found)
+
+
 
 
 #Table7-tasks
@@ -466,4 +474,93 @@ def close_database(e=None):
 
     if db is not None:
         db.close()
+
+"""-------------------forum---------------------"""
+def create_post(postId, email, name, title, content, sentiment=None):
+    query = """
+    INSERT INTO forum_posts (postId, email, name, title, postTime, content, likes, sentiment)
+    VALUES (%s, %s, %s, %s, NOW(), %s, 0, %s)
+    RETURNING postId;
+    """
+    with get_connection() as conn:
+        with conn.cursor() as cursor:
+            cursor.execute(query, (postId, email, name, title, content, sentiment))
+            conn.commit()
+            return cursor.fetchone()[0]  # Return postId for confirmation
+
+
+def add_reply(postId, reply_content, replier_name):
+    query_get_replies = "SELECT replies FROM forum_posts WHERE postId = %s"
+    query_update_replies = """
+    UPDATE forum_posts 
+    SET replies = %s 
+    WHERE postId = %s
+    """
+    
+    with get_connection() as conn:
+        with conn.cursor() as cursor:
+            cursor.execute(query_get_replies, (postId,))
+            replies = cursor.fetchone()[0]  # Get existing replies
+            
+            # Prepare new reply
+            new_reply = {
+                "replier_name": replier_name,
+                "reply_content": reply_content,
+                "reply_time": datetime.now().isoformat()
+            }
+            
+            replies.append(new_reply)  # Add new reply to the list
+            
+            # Update the replies field
+            cursor.execute(query_update_replies, (json.dumps(replies), postId))
+            conn.commit()
+
+
+def read_all_posts():
+    query = "SELECT * FROM forum_posts ORDER BY postTime DESC"
+    
+    with get_connection() as conn:
+        with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+            cursor.execute(query)
+            return cursor.fetchall()  # Returns a list of all posts as dictionaries, including title and likes
+
+def update_likes(postId, increment=True):
+    """
+    Updates the likes for a given post.
+    
+    :param postId: The ID of the post to update.
+    :param increment: If True, increment likes; if False, decrement likes.
+    :return: The updated number of likes for the post.
+    """
+    query = """
+    UPDATE forum_posts 
+    SET likes = likes + %s 
+    WHERE postId = %s
+    RETURNING likes;
+    """
+    
+    # Determine the value to increment or decrement likes
+    like_change = 1 if increment else -1
+    
+    with get_connection() as conn:
+        with conn.cursor() as cursor:
+            cursor.execute(query, (like_change, postId))
+            conn.commit()
+            return cursor.fetchone()[0]  # Return the updated likes count
+
+def delete_post(postId):
+    query = "DELETE FROM forum_posts WHERE postId = %s"
+    
+    with get_connection() as conn:
+        with conn.cursor() as cursor:
+            cursor.execute(query, (postId,))
+            conn.commit()
+
+def get_all_post_ids():
+    query = "SELECT postId FROM forum_posts"
+    conn = get_connection()
+    with conn.cursor() as cursor:
+        cursor.execute(query)
+        post_ids = [row[0] for row in cursor.fetchall()]  # Extracting postId into a list
+        return post_ids
 
