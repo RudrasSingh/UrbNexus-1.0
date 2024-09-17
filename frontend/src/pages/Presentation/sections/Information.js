@@ -67,15 +67,15 @@ function Information() {
               <Grid item xs={12} md={6}>
                 <DefaultInfoCard
                   icon="price_change"
-                  title="Save Time & Money"
-                  description="Creating your design from scratch with dedicated designers can be very expensive. Start with our Design System."
+                  title="Save environment & Earn Credits"
+                  description="Finish the work with less Carbon Emissions and more credits."
                 />
               </Grid>
               <Grid item xs={12} md={6}>
                 <DefaultInfoCard
                   icon="devices"
-                  title="Fully Responsive"
-                  description="Regardless of the screen size, the website content will naturally fit the given resolution."
+                  title="Cross Department Collaboration"
+                  description="Collaborate with your team in different departments."
                 />
               </Grid>
             </Grid>

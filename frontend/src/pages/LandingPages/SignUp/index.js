@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { MenuItem, Select, InputLabel, FormControl } from "@mui/material";
 
 // react-router-dom components
 import { Link } from "react-router-dom";
@@ -37,10 +38,12 @@ function SignInBasic() {
   const [email, setEmail] = useState("");
   const [authority, setAuthority] = useState("");
   const [profilePic, setProfilePic] = useState("");
+  const [role, setRole] = useState("");
+  const [department, setDepartment] = useState("");
 
   const handleSetRememberMe = () => setRememberMe(!rememberMe);
   const handleSignUp = () => {
-    console.log(name, email, password, authority, profilePic);
+    console.log(name, email, password, authority, profilePic, role, department);
   };
   const handleProfilePicChange = (e) => {
     setProfilePic(e.target.files[0]);
@@ -70,7 +73,7 @@ function SignInBasic() {
         left={0}
         zIndex={1}
         width="100%"
-        minHeight="100vh"
+        minHeight="120vh"
         sx={{
           backgroundImage: ({ functions: { linearGradient, rgba }, palette: { gradients } }) =>
             `${linearGradient(
@@ -98,7 +101,7 @@ function SignInBasic() {
                 textAlign="center"
               >
                 <MKTypography variant="h4" fontWeight="medium" color="white" mt={1}>
-                  Sign in
+                  Sign Up
                 </MKTypography>
                 <Grid container spacing={3} justifyContent="center" sx={{ mt: 1, mb: 2 }}>
                   <Grid item xs={2}>
@@ -155,6 +158,34 @@ function SignInBasic() {
                       onChange={(e) => setAuthority(e.target.value)}
                       fullWidth
                     />
+                  </MKBox>
+                  <MKBox mb={2}>
+                    <FormControl fullWidth>
+                      <InputLabel>Role</InputLabel>
+                      <Select
+                        value={role}
+                        onChange={(e) => setRole(e.target.value)}
+                        sx={{ height: 40 }}
+                      >
+                        <MenuItem value="Admin">Admin</MenuItem>
+                        <MenuItem value="User">User</MenuItem>
+                        <MenuItem value="Manager">Manager</MenuItem>
+                      </Select>
+                    </FormControl>
+                  </MKBox>
+                  <MKBox mb={2}>
+                    <FormControl fullWidth>
+                      <InputLabel>Department</InputLabel>
+                      <Select
+                        value={department}
+                        onChange={(e) => setDepartment(e.target.value)}
+                        sx={{ height: 40 }}
+                      >
+                        <MenuItem value="IT">IT</MenuItem>
+                        <MenuItem value="HR">HR</MenuItem>
+                        <MenuItem value="Finance">Finance</MenuItem>
+                      </Select>
+                    </FormControl>
                   </MKBox>
                   <MKBox mb={2}>
                     <MKInput
