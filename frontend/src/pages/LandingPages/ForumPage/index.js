@@ -2,6 +2,16 @@
 import React, { useState } from "react";
 import "./forum.css"; // Add your CSS here
 import PropTypes from "prop-types";
+import DefaultNavbar from "examples/Navbars/DefaultNavbar";
+import routes from "routes";
+import MKBox from "components/MKBox";
+import footerRoutes from "footer.routes";
+import DefaultFooter from "examples/Footers/DefaultFooter";
+
+import { useDispatch } from "react-redux";
+import { logoutUser } from "../../../redux/action";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const ForumPage = ({ loggedInUser = { name: "Guest" } }) => {
   const initialPosts = [
@@ -53,6 +63,40 @@ const ForumPage = ({ loggedInUser = { name: "Guest" } }) => {
   const [replyContent, setReplyContent] = useState("");
   const [newPostTitle, setNewPostTitle] = useState("");
   const [newPostDescription, setNewPostDescription] = useState("");
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const UserState = useSelector((state) => state.user.userData);
+  const label = UserState == null ? "Sign In" : "Sign Out";
+
+  const handleActionClick = () => {
+    if (UserState == null) {
+      navigate("/signin"); // Redirect to the SignIn page
+    } else {
+      dispatch(logoutUser());
+      alert("Logged out successfully");
+    }
+  };
+  const filterRoutes = (routes) => {
+    return routes
+      .filter(
+        (route) =>
+          route.name !== "Dashboard" &&
+          route.name !== "Dept." &&
+          route.name !== "Create Task" &&
+          route.name !== "Add Inventory"
+      )
+      .map((route) => {
+        // If a route has a `collapse` property, we need to filter it recursively
+        if (route.collapse) {
+          return {
+            ...route,
+            collapse: filterRoutes(route.collapse), // Recursively filter the collapse array
+          };
+        }
+        return route;
+      });
+  };
+  const filteredRoutes = UserState ? routes : filterRoutes(routes);
 
   // Open reply modal
   const handleReplyClick = (post) => {
@@ -196,122 +240,154 @@ const ForumPage = ({ loggedInUser = { name: "Guest" } }) => {
   };
 
   return (
-    <div className="forum-page">
-      {/* New Post Button */}
-      <div className="comment-box">
-        <input
-          type="text"
-          placeholder="Post your first comment here"
-          onClick={handlePostClick}
-          readOnly
+    <>
+      <MKBox
+        position="fixed"
+        top="0.5rem"
+        width="100%"
+        display="flex"
+        justifyContent="center"
+        zIndex="200"
+      >
+        <DefaultNavbar
+          routes={filteredRoutes}
+          action={{
+            type: "internal",
+            label: label,
+            color: "info",
+            functions: handleActionClick, // Use the function directly
+          }}
+          sticky
         />
-        <button onClick={handlePostClick}>Post</button>
-      </div>
-
-      {/* Post List */}
-      <div className="topics">
-        <div className="filters">
-          <button>Latest</button>
-          <button>Most Debated</button>
-          <button>Top Borders</button>
-        </div>
-        {posts.map((post) => (
-          <div key={post.id} className="post-card">
-            <div className="post-header">
-              <span className="post-category">Indian Railway</span>
-              <button className="follow-button" onClick={() => handleFollowClick(post.id)}>
-                {post.isFollowed ? "Unfollow" : "Follow"}
-              </button>
-            </div>
-            <div className="user-info">
-              <span className="user-name">{post.user}</span>
-              <span className="user-role">{post.role}</span>
-              <span className="post-time">{post.postTime}</span>
-            </div>
-            <div className="post-content">{post.content}</div>
-            <div className="post-actions">
-              <button className="reply-button" onClick={() => handleReplyClick(post)}>
-                Reply
-              </button>
-              <button className="share-button" onClick={() => handleShareClick(post.content)}>
-                Share
-              </button>
-              <button
-                className={`like-button ${post.likedByUser ? "liked" : ""}`}
-                onClick={() => handleLikeClick(post.id)}
-              >
-                ❤️ {post.likes}
-              </button>
-              <button className="follow-post-button" onClick={() => handleFollowPostClick(post.id)}>
-                {post.isPostFollowed ? "Unfollow Post" : "Follow Post"}
-              </button>
-              <button className="offensive-button" onClick={() => handleOffensiveClick(post.id)}>
-                {post.isOffensive ? "Flagged" : "Offensive"}
-              </button>
-            </div>
-
-            {/* Replies Section */}
-            {post.replies.length > 0 && (
-              <div className="replies-section">
-                {post.replies.map((reply) => (
-                  <div key={reply.id} className="reply-card">
-                    <div className="reply-info">
-                      <span className="reply-user">{reply.user}</span>
-                      <span className="reply-time">{reply.postTime}</span>
-                    </div>
-                    <div className="reply-content">{reply.content}</div>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-        ))}
-      </div>
-
-      {/* Reply Modal */}
-      {showReplyModal && (
-        <div className="reply-modal">
-          <div className="modal-content">
-            <h3>Reply to {currentPost.user}'s post</h3>
-            <textarea
-              value={replyContent}
-              onChange={(e) => setReplyContent(e.target.value)}
-              placeholder="Write your reply here..."
-              rows="5"
-            />
-            <div className="modal-actions">
-              <button onClick={handleReplySubmit}>Submit Reply</button>
-              <button onClick={handleCloseReplyModal}>Cancel</button>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* New Post Modal */}
-      {showPostModal && (
-        <div className="post-modal">
-          <div className="modal-content">
-            <h3>Create a New Post</h3>
+      </MKBox>
+      <MKBox pt={6} px={1} mt={6}>
+        <div className="forum-page">
+          {/* New Post Button */}
+          <div className="comment-box">
             <input
               type="text"
-              value={newPostTitle}
-              onChange={(e) => setNewPostTitle(e.target.value)}
-              placeholder="Post Title"
+              placeholder="Post your first comment here"
+              onClick={handlePostClick}
+              readOnly
             />
-            <textarea
-              value={newPostDescription}
-              onChange={(e) => setNewPostDescription(e.target.value)}
-              placeholder="Write your post here..."
-              rows="5"
-            />
-            <div className="modal-actions">
-              <button onClick={handlePostSubmit}>Submit Post</button>
-              <button onClick={handleClosePostModal}>Cancel</button>
-            </div>
+            <button onClick={handlePostClick}>Post</button>
           </div>
+
+          {/* Post List */}
+          <div className="topics">
+            <div className="filters">
+              <button>Latest</button>
+              <button>Most Debated</button>
+              <button>Top Borders</button>
+            </div>
+            {posts.map((post) => (
+              <div key={post.id} className="post-card">
+                <div className="post-header">
+                  <span className="post-category">Indian Railway</span>
+                  <button className="follow-button" onClick={() => handleFollowClick(post.id)}>
+                    {post.isFollowed ? "Unfollow" : "Follow"}
+                  </button>
+                </div>
+                <div className="user-info">
+                  <span className="user-name">{post.user}</span>
+                  <span className="user-role">{post.role}</span>
+                  <span className="post-time">{post.postTime}</span>
+                </div>
+                <div className="post-content">{post.content}</div>
+                <div className="post-actions">
+                  <button className="reply-button" onClick={() => handleReplyClick(post)}>
+                    Reply
+                  </button>
+                  <button className="share-button" onClick={() => handleShareClick(post.content)}>
+                    Share
+                  </button>
+                  <button
+                    className={`like-button ${post.likedByUser ? "liked" : ""}`}
+                    onClick={() => handleLikeClick(post.id)}
+                  >
+                    ❤️ {post.likes}
+                  </button>
+                  <button
+                    className="follow-post-button"
+                    onClick={() => handleFollowPostClick(post.id)}
+                  >
+                    {post.isPostFollowed ? "Unfollow Post" : "Follow Post"}
+                  </button>
+                  <button
+                    className="offensive-button"
+                    onClick={() => handleOffensiveClick(post.id)}
+                  >
+                    {post.isOffensive ? "Flagged" : "Offensive"}
+                  </button>
+                </div>
+
+                {/* Replies Section */}
+                {post.replies.length > 0 && (
+                  <div className="replies-section">
+                    {post.replies.map((reply) => (
+                      <div key={reply.id} className="reply-card">
+                        <div className="reply-info">
+                          <span className="reply-user">{reply.user}</span>
+                          <span className="reply-time">{reply.postTime}</span>
+                        </div>
+                        <div className="reply-content">{reply.content}</div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* Reply Modal */}
+          {showReplyModal && (
+            <div className="reply-modal">
+              <div className="modal-content">
+                <h3>Reply to {currentPost.user}'s post</h3>
+                <textarea
+                  value={replyContent}
+                  onChange={(e) => setReplyContent(e.target.value)}
+                  placeholder="Write your reply here..."
+                  rows="5"
+                />
+                <div className="modal-actions">
+                  <button onClick={handleReplySubmit}>Submit Reply</button>
+                  <button onClick={handleCloseReplyModal}>Cancel</button>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* New Post Modal */}
+          {showPostModal && (
+            <div className="post-modal">
+              <div className="modal-content">
+                <h3>Create a New Post</h3>
+                <input
+                  type="text"
+                  value={newPostTitle}
+                  onChange={(e) => setNewPostTitle(e.target.value)}
+                  placeholder="Post Title"
+                />
+                <textarea
+                  value={newPostDescription}
+                  onChange={(e) => setNewPostDescription(e.target.value)}
+                  placeholder="Write your post here..."
+                  rows="5"
+                />
+                <div className="modal-actions">
+                  <button onClick={handlePostSubmit}>Submit Post</button>
+                  <button onClick={handleClosePostModal}>Cancel</button>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
-      )}
-    </div>
+      </MKBox>
+      <MKBox pt={6} px={1} mt={6} mb={0}>
+        <DefaultFooter content={footerRoutes} />
+      </MKBox>
+    </>
   );
 };
 
