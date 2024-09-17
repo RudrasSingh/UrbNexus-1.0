@@ -1,214 +1,270 @@
-/* Overall Forum Page Styling */
+/* forum.css */
+
 .forum-page {
-  padding: 20px;
+  width: 85%;
   max-width: 1200px;
-  margin: 0 auto;
-  background-color: #f4f6f8;
-  font-family: Arial, sans-serif;
+  margin: 20px auto;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  overflow: hidden; /* To handle child elements overflow */
 }
 
-/* Comment Box Styling */
+/* New Post Box */
 .comment-box {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
-  background-color: #ffffff;
-  border-radius: 8px;
+  background-color: #fafafa;
   padding: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
 .comment-box input {
-  width: 80%;
-  padding: 12px;
-  font-size: 16px;
-  border-radius: 4px;
+  flex: 1;
+  padding: 10px;
   border: 1px solid #ddd;
-  outline: none;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
 }
 
 .comment-box button {
-  padding: 12px 20px;
-  background-color: #007bff;
-  color: white;
+  padding: 10px 20px;
   border: none;
-  border-radius: 4px;
-  cursor: pointer;
+  border-radius: 5px;
+  background-color: rgb(73, 163, 241);
+  color: #fff;
   font-size: 16px;
+  cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .comment-box button:hover {
-  background-color: #0056b3;
-  transform: translateY(-2px);
+  background-color: rgb(26, 115, 232);
+  transform: scale(1.05);
 }
 
-/* Filters Section Styling */
+/* Post List */
+.topics {
+  margin-top: 20px;
+}
+
 .filters {
   display: flex;
-  gap: 10px;
+  justify-content: space-between;
   margin-bottom: 20px;
 }
 
 .filters button {
-  padding: 10px 20px;
-  background-color: #e9ecef;
+  padding: 10px 15px;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
+  background-color: rgb(26, 115, 232);
+  color: #fff;
+  font-size: 14px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  font-size: 14px;
 }
 
 .filters button:hover {
-  background-color: #007bff;
-  color: white;
-  transform: translateY(-2px);
+  background-color: rgb(73, 163, 241);
+  transform: scale(1.05);
 }
 
-/* Post Cards */
 .post-card {
-  background-color: #ffffff;
-  border: 1px solid #ddd;
-  padding: 20px;
-  border-radius: 8px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 15px;
+  transition: transform 0.3s ease;
 }
 
 .post-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
 .post-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 15px;
 }
 
-.user-info {
+.post-category {
+  font-weight: bold;
+  color: rgb(26, 115, 232);
+}
+
+.follow-button {
+  background: none;
+  border: 1px solid rgb(26, 115, 232);
+  border-radius: 5px;
+  color: rgb(26, 115, 232);
+  padding: 5px 10px;
+  cursor: pointer;
   font-size: 14px;
-  color: #6c757d;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.follow-button:hover {
+  background-color: rgb(26, 115, 232);
+  color: #fff;
+}
+
+/* User Info */
+.user-info {
+  margin: 10px 0;
 }
 
 .user-name {
-  font-weight: 600;
-  color: #007bff;
+  font-weight: bold;
 }
 
+.user-role {
+  color: #888;
+}
+
+.post-time {
+  color: #888;
+  font-size: 14px;
+}
+
+/* Post Content */
 .post-content {
-  font-size: 16px;
-  color: #333;
+  margin: 10px 0;
   line-height: 1.6;
+  color: #333;
 }
 
+/* Post Actions */
 .post-actions {
   display: flex;
+  justify-content: flex-start;
   gap: 15px;
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
 .post-actions button {
-  padding: 8px 16px;
-  background-color: #f8f9fa;
   border: none;
-  border-radius: 4px;
+  background: none;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: 16px;
+  transition: color 0.3s ease;
 }
 
-.post-actions button:hover {
-  background-color: #007bff;
-  color: white;
-  transform: translateY(-2px);
+.post-actions .reply-button {
+  color: rgb(26, 115, 232);
 }
 
-/* Reply Modal Styling */
-.reply-modal {
+.post-actions .share-button {
+  color: rgb(73, 163, 241);
+}
+
+.post-actions .like-button {
+  color: #f44336;
+}
+
+.post-actions .follow-post-button {
+  color: rgb(26, 115, 232);
+}
+
+.post-actions .offensive-button {
+  color: #e91e63;
+}
+
+/* Replies Section */
+.replies-section {
+  margin-top: 20px;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+}
+
+.reply-card {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.reply-info {
+  font-size: 14px;
+  color: #888;
+}
+
+.reply-user {
+  font-weight: bold;
+}
+
+.reply-time {
+  margin-left: 10px;
+}
+
+/* Modals */
+.reply-modal, .post-modal {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
 }
 
 .modal-content {
-  background-color: #ffffff;
-  padding: 30px;
-  border-radius: 8px;
-  max-width: 600px;
-  width: 100%;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  text-align: center;
-  border: 1px solid #ddd;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 500px;
+  position: relative;
 }
 
-/* Title of the reply modal */
-.modal-content h3 {
-  margin-bottom: 20px;
-  font-size: 22px;
-  color: #007bff;
-  border-bottom: 2px solid #007bff;
-  padding-bottom: 10px;
-}
-
-/* Text area where user types their reply */
-.modal-content textarea {
-  width: 100%;
-  padding: 15px;
-  font-size: 16px;
-  border-radius: 5px;
-  border: 1px solid #ddd;
-  resize: vertical;
-  margin-top: 15px;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-/* Container for the buttons inside the modal */
 .modal-actions {
   display: flex;
-  justify-content: flex-end;
-  margin-top: 20px;
-  gap: 10px;
+  justify-content: space-between;
+  margin-top: 15px;
 }
 
-/* Style for buttons inside modal */
 .modal-actions button {
   padding: 10px 20px;
   border: none;
+  border-radius: 5px;
+  color: #fff;
   cursor: pointer;
-  border-radius: 4px;
-  font-size: 14px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
 }
 
-/* Primary submit button */
-.modal-actions button.submit-btn {
-  background-color: #007bff;
-  color: white;
+.modal-actions .submit-button {
+  background-color: rgb(73, 163, 241);
 }
 
-.modal-actions button.submit-btn:hover {
-  background-color: #0056b3;
-  transform: translateY(-2px);
+.modal-actions .submit-button:hover {
+  background-color: rgb(26, 115, 232);
 }
 
-/* Secondary cancel button */
-.modal-actions button.cancel-btn {
-  background-color: #f8f9fa;
+.modal-actions .cancel-button {
+  background-color: #ccc;
+}
+
+.modal-actions .cancel-button:hover {
+  background-color: #aaa;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
   color: #333;
-}
-
-.modal-actions button.cancel-btn:hover {
-  background-color: #e9ecef;
-  transform: translateY(-2px);
+  resize: vertical;
+  box-sizing: border-box;
 }
