@@ -1,6 +1,6 @@
 //react arrow function
 import React from "react";
-import CreateTaskComp from "./sections/CreateTaskComp";
+// import CreateTaskComp from "./sections/CreateTaskComp";
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import routes from "routes";
 import MKBox from "components/MKBox";
@@ -11,6 +11,8 @@ import { useDispatch } from "react-redux";
 import { logoutUser } from "../../../redux/action";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+// import CreateProject from "./sections/CreateProject";
+import CreatePro from "./sections/CreatePro";
 
 const CreateTask = () => {
   const dispatch = useDispatch();
@@ -62,7 +64,7 @@ const CreateTask = () => {
         />
       </MKBox>
       <MKBox pt={6} px={1} mt={6}>
-        <CreateTaskComp></CreateTaskComp>
+        <CreatePro></CreatePro>
       </MKBox>
       <MKBox pt={6} px={1} mt={6} mb={0}>
         <DefaultFooter content={footerRoutes} />
