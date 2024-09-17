@@ -18,6 +18,6 @@ class Config:
         'messagingSenderId': os.getenv("MESSAGING_SENDER_ID"),
         'appId': os.getenv("APP_ID"),
         'measurementId': os.getenv("MEASUREMENT_ID"),
-        'databaseURL': ""
+        'databaseURL': os.getenv(""),
     }
     GEN_AI_API = os.getenv("API_KEY_GENAI")

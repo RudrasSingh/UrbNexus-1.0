@@ -107,16 +107,17 @@ def signupAuthority():
         authorrityId = request.json.get('authorityId')
         role = request.json.get('role')
         department = request.json.get('department')
-        if request.json.get('profile_picture'):
-            picture = request.json.get('profile_picture')
+        if request.files['profile_picture']:
+            picture = upload_to_firebase(request.files['profile_picture'])
         else:
             picture = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
         
         try:
             user = auth.create_user_with_email_and_password(email, password)
+            
+            """store user info in the database"""
+            db.create_user(user["localId"], name, email, role, department, picture)
 
-            #TODO: create user in database with specific role and department
-            # db.create_user(user["localId"], name, email, role, department, picture)
             print(user, name, email, role, department, picture, authorrityId)
 
             return jsonify({"message":"User created successfully","name":name,"email":email,"profile_picture":picture})
@@ -162,10 +163,16 @@ def logout():
 
 #---------------------------------------------------------------------------------------
 
+def upload_to_firebase(file):
+    """uploading the profile image on cloud storage"""
+    file_name = file.filename
+    auth.storage.child(file_name).put(file)
+    url = auth.storage.child(file_name).get_url(None)
+    return url
+
 # Function to send an email using Mailjet
 def automatic_mail(to_email, to_name, subject, text_part, html_part):
     try:
-        # Your Mailjet API keys (replace with your actual keys)
         API_KEY = 'your-mailjet-api-key'  # Replace with your Mailjet API Key
         API_SECRET = 'your-mailjet-api-secret'  # Replace with your Mailjet API Secret
 
