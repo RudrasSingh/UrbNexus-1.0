@@ -1,7 +1,7 @@
 // @mui material components
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
-import Tooltip from "@mui/material/Tooltip";
+// import Tooltip from "@mui/material/Tooltip";
 
 // Material Kit 2 React components
 import MKBox from "components/MKBox";
@@ -54,7 +54,7 @@ function Download() {
           </Grid>
         </Container>
       </MKBox>
-      <Container>
+      {/* <Container>
         <Grid container item xs={6} mx="auto">
           <MKBox textAlign="center">
             <MKTypography variant="h3" mt={6} mb={3}>
@@ -162,7 +162,7 @@ function Download() {
             </Grid>
           </MKBox>
         </Grid>
-      </Container>
+      </Container> */}
     </MKBox>
   );
 }

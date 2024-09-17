@@ -17,6 +17,7 @@ import ForumPage from "pages/LandingPages/ForumPage";
 
 //dashboard2
 import Dashboard2 from "pages/LandingPages/Dashboard2";
+import AddInventoryPage from "pages/LandingPages/AddInventory";
 
 const routes = [
   {
@@ -71,8 +72,8 @@ const routes = [
           },
           {
             name: "Add Inventory",
-            route: " /",
-            component: <CreateTask />,
+            route: "/pages/landing-pages/AddInventory",
+            component: <AddInventoryPage />,
           },
         ],
       },
