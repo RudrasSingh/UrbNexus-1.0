@@ -98,12 +98,12 @@ def signupUser():
 def signupAuthority():
     if request.method == 'POST':
 
-        name = request.json.get('name')
-        email = request.json.get('email')
-        password = request.json.get('password')
-        authorrityId = request.json.get('authorityId')
-        role = request.json.get('role')
-        department = request.json.get('department')
+        name = request.get_json('name')
+        email = request.get_json('email')
+        password = request.get_json('password')
+        authorrityId = request.get_json('authorityId')
+        role = request.get_json('role')
+        department = request.get_json('department')
         if request.files['profile_picture']:
             picture = upload_to_firebase(request.files['profile_picture'])
         else:
