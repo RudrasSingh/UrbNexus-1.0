@@ -2,8 +2,8 @@
     "Servers": {
         "1": {
             "Name": "Db_connection",
-            "Group": "UrbNexus",
-            "Host": "pg-155ea646-urbnexus1.j.aivencloud.com",
+            "Group": "URBNexus",
+            "Host": "pg-e75810b-urbnexus1.i.aivencloud.com",
             "Port": 14538,
             "MaintenanceDB": "Dep_db",
             "Username": "avnadmin",
