@@ -6,11 +6,13 @@ from pyrebase import *
 import database as db
 from resource_allocator_algo import ResourceAllocator
 import random
+import h3
+from functools import wraps
 
 #----------------------application setup----------------------------------------
 app = Flask(__name__)
 CORS(app)
-
+api = Blueprint("api", __name__, url_prefix="/api/v1")
 app.config.from_object(Config)
 app.secret_key = Config.FLASK_SECRET
 
@@ -27,12 +29,39 @@ firebase = initialize_app(Config.FIREBASE_CONFIG)
 auth = firebase.auth()
 # -----------------------------------------------------------------------------
 #authentications
+def role_restricted(excluded_roles):
+    """
+    Decorator to deny access to users with specific roles.
+    If the user's role is in `excluded_roles`, they will be blocked.
+    """
+    def decorator(f):
+        @wraps(f)
+        def wrapper(*args, **kwargs):
+            if "user" not in session:
+                return jsonify({"message": "Unauthorized access. Please sign in.", "redirect": "/google-login"}), 401
+
+            user_email = session["user"].get("email")
+            if not user_email:
+                return jsonify({"message": "Invalid session. Please sign in again."}), 401
+
+            # Fetch the user's role from the database
+            user_role = "public" if db.read_public_user_by_email(user_email) else "authority"
+
+            if user_role in excluded_roles:
+                return jsonify({"message": "Access Denied"}), 403
+
+            return f(*args, **kwargs)
+        return wrapper
+    return decorator
+
 #Google Login
-@app.route("/callback/<flow>")
+@api.route("/callback/<flow>")
 def googleCallback(flow):
     token = oauth.myApp.authorize_access_token()
 
-    
+    if not token:
+        abort(400, "Authorization failed or state mismatch")
+
     token = dict(token)
     userinfo = token.get('userinfo')
 
@@ -53,30 +82,29 @@ def googleCallback(flow):
     if flow == "login":
         return jsonify({"name":user_info["name"],"email":user_info["email"],"profile_picture":user_info["profile_picture"]})
     elif flow == "signup":
-        '''
-        TODO: add function tob store user info in database 
-        '''
+        # Store user info in the database
+        db.create_public_user(user_info["name"], user_info["email"], pro_pic=user_info["profile_picture"])
         return jsonify({"name":user_info["name"],"email":user_info["email"],"profile_picture":user_info["profile_picture"]})
     else:
         abort(400, "Invalid flow type")
 
 
 
-@app.route("/google-login")
+@api.route("/google-login")
 def googleLoginUser():
     if "user" in session:
         abort(404)
     return oauth.myApp.authorize_redirect(redirect_uri=url_for("googleCallback", flow="login", _external=True))
 
 
-@app.route("/google-signup")
+@api.route("/google-signup")
 def googleSignupUser():
     if "user" in session:
         abort(404)
     return oauth.myApp.authorize_redirect(redirect_uri=url_for("googleCallback", flow="signup", _external=True))
 
 
-@app.route('/signup-public', methods = ['GET','POST'])
+@api.route('/signup-public', methods = ['GET','POST'])
 def signupUser():
     if request.method == 'POST':
         name = request.json.get('name')
@@ -88,45 +116,63 @@ def signupUser():
             picture = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
         
         try:
-            # user = auth.create_user_with_email_and_password(email, password)
+            user = auth.create_user_with_email_and_password(email, password)
+            db.create_public_user(name,email,pro_pic=picture)
+            auth.send_email_verification(user.get("idToken"))
             return jsonify({"message":"User created successfully","name":name,"email":email,"profile_picture":picture})
         
         except Exception as e:
-            return jsonify({"message":e.args[1]})
+            error = str(e)
+            return jsonify({"message":error})
+            
     else:
         return jsonify({"message":"Invalid request method"})
 
-@app.route('/signup-authority', methods = ['GET','POST'])
+@api.route('/signup-authority', methods=['GET', 'POST'])
 def signupAuthority():
     if request.method == 'POST':
+        data = request.get_json()  # Get the entire JSON payload
+        if not data:
+            return jsonify({"message": "Invalid JSON payload"}), 400
 
-        name = request.get_json('name')
-        email = request.get_json('email')
-        password = request.get_json('password')
-        authorrityId = request.get_json('authorityId')
-        role = request.get_json('role')
-        department = request.get_json('department')
-        if request.files['profile_picture']:
+        name = data.get('name')
+        email = data.get('email')
+        password = data.get('password')
+        authorityId = data.get('authorityId')
+        contact = data.get('contact')
+        role = data.get('role')
+        department = data.get('department')
+
+        if not email or not password:
+            return jsonify({"message": "Email and password are required"}), 400
+
+        if 'profile_picture' in request.files:
             picture = upload_to_firebase(request.files['profile_picture'])
         else:
             picture = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
-        
+
         try:
-            user = auth.create_user_with_email_and_password(email, password)
             
-            """store user info in the database"""
-            db.create_user(user["localId"], name, email, role, department, picture)
+            # Store user info in the database
+            user = auth.create_user_with_email_and_password(email, password)
+            db.create_dep_head(name,contact,email,picture,authorityId)
+            auth.send_email_verification(user.get("idToken"))
+            print(user, name, email, role, department, picture, authorityId)
 
-            print(user, name, email, role, department, picture, authorrityId)
-
-            return jsonify({"message":"User created successfully","name":name,"email":email,"profile_picture":picture})
+            return jsonify({
+                "message": "User created successfully",
+                "name": name,
+                "email": email,
+                "profile_picture": picture
+            })
         
         except Exception as e:
-            return jsonify({"message":e.args[1]})
-    else:
-        return jsonify({"message":"Invalid request method"})
+            error_message = str(e)
+            return jsonify({"message": f"Error: {error_message}"}), 400
+
+    return jsonify({"message": "Invalid request method"}), 405
     
-@app.route('/login', methods = ['GET','POST'])
+@api.route('/login', methods = ['GET','POST'])
 def login():
     if request.method == 'POST': 
         info = request.get_json()
@@ -138,7 +184,7 @@ def login():
             idToken = user["idToken"]
             user = auth.get_account_info(user['idToken'])
             session['user'] = {
-                "name":user["users"][0]["displayName"],
+                "name":user["users"],
                 "email":user["users"][0]["email"],
                 "emailVerified":user["users"][0]["emailVerified"],
                 "idToken":idToken
@@ -153,13 +199,20 @@ def login():
         return jsonify({"message":"Login Failure"})
 
 
-@app.route('/logout')
+@api.route('/logout')
 def logout():
 
     session.pop('user', None)
     session.clear()
     return jsonify({"message":"Log out success"})
 
+# @api.route('/delete')
+# def deleteData():
+#     try:
+#         db.delete_dep_head("atul.tmsl@gmail.com")
+#         return jsonify({"message":"deleted"})
+#     except Exception as e:
+#         return jsonify({"message":f"something went wrong. Please try again later {e}"})
 #---------------------------------------------------------------------------------------
 # image uploading function
 def upload_to_firebase(file):
@@ -171,7 +224,7 @@ def upload_to_firebase(file):
 
 #---------------------------------------------------------------------------------------
 #functionality code
-@app.route('/new-task', methods=['GET','POST'])
+@api.route('/new-task', methods=['GET','POST'])
 def createTask():
     if "user" in session:
 
@@ -231,7 +284,7 @@ def createTask():
     # return jsonify({"message":"Task created successfully","info":info})
 
 
-@app.route('/forum',methods=['GET'])
+@api.route('/forum',methods=['GET'])
 def discussionForum():
     if "user" in session:
         forumContent = db.read_all_posts()
@@ -242,7 +295,7 @@ def discussionForum():
     else:
         return jsonify({"message":"User not logged in"}), 401
         
-@app.route('/new-post',methods=['GET','POST'])
+@api.route('/new-post',methods=['GET','POST'])
 def createPost():
     if "user" in session:
         post = request.get_json()
@@ -264,7 +317,7 @@ def createPost():
     else:
         return jsonify({"message":"User not logged in"}), 401
     
-@app.route('/new-reply',methods=['GET','POST'])
+@api.route('/new-reply',methods=['GET','POST'])
 def addReply():
     if "user" in session:
         reply = request.get_json()
@@ -328,6 +381,7 @@ def allocation_for_task(info):
         raise Exception(f"Resource allocation failed: {str(e)}")
 
 
+app.register_blueprint(api)
 if __name__ == '__main__':
     app.run(debug=True)
 
