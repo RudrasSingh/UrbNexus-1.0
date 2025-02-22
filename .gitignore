@@ -2,3 +2,5 @@
 /venv/
 /backend/test_model.py
 /backend/venv/
+backend/__pycache__
+backend/__pycache__/database.cpython-312.pyc
