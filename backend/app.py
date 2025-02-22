@@ -46,7 +46,7 @@ def role_restricted(excluded_roles):
 
             # Fetch the user's role from the database
             user_role = "public" if db.read_public_user_by_email(user_email) else "authority"
-            
+
             if user_role in excluded_roles:
                 return jsonify({"message": "Access Denied"}), 403
 
@@ -59,7 +59,9 @@ def role_restricted(excluded_roles):
 def googleCallback(flow):
     token = oauth.myApp.authorize_access_token()
 
-    
+    if not token:
+        abort(400, "Authorization failed or state mismatch")
+
     token = dict(token)
     userinfo = token.get('userinfo')
 
@@ -80,9 +82,8 @@ def googleCallback(flow):
     if flow == "login":
         return jsonify({"name":user_info["name"],"email":user_info["email"],"profile_picture":user_info["profile_picture"]})
     elif flow == "signup":
-        '''
-        TODO: add function tob store user info in database 
-        '''
+        # Store user info in the database
+        db.create_public_user(user_info["name"], user_info["email"], pro_pic=user_info["profile_picture"])
         return jsonify({"name":user_info["name"],"email":user_info["email"],"profile_picture":user_info["profile_picture"]})
     else:
         abort(400, "Invalid flow type")
@@ -117,6 +118,7 @@ def signupUser():
         try:
             user = auth.create_user_with_email_and_password(email, password)
             db.create_public_user(name,email,pro_pic=picture)
+            auth.send_email_verification(user.get("idToken"))
             return jsonify({"message":"User created successfully","name":name,"email":email,"profile_picture":picture})
         
         except Exception as e:
@@ -153,8 +155,7 @@ def signupAuthority():
             
             # Store user info in the database
             user = auth.create_user_with_email_and_password(email, password)
-            db.create_dep_head(name,contact,email,picture,user["localId"])
-            user = auth.create_user_with_email_and_password(email, password)
+            db.create_dep_head(name,contact,email,picture,authorityId)
             auth.send_email_verification(user.get("idToken"))
             print(user, name, email, role, department, picture, authorityId)
 
@@ -183,7 +184,7 @@ def login():
             idToken = user["idToken"]
             user = auth.get_account_info(user['idToken'])
             session['user'] = {
-                "name":user["users"][0]["displayName"],
+                "name":user["users"],
                 "email":user["users"][0]["email"],
                 "emailVerified":user["users"][0]["emailVerified"],
                 "idToken":idToken
@@ -205,6 +206,13 @@ def logout():
     session.clear()
     return jsonify({"message":"Log out success"})
 
+# @api.route('/delete')
+# def deleteData():
+#     try:
+#         db.delete_dep_head("atul.tmsl@gmail.com")
+#         return jsonify({"message":"deleted"})
+#     except Exception as e:
+#         return jsonify({"message":f"something went wrong. Please try again later {e}"})
 #---------------------------------------------------------------------------------------
 # image uploading function
 def upload_to_firebase(file):

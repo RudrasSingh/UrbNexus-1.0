@@ -6,13 +6,12 @@ import uuid
 import datetime
 import json
 from dotenv import load_dotenv
-from datetime import datetime
-
-#Load environment variables from .env file
+import datetime
 load_dotenv()
 
-
-with open("D:/Kriti Port Folio/SIH'24/UrbNexus-1.0/backend/db_conf.json") as config_file:
+base_path = os.path.dirname(os.path.abspath(__file__))
+file_path = os.path.join(base_path, "pgConnect.json")
+with open(file_path) as config_file:
     config = json.load(config_file)
 
 db_config = config["Servers"]["1"]
@@ -610,4 +609,3 @@ def get_all_post_ids():
         cursor.execute(query)
         post_ids = [row[0] for row in cursor.fetchall()]  # Extracting postId into a list
         return post_ids
-
