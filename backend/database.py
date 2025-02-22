@@ -12,7 +12,7 @@ from datetime import datetime
 load_dotenv()
 
 
-with open("D:/Kriti Port Folio/SIH'24/UrbNexus-1.0/backend/db_conf.json") as config_file:
+with open("D:/Kriti Port Folio/SIH'24/UrbNexus-1.0/backend/pgConnect.json") as config_file:
     config = json.load(config_file)
 
 db_config = config["Servers"]["1"]
@@ -412,15 +412,15 @@ def read_public_user_by_email(email):
 
 #Table7-tasks
 # Create a Task
-def create_task(t_id, title, descr=None, assign_to=None, dept_id=None, stat='Pending', priority=None, loc=None, due=None, req=None):
+def create_task(t_id, title, descr=None, assign_to=None, dep_id=None, stat='Pending', priority=None, loc=None, due=None, req=None):
     query = """
-    INSERT INTO tasks (t_id, title, descr, assign_to, dept_id, stat, priority, loc, due, req, created_at, updated_at)
+    INSERT INTO tasks (t_id, title, descr, assign_to, dep_id, stat, priority, loc, due, req, created_at, updated_at)
     VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
     RETURNING t_id;
     """
     conn = get_connection()
     with conn.cursor() as cursor:
-        cursor.execute(query, (t_id, title, descr, assign_to, dept_id, stat, priority, loc, due, req, current_timestamp(), current_timestamp()))
+        cursor.execute(query, (t_id, title, descr, assign_to, dep_id, stat, priority, loc, due, req, current_timestamp(), current_timestamp()))
         conn.commit()
         return cursor.fetchone()[0]
 
@@ -436,13 +436,13 @@ def read_tasks():
 
 
 # Update Task
-def update_task(t_id, title=None, descr=None, assign_to=None, dept_id=None, stat=None, priority=None, loc=None, due=None, req=None):
+def update_task(t_id, title=None, descr=None, assign_to=None, dep_id=None, stat=None, priority=None, loc=None, due=None, req=None):
     query = """
     UPDATE tasks
     SET title = COALESCE(%s, title),
         descr = COALESCE(%s, descr),
         assign_to = COALESCE(%s, assign_to),
-        dept_id = COALESCE(%s, dept_id),
+        dep_id = COALESCE(%s, dep_id),
         stat = COALESCE(%s, stat),
         priority = COALESCE(%s, priority),
         loc = COALESCE(%s, loc),
@@ -453,7 +453,7 @@ def update_task(t_id, title=None, descr=None, assign_to=None, dept_id=None, stat
     """
     conn = get_connection()
     with conn.cursor() as cursor:
-        cursor.execute(query, (title, descr, assign_to, dept_id, stat, priority, loc, due, req, current_timestamp(), t_id))
+        cursor.execute(query, (title, descr, assign_to, dep_id, stat, priority, loc, due, req, current_timestamp(), t_id))
         conn.commit()
 
 
