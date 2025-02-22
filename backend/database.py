@@ -12,7 +12,7 @@ from datetime import datetime
 load_dotenv()
 
 
-with open('backend/db_conf.json') as config_file:
+with open('./backend/db_conf.json') as config_file:
     config = json.load(config_file)
 
 db_config = config["Servers"]["1"]

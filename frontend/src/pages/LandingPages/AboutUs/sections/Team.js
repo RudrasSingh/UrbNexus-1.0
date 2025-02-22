@@ -35,8 +35,8 @@ function Team() {
               The Executive Team
             </MKTypography>
             <MKTypography variant="body2" color="white" opacity={0.8}>
-              There&apos;s nothing I really wanted to do in life that I wasn&apos;t able to get good
-              at. That&apos;s my skill.
+              There&apos;s nothing we really wanted to do in life that we weren&apos;t able to get
+              good at. That&apos;s my skill.
             </MKTypography>
           </Grid>
         </Grid>
@@ -46,7 +46,7 @@ function Team() {
               <HorizontalTeamCard
                 image={team1}
                 name="Atul Kumar Singh"
-                position={{ color: "info", label: "backend Developer" }}
+                position={{ color: "info", label: "Lead and Backend Developer" }}
                 description="Crafting seamless connections between data and functionality, empowering the digital world."
               />
             </MKBox>
