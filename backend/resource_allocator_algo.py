@@ -34,13 +34,13 @@ class ResourceAllocator:
                 project['priority'] = priority_map.get(priority_str.lower(), 3)  # Default to low priority if not matched
 
 
-# ek use case
-projects = [
-    {"name": "Project A", "priority": "high", "requirements": {"machinery": 5, "workers": 10}},
+# # ek use case
+# projects = [
+#     {"name": "Project A", "priority": "high", "requirements": {"machinery": 5, "workers": 10}},
     
-]
-resources = {"machinery": 8, "workers": 32}
+# ]
+# resources = {"machinery": 8, "workers": 32}
 
-allocator = ResourceAllocator(projects, resources)
-allocation = allocator.allocate_resources()
-print(allocation)
+# allocator = ResourceAllocator(projects, resources)
+# allocation = allocator.allocate_resources()
+# print(allocation)

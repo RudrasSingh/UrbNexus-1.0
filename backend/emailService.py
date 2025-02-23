@@ -67,6 +67,6 @@ def task_merge_proposal_email(to_email, to_name, task_name, merge_task):
 
 
 # testing
-print(task_created_email("atul.tmsl@gmail.com","Atul","Road Building"))
-print(task_overlap_email("ishakriti.2004@gmail.com","Isha","Road Building","Bridge Construction"))
-print(task_merge_proposal_email("utsavtiwari030@gmail.com","Utsav","Road Building","Bridge Construction"))
+# print(task_created_email("atul.tmsl@gmail.com","Atul","Road Building"))
+# print(task_overlap_email("ishakriti.2004@gmail.com","Isha","Road Building","Bridge Construction"))
+# print(task_merge_proposal_email("utsavtiwari030@gmail.com","Utsav","Road Building","Bridge Construction"))

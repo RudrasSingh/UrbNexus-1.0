@@ -127,7 +127,7 @@ tasks = json.loads(json_data)["tasks"]
 merged_tasks = merge_tasks(tasks)
 
 # Display the merged tasks
-print(json.dumps(merged_tasks, indent=2))
+# print(json.dumps(merged_tasks, indent=2))
 
 # Define an in-depth, predefined prompt for Generative AI
 predefined_prompt = f'''
@@ -153,6 +153,6 @@ try:
     ai_response = response.text.strip()
     # Try to parse the response as JSON, assuming the AI outputs JSON-like text
     parsed_json = json.loads(ai_response)
-    print(json.dumps(parsed_json, indent=2))
+    # print(json.dumps(parsed_json, indent=2))
 except json.JSONDecodeError:
-    print(f"AI Response is not in JSON format. Here's the raw text:\n{ai_response}")
+    val = (f"AI Response is not in JSON format. Here's the raw text:\n{ai_response}")
