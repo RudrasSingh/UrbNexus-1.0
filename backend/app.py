@@ -6,8 +6,10 @@ from pyrebase import *
 import database as db
 from resource_allocator_algo import ResourceAllocator
 import random
-import h3
 from functools import wraps
+import merger
+import emailService as mail
+
 
 #----------------------application setup----------------------------------------
 app = Flask(__name__)
@@ -206,13 +208,17 @@ def logout():
     session.clear()
     return jsonify({"message":"Log out success"})
 
-# @api.route('/delete')
-# def deleteData():
+# @api.route('/deleteTask')
+# def dels():
+#     task_id = 43973
+#     if not task_id:
+#         return jsonify({"message": "Task ID is required"}), 400
+
 #     try:
-#         db.delete_dep_head("atul.tmsl@gmail.com")
-#         return jsonify({"message":"deleted"})
+#         db.delete_task(task_id)
+#         return jsonify({"message": "Task deleted successfully"})
 #     except Exception as e:
-#         return jsonify({"message":f"something went wrong. Please try again later {e}"})
+#         return jsonify({"message": f"Failed to delete task: {str(e)}"}), 500
 #---------------------------------------------------------------------------------------
 # image uploading function
 def upload_to_firebase(file):
@@ -228,52 +234,81 @@ def upload_to_firebase(file):
 def createTask():
     if "user" in session:
 
-        #TODO: write the mechanism to get the details from the front end and store it in the database
-       # info = request.get_json()
-       # try:
-         #   db.
-
-        
-        #TODO: allocate the resources for the task using Resource Allocation Algorithm and notify upon success
-
+        # Get task details from the front end
         info = request.get_json()
-
-        allocation_result= allocation_for_task(info)
-
-
-    #TODO: write the mechanism to get the details from the front end and store it in the database
-    info = request.get_json()
-    depart = info.get("department")
-    deptId = []
-    department = 1234
-    # for id in db.read_departments():
-    #     deptId.append({"id":id.get("dep_id"),"name":id.get("dep_name")})
-    # for id in deptId:
-    #     if depart==id.get("name"):
-    #         department = id.get("id")
-    try:
-        taskId = 1234
-        task=f"TK{random.randint(10000,99999)}"
-        # for id in db.read_tasks():
-        #     if id.get("t_id") != task:
-        #         taskId = task
-        taskinfo = {
+        depart = info.get("department")
+        # deptId = []
+        # for id in db.read_departments():
+        #     deptId.append({"id":id.get("dep_id"),"name":id.get("dep_name")})
+        # for id in deptId:
+        #     if depart==id.get("name"):
+        #         department = id.get("id")
+        try:
+            existing_task_ids = [task.get("t_id") for task in db.read_tasks()]
+            while True:
+                taskId = random.randint(10000, 99999)
+                if taskId not in existing_task_ids:
+                    break
+            taskinfo = {
             "id" : taskId,
             "title": info.get("title"),
             "desc": info.get("desc"),
             "projManager": info.get("projManager"),
-            "department": depart,
+            "department": 1002,
             "stat": info.get("stat"),
             "priority": info.get("priority"),
             "location": info.get("location"),
-            "deadline": info.get("deadline")
-        }
-        # db.create_task(taskId, info.get("title"),None, None,None, info.get("stat"), info.get("priority"), info.get("location"), info.get("deadline"))
+            "deadline": info.get("deadline"),
+            "resources": info.get("resources")
+            }
+            db.create_task(taskinfo.get("id"), taskinfo.get("title"),taskinfo.get("desc"),taskinfo.get("projManager"),taskinfo.get("department"), taskinfo.get("stat"), taskinfo.get("priority"), taskinfo.get("location"), taskinfo.get("deadline"), json.dumps(taskinfo.get("resources")))
+            mail.task_created_email(session.get("email"),session.get("name"),taskinfo.get("title"))
+            return jsonify({"message":"Task created successfully","task details":db.read_tasks()})
+        
+        except Exception as e:   
+            return({"message":f"something went wrong! Please try again later {e}"})
 
-        return jsonify({"message":"Task created successfully","task details":db.read_tasks()})
+        
+        #TODO: allocate the resources for the task using Resource Allocation Algorithm and notify upon success
+
+    #    info  = request.get_json()
+
+    #     allocation_result= allocation_for_task(info)
+
+
+    #TODO: write the mechanism to get the details from the front end and store it in the database
+    # info = request.get_json()
+    # depart = info.get("department")
+    # deptId = []
+    # department = 1234
+    # # for id in db.read_departments():
+    # #     deptId.append({"id":id.get("dep_id"),"name":id.get("dep_name")})
+    # # for id in deptId:
+    # #     if depart==id.get("name"):
+    # #         department = id.get("id")
+    # try:
+    #     taskId = 1234
+    #     task=f"TK{random.randint(10000,99999)}"
+    #     # for id in db.read_tasks():
+    #     #     if id.get("t_id") != task:
+    #     #         taskId = task
+    #     taskinfo = {
+    #         "id" : taskId,
+    #         "title": info.get("title"),
+    #         "desc": info.get("desc"),
+    #         "projManager": info.get("projManager"),
+    #         "department": depart,
+    #         "stat": info.get("stat"),
+    #         "priority": info.get("priority"),
+    #         "location": info.get("location"),
+    #         "deadline": info.get("deadline")
+    #     }
+    #     # db.create_task(taskId, info.get("title"),None, None,None, info.get("stat"), info.get("priority"), info.get("location"), info.get("deadline"))
+
+    #     return jsonify({"message":"Task created successfully","task details":db.read_tasks()})
     
-    except Exception as e:   
-        return({"message":f"something went wrong! Please try again later {e}"})
+    # except Exception as e:   
+    #     return({"message":f"something went wrong! Please try again later {e}"})
     #TODO: allocate the resources for the task using Resource Allocation Algorithm and notify upon success
     
 
@@ -283,7 +318,41 @@ def createTask():
 
     # return jsonify({"message":"Task created successfully","info":info})
 
+@api.route('/checkMerge', methods=['GET','POST'])
+def mergeCheck():
+    if "user" not in session:
+        return jsonify({"message": "User not logged in"}), 401
 
+    try:
+        # Fetch all tasks from PostgreSQL (Assume it returns a list of tuples)
+        tasks_data = db.read_tasks()  
+
+        if not tasks_data:
+            return jsonify({"message": "No tasks found", "tasks": []})
+
+        tasks_json = [
+            {
+                "id": task[0],          # t_id
+                "name": task[1],        # title
+                "description": task[2], # descr
+                "assigned_to": task[3], # assign_to
+                "department_id": task[4], # dep_id
+                "status": task[5],      # stat
+                "priority": task[6],    # priority
+                "location": task[7],    # loc
+                "due_date": task[8],    # due
+                "requirements": task[9] # req
+            }
+            for task in tasks_data
+        ]
+
+        # Check for overlapping tasks and merge them
+        merged_tasks = merger.merge_tasks(tasks_json)
+        return jsonify({"message": "Tasks merged successfully", "merged_tasks": merged_tasks})
+        
+    except Exception as e:
+        return jsonify({"message": f"Something went wrong! Error: {str(e)}"}), 500
+    
 @api.route('/forum',methods=['GET'])
 def discussionForum():
     if "user" in session:

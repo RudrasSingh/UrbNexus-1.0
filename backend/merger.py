@@ -3,22 +3,48 @@ import json
 import google.generativeai as genai
 from datetime import datetime
 from config import Config
-from geopy.distance import geodesic
+import h3
 
 # Configure API Key
 genai.configure(api_key=Config.GEN_AI_API)
 
-# Function to check if two tasks can be merged based on time and location proximity
+# Function to check if two tasks can be merged based on time and location proximityimport h3
+
 def can_merge(task1, task2):
+    """
+    Determines if two tasks can be merged based on time and location proximity using Uber's H3 algorithm.
+    
+    - Tasks can merge if they have the same start and end times.
+    - Latitude and longitude are converted into H3 hexagons to check for spatial overlap.
+    
+    Parameters:
+        task1 (dict): Task details including 'start_time', 'end_time', 'latitude', and 'longitude'.
+        task2 (dict): Task details including 'start_time', 'end_time', 'latitude', and 'longitude'.
+    
+    Returns:
+        bool: True if tasks can be merged, False otherwise.
+    """
+
+    # Ensure both tasks have valid time and location data
+    required_keys = {'start_time', 'end_time', 'latitude', 'longitude'}
+    if not all(key in task1 and key in task2 for key in required_keys):
+        return False
+
+    # Check if both tasks have identical time slots
     time_match = (task1['start_time'] == task2['start_time'] and task1['end_time'] == task2['end_time'])
-    
-    # Calculate the distance between two locations using latitudes and longitudes
-    loc1 = (task1['latitude'], task1['longitude'])
-    loc2 = (task2['latitude'], task2['longitude'])
-    distance = geodesic(loc1, loc2).kilometers
-    
-    # Merge tasks if distance is within 5 km
-    return time_match and distance <= 5
+
+    try:
+        # Convert latitude and longitude to H3 hexagons at resolution 9
+        h3_res = 9  # Uber's H3 resolution (higher = more granular)
+        loc1_h3 = h3.latlng_to_cell(float(task1['latitude']), float(task1['longitude']), h3_res)
+        loc2_h3 = h3.latlng_to_cell(float(task2['latitude']), float(task2['longitude']), h3_res)
+
+        # Tasks can merge if they fall within the same H3 hexagon and have the same time
+        return time_match and loc1_h3 == loc2_h3
+
+    except ValueError:
+        # Handle invalid latitude/longitude values
+        return False
 
 # Function to merge tasks
 def merge_tasks(tasks):

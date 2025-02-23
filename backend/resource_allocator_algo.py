@@ -37,9 +37,7 @@ class ResourceAllocator:
 # ek use case
 projects = [
     {"name": "Project A", "priority": "high", "requirements": {"machinery": 5, "workers": 10}},
-    {"name": "Project B", "priority": "low", "requirements": {"machinery": 3, "workers": 8}},
-    {"name":"Project C", "priority": "medium", "requirements": {"machinery": 5, "workers":12}},
-    {"name":"Project D", "priority": "high", "requirements":{"machinery": 5, "workers":18}}
+    
 ]
 resources = {"machinery": 8, "workers": 32}
 

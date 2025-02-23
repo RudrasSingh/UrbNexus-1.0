@@ -21,3 +21,5 @@ class Config:
         'databaseURL': os.getenv(""),
     }
     GEN_AI_API = os.getenv("API_KEY_GENAI")
+    MAILJET_API_KEY = os.getenv("API_KEY_MAILJET")
+    MAILJET_API_SECRET = os.getenv("API_SECRET_MAILJET")

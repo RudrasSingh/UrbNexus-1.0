@@ -9,7 +9,7 @@ RUN apk add --no-cache \
     gcc musl-dev libffi-dev openssl-dev python3-dev postgresql-dev
 
 # Copy the requirements file first (for caching)
-COPY backend/requirements.txt .
+COPY ../requirements.txt .
 
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
@@ -18,7 +18,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY backend/ .
 
 # Copy the .env file into the container (but ignore it in Git)
-COPY backend/.env .env
+COPY .env .env
 
 # Expose port 5000 for Flask
 EXPOSE 5000
