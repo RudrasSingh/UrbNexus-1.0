@@ -16,7 +16,7 @@ def send_email(to_email, to_name, subject, text_part, html_part):
                 {
                     "From": {
                         "Email": "urbnexus@gmail.com", 
-                        "Name": "UrbNexus 1.0" 
+                        "Name": "UrbNexus Team"
                     },
                     "To": [
                         {
@@ -32,10 +32,8 @@ def send_email(to_email, to_name, subject, text_part, html_part):
             ]
         }
 
-       
         result = mailjet.send.create(data=data)
 
-      
         if result.status_code == 200:
             return {"status": "success", "message": "Email sent successfully", "response": result.json()}
         else:
@@ -44,29 +42,72 @@ def send_email(to_email, to_name, subject, text_part, html_part):
     except Exception as e:
         return {"status": "error", "message": str(e)}
 
-# 1️⃣ Email when a task is successfully created
+
+# 🎯 Unified HTML Email Template
+def generate_email_template(title, message, cta_text=None, cta_link=None):
+    html_template = f"""
+    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 20px; border-radius: 10px; background: #ffffff; box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);">
+        <div style="text-align: center;">
+            <img src="https://public.readdy.ai/ai/img_res/3cc2ba5c910c5b5cfa186471391cb1e9.jpg" alt="UrbNexus" style="width: 150px; margin-bottom: 20px;">
+        </div>
+        <h2 style="color: #333; text-align: center;">{title}</h2>
+        <p style="color: #555; font-size: 16px; line-height: 1.6; text-align: center;">
+            {message}
+        </p>
+        {f'<div style="text-align: center; margin-top: 20px;"><a href="{cta_link}" style="background: #007BFF; color: white; text-decoration: none; padding: 10px 20px; border-radius: 5px; font-size: 16px;">{cta_text}</a></div>' if cta_text and cta_link else ''}
+        <hr style="border: none; border-top: 1px solid #ddd; margin: 20px 0;">
+        <p style="text-align: center; color: #888; font-size: 14px;">
+            Need help? Contact us at <a href="mailto:urbnexus@gmail.com" style="color: #007BFF;">urbnexus@gmail.com</a>.
+        </p>
+    </div>
+    """
+    return html_template
+
+
+# 1️⃣ **Task Creation Email**
 def task_created_email(to_email, to_name, task_name):
-    subject = "✅ Task Created Successfully"
-    text_part = f"Your task '{task_name}' has been successfully created. Visit your dashboard for details."
-    html_part = f"<h3>Task Created Successfully</h3><p>Your task '<strong>{task_name}</strong>' has been created. Please visit the dashboard for more details and next steps.</p>"
+    subject = "✅ Your Task Has Been Created Successfully!"
+    text_part = f"Your task '{task_name}' has been successfully created. Check your dashboard for details."
+    html_part = generate_email_template(
+        title="Task Created Successfully 🎉",
+        message=f"Hello {to_name},<br><br>Your task <strong>{task_name}</strong> has been created successfully! You can now track its progress and manage it on your dashboard.",
+        cta_text="View Task",
+        cta_link="https://urbnexus.netlify.app"
+    )
     return send_email(to_email, to_name, subject, text_part, html_part)
 
-# 2️⃣ Email when a task is overlapping with another task
+
+# 2️⃣ **Task Overlap Warning Email**
 def task_overlap_email(to_email, to_name, task_name, conflicting_task):
-    subject = "⚠️ Task Overlap Detected"
-    text_part = f"Your task '{task_name}' is overlapping with '{conflicting_task}'. Review on the dashboard to avoid conflicts."
-    html_part = f"<h3>⚠️ Task Overlap Detected</h3><p>Your task '<strong>{task_name}</strong>' is overlapping with '<strong>{conflicting_task}</strong>'. Please review the dashboard to resolve potential conflicts.</p>"
+    subject = "⚠️ Task Overlap Detected!"
+    text_part = f"Your task '{task_name}' is overlapping with '{conflicting_task}'. Review your dashboard to resolve this."
+    html_part = generate_email_template(
+        title="⚠️ Task Overlap Detected",
+        message=f"Hello {to_name},<br><br>Your task <strong>{task_name}</strong> is overlapping with <strong>{conflicting_task}</strong>. We recommend checking your dashboard to avoid any conflicts.",
+        cta_text="Resolve Overlap",
+        cta_link="https://urbnexus.netlify.app"
+    )
     return send_email(to_email, to_name, subject, text_part, html_part)
 
-# 3️⃣ Email to propose merging tasks to optimize resources
+
+# 3️⃣ **Task Merge Proposal Email**
 def task_merge_proposal_email(to_email, to_name, task_name, merge_task):
     subject = "🔄 Task Merge Proposal"
-    text_part = f"Consider merging your task '{task_name}' with '{merge_task}' to optimize resources. Check your dashboard for more details."
-    html_part = f"<h3>🔄 Task Merge Proposal</h3><p>Your task '<strong>{task_name}</strong>' may benefit from merging with '<strong>{merge_task}</strong>' to save time and resources. Please visit your dashboard to proceed with the merge.</p>"
+    text_part = f"Consider merging your task '{task_name}' with '{merge_task}' to optimize resources."
+    html_part = generate_email_template(
+        title="🔄 Task Merge Proposal",
+        message=f"Hello {to_name},<br><br>We noticed that your task <strong>{task_name}</strong> could be merged with <strong>{merge_task}</strong> to enhance efficiency and resource management.",
+        cta_text="Merge Tasks",
+        cta_link="https://urbnexus.netlify.app"
+    )
     return send_email(to_email, to_name, subject, text_part, html_part)
-
 
 # testing
 print(task_created_email("atul.tmsl@gmail.com","Atul","Road Building"))
 print(task_overlap_email("ishakriti.2004@gmail.com","Isha","Road Building","Bridge Construction"))
 print(task_merge_proposal_email("utsavtiwari030@gmail.com","Utsav","Road Building","Bridge Construction"))
+print(task_merge_proposal_email("49guptarishav@gmail.com","Rishav","Road Building","Bridge Construction"))
+print(task_merge_proposal_email("subhra080@gmail.com","Subhra","Water Supply","Electricity lines"))
+print(task_merge_proposal_email("srijitajana003@gmail.com","Srijita","Water Supply","Electricity lines"))
+
+
