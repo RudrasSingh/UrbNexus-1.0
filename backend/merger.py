@@ -137,7 +137,7 @@ Return the output in a JSON format. The tasks are: {json.dumps(merged_tasks)}
 
 # Call the Generative AI API for task suggestions
 response = genai.GenerativeModel(
-    model_name="gemini-1.0-pro",
+    model_name="gemini-1.0-lite",  # Use Lite model for free access
     generation_config={
         "temperature": 0.8,
         "top_p": 1,
