@@ -13,7 +13,16 @@ import emailService as mail
 
 #----------------------application setup----------------------------------------
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": ["http://localhost:3000", "http://127.0.0.1:3000"]}})
+
+CORS(app, resources={
+    r"/*": {
+        "origins": [
+            "http://localhost:3000", 
+            "http://127.0.0.1:3000",
+            "https://urbnexus.netlify.app"
+        ]
+    }
+})
 api = Blueprint("api", __name__, url_prefix="/api/v1")
 app.config.from_object(Config)
 app.secret_key = Config.FLASK_SECRET
