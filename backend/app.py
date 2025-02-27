@@ -13,7 +13,7 @@ import emailService as mail
 
 #----------------------application setup----------------------------------------
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/api/*": {"origins": "*"}}, supports_credentials=True)
 api = Blueprint("api", __name__, url_prefix="/api/v1")
 app.config.from_object(Config)
 app.secret_key = Config.FLASK_SECRET
